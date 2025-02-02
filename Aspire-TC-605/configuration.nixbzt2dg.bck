@@ -67,8 +67,6 @@ in
 
     # winapps
     podman-compose
-    winapps
-    winapps-launcher
   ];
 
   # winapps
