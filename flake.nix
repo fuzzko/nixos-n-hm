@@ -89,7 +89,7 @@
             nixGLPackages = nixGL.outputs.packages.${system};
             helixUnstable = helix.outputs.packages.${system}.helix;
             winapps = winapps.packages."${system}".winapps;
-            winapps-launcher = winapps.packages."${system}".winapps-launcher.override (prev: {
+            winapps-launcher = winapps.packages."${system}".winapps-launcher.overrideAttrs (prev: {
               patches = [ ./patches/WinAppsLauncher.patch ];
               postPatch = ''
                 substituteAllInPlace WinApps-Launcher.sh
