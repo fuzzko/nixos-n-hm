@@ -109,7 +109,7 @@
 
                 runHook postInstall
               '';
-            };
+            });
           })
         ];
       };
