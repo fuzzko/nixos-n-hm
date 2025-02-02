@@ -35,6 +35,11 @@
       url = "github:helix-editor/helix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    winapps = {
+      url = "github:winapps-org/winapps";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {
@@ -64,6 +69,7 @@
       nix-flatpak,
       nix-ld,
       helix,
+      winapps,
       ...
     }:
     let
@@ -80,6 +86,8 @@
             nix-search = nix-search-cli.outputs.packages.${system}.nix-search;
             nixGLPackages = nixGL.outputs.packages.${system};
             helixUnstable = helix.outputs.packages.${system}.helix;
+            winapps = winapps.packages."${system}".winapps;
+            winapps-launcher = winapps.packages."${system}".winapps-launcher;
           })
         ];
       };
