@@ -94,6 +94,21 @@
               postPatch = ''
                 substituteAllInPlace WinApps-Launcher.sh
               '';
+              installPhase = ''
+                runHook preInstall
+
+                mkdir -p $out
+                cp -r ./Icons $out/Icons
+
+                install -m755 -D WinApps-Launcher.sh $out/bin/winapps-launcher
+                install -Dm444 -T Icons/AppIcon.svg $out/share/pixmaps/winapps.svg
+
+                wrapProgram $out/bin/winapps-launcher \
+                  --set LIBVIRT_DEFAULT_URI "qemu:///system" \
+                  --prefix PATH : "${lib.makeBinPath buildInputs}"
+
+                runHook postInstall
+              '';
             };
           })
         ];
