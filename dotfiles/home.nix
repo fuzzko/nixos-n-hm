@@ -105,7 +105,14 @@ in
       ".config/winapps/winapps.conf".text = builtins.replaceStrings [ " = \"" ] [ "=\"" ] (
         std.serde.toTOML (builtins.mapAttrs (name: value: toString value) (loadConfig "winapps" { }))
       );
-      ".config/winapps/compose.yaml".source = pkgs.formats.yaml.generate "compose.yaml" (builtins.toJSON (loadConfig "winapps/compose" { }));
+      ".config/winapps/compose.yaml".source = callP pkgs.runCommand "toYAML" {
+            buildInputs = with pkgs; [ yj ];
+            json = builtins.toJSON (import ./foo.nix);
+            passAsFile = [ "json" ]; # will be available as `$jsonPath`
+          } ''
+            mkdir -p $out
+            yj -jy < "$jsonPath" > $out/go.yaml
+          '';
     }
     # Misc. files
     // {
