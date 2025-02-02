@@ -112,6 +112,7 @@ in
       ".config/winapps/winapps.conf".text = builtins.replaceStrings [ " = \"" ] [ "=\"" ] (
         std.serde.toTOML (builtins.mapAttrs (name: value: toString value) (loadConfig "winapps" { }))
       );
+      ".config/winapps/compose.yaml".source = ./configs/winapps/compose.yaml;
     }
     # Misc. files
     // {
