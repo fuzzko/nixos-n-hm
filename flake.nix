@@ -79,6 +79,9 @@
         if x == "" then "x86_64-linux" else x;
       pkgs = import nixpkgs {
         inherit system;
+        config = {
+          allowUnfree = true;
+        };
         overlays = [
           nur.overlays.default
           (_: _: {
