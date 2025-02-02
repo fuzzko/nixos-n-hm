@@ -105,6 +105,7 @@
 
       nixosConfigurations.HP-240-G5-Notebook-PC = nixpkgs.lib.nixosSystem {
         inherit system;
+        inherit pkgs;
         modules = [
           nix-flatpak.nixosModules.nix-flatpak
           nix-ld.nixosModules.nix-ld
@@ -115,6 +116,7 @@
 
       nixosConfigurations.Aspire-TC-605 = nixpkgs.lib.nixosSystem {
         inherit system;
+        inherit pkgs;
         modules = [
           nix-flatpak.nixosModules.nix-flatpak
           nix-ld.nixosModules.nix-ld
