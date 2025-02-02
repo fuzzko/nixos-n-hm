@@ -32,7 +32,14 @@ let
   };
 
   loadConfig = x: y: import (./configs + "/${x}.nix") (inputs // { root = ./.; } // y);
-  toString = x: if x == true then "true" else if x == false then "false" else builtins.toString x;
+  toString =
+    x:
+    if x == true then
+      "true"
+    else if x == false then
+      "false"
+    else
+      builtins.toString x;
 in
 {
   programs.home-manager.enable = true;
@@ -105,14 +112,18 @@ in
       ".config/winapps/winapps.conf".text = builtins.replaceStrings [ " = \"" ] [ "=\"" ] (
         std.serde.toTOML (builtins.mapAttrs (name: value: toString value) (loadConfig "winapps" { }))
       );
-      ".config/winapps/compose.yaml".source = callP pkgs.runCommand "toYAML" {
+      ".config/winapps/compose.yaml".source = pkgs.callPackage (
+        pkgs.runCommand "toYAML"
+          {
             buildInputs = with pkgs; [ yj ];
-            json = builtins.toJSON (import ./foo.nix);
+            json = builtins.toJSON (loadConfig "winapps/compose" { });
             passAsFile = [ "json" ]; # will be available as `$jsonPath`
-          } ''
+          }
+          ''
             mkdir -p $out
-            yj -jy < "$jsonPath" > $out/go.yaml
-          '';
+            yj -jy < "$jsonPath" > $out/compose.yaml
+          ''
+      ) + /compose.yaml;
     }
     # Misc. files
     // {
