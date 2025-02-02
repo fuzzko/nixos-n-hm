@@ -10,7 +10,7 @@ let
 in
 {
   name = "winapps";
-  volumes.data = {};
+  volumes.data = { };
   services.windows = {
     image = "ghcr.io/dockur/windows:latest";
     container_name = "WinApps";
@@ -24,5 +24,21 @@ in
       "DISK_SIZE" = disk_size;
       "HOME" = "\${HOME}";
     };
+    privilaged = true;
+    ports = [
+      "8006:8006"
+      "3389:3389/tcp"
+      "3389:3389/udp"
+    ];
+    stop_grace_period = "120s";
+    restart = "on-failure";
+    volumes = [
+      "data:/storage"
+      "\${HOME}/shared"
+      "./oem:/oem"
+    ];
+    devices = [
+      "/dev/kvm"
+    ];
   };
 }
