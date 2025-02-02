@@ -112,7 +112,6 @@ in
       ".config/winapps/winapps.conf".text = builtins.replaceStrings [ " = \"" ] [ "=\"" ] (
         std.serde.toTOML (builtins.mapAttrs (name: value: toString value) (loadConfig "winapps" { }))
       );
-      # A workaround to convert Nix to YAML
       ".config/winapps/compose.yaml".source = pkgs.callPackage (
         pkgs.runCommand "toYAML"
           {
