@@ -32,7 +32,6 @@ let
   };
 
   loadConfig = x: y: import (./configs + "/${x}.nix") (inputs // { root = ./.; } // y);
-  toString = x: if x == true then "true" else if x == false then "false" else builtins.toString x;
 in
 {
   programs.home-manager.enable = true;
