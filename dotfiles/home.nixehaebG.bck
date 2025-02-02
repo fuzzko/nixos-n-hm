@@ -101,7 +101,6 @@ in
     {
       ".config/zls.json".text = builtins.toJSON (loadConfig "zls" { });
       ".config/wluma/config.toml".text = std.serde.toTOML (loadConfig "wluma" { });
-      ".config/winapps/winapps.conf".text = std.serde.toTOML (builtins.mapAttrs (name: value: toString value ) (loadConfig "winapps" { }))
     }
     # Misc. files
     // {
