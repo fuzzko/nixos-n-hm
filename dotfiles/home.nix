@@ -105,7 +105,7 @@ in
       ".config/winapps/winapps.conf".text = builtins.replaceStrings [ " = \"" ] [ "=\"" ] (
         std.serde.toTOML (builtins.mapAttrs (name: value: toString value) (loadConfig "winapps" { }))
       );
-      ".config/winapps/compose.yaml".text = lib.generators.toYAML (loadConfig "winapps/compose" { });
+      ".config/winapps/compose.yaml".source = pkgs.formats.yaml.generate "compose.yaml" (builtins.toJSON (loadConfig "winapps/compose" { }));
     }
     # Misc. files
     // {
