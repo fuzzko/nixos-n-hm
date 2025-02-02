@@ -101,10 +101,7 @@ in
     {
       ".config/zls.json".text = builtins.toJSON (loadConfig "zls" { });
       ".config/wluma/config.toml".text = std.serde.toTOML (loadConfig "wluma" { });
-      ".config/winapps/winapps.conf".text = builtins.replaceStrings [ " = \"" ] [ "=\"" ] (
-        std.serde.toTOML (builtins.mapAttrs (name: value: toString value) (loadConfig "winapps" { }))
-      );
-      ".config/winapps/compose.yaml".text = lib.generators.toYAML (loadConfig "wluma/compose" { });
+      ".config/winapps/winapps.conf".text = std.serde.toTOML (builtins.mapAttrs (name: value: toString value) (loadConfig "winapps" { }));
     }
     # Misc. files
     // {
@@ -211,8 +208,8 @@ in
     languages = loadConfig "helix/languages" { };
     themes.catppuccin-mocha_ts = {
       inherits = "catppuccin-mocha";
-      "ui.background" = { };
-      "ui.text" = { };
+      "ui.background" = {};
+      "ui.text" = {};
     };
   };
 
