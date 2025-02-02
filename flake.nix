@@ -91,6 +91,9 @@
             winapps = winapps.packages."${system}".winapps;
             winapps-launcher = winapps.packages."${system}".winapps-launcher.overrideAttrs {
               patches = [ ./patches/WinAppsLauncher.patch ];
+              postPatch = ''
+                substituteAllInPlace WinApps-Launcher.sh
+              '';
             };
           })
         ];
