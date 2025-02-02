@@ -89,7 +89,7 @@
             nixGLPackages = nixGL.outputs.packages.${system};
             helixUnstable = helix.outputs.packages.${system}.helix;
             winapps = winapps.packages."${system}".winapps;
-            winapps-launcher = winapps.packages."${system}".winapps-launcher.overrideAttrs {
+            winapps-launcher = winapps.packages."${system}".winapps-launcher.override (prev: {
               patches = [ ./patches/WinAppsLauncher.patch ];
               postPatch = ''
                 substituteAllInPlace WinApps-Launcher.sh
@@ -105,7 +105,7 @@
 
                 wrapProgram $out/bin/winapps-launcher \
                   --set LIBVIRT_DEFAULT_URI "qemu:///system" \
-                  --prefix PATH : "${lib.makeBinPath buildInputs}"
+                  --prefix PATH : "${pkgs.lib.makeBinPath prev.buildInputs}"
 
                 runHook postInstall
               '';
