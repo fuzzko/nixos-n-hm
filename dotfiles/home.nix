@@ -150,6 +150,18 @@ in
       allowed-users = [ username ];
     };
     gc.automatic = true;
+    registry.nixpkgs = {
+      from = {
+        id = "nixpkgs";
+        type = "indirect";
+      };
+      to = {
+        owner = "NixOS";
+        repo = "nixpkgs";
+        ref = (builtins.fromJSON (builtins.readFile ./flake.lock)).nodes.nixpkgs.locked.rev;
+        type = "github";
+      };
+    };
   };
 
   nixpkgs.config = {
