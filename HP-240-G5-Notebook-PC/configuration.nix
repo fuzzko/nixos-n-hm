@@ -208,4 +208,6 @@ in
     enable = true;
     enableSSHSupport = true;
   };
+
+  programs.adb.enable = true;
 }
