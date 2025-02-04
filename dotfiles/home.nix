@@ -81,13 +81,16 @@ in
       nautilus
       nautilus-open-any-terminal
       hyprshot
-      kooha
-      pamixer
-      wl-clipboard
-      alsa-utils
-      playerctl
       hyprpolkitagent
+      pamixer
+      playerctl
+      alsa-utils
+      wl-clipboard
       clipse
+
+      # For recording
+      kooha
+      scrcpy
 
       # i don't fucking know why i installed these shits but i installed them anyway
       youtube-music
