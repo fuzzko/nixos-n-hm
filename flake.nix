@@ -89,27 +89,7 @@
             nixGLPackages = nixGL.outputs.packages.${system};
             helixUnstable = helix.outputs.packages.${system}.helix;
             winapps = winapps.packages."${system}".winapps;
-            winapps-launcher = winapps.packages."${system}".winapps-launcher.overrideAttrs (final: prev: {
-              patches = [ ./patches/WinAppsLauncher.patch ];
-              postPatch = ''
-                substituteAllInPlace WinApps-Launcher.sh
-              '';
-              installPhase = ''
-                runHook preInstall
-
-                mkdir -p $out
-                cp -r ./Icons $out/Icons
-
-                install -m755 -D WinApps-Launcher.sh $out/bin/winapps-launcher
-                install -Dm444 -T Icons/AppIcon.svg $out/share/pixmaps/winapps.svg
-
-                wrapProgram $out/bin/winapps-launcher \
-                  --set LIBVIRT_DEFAULT_URI "qemu:///system" \
-                  --prefix PATH : "${pkgs.lib.makeBinPath prev.buildInputs}"
-
-                runHook postInstall
-              '';
-            });
+            winapps-launcher = winapps.packages."${system}".winapps-launcher;
           })
         ];
       };
