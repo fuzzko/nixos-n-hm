@@ -158,7 +158,7 @@ in
       to = {
         owner = "NixOS";
         repo = "nixpkgs";
-        ref = (builtins.fromJSON (builtins.readFile ./flake.lock)).nodes.nixpkgs.locked.rev;
+        ref = (builtins.fromJSON (builtins.readFile ../flake.lock)).nodes.nixpkgs.locked.rev;
         type = "github";
       };
     };
