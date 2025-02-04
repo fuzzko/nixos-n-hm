@@ -86,12 +86,12 @@
           nur.overlays.default
           (final: prev: {
             bun = prev.bun.overrideAttrs rec {
-  passthru.sources."x86_64-linux" = pkgs.fetchurl {
-    url = "https://github.com/oven-sh/bun/releases/download/bun-v${prev.bun.version}/bun-linux-x64-baseline.zip";
-    hash = "sha256-FwkVP5lb2V9E8YGPkTAqVMsZmaZXMq8x5AR+99cuIX0=";
-  };
-  src = passthru.sources."x86_64-linux";
-};
+              passthru.sources."x86_64-linux" = pkgs.fetchurl {
+                url = "https://github.com/oven-sh/bun/releases/download/bun-v${prev.bun.version}/bun-linux-x64-baseline.zip";
+                hash = "sha256-L76ihYOsWLvMgeY1zjUp0tw9N8RjuItrGUEz/sngO+4=";
+              };
+              src = passthru.sources."x86_64-linux";
+            };
             nix-search = nix-search-cli.outputs.packages.${system}.nix-search;
             nixGLPackages = nixGL.outputs.packages.${system};
             helixUnstable = helix.outputs.packages.${system}.helix;
