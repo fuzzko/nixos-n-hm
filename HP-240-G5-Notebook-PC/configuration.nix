@@ -31,6 +31,8 @@ let
       runHook postInstall
     '';
   };
+
+  myLib = import ../lib { inherit pkgs; };
 in
 {
   imports = [
