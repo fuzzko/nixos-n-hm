@@ -1,0 +1,3 @@
+{
+  transpileToCSS = path: null;
+}
