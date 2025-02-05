@@ -66,8 +66,8 @@ in
         disable_splash_rendering = true
         disable_hyprland_qtutils_check = true
      }
-env = GTK_USE_PORTAL,0
-env = GDK_DEBUG,no-portals
+      env = GTK_USE_PORTAL,0
+      env = GDK_DEBUG,no-portals
     '';
   };
 
