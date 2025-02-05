@@ -1,3 +1,4 @@
+{ pkgs }:
 {
-  transpileToCSS = path: null;
+  execWith = cmd: deps: builtins.readFile (pkgs.runCommand "" { buildInputs = deps; } cmd);
 }
