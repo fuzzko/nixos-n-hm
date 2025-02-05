@@ -117,7 +117,6 @@
         inherit system;
         inherit pkgs;
         modules = [
-        catppuccin.nixosModules.catppuccin
           nix-flatpak.nixosModules.nix-flatpak
           nix-ld.nixosModules.nix-ld
           ./modules/refind/refind.nix
