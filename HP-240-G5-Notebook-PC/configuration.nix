@@ -163,9 +163,9 @@ in
         "nextdns-ipv6"
       ];
     };
-    serviceConfig = {
-      StateDirectory = "dnscrypt-proxy";
-    };
+  };
+  systemd.services.dnscrypt-proxy2.serviceConfig = {
+    StateDirectory = "dnscrypt-proxy";
   };
 
   hardware.bluetooth = {
