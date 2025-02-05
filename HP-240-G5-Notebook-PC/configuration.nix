@@ -57,7 +57,7 @@ in
     ];
     trusted-users = [ "komo" ];
   };
-  
+
   boot = {
     loader = {
       systemd-boot.enable = lib.mkDefault false;
@@ -74,7 +74,8 @@ in
   };
 
   programs.nix-ld = {
-  dev.enable = true;};
+    dev.enable = true;
+  };
 
   networking.networkmanager = {
     enable = true;
