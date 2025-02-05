@@ -46,6 +46,9 @@ in
     efibootmgr
     udisks
 
+    # greeter
+    regreet
+
     # useless things
     openutau
   ];
