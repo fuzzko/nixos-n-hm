@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   lib,
   ...
@@ -82,6 +81,8 @@ in
 
   programs.regreet = {
     enable = true;
+    theme.name = "catppuccin-mocha-blue-standard+default";
+    
   };
   
   programs.hyprland = {
