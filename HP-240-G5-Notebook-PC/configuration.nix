@@ -39,16 +39,20 @@ in
 
   system.stateVersion = "24.05";
 
-  boot.loader.systemd-boot.enable = lib.mkDefault false;
-  boot.loader.refind.enable = true;
-  boot.loader.refind.extraConfig = ''
-    enable_touch true
-    include themes/rEFInd-minimal-dark/theme.conf
-  '';
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    loader = {
+      systemd-boot.enable = lib.mkDefault false;
+      refind.enable = true;
+      refind.extraConfig = ''
+        enable_touch true
+        include themes/rEFInd-minimal-dark/theme.conf
+      '';
+      efi.canTouchEfiVariables = true;
+    };
 
-  # comment this if something's fucked up
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+    # comment this if something's fucked up
+    kernelPackages = pkgs.linuxPackages_zen;
+  };
 
   nix.settings = {
     experimental-features = [
