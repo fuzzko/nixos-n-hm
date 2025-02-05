@@ -47,7 +47,7 @@ in
     udisks
 
     # greeter
-    regreet
+    greetd.regreet
 
     # useless things
     openutau
