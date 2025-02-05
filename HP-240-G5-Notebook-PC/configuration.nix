@@ -102,6 +102,7 @@ in
         ];
       };
     };
+    extraCss = myLib.transpileToCSS ../shared-configs/regreet.scss;
   };
 
   programs.hyprland = {
