@@ -39,6 +39,25 @@ in
 
   system.stateVersion = "24.05";
 
+  environment.systemPackages = with pkgs; [
+    git
+    refind
+    gptfdisk
+    efibootmgr
+    udisks
+
+    # useless things
+    openutau
+  ];
+
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    trusted-users = [ "komo" ];
+  };
+  
   boot = {
     loader = {
       systemd-boot.enable = lib.mkDefault false;
@@ -54,26 +73,8 @@ in
     kernelPackages = pkgs.linuxPackages_zen;
   };
 
-  nix.settings = {
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-    trusted-users = [ "komo" ];
-  };
-
-  environment.systemPackages = with pkgs; [
-    git
-    refind
-    gptfdisk
-    efibootmgr
-    udisks
-
-    # useless things
-    openutau
-  ];
-
-  programs.nix-ld.dev.enable = true;
+  programs.nix-ld = {
+  dev.enable = true;};
 
   networking.networkmanager = {
     enable = true;
