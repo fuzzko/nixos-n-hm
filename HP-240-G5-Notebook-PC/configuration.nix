@@ -58,6 +58,39 @@ in
     trusted-users = [ "komo" ];
   };
 
+  environment.etc = {
+    "greetd/hyprland.conf".text = ''
+      exec-once = regreet; hyprctl dispatch exit
+      misc {
+        disable_hyprland_logo = true
+        disable_splash_rendering = true
+        disable_hyprland_qtutils_check = true
+     }
+env = GTK_USE_PORTAL,0
+env = GDK_DEBUG,no-portals
+    '';
+  };
+
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "Hyprland --config /etc/greetd/hyprland.conf";
+      };
+    };
+  };
+
+  programs.regreet = {
+    enable = true;
+  };
+  
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
+  security.pam.services.hyprlock = { };
+
   boot = {
     loader = {
       systemd-boot.enable = lib.mkDefault false;
@@ -132,13 +165,6 @@ in
     };
   };
 
-  services.greetd = {
-    enable = true;
-  };
-  programs.regreet = {
-    enable = true;
-  };
-
   services.kmscon = {
     enable = true;
     hwRender = true;
@@ -157,13 +183,6 @@ in
       }
     ];
   };
-
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
-  security.pam.services.hyprlock = { };
 
   services.printing = {
     enable = true;
