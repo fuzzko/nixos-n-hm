@@ -75,8 +75,10 @@ in
 
   programs.nix-ld.dev.enable = true;
 
-  networking.networkmanager.enable = true;
-  networking.networkmanager.dns = "none";
+  networking.networkmanager = {
+    enable = true;
+    dns = "none";
+  };
   networking.nameservers = [
     "127.0.0.1"
     "::1"
