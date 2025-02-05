@@ -193,18 +193,24 @@ in
     pulse.enable = true;
   };
 
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+  };
 
-  services.resolved.enable = false;
+  services.resolved = {
+    enable = false;
+  };
 
-  services.flatpak.enable = true;
-  services.flatpak.packages = [
-    "io.github.zen_browser.zen" # Browser
-    "io.github.equicord.equibop" # Discord
-    "im.nheko.Nheko" # Matrix
-    "io.itch.itch"
-    "com.interversehq.qView"
-  ];
+  services.flatpak = {
+    enable = true;
+    packages = [
+      "io.github.zen_browser.zen" # Browser
+      "io.github.equicord.equibop" # Discord
+      "im.nheko.Nheko" # Matrix
+      "io.itch.itch"
+      "com.interversehq.qView"
+    ];
+  };
 
   services.udisks2.enable = true;
 
