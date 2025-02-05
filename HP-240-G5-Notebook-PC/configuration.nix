@@ -133,9 +133,9 @@ in
     enable = true;
   };
 
-  services.kmscon.enable = true;
-  services.kmscon.hwRender = true;
-  services.kmscon.fonts = [
+  services.kmscon = {enable = true;
+  hwRender = true;
+  fonts = [
     {
       name = "DepartureMono Nerd Font Mono";
       package = departure-nf-mono;
@@ -149,6 +149,7 @@ in
       package = pkgs.noto-fonts-emoji;
     }
   ];
+  };
 
   services.xserver.xkb = {
     layout = "us";
