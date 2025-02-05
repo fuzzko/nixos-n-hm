@@ -95,6 +95,7 @@ in
       # i don't fucking know why i installed these shits but i installed them anyway
       youtube-music
       openutau
+      nchat
     ]
     ++ (with nur.repos.mbekkomo; [
       (wrapGL sklauncher)
