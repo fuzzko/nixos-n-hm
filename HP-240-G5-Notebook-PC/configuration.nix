@@ -126,8 +126,12 @@ in
     enable = true;
   };
 
-  services.greetd.enable = true;
-  programs.regreet.enable = true;
+  services.greetd = {
+    enable = true;
+  };
+  programs.regreet = {
+    enable = true;
+  };
 
   services.kmscon.enable = true;
   services.kmscon.hwRender = true;
