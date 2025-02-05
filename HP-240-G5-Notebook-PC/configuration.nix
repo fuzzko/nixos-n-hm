@@ -114,13 +114,17 @@ in
     powerOnBoot = true;
   };
 
-  services.blueman.enable = true;
+  services.blueman = {
+    enable = true;
+  };
 
   time.timeZone = "Asia/Makassar";
 
   i18n.defaultLocale = "en_US.UTF-8";
 
-  services.xserver.enable = true;
+  services.xserver = {
+    enable = true;
+  };
 
   services.greetd.enable = true;
   programs.regreet.enable = true;
