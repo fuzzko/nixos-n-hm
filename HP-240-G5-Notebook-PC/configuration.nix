@@ -60,14 +60,14 @@ in
 
   environment.etc = {
     "greetd/hyprland.conf".text = ''
-      exec-once = regreet; hyprctl dispatch exit
-      misc {
-        disable_hyprland_logo = true
-        disable_splash_rendering = true
-        disable_hyprland_qtutils_check = true
-     }
-      env = GTK_USE_PORTAL,0
-      env = GDK_DEBUG,no-portals
+       exec-once = regreet; hyprctl dispatch exit
+       misc {
+         disable_hyprland_logo = true
+         disable_splash_rendering = true
+         disable_hyprland_qtutils_check = true
+      }
+       env = GTK_USE_PORTAL,0
+       env = GDK_DEBUG,no-portals
     '';
   };
 
@@ -82,10 +82,26 @@ in
 
   programs.regreet = {
     enable = true;
-    theme.name = config.gtk.theme;
-    
+    theme = {
+      name = "Lounge-night-compact";
+      package = pkgs.lounge-gtk-theme;
+    };
+    cursorTheme = {
+      name = "catppuccin-mocha-yellow-cursors";
+      package = pkgs.catppuccin-cursors.mochaYellow;
+    };
+    iconTheme = {
+      name = "Lounge-aux";
+      package = pkgs.buildEnv {
+        name = "regreet-icons";
+        paths = with pkgs; [
+          adwaita-icon-theme
+          lounge-gtk-theme
+        ];
+      };
+    };
   };
-  
+
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
