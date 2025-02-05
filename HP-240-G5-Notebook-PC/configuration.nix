@@ -100,6 +100,12 @@ in
         ];
       };
     };
+    settings = {
+      background = {
+        path = ../resources/regreet-wallpaper.png;
+        fit = "Contain";
+      };
+    };
   };
 
   programs.hyprland = {
