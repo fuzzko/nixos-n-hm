@@ -124,6 +124,10 @@ in
 
   services.xserver = {
     enable = true;
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
   };
 
   services.greetd = {
@@ -133,27 +137,23 @@ in
     enable = true;
   };
 
-  services.kmscon = {enable = true;
-  hwRender = true;
-  fonts = [
-    {
-      name = "DepartureMono Nerd Font Mono";
-      package = departure-nf-mono;
-    }
-    {
-      name = "Noto fonts";
-      package = pkgs.noto-fonts;
-    }
-    {
-      name = "Noto fonts (Emoji)";
-      package = pkgs.noto-fonts-emoji;
-    }
-  ];
-  };
-
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+  services.kmscon = {
+    enable = true;
+    hwRender = true;
+    fonts = [
+      {
+        name = "DepartureMono Nerd Font Mono";
+        package = departure-nf-mono;
+      }
+      {
+        name = "Noto fonts";
+        package = pkgs.noto-fonts;
+      }
+      {
+        name = "Noto fonts (Emoji)";
+        package = pkgs.noto-fonts-emoji;
+      }
+    ];
   };
 
   programs.hyprland = {
