@@ -31,8 +31,6 @@ let
       runHook postInstall
     '';
   };
-
-  myLib = import ../lib { inherit pkgs; };
 in
 {
   imports = [
@@ -102,7 +100,6 @@ in
         ];
       };
     };
-    extraCss = myLib.transpileToCSS ../shared-configs/regreet.scss;
   };
 
   programs.hyprland = {
