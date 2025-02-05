@@ -163,11 +163,13 @@ in
 
   security.pam.services.hyprlock = { };
 
-  services.printing.enable = true;
-  services.printing.drivers = with pkgs; [
-    gutenprint
-    gutenprintBin
-  ];
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [
+      gutenprint
+      gutenprintBin
+    ];
+  };
   services.avahi = {
     enable = true;
     nssmdns4 = true;
