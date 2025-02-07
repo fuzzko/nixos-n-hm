@@ -91,6 +91,7 @@ in
       # For recording
       kooha
       scrcpy
+      mumble
 
       # i don't fucking know why i installed these shits but i installed them anyway
       youtube-music
