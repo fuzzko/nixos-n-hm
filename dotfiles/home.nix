@@ -240,11 +240,6 @@ in
     settings = loadConfig "alacritty" { };
   };
 
-  programs.zellij = {
-    enable = true;
-    settings = loadConfig "zellij" { };
-  };
-
   programs.bun = {
     enable = true;
   };
