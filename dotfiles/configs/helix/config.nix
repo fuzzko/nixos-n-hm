@@ -57,6 +57,11 @@
     max-indent-retain = 0;
   };
 
+  editor.end-of-line-diagnostics = "warning";
+  editor.inline-diagnostics = {
+    cursor-line = "error";
+  };
+
   keys.normal = {
     "C-m" = {
       s = "save_selection";
