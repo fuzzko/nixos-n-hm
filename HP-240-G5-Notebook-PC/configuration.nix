@@ -56,7 +56,11 @@ in
   nix = {
     optimise = {
       automatic = true;
-      dates = [ "7d" ];
+      dates = [ "weekly" ];
+    };
+    gc = {
+      automatic = true;
+      dates = "weekly";
     };
     settings = {
       experimental-features = [
