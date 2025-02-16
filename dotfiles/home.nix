@@ -147,7 +147,6 @@ in
       ];
       allowed-users = [ username ];
     };
-    gc.automatic = true;
     registry.nixpkgs = {
       from = {
         id = "nixpkgs";
