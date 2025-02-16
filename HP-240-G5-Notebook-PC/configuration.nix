@@ -53,12 +53,18 @@ in
     openutau
   ];
 
-  nix.settings = {
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-    trusted-users = [ "komo" ];
+  nix = {
+    optimise = {
+      automatic = true;
+      dates = [ "7d" ];
+    };
+    settings = {
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      trusted-users = [ "komo" ];
+    };
   };
 
   environment.etc = {
