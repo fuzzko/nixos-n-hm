@@ -68,6 +68,7 @@ in
       unzip
 
       # Something that would ease me off
+      khal
       fzf
       ripgrep
       fd
