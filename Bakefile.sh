@@ -17,14 +17,19 @@ task.switch-nixos() {
     sed 's| |-|g' /sys/devices/virtual/dmi/id/product_name
   )"
   [[ "$1" != "-" ]] && config="$1"
+  shift
   
   nixos-rebuild switch --flake .#"$config" --impure "$@"
 }
 
 task.boot-nixos() {
-  local config="${1:-$(
+  local config
+  config="$(
     sed 's| |-|g' /sys/devices/virtual/dmi/id/product_name
-  )}"
+  )"
+  [[ "$1" != "-" ]] && config="$1"
+  shift
+
   nixos-rebuild boot --flake .#"$config" --impure "$@"
 }
 
