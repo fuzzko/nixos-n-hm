@@ -257,11 +257,7 @@ in
   services.flatpak = {
     enable = true;
     packages = [
-      "io.github.zen_browser.zen" # Browser
-      "io.github.equicord.equibop" # Discord
-      "im.nheko.Nheko" # Matrix
       "io.itch.itch"
-      "com.interversehq.qView"
     ];
   };
 
