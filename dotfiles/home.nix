@@ -128,6 +128,7 @@ in
     "SUDO_PROMPT" = "[sudo 🐺] %p: ";
     "PAGER" = "moar";
     "GIT_PAGER" = PAGER;
+    "BROWSER" = "app.zen_browser.zen";
   };
 
   services.flatpak = {
