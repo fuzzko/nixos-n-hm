@@ -12,9 +12,12 @@ task.switch-hm() {
 }
 
 task.switch-nixos() {
-  local config="${1:-$(
+  local config
+  config="$(
     sed 's| |-|g' /sys/devices/virtual/dmi/id/product_name
-  )}"
+  )"
+  [[ "$1" != "-" ]] && config="$1"
+  
   nixos-rebuild switch --flake .#"$config" --impure "$@"
 }
 
