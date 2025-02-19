@@ -130,6 +130,17 @@ in
     "GIT_PAGER" = PAGER;
   };
 
+  services.flatpak = {
+    packages = [
+      "app.zen_browser.zen"
+      "io.github.milkshiift.GoofCord"
+    ];
+    update.auto = {
+      enable = true;
+    };
+    uninstallUnmanaged = true;
+  };
+
   catppuccin.flavor = "mocha";
   catppuccin.accent = "blue";
   catppuccin.enable = true;
