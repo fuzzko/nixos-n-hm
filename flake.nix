@@ -11,7 +11,7 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/latest";
     nix-search-cli = {
       url = "github:peterldowns/nix-search-cli";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -108,6 +108,7 @@
           declarative-cachix.homeManagerModules.declarative-cachix
           nix-index-database.hmModules.nix-index
           catppuccin.homeManagerModules.catppuccin
+          nix-flatpak.homeManagerModules.nix-flatpak
           ./dotfiles/home.nix
         ];
         extraSpecialArgs.std = nix-std.lib;
