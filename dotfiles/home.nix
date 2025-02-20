@@ -137,6 +137,7 @@ in
       "app.zen_browser.zen"
       "io.github.milkshiift.GoofCord"
       "im.nheko.Nheko"
+
     ];
     update.auto = {
       enable = true;
