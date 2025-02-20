@@ -125,10 +125,11 @@ in
     };
 
   home.sessionVariables = rec {
-    "SUDO_PROMPT" = "[sudo 🐺] %p: ";
+    "SUDO_PROMPT" = "\a[sudo 🐺]: ";
+    "BROWSER" = "app.zen_browser.zen";
     "PAGER" = "moar";
     "GIT_PAGER" = PAGER;
-    "BROWSER" = "app.zen_browser.zen";
+    "SYSTEMD_PAGERSECURE" = "true";
   };
 
   services.flatpak = {
