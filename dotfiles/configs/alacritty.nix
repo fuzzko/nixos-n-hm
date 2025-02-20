@@ -24,7 +24,16 @@
 
   mouse.hide_when_typing = true;
 
-  bell = {
-    duration = 150;
+  bell.duration = 150;
+  
+  cursor = {
+    style = {
+      shape = "Underline";
+      blinking = "On";
+    };
+    vi_mode_style = {
+      shape = "Block";
+      blinking = "Off";
+    };
   };
 }
