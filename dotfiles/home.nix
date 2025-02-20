@@ -132,6 +132,7 @@ in
   };
 
   services.flatpak = {
+    enable = true;
     packages = [
       "app.zen_browser.zen"
       "io.github.milkshiift.GoofCord"
