@@ -137,7 +137,7 @@ in
       "app.zen_browser.zen"
       "io.github.milkshiift.GoofCord"
       "im.nheko.Nheko"
-
+      "org.kde.kwalletmanager5"
     ];
     update.auto = {
       enable = true;
