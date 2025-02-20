@@ -23,4 +23,8 @@
   };
 
   mouse.hide_when_typing = true;
+
+  bell = {
+    duration = 250;
+  };
 }
