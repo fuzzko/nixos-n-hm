@@ -9,10 +9,7 @@
     y = 1;
   };
 
-  window.padding = {
-    x = 3;
-    y = 2;
-  };
+  window.dynamic_padding = true;
 
   window.opacity = 0.65;
   window.blur = true;
