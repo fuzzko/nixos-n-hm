@@ -1,4 +1,4 @@
-{ lib, ... }: {
+{ pkgs, lib, ... }: {
   theme = lib.mkForce "catppuccin-mocha_ts";
 
   editor = {
@@ -12,6 +12,8 @@
     default-line-ending = "lf";
     popup-border = "all";
     preview-completion-insert = false;
+    completion-trigger-len = 4;
+    shell = ["${pkgs.nushell}/bin/nu" "--stdin" "-c"];
   };
 
   editor.statusline = {
