@@ -20,8 +20,6 @@
   };
 
   mouse.hide_when_typing = true;
-
-  bell.duration = 150;
   
   cursor = {
     style = {
