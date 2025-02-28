@@ -239,6 +239,7 @@ in
       bash-language-server
       emmet-language-server
       yaml-language-server
+      vscode-langservers-extracted
       zls
     ];
     settings = loadConfig "helix/config" { };
