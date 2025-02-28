@@ -361,7 +361,7 @@ in
     };
   };
 
-  programs.wpaperd = {
+  services.wpaperd = {
     enable = true;
     settings = loadConfig "wpaperd" { };
   };
