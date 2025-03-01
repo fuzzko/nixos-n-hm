@@ -125,7 +125,7 @@ in
     };
 
   home.sessionVariables = rec {
-    "SUDO_PROMPT" = "\a[sudo 🐺]: ";
+    "SUDO_PROMPT" = "[sudo 🐺]: ";
     "BROWSER" = "app.zen_browser.zen";
     "PAGER" = "moar";
     "GIT_PAGER" = PAGER;
