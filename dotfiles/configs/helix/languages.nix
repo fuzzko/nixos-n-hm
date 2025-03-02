@@ -19,6 +19,7 @@ _: {
     args = [ "--stdio" ];
     required-root-patterns = [ "tailwind.config.js" ];
   };
+  language-server.emmylua.command = "emmylua_ls";
 
   language =
     let
@@ -28,6 +29,13 @@ _: {
       };
     in
     [
+      {
+        name = "lua";
+        roots = [".luarc.json" ".luacheckrc" ".stylua.toml" "selene.toml" ".git"];
+        language-servers = [
+          "emmylua"
+        ];
+      }
       {
         name = "html";
         roots = [ ".git" ];
