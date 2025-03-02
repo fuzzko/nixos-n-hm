@@ -38,6 +38,7 @@ _: {
       {
         name = "lua";
         roots = [
+          ".editorconfig"
           ".luarc.json"
           ".emmyrc.json"
           ".busted"
