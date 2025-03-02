@@ -33,6 +33,8 @@ _: {
         name = "lua";
         roots = [
           ".luarc.json"
+          ".emmyrc.json"
+          ".busted"
           ".luacheckrc"
           ".stylua.toml"
           "selene.toml"
