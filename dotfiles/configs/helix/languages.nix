@@ -31,7 +31,13 @@ _: {
     [
       {
         name = "lua";
-        roots = [".luarc.json" ".luacheckrc" ".stylua.toml" "selene.toml" ".git"];
+        roots = [
+          ".luarc.json"
+          ".luacheckrc"
+          ".stylua.toml"
+          "selene.toml"
+          ".git"
+        ];
         language-servers = [
           "emmylua"
         ];
