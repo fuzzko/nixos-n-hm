@@ -84,20 +84,25 @@
         };
         overlays = [
           nur.overlays.default
-          (final: prev: {
-            bun = prev.bun.overrideAttrs rec {
-              passthru.sources."x86_64-linux" = pkgs.fetchurl {
-                url = "https://github.com/oven-sh/bun/releases/download/bun-v${prev.bun.version}/bun-linux-x64-baseline.zip";
-                hash = "sha256-iempXRGVbhT7IyunjJfxUs4IilWlkqPGZ15mzCUNyLQ="; # update this
+          (
+            final: prev:
+            {
+              bun = prev.bun.overrideAttrs rec {
+                passthru.sources."x86_64-linux" = pkgs.fetchurl {
+                  url = "https://github.com/oven-sh/bun/releases/download/bun-v${prev.bun.version}/bun-linux-x64-baseline.zip";
+                  hash = "sha256-iempXRGVbhT7IyunjJfxUs4IilWlkqPGZ15mzCUNyLQ="; # update this
+                };
+                src = passthru.sources."x86_64-linux";
               };
-              src = passthru.sources."x86_64-linux";
-            };
-            nix-search = nix-search-cli.outputs.packages.${system}.nix-search;
-            nixGLPackages = nixGL.outputs.packages.${system};
-            helixUnstable = helix.outputs.packages.${system}.helix;
-            winapps = winapps.packages."${system}".winapps;
-            winapps-launcher = winapps.packages."${system}".winapps-launcher;
-          })
+            }
+            // {
+              nix-search = nix-search-cli.outputs.packages.${system}.nix-search;
+              nixGLPackages = nixGL.outputs.packages.${system};
+              helixUnstable = helix.outputs.packages.${system}.helix;
+              winapps = winapps.packages."${system}".winapps;
+              winapps-launcher = winapps.packages."${system}".winapps-launcher;
+            }
+          )
         ];
       };
     in
