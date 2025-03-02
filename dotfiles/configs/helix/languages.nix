@@ -19,7 +19,13 @@ _: {
     args = [ "--stdio" ];
     required-root-patterns = [ "tailwind.config.js" ];
   };
-  language-server.emmylua.command = "emmylua_ls";
+  language-server.emmylua = {
+    command = "emmylua_ls";
+    args = [
+      "--log-path"
+      "/tmp/emmylua_ls.log"
+    ];
+  };
 
   language =
     let
