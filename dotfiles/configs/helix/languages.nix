@@ -23,7 +23,7 @@ _: {
     command = "emmylua_ls";
     args = [
       "--log-path"
-      "/tmp/emmylua_ls.log"
+      "/tmp/emmylua_ls"
     ];
   };
 
