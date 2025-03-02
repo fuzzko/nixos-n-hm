@@ -43,7 +43,7 @@ in
   # the fucking problem that makes home-manager switch slow
   news.display = "silent";
 
-  home.packages =
+  home.packages = lib.flatten (
     with pkgs;
     [
       # Fonts
@@ -98,10 +98,11 @@ in
       youtube-music
       openutau
       nchat
+      (with nur.repos.mbekkomo; [
+        (wrapGL sklauncher)
+      ])
     ]
-    ++ (with nur.repos.mbekkomo; [
-      (wrapGL sklauncher)
-    ]);
+  );
 
   home.file =
     # External Config
@@ -233,15 +234,21 @@ in
     enable = true;
     package = pkgs.helixUnstable;
     defaultEditor = true;
-    extraPackages = with pkgs; [
-      lua-language-server
-      nil
-      bash-language-server
-      emmet-language-server
-      yaml-language-server
-      vscode-langservers-extracted
-      zls
-    ];
+    extraPackages = lib.flatten (
+      with pkgs;
+      [
+        (with nur.repos.mbekkomo; [
+          emmylua_ls
+        ])
+
+        nil
+        bash-language-server
+        emmet-language-server
+        yaml-language-server
+        vscode-langservers-extracted
+        zls
+      ]
+    );
     settings = loadConfig "helix/config" { };
     languages = loadConfig "helix/languages" { };
     themes.catppuccin-mocha_ts = {
