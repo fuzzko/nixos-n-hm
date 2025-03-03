@@ -386,8 +386,8 @@ in
     enable = true;
     package = pkgs.buildEnv {
       name = "hyprland-env";
-      paths = with pkgs; [
-        hyprland
+      paths = { ... }@attrs: with pkgs; [
+        (hyprland.override attrs)
         hyprshot
         hyprpicker
         playerctl
