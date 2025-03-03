@@ -115,6 +115,8 @@ in
       portal = "^(xdg-desktop-portal-.*)$";
     in
     [
+      "suppressevent maximize, class:.*"
+      "nofocus, class:^$, title:^$, xwayland:1, floating:1,fullscreen:1, pinned:1"
       "float,class:${alacritty},tittle:${alacritty}"
       "float, class:${clipse}"
       "size 622 652, class:${clipse}"
@@ -195,9 +197,9 @@ in
   ];
 
   bindl = [
-      ",XF86AudioNext, exec, playerctl next"
-      ",XF86AudioPause, exec, playerctl play-pause"
-      ",XF86AudioPlay, exec, playerctl play-pause"
-      ",XF86AudioPrev, exec, playerctl previous"
+    ",XF86AudioNext, exec, playerctl next"
+    ",XF86AudioPause, exec, playerctl play-pause"
+    ",XF86AudioPlay, exec, playerctl play-pause"
+    ",XF86AudioPrev, exec, playerctl previous"
   ];
 }
