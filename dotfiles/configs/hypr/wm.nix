@@ -70,9 +70,9 @@ in
       passmenu = toString (root + /bin/passmenu);
     in
     [
-      "SUPER, PRINT, exec, hyprshot -m window"
-      ", PRINT, exec, hyprshot -m output"
-      "SHIFT + SUPER, PRINT, exec, hyprshot -m region"
+      "SUPER, PRINT, exec, hyprshot -m window --freeze"
+      ", PRINT, exec, hyprshot -m output --freeze"
+      "SHIFT + SUPER, PRINT, exec, hyprshot -m region --freeze"
 
       "SHIFT + SUPER, V, exec, alacritty --class clipse -e clipse"
 
