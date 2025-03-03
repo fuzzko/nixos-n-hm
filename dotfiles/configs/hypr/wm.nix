@@ -168,8 +168,7 @@ in
 
       "SUPER, mouse:272, movewindow"
       "SUPER, mouse:273, resizewindow"
-
-      
+     
       "SUPER, PRINT, exec, hyprshot -m window --freeze"
       ", PRINT, exec, hyprshot -m output --freeze"
       "SHIFT + SUPER, PRINT, exec, hyprshot -m region --freeze"
