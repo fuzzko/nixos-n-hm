@@ -168,7 +168,7 @@ in
 
       "SUPER, mouse:272, movewindow"
       "SUPER, mouse:273, resizewindow"
-     
+
       "SUPER, PRINT, exec, hyprshot -m window --freeze"
       ", PRINT, exec, hyprshot -m output --freeze"
       "SHIFT + SUPER, PRINT, exec, hyprshot -m region --freeze"
@@ -186,5 +186,9 @@ in
   bindel = [
     ",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
     ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
+    ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+    ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+    ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
   ];
 }
