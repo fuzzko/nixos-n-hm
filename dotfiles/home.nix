@@ -82,11 +82,7 @@ in
       nautilus
       nautilus-open-any-terminal
       hyprpolkitagent
-      pamixer
-      playerctl
-      alsa-utils
       wl-clipboard
-      clipse
 
       # For recording
       kooha
@@ -232,14 +228,7 @@ in
 
   programs.helix = {
     enable = true;
-    package = pkgs.buildEnv {
-      name = "helix-env";
-      paths = with pkgs; [
-        helixUnstable
-        wireplumber
-        playerctl
-      ];
-    };
+    package = pkgs.helixUnstable;
     defaultEditor = true;
     extraPackages = lib.flatten (
       with pkgs;
@@ -297,19 +286,13 @@ in
       fish_vi_key_bindings
     '';
     plugins =
-      let
-        plugin = x: {
-          name = x.name;
-          src = x.src;
-        };
-      in
       with pkgs.fishPlugins;
       [
-        (plugin fifc)
-        (plugin done)
-        (plugin colored-man-pages)
-        (plugin autopair)
-        (plugin git-abbr)
+        fifc
+        done
+        colored-man-pages
+        autopair
+        git-abbr
       ];
   };
 
@@ -398,6 +381,9 @@ in
         hyprland
         hyprshot
         hyprpicker
+        playerctl
+        wireplumber
+        clipse
       ];
     };
     # TODO: Migrate to Nix expression
