@@ -152,10 +152,10 @@ in
       (builtins.map (
         v':
         let
-          v = toString v';
+          v = toString (if v' == 0 then 10 else v');
         in
         "SUPER, ${v}, workspace, ${v}"
-      ) (lists.range 1 9))
+      ) (lists.range 0 9))
 
       "SUPER, PRINT, exec, hyprshot -m window --freeze"
       ", PRINT, exec, hyprshot -m output --freeze"
