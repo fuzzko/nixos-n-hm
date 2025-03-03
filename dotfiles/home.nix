@@ -384,17 +384,17 @@ in
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package = pkgs.hyprland.overrideAttrs (prev: {
-      buildInputs =
-        prev.buildInputs
-        ++ (with pkgs; [
+    package = pkgs.buildEnv {
+      name = "hyprland-env";
+      paths = with pkgs; [
+        hyprland
           hyprshot
           hyprpicker
           playerctl
           wireplumber
           clipse
-        ]);
-    });
+      ];
+    };
     settings = loadConfig "hypr/wm" { };
     xwayland.enable = true;
   };
