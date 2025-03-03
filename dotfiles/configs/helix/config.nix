@@ -13,7 +13,7 @@
     popup-border = "all";
     preview-completion-insert = false;
     completion-trigger-len = 3;
-    shell = ["${pkgs.nushell}/bin/nu" "--stdin" "-c"];
+    shell = ["nu" "--stdin" "-c"];
   };
 
   editor.statusline = {
