@@ -81,9 +81,6 @@ in
       # For hyprland
       nautilus
       nautilus-open-any-terminal
-      (hyprshot.overrideAttrs (prev: {
-        buildInputs = prev.buildInputs ++ (with pkgs; [ hyprpicker ]);
-      }))
       hyprpolkitagent
       pamixer
       playerctl
@@ -235,7 +232,14 @@ in
 
   programs.helix = {
     enable = true;
-    package = pkgs.helixUnstable;
+    package = pkgs.buildEnv {
+      name = "helix-env";
+      paths = with pkgs; [
+        helixUnstable
+        wireplumber
+        playerctl
+      ];
+    };
     defaultEditor = true;
     extraPackages = lib.flatten (
       with pkgs;
@@ -388,6 +392,14 @@ in
 
   wayland.windowManager.hyprland = {
     enable = true;
+    package = pkgs.buildEnv {
+      name = "hyprland-env";
+      paths = with pkgs; [
+        hyprland
+        hyprshot
+        hyprpicker
+      ];
+    };
     # TODO: Migrate to Nix expression
     settings = loadConfig "hypr/wm" { };
     importantPrefixes = [
