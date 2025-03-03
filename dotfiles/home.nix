@@ -376,19 +376,17 @@ in
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package = pkgs.buildEnv {
-      name = "hyprland-env";
-      paths = with pkgs; [
-        hyprland
+    package = pkgs.hyprland.overrideAttrs (prev: {
+      buildInputs = prev.buildInputs ++ (with pkgs; [
         hyprshot
         hyprpicker
         playerctl
         wireplumber
         clipse
-      ];
-    };
-    # TODO: Migrate to Nix expression
+      ]);
+    });
     settings = loadConfig "hypr/wm" { };
+    xwayland.enable = true;
   };
 
   caches.cachix = [
