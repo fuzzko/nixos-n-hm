@@ -1,11 +1,17 @@
-{ pkgs, root, lib, ... }:
+{
+  pkgs,
+  root,
+  lib,
+  ...
+}:
 let
-  inherit (lib) attrsets;
-  
+  inherit (lib) attrsets lists;
+
   terminal = "alacritty";
   runner = "wofi --show drun";
+  fileManager = "nautilus";
 
-  cursor_size = 30;
+  cursorSize = 30;
 
   makeEnv = x: attrsets.mapAttrsToList (name: value: "${name},${toString value}") x;
 in
@@ -23,8 +29,8 @@ in
   monitor = ",preferred,auto,auto";
 
   env = makeEnv {
-    "XCURSOR_SIZE" = cursor_size;
-    "HYPRCURSOR_SIZE" = cursor_size;
+    "XCURSOR_SIZE" = cursorSize;
+    "HYPRCURSOR_SIZE" = cursorSize;
   };
 
   general = {
@@ -38,6 +44,67 @@ in
     allow_tearing = false;
 
     layout = "dwindle";
+  };
+
+  decoration = {
+    rounding = 10;
+
+    active_opacity = 1.0;
+    inactive_opacity = 0.8;
+
+    blur = {
+      enabled = true;
+      size = 3;
+      passes = 1;
+      vibrancy = 0.1696;
+    };
+  };
+
+  animations = {
+    enabled = true;
+
+    bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
+
+    animation = [
+      "windows, 1, 7, myBezier"
+      "windowsOut, 1, 7, default, popin 80%"
+      "border, 1, 10, default"
+      "borderangle, 1, 8, default"
+      "fade, 1, 7, default"
+      "workspaces, 1, 6, default"
+    ];
+  };
+
+  dwindle = {
+    pseudotile = true;
+    preserve_split = true;
+  };
+
+  master = {
+    new_status = "master";
+  };
+
+  misc = {
+    force_default_wallpaper = -1;
+    disable_hyprland_logo = false;
+  };
+
+  input.input = {
+    kb_layout = "us";
+    kb_variant = "";
+    kb_model = "";
+    kb_options = "";
+    kb_rules = "";
+
+    follow_mouse = 1;
+
+    sensitivity = 0;
+
+    touchpad.natural_scroll = false;
+  };
+
+  gestures = {
+    workspace_swipe = false;
   };
 
   windowrulev2 =
@@ -69,7 +136,27 @@ in
     let
       passmenu = toString (root + /bin/passmenu);
     in
-    [
+    lists.flatten ([
+      "SUPER, Q, exec, ${terminal}"
+      "SUPER, E, exec, ${fileManager}"
+      "SUPER, V, togglefloating,"
+      "SUPER, R, exec, ${runner}"
+      "SUPER, P, pseudo,"
+      "SUPER, J, togglesplit,"
+
+      "SUPER, left, movefocus, l"
+      "SUPER, right, movefocus, r"
+      "SUPER, up, movefocus, u"
+      "SUPER, down, movefocus, d"
+
+      (builtins.map (
+        v':
+        let
+          v = toString v';
+        in
+        "SUPER, ${v}, workspace, ${v}"
+      ) (lists.range 1 9))
+
       "SUPER, PRINT, exec, hyprshot -m window --freeze"
       ", PRINT, exec, hyprshot -m output --freeze"
       "SHIFT + SUPER, PRINT, exec, hyprshot -m region --freeze"
@@ -82,7 +169,7 @@ in
       "CTRL + SUPER, R, exec, ${passmenu} -o"
       "SHIFT + SUPER, C, killactive,"
       "SHIFT + SUPER, M, exit,"
-    ];
+    ]);
 
   bindel = [
     ",XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl s 10%+"
