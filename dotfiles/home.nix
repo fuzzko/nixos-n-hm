@@ -233,10 +233,11 @@ in
     extraPackages = lib.flatten (
       with pkgs;
       [
+        nushell
+        
         (with nur.repos.mbekkomo; [
           emmylua_ls
         ])
-
         nil
         bash-language-server
         emmet-language-server
