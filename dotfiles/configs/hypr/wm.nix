@@ -150,13 +150,26 @@ in
       "SUPER, down, movefocus, d"
 
       (builtins.map (
-        v':
+        v:
         let
-          v = toString (if v' == 0 then 10 else v');
+          bind = toString v;
+          workspace = toString (if v == 0 then 10 else v);
         in
-        "SUPER, ${v}, workspace, ${v}"
+        [
+          "SUPER, ${bind}, workspace, ${workspace}"
+          "SHIFT + SUPER, ${bind}, movetoworkspace, ${workspace}"
+        ]
       ) (lists.range 0 9))
+      "SUPER, S, togglespecialworkspace, magic"
+      "SHIFT + SUPER, S, movetoworkspace, special:magic"
 
+      "SUPER, mouse_down, workspace, e+1"
+      "SUPER, mouse_up, workspace, e-1"
+
+      "SUPER, mouse:272, movewindow"
+      "SUPER, mouse:273, resizewindow"
+
+      
       "SUPER, PRINT, exec, hyprshot -m window --freeze"
       ", PRINT, exec, hyprshot -m output --freeze"
       "SHIFT + SUPER, PRINT, exec, hyprshot -m region --freeze"
@@ -172,7 +185,7 @@ in
     ]);
 
   bindel = [
-    ",XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl s 10%+"
-    ",XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl s 10%-"
+    ",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
+    ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
   ];
 }
