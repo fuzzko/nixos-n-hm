@@ -1,11 +1,13 @@
-{ pkgs, root, ... }:
+{ pkgs, root, lib, ... }:
 let
+  inherit (lib) attrsets;
+  
   terminal = "alacritty";
   runner = "wofi --show drun";
 
   cursor_size = 30;
 
-  makeEnv = x: builtins.mapAttrs (name: value: [ "${name},${toString value}" ]) x;
+  makeEnv = x: attrsets.mapAttrsToList (name: value: "${name},${toString value}") x;
 in
 {
   exec-once = [
@@ -20,10 +22,10 @@ in
 
   monitor = ",preferred,auto,auto";
 
-  env = [
-    (makeEnv "XCURSOR_SIZE" cursor_size)
-    (makeEnv "HYPRCURSOR_SIZE" cursor_size)
-  ];
+  env = makeEnv {
+    "XCURSOR_SIZE" = cursor_size;
+    "HYPRCURSOR_SIZE" = cursor_size;
+  };
 
   general = {
     gaps_in = 5;
