@@ -109,11 +109,13 @@ in
 
   windowrulev2 =
     let
-      clipse = "(clipse)";
-      sober = "(org.vinegarhq.Sober)";
-      portal = "(xdg-desktop-portal-.*)";
+      alacritty = "^(alacritty)$";
+      clipse = "^(clipse)$";
+      sober = "^(org.vinegarhq.Sober)$";
+      portal = "^(xdg-desktop-portal-.*)$";
     in
     [
+      "float,class:${alacritty},tittle:${alacritty}"
       "float, class:${clipse}"
       "size 622 652, class:${clipse}"
       "pin, class:${clipse}, title:(Sober)"
