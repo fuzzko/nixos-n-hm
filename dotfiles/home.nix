@@ -81,7 +81,9 @@ in
       # For hyprland
       nautilus
       nautilus-open-any-terminal
-      hyprshot
+      (hyprshot.overrideAttrs (prev: {
+        buildInputs = prev.buildInputs ++ (with pkgs; [ hyprpicker ]);
+      }))
       hyprpolkitagent
       pamixer
       playerctl
