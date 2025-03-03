@@ -388,11 +388,11 @@ in
       name = "hyprland-env";
       paths = with pkgs; [
         hyprland
-          hyprshot
-          hyprpicker
-          playerctl
-          wireplumber
-          clipse
+        hyprshot
+        hyprpicker
+        playerctl
+        wireplumber
+        clipse
       ];
     };
     settings = loadConfig "hypr/wm" { };
