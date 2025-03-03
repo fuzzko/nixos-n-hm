@@ -234,7 +234,7 @@ in
       with pkgs;
       [
         nushell
-        
+
         (with nur.repos.mbekkomo; [
           emmylua_ls
         ])
@@ -286,15 +286,23 @@ in
 
       fish_vi_key_bindings
     '';
-    plugins =
-      with pkgs.fishPlugins;
-      [
-        fifc
-        done
-        colored-man-pages
-        autopair
-        git-abbr
-      ];
+    plugins = (
+      builtins.map
+        (x: {
+          name = x.name;
+          src = x.src;
+        })
+        (
+          with pkgs.fishPlugins;
+          [
+            fifc
+            done
+            colored-man-pages
+            autopair
+            git-abbr
+          ]
+        )
+    );
   };
 
   programs.direnv = {
@@ -377,13 +385,15 @@ in
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.hyprland.overrideAttrs (prev: {
-      buildInputs = prev.buildInputs ++ (with pkgs; [
-        hyprshot
-        hyprpicker
-        playerctl
-        wireplumber
-        clipse
-      ]);
+      buildInputs =
+        prev.buildInputs
+        ++ (with pkgs; [
+          hyprshot
+          hyprpicker
+          playerctl
+          wireplumber
+          clipse
+        ]);
     });
     settings = loadConfig "hypr/wm" { };
     xwayland.enable = true;
