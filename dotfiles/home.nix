@@ -384,7 +384,7 @@ in
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package =
+    package = pkgs.callPackage (
       { ... }@attrs:
       pkgs.buildEnv {
         name = "hyprland-env";
@@ -396,7 +396,8 @@ in
           wireplumber
           clipse
         ];
-      };
+      }
+    ) { };
     settings = loadConfig "hypr/wm" { };
     xwayland.enable = true;
   };
