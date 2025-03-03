@@ -1,4 +1,5 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }:
+{
   theme = lib.mkForce "catppuccin-mocha_ts";
 
   editor = {
@@ -13,7 +14,11 @@
     popup-border = "all";
     preview-completion-insert = false;
     completion-trigger-len = 3;
-    shell = ["nu" "--stdin" "-c"];
+    shell = [
+      "nu"
+      "--stdin"
+      "-c"
+    ];
   };
 
   editor.statusline = {

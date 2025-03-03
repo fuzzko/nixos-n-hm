@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 with lib;
 
@@ -23,12 +28,23 @@ let
 
     extraIcons = if cfg.extraIcons != null then cfg.extraIcons else "";
 
-    inherit (pkgs) refind efibootmgr coreutils findutils gptfdisk gnugrep gnused gawk utillinux;
+    inherit (pkgs)
+      refind
+      efibootmgr
+      coreutils
+      findutils
+      gptfdisk
+      gnugrep
+      gnused
+      gawk
+      utillinux
+      ;
 
     inherit (efi) efiSysMountPoint canTouchEfiVariables;
   };
 
-in {
+in
+{
 
   options.boot.loader.refind = {
     enable = mkOption {

@@ -20,7 +20,7 @@
   };
 
   mouse.hide_when_typing = true;
-  
+
   cursor = {
     style = {
       shape = "Underline";

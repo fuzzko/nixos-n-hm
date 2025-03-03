@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   RDP_USER = "MyWindowsUser";
   RDP_PASS = "MyWindowsPassword";
   RDP_DOMAIN = "";
