@@ -128,6 +128,7 @@ in
     };
 
   home.sessionVariables = rec {
+    "XDG_PICTURES_DIR" = "${homeDir}/Pictures";
     "SUDO_PROMPT" = "[sudo 🐺]: ";
     "BROWSER" = "app.zen_browser.zen";
     "PAGER" = "moar";
