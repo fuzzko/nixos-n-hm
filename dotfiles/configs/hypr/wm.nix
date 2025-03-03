@@ -5,7 +5,7 @@ let
 
   cursor_size = 30;
 
-  makeEnv = x: builtins.mapAttrs (name: value: [ "${name},${value}" ]) x;
+  makeEnv = x: builtins.mapAttrs (name: value: [ "${name},${toString value}" ]) x;
 in
 {
   exec-once = [
@@ -21,8 +21,8 @@ in
   monitor = ",preferred,auto,auto";
 
   env = [
-    "XCURSOR_SIZE,${toString cursor_size}"
-    "HYPRCURSOR_SIZE,${toString cursor_size}"
+    (makeEnv "XCURSOR_SIZE" cursor_size)
+    (makeEnv "HYPRCURSOR_SIZE" cursor_size)
   ];
 
   general = {
