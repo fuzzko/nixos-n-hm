@@ -136,6 +136,7 @@ in
       "io.github.milkshiift.GoofCord"
       "im.nheko.Nheko"
       "org.kde.kwalletmanager5"
+      "com.interversehq.qView"
     ];
     update.auto = {
       enable = true;
