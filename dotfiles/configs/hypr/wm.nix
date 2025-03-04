@@ -110,7 +110,7 @@ in
 
   windowrulev2 =
     let
-      alacritty = "^(alacritty)$";
+      alacritty = "^(Alacritty)$";
       clipse = "^(clipse)$";
       sober = "^(org.vinegarhq.Sober)$";
       portal = "^(xdg-desktop-portal-.*)$";
