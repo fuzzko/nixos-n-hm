@@ -89,7 +89,7 @@ in
     disable_hyprland_logo = false;
   };
 
-  input.input = {
+  input = {
     kb_layout = "us";
     kb_variant = "";
     kb_model = "";
