@@ -403,6 +403,11 @@ in
     xwayland.enable = true;
   };
 
+  programs.yazi = {
+    enable = true;
+    settings = loadConfig "yazi" { };
+  };
+
   caches.cachix = [
     "nix-community"
     "mbekkomo"
