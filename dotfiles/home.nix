@@ -391,7 +391,6 @@ in
         paths = with pkgs; [
           (hyprland.override attrs)
           wluma
-          "HYRPSHOT_DIR" = /${XDG_PICTURES_DIR}/Screenshots
           hyprshot
           hyprpicker
           playerctl
