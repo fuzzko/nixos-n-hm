@@ -1,5 +1,5 @@
 {
-  pkgs,
+  config,
   root,
   lib,
   ...
@@ -22,15 +22,16 @@ in
     "systemctl --user start hyprpolkitagent.service"
     "systemctl --user start hypridle.service"
     "wpaperd -d"
-    "${pkgs.wluma}/bin/wluma &"
+    "wluma &"
     "clipse -listen"
   ];
 
   monitor = ",preferred,auto,auto";
 
-  env = makeEnv {
+  env = makeEnv rec {
     "XCURSOR_SIZE" = cursorSize;
     "HYPRCURSOR_SIZE" = cursorSize;
+    "XDG_PICTURES_DIR" = /${config.home.homeDirectory}/Pictures;
   };
 
   general = {
