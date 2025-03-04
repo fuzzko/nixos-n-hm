@@ -276,7 +276,7 @@ in
       zoxide init fish | source
       source ${builtins.toString ./etc/lscolors.fish}
 
-      set -Ux fifc_editor hx
+      set -Ux fifc_editor bat
 
       set fish_cursor_default block
       set fish_cursor_insert line
@@ -286,6 +286,8 @@ in
 
       fish_default_key_bindings -M insert
       fish_vi_key_bindings --no-erase insert
+
+      bind alt-y 'yy'
     '';
     plugins = (
       builtins.map
