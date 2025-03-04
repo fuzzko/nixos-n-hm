@@ -23,9 +23,9 @@
 
   editor.statusline = {
     mode = {
-      normal = "[N]";
-      insert = "[I]";
-      select = "[S]";
+      normal = "NOR";
+      insert = "INS";
+      select = "SEL";
     };
     center = [
       "read-only-indicator"
