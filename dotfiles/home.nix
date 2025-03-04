@@ -24,7 +24,7 @@ let
     '';
   };
 
-  loadConfig = x: y: import (./configs + "/${x}.nix") (inputs // { root = ./.; } // y);
+  loadConfig = x: y: import ./configs/${x}.nix (inputs // { root = ./.; } // y);
   toString =
     x:
     if x == true then
@@ -390,6 +390,8 @@ in
         name = "hyprland-env";
         paths = with pkgs; [
           (hyprland.override attrs)
+          wluma
+          "HYRPSHOT_DIR" = /${XDG_PICTURES_DIR}/Screenshots
           hyprshot
           hyprpicker
           playerctl
