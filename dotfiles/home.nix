@@ -288,6 +288,7 @@ in
       fish_vi_key_bindings --no-erase insert
 
       bind alt-y 'yy'
+      bind alt-shift-y 'yazi'
     '';
     plugins = (
       builtins.map
