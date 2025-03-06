@@ -237,6 +237,8 @@ in
         nushell
 
         (with nur.repos.mbekkomo; [
+          emmylua-codestyle
+          
           emmylua_ls
         ])
         nil
