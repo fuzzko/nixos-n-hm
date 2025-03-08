@@ -1,0 +1,11 @@
+{ ... }: {
+  manager.prepend_keymap = [
+    {
+      on = "!";
+      run = ''
+        shell "$SHELL" --block
+      '';
+      desc = "Open shell here";
+    }
+  ];
+}
