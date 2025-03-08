@@ -3,7 +3,7 @@
     {
       on = "!";
       run = ''
-        shell "$SHELL" --block
+        shell "fish" --block
       '';
       desc = "Open shell here";
     }
