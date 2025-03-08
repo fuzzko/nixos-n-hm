@@ -413,6 +413,7 @@ in
   programs.yazi = {
     enable = true;
     settings = loadConfig "yazi" { };
+    keymaps = loadConfig "yazi/keymaps" { };
   };
 
   caches.cachix = [
