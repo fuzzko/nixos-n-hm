@@ -91,7 +91,14 @@ in
   programs.regreet = {
     enable = true;
     theme = {
-      name = ""
+      name = "Graphite-Dark";
+      package = pkgs.graphite-gtk-theme.override {
+        themeVariants = [ "default" ];
+        tweaks = [
+          "rimless"
+          "darker"
+        ];
+      };
     };
     cursorTheme = {
       name = "catppuccin-mocha-yellow-cursors";
