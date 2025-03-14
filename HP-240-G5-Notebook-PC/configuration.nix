@@ -91,8 +91,7 @@ in
   programs.regreet = {
     enable = true;
     theme = {
-      name = "Lounge-night-compact";
-      package = pkgs.lounge-gtk-theme;
+      name = ""
     };
     cursorTheme = {
       name = "catppuccin-mocha-yellow-cursors";
