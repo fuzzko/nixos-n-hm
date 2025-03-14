@@ -90,7 +90,7 @@
               bun = prev.bun.overrideAttrs rec {
                 passthru.sources."x86_64-linux" = pkgs.fetchurl {
                   url = "https://github.com/oven-sh/bun/releases/download/bun-v${prev.bun.version}/bun-linux-x64-baseline.zip";
-                  hash = "sha256-iempXRGVbhT7IyunjJfxUs4IilWlkqPGZ15mzCUNyLQ="; # update this
+                  hash = "sha256-4D6yVZphrwz7es8+WSctVWE+8UB48Vb3siUSRWyqD4s="; # update this
                 };
                 src = passthru.sources."x86_64-linux";
               };
