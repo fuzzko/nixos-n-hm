@@ -98,7 +98,9 @@
             // {
               nix-search = nix-search-cli.outputs.packages.${system}.nix-search;
               nixGLPackages = nixGL.outputs.packages.${system};
-              helixUnstable = helix.outputs.packages.${system}.helix;
+              helixUnstable = helix.outputs.packages.${system}.helix.overrideAttrs {
+                NIX_BUILD_CORES = "8";
+              };
               winapps = winapps.packages."${system}".winapps;
               winapps-launcher = winapps.packages."${system}".winapps-launcher;
             }
