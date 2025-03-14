@@ -99,14 +99,6 @@ in
       package = pkgs.catppuccin-cursors.mochaYellow;
     };
     iconTheme = {
-      name = "Lounge-aux";
-      package = pkgs.buildEnv {
-        name = "regreet-icons";
-        paths = with pkgs; [
-          adwaita-icon-theme
-          lounge-gtk-theme
-        ];
-      };
     };
     settings = {
       background = {
