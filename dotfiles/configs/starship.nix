@@ -90,14 +90,16 @@
     format = ''[\(devenv\) ]($style)'';
   };
 
+  env_var.YAZI_PROMPT = {
+    style = "fg:57";
+    format = ''[\(yazi\) ]($style)'';
+  };
+
   fill.symbol = " ";
 
   format =
-    let
-      dot = "[🞄](grey)";
-    in
     ''
-      $battery''${env_var.DEVENV_ROOT}''${env_var.NIX_SHELL}$username [@](fg:#a6a6a6) $directory$fill${
+      $battery''${env_var.YAZI_PROMPT}''${env_var.DEVENV_ROOT}''${env_var.NIX_SHELL}$username [@](fg:#a6a6a6) $directory$fill${
         # prevent nixfmt from formatting this line
         "$git_branch$git_commit$git_state$git_metrics$git_status"
         #
