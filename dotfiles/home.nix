@@ -414,7 +414,9 @@ in
     enable = true;
     settings = loadConfig "yazi" { };
     keymap = loadConfig "yazi/keymaps" { };
-    plugins
+    plugins = with pkgs.yaziPlugins; [
+      smart-enter-yazi
+    ];
   };
 
   caches.cachix = [
