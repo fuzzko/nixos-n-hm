@@ -3,7 +3,7 @@
     {
       on = "!";
       run = ''
-        shell "fish" --block
+        shell "env YAZI_PROMPT=1 fish" --block
       '';
       desc = "Open shell here";
     }
