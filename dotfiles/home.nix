@@ -238,7 +238,7 @@ in
 
         (with nur.repos.mbekkomo; [
           emmylua-codestyle
-          
+
           emmylua_ls
         ])
         nil
@@ -421,6 +421,9 @@ in
 
   programs.fzf = {
     enable = true;
+    defaultCommand = ''
+      fd --type f --strip-cwd-prefix
+    '';
   };
 
   caches.cachix = [
