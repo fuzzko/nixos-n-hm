@@ -39,6 +39,10 @@
       url = "github:winapps-org/winapps";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    yazi-plugins-overlay = {
+      url = "github:mbekkomo/yazi-plugins-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {
@@ -69,6 +73,7 @@
       nix-ld,
       helix,
       winapps,
+      yazi-plugins-overlay,
       ...
     }:
     let
@@ -105,6 +110,7 @@
               winapps-launcher = winapps.packages."${system}".winapps-launcher;
             }
           )
+          yazi-plugins-overlay.overlays.default
         ];
       };
     in
