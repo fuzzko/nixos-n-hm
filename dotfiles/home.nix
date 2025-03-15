@@ -66,6 +66,7 @@ in
       glow
       libnotify
       unzip
+      ueberzugpp
 
       # Something that would ease me off
       khal
