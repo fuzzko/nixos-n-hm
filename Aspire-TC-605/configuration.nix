@@ -118,8 +118,32 @@ in
   services.xserver.enable = true;
 
   services.greetd.enable = true;
-  programs.regreet.enable = true;
-
+  programs.regreet = {
+    enable = true;
+    theme = {
+      name = "Graphite-Dark";
+      package = pkgs.graphite-gtk-theme.override {
+        themeVariants = [ "default" ];
+        tweaks = [
+          "rimless"
+          "darker"
+        ];
+      };
+    };
+    cursorTheme = {
+      name = "catppuccin-mocha-yellow-cursors";
+      package = pkgs.catppuccin-cursors.mochaYellow;
+    };
+    iconTheme = {
+    };
+    settings = {
+      background = {
+        path = ../resources/regreet-wallpaper.png;
+        fit = "Contain";
+      };
+    };
+  };
+  
   services.kmscon.enable = true;
   services.kmscon.hwRender = true;
   services.kmscon.fonts = [
