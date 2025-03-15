@@ -151,6 +151,9 @@ in
   catppuccin = {
     cursors.enable = true;
     gtk.enable = true;
+    fzf.enable = true;
+    helix.enable = true;
+    fish.enable = true;
   };
 
   nix = {
