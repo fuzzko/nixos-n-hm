@@ -530,11 +530,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1742005559,
-        "narHash": "sha256-PVpf+Bp+1VZ66Jcd0tk9uyzIx3MTSdxb/Zkdtt9/GY8=",
+        "lastModified": 1742017389,
+        "narHash": "sha256-9bqcGPUPeL4UwlSlF4RlxLt+oWfqnKNuSXoUuKu/Mak=",
         "owner": "mbekkomo",
         "repo": "yazi-plugins-overlay",
-        "rev": "2fb5d21240efc33485874518bc74b76b07e669a4",
+        "rev": "1488c05f91b5211359103de662d46c1fc0fd7a8e",
         "type": "github"
       },
       "original": {
