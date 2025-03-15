@@ -83,6 +83,12 @@ in
       nautilus
       nautilus-open-any-terminal
       hyprpolkitagent
+      wluma
+      hyprshot
+      hyprpicker
+      playerctl
+      wireplumber
+      clipse
       wl-clipboard
 
       # For recording
@@ -395,21 +401,6 @@ in
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package = pkgs.callPackage (
-      { ... }@attrs:
-      pkgs.buildEnv {
-        name = "hyprland-env";
-        paths = with pkgs; [
-          (hyprland.override attrs)
-          wluma
-          hyprshot
-          hyprpicker
-          playerctl
-          wireplumber
-          clipse
-        ];
-      }
-    ) { };
     settings = loadConfig "hypr/wm" { };
     xwayland.enable = true;
   };
