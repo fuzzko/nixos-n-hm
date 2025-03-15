@@ -14,7 +14,7 @@ in
 
   background = [
     {
-      path = builtins.toString (root + /etc/wallpapers/sorcerer-casting.jpg);
+      path = builtins.toString (root + /../resources/wallpapers/sorcerer-casting.jpg);
       blur_passes = 1;
     }
   ];
