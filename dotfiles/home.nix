@@ -424,6 +424,9 @@ in
     defaultCommand = ''
       fd --type f --strip-cwd-prefix
     '';
+    defaultOptions = [
+      "--style full"
+    ];
   };
 
   caches.cachix = [
