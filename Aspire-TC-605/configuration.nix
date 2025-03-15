@@ -138,7 +138,7 @@ in
     };
     settings = {
       background = {
-        path = ../resources/regreet-wallpaper.png;
+        path = ../resources/wallpapers/regreet-wallpaper.png;
         fit = "Contain";
       };
     };
