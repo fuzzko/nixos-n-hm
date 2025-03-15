@@ -419,6 +419,10 @@ in
     };
   };
 
+  programs.fzf = {
+    enable = true;
+  }
+
   caches.cachix = [
     "nix-community"
     "mbekkomo"
