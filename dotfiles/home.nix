@@ -417,8 +417,11 @@ in
     enable = true;
     settings = loadConfig "yazi" { };
     keymap = loadConfig "yazi/keymaps" { };
-    plugins = with pkgs.yaziPlugins; {
-      smart-enter = smart-enter-yazi;
+    plugins = {
+      inherit (pkgs.yaziPlugins)
+        smart-enter
+        projects
+        ;
     };
   };
 
