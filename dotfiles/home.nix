@@ -414,6 +414,7 @@ in
     enable = true;
     settings = loadConfig "yazi" { };
     keymap = loadConfig "yazi/keymaps" { };
+    plugins
   };
 
   caches.cachix = [
