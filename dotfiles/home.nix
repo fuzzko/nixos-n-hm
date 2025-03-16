@@ -138,6 +138,7 @@ in
 
   home.pointerCursor = {
     enable = true;
+    size = 15;
     hyprcursor.enable = true;
     x11.enable = true;
   };
