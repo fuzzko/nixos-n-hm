@@ -136,6 +136,12 @@ in
     "SYSTEMD_PAGERSECURE" = "true";
   };
 
+  home.pointerCursor = {
+    enable = true;
+    hyprcursor.enable = true;
+    x11.enable = true;
+  };
+
   services.flatpak = {
     enable = true;
     packages = [
@@ -151,11 +157,11 @@ in
     uninstallUnmanaged = true;
   };
 
-  catppuccin.flavor = "mocha";
-  catppuccin.accent = "blue";
-  catppuccin.enable = true;
-
   catppuccin = {
+    flavor = "mocha";
+    accent = "blue";
+    enable = true;
+
     cursors.enable = true;
     gtk.enable = true;
     fzf.enable = true;
