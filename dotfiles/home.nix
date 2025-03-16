@@ -390,11 +390,6 @@ in
     };
   };
 
-  services.wpaperd = {
-    enable = true;
-    settings = loadConfig "wpaperd" { };
-  };
-
   services.hypridle = {
     enable = true;
     settings = loadConfig "hypr/idle" { };
