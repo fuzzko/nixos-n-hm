@@ -47,7 +47,7 @@ in
     with pkgs;
     [
       # Fonts
-      nerd-fonts.
+      nerd-fonts.ubuntu
       departure-nf
       noto-fonts
       noto-fonts-color-emoji
