@@ -7,6 +7,6 @@ in {
     "${toString wallpaper_dir}/wallpaper.png"
   ];
   wallpaper = [
-    ", ${toString wallpaper_dir}/wallpaper.png"
+    ",${toString wallpaper_dir}/wallpaper.png"
   ];
 }
