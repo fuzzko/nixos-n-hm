@@ -28,9 +28,9 @@ in
 
   monitor = ",preferred,auto,auto";
 
-  env = makeEnv rec {
-    "XCURSOR_SIZE" = cursorSize;
-    "HYPRCURSOR_SIZE" = cursorSize;
+  env = makeEnv {
+    # "XCURSOR_SIZE" = cursorSize;
+    # "HYPRCURSOR_SIZE" = cursorSize;
     "XDG_PICTURES_DIR" = /${config.home.homeDirectory}/Pictures;
   };
 
