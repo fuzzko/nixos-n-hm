@@ -58,7 +58,7 @@ in
 
       # Devtools
       devenv
-      nixfmt-rfc-style
+      nixfmt-treefmt
       shellcheck
 
       # Misc.
