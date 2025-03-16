@@ -11,7 +11,7 @@
 
   window.dynamic_padding = true;
 
-  window.opacity = 0.65;
+  window.opacity = 0.70;
   window.blur = true;
 
   terminal = {
