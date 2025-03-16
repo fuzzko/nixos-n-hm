@@ -266,8 +266,8 @@ in
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
-      kdePackages.xdg-desktop-portal-kde
       xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
     ];
   };
 
