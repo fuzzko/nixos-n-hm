@@ -249,7 +249,7 @@ in
       [
         nushell
 
-        nixfmt-treefmt
+        nixfmt-tree
         shellcheck
 
         (with nur.repos.mbekkomo; [
