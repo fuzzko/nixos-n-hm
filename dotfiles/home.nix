@@ -56,11 +56,6 @@ in
       nix-search
       cachix
 
-      # Devtools
-      devenv
-      nixfmt-treefmt
-      shellcheck
-
       # Misc.
       micro
       moar
@@ -254,11 +249,14 @@ in
       [
         nushell
 
+        nixfmt-treefmt
+        shellcheck
+
         (with nur.repos.mbekkomo; [
           emmylua-codestyle
-
           emmylua_ls
         ])
+        
         nil
         bash-language-server
         emmet-language-server
