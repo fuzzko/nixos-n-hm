@@ -4,9 +4,9 @@ let
 in {
   ipc = "on";
   preload = [
-    "${wallpaper_dir}/wallpaper.png"
+    "${toString wallpaper_dir}/wallpaper.png"
   ];
   wallpaper = [
-    ", ${wallpaper_dir}/wallpaper.png"
+    ", ${toString wallpaper_dir}/wallpaper.png"
   ];
 }
