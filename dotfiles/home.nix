@@ -394,6 +394,11 @@ in
     settings = loadConfig "hypr/idle" { };
   };
 
+  services.hyprpaper = {
+    enable = true;
+    settings = loadConfig "hypr/paper" { };
+  };
+
   programs.hyprlock = {
     enable = true;
     settings = loadConfig "hypr/lock" { };
