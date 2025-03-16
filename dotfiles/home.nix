@@ -271,6 +271,8 @@ in
       inherits = "catppuccin-mocha";
       "ui.background" = { };
       "ui.text" = { };
+      "ui.cursorline.primary" = { };
+      "ui.cursorline.secondary" = { };
     };
   };
 
