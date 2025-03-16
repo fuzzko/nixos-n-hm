@@ -91,7 +91,7 @@
   };
 
   env_var.YAZI_PROMPT = {
-    style = "fg:57";
+    style = "fg:93";
     format = ''[\(yazi\) ]($style)'';
   };
 
