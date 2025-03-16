@@ -297,4 +297,9 @@ in
   programs.adb = {
     enable = true;
   };
+
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
 }
