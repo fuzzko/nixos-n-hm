@@ -29,9 +29,9 @@
       run = "seek -5";
     }
     {
-      desc = "Diff the selected with the hovered file";
       on = "<C-d>";
       run = "plugin diff";
+      desc = "Diff the selected with the hovered file";
     }
   ];
 }
