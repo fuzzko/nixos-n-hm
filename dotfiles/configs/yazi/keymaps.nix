@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   manager.prepend_keymap = [
     {
       on = "!";
@@ -18,6 +19,14 @@
       on = "C";
       run = "plugin ouch --args=zip";
       desc = "Compress with ouch";
+    }
+    {
+      on = "<C-e>";
+      run = "seek 5";
+    }
+    {
+      on = "<C-y>";
+      run = "seek -5";
     }
   ];
 }
