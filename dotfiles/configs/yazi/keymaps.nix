@@ -41,5 +41,13 @@
       run = "plugin chmod";
       desc = "Chmod on selected files";
     }
+    {
+      on = [
+        "f"
+        "j"
+      ];
+      run = "plugin first-non-directory";
+      desc = "Jumps to the first file";
+    }
   ];
 }
