@@ -9,11 +9,9 @@
       desc = "Open shell here";
     }
     {
-      on = "l";
-      run = ''
-        plugin smart-enter
-      '';
-      desc = "Enter the child directory, or open the file";
+      on = [ "l" ];
+      run = "plugin bypass --args=smart_enter";
+      desc = "Open a file, or recursively enter child directory, skipping children with only a single subdirectory";
     }
     {
       on = "C";
