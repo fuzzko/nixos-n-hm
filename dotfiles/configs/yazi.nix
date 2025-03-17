@@ -18,4 +18,16 @@
       )
     ];
   };
+  opener.extract = [
+    {
+      run = ''ouch d -y "%*"'';
+      desc = "Extract here with ouch";
+      for = "windows";
+    }
+    {
+      run = ''ouch d -y "$@"'';
+      desc = "Extract here with ouch";
+      for = "unix";
+    }
+  ];
 }
