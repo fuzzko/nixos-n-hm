@@ -417,10 +417,11 @@ in
     keymap = loadConfig "yazi/keymaps" { };
     plugins = {
       inherit (pkgs.yaziPlugins)
-        smart-enter
+        bypass
         projects
         ouch
         diff
+        first-non-directory
         ;
     };
   };
