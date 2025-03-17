@@ -33,5 +33,13 @@
       run = "plugin diff";
       desc = "Diff the selected with the hovered file";
     }
+    {
+      on = [
+        "c"
+        "m"
+      ];
+      run = "plugin chmod";
+      desc = "Chmod on selected files";
+    }
   ];
 }
