@@ -60,6 +60,7 @@ in
       libnotify
       unzip
       ueberzugpp
+      ouch
 
       # Something that would ease me off
       khal
@@ -418,6 +419,7 @@ in
       inherit (pkgs.yaziPlugins)
         smart-enter
         projects
+        ouch
         ;
     };
   };
