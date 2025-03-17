@@ -254,7 +254,7 @@ in
           emmylua-codestyle
           emmylua_ls
         ])
-        
+
         nil
         bash-language-server
         emmet-language-server
@@ -415,8 +415,8 @@ in
     enable = true;
     settings = loadConfig "yazi" { };
     keymap = loadConfig "yazi/keymaps" { };
-    plugins = {
-      inherit (pkgs.yaziPlugins)
+    plugins = with pkgs.yaziPlugins; {
+      inherit
         bypass
         projects
         ouch
