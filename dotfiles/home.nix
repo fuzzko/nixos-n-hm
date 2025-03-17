@@ -420,6 +420,7 @@ in
         smart-enter
         projects
         ouch
+        diff
         ;
     };
   };
