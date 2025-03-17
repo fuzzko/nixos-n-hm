@@ -14,5 +14,10 @@
       '';
       desc = "Enter the child directory, or open the file";
     }
+    {
+      on = "C";
+      run = "plugin ouch --args=zip";
+      desc = "Compress with ouch";
+    }
   ];
 }
