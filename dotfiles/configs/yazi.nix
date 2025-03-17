@@ -16,6 +16,10 @@
           "x-xz"
         ]
       )
+      {
+        name = "*.md";
+        run = "glow";
+      }
     ];
   };
   opener.extract = [
