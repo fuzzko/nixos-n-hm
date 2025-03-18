@@ -423,6 +423,12 @@ in
         diff
         first-non-directory
         ;
+      wl-clipboard = wl-clipboard.overrideAttrs {
+        nativeBuildInputs = with pkgs; [ sd ];
+        patchPhase = ''
+          sd -F 'tab.selected' 'cx.yanked' init.lua
+        '';
+      };
     };
   };
 
