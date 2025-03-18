@@ -10,12 +10,12 @@
     }
     {
       on = [ "l" ];
-      run = "plugin bypass --args=smart_enter";
+      run = "plugin bypass smart_enter";
       desc = "Open a file, or recursively enter child directory, skipping children with only a single subdirectory";
     }
     {
       on = "C";
-      run = "plugin ouch --args=zip";
+      run = "plugin ouch zip";
       desc = "Compress with ouch";
     }
     {
