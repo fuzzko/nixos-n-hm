@@ -1,3 +1,3 @@
 { ... }: {
-  
+  hotreload_theme = true;
 }
