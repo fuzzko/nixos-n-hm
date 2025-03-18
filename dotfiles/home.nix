@@ -108,17 +108,15 @@ in
       ".config/winapps/winapps.conf".text = builtins.replaceStrings [ " = \"" ] [ "=\"" ] (
         std.serde.toTOML (builtins.mapAttrs (name: value: toString value) (loadConfig "winapps" { }))
       );
-      ".config/winapps/compose.yaml".source = ./configs/winapps/compose.yaml;
-    }
+      ".config/walker/config.toml".text = std.serde.toTOML (loadConfig "walker" { });
     # Misc. files
-    // {
+      ".config/winapps/compose.yaml".source = ./configs/winapps/compose.yaml;
       ".config/fish/functions/nixs.fish".source = ./shells/nixs.fish;
       ".config/fish/functions/nixd.fish".source = ./shells/nixd.fish;
       # Waybar
       ".config/waybar/fonts/Symbols-2048-em Nerd Font Complete.woff2".source = builtins.fetchurl {
         url = "https://www.nerdfonts.com/assets/fonts/Symbols-2048-em%20Nerd%20Font%20Complete.woff2";
         name = "font.woff2";
-      };
     };
 
   home.sessionVariables = rec {
