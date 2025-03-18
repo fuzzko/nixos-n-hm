@@ -47,5 +47,12 @@
       run = "plugin first-non-directory";
       desc = "Jumps to the first file";
     }
+    {
+      on = "y";
+      run = [
+        "yank"
+        "plugin wl-clipboard"
+      ];
+    }
   ];
 }
