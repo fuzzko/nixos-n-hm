@@ -108,7 +108,7 @@ in
       ".config/winapps/winapps.conf".text = builtins.replaceStrings [ " = \"" ] [ "=\"" ] (
         std.serde.toTOML (builtins.mapAttrs (name: value: toString value) (loadConfig "winapps" { }))
       );
-      ".config/walker/config.toml".text = std.serde.toTOML (loadConfig "walker" { });
+      ".config/walker/config.json".text = builtins.toJSON (loadConfig "walker" { });
     # Misc. files
       ".config/winapps/compose.yaml".source = ./configs/winapps/compose.yaml;
       ".config/fish/functions/nixs.fish".source = ./shells/nixs.fish;
