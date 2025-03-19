@@ -9,7 +9,9 @@ let
 in
 {
   general = {
-
+    hide_cursor = true;
+    ignore_empty_input = true;
+    
   };
 
   background = [
@@ -21,9 +23,8 @@ in
 
   input-field = [
     {
-      size = "200, 50";
+      size = "250, 55";
       position = "0, -80";
-      monitor = "";
       dots_center = true;
       fade_on_empty = false;
       font_color = rgba 202 211 245 null;
