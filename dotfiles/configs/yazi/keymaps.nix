@@ -54,5 +54,11 @@
         "plugin wl-clipboard"
       ];
     }
+    {
+      on = "<C-n>";
+      run = ''
+        shell -- dragon -x -i -T "$1"
+      '';
+    }
   ];
 }
