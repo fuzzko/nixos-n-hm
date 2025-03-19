@@ -20,14 +20,14 @@ in
   };
 
   input-field = {
-    size = "250, 55";
+    size = "200, 50";
     position = "0, -80";
     dots_center = true;
     fade_on_empty = false;
     font_color = rgba 202 211 245 null;
     inner_color = rgba 91 96 120 null;
     outer_color = rgba 24 25 38 null;
-    outline_thickness = 2;
+    outline_thickness = 5;
     placeholder_text = ''
       <span foreground="##cad3f5">Password...</span>
     '';
