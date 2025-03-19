@@ -193,6 +193,7 @@ in
       };
     };
   };
+  };
 
   nixGL = {
     packages = pkgs.nixGLPackages;
