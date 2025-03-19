@@ -72,6 +72,7 @@ in
       bat
       sigi
       gum
+      xdragon
 
       # For hyprland
       nautilus
