@@ -6,6 +6,7 @@ let
       "rgba(${toString r},${toString g},${toString b},1.0)"
     else
       "rgba(${toString r},${toString g},${toString b},${toString a})";
+  rgb = r: g: b: rgba r g b null;
 in
 {
   general = {
@@ -24,9 +25,9 @@ in
     position = "0, -80";
     dots_center = true;
     fade_on_empty = false;
-    font_color = rgba 202 211 245 null;
-    inner_color = rgba 91 96 120 null;
-    outer_color = rgba 24 25 38 null;
+    font_color = rgb 202 211 245;
+    inner_color = rgb 91 96 120;
+    outer_color = rgb 24 25 38;
     outline_thickness = 5;
     placeholder_text = ''
       <span foreground="##cad3f5">Password...</span>
