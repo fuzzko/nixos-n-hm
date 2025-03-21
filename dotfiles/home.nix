@@ -381,7 +381,7 @@ in
   programs.eww = {
     enable = true;
     configDir = ./configs/eww;
-  }
+  };
 
   services.hypridle = {
     enable = true;
