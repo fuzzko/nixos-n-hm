@@ -26,7 +26,9 @@
     check_color = "$blue";
     position = "0, -10%";
     shadow_passes = 1;
+    shadow_size = 1;
     font_family = "Terminess Nerd Font";
+    dots_text_format = "*";
     placeholder_text = ''
       <span foreground="##$surface2Alpha"><i>Password...</i></span>
     '';
