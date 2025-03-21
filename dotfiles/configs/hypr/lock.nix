@@ -13,10 +13,11 @@
 
   input-field = {
     monitor = "";
-    size = "19%, 7.4%";
-    dots_size = 0.2;
-    outline_thickness = 2;
-    rounding = 23;
+    size = "20%, 7%";
+    dots_size = 0.28;
+    dots_spacing = 0.3;
+    outline_thickness = 0;
+    rounding = 5;
     fade_on_empty = false;
     outer_color = "$base";
     inner_color = "$overlay1";
