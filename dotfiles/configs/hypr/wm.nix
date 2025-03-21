@@ -115,7 +115,7 @@ in
     [
       "suppressevent maximize, class:.*"
       "nofocus, class:^$, title:^$, xwayland:1, floating:1,fullscreen:1, pinned:1"
-      "float,class:${alacritty},tittle:${alacritty}"
+      "float, class:${alacritty}, title:${alacritty}"
       "float, class:${clipse}"
       "size 622 652, class:${clipse}"
       "pin, class:${clipse}, title:(Sober)"
