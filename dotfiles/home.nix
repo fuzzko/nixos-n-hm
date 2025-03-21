@@ -84,6 +84,7 @@ in
       wluma
       hyprshot
       hyprpicker
+      hyprsunset
       playerctl
       wireplumber
       clipse
