@@ -10,9 +10,6 @@ let
   terminal = "alacritty";
   runner = "wofi --show drun";
   fileManager = "nautilus";
-
-  cursorSize = 30;
-
   makeEnv = x: attrsets.mapAttrsToList (name: value: "${name},${toString value}") x;
 in
 {
