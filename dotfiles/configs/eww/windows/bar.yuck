@@ -1,1 +1,3 @@
-(defvar)
+;;; Bar configuration
+
+(defvar bar-constants `{}`) ;; Don't attempt to `eww update` this
