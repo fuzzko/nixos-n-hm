@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   general = {
-    immediate_rendering = true;
+    immediate_render = true;
     ignore_empty_input = true;
     hide_cursor = true;
   };
