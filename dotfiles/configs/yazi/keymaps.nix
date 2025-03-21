@@ -9,7 +9,12 @@
       desc = "Open shell here";
     }
     {
-      on = [ "l" ];
+      on = "<Left>";
+      run = "plugin bypass smart_enter";
+      desc = "Open a file, or recursively enter child directory, skipping children with only a single subdirectory";
+    }
+    {
+      on = "<Enter>";
       run = "plugin bypass smart_enter";
       desc = "Open a file, or recursively enter child directory, skipping children with only a single subdirectory";
     }
