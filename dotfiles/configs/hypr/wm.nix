@@ -20,14 +20,13 @@ in
     "systemctl --user start hypridle.service"
     "wpaperd -d"
     "wluma &"
+    ""
     "clipse -listen"
   ];
 
   monitor = ",preferred,auto,auto";
 
   env = makeEnv {
-    # "XCURSOR_SIZE" = cursorSize;
-    # "HYPRCURSOR_SIZE" = cursorSize;
     "XDG_PICTURES_DIR" = /${config.home.homeDirectory}/Pictures;
   };
 
@@ -114,7 +113,7 @@ in
     in
     [
       "suppressevent maximize, class:.*"
-      "nofocus, class:^$, title:^$, xwayland:1, floating:1,fullscreen:1, pinned:1"
+      "nofocus, class:^$, title:^$, xwayland:1, floating:1, fullscreen:1, pinned:1"
       "float, class:${alacritty}, title:${alacritty}"
       "float, class:${clipse}"
       "size 622 652, class:${clipse}"
