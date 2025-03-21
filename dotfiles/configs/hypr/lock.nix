@@ -1,4 +1,4 @@
-{ pkgs, root, ... }: {
+{ pkgs, ... }: {
   general = {
     immediate_rendering = true;
     ignore_empty_input = true;
