@@ -14,7 +14,7 @@
   input-field = {
     monitor = "";
     size = "19%, 7.4%";
-    dots_size = 0.4;
+    dots_size = 0.2;
     outline_thickness = 2;
     rounding = 23;
     fade_on_empty = false;
@@ -43,6 +43,7 @@
       text_align = "left";
       color = "$text";
       font_family = "Terminess Nerd Font";
+      font_size = 27;
       shadow_passes = 2;
       position = "1.8%, 5.8%";
     }
@@ -53,6 +54,7 @@
       text_align = "left";
       color = "$text";
       font_family = "Terminess Nerd Font";
+      font_size = 20;
       shadow_passes = 2;
       position = "1.8%, 1.8%";
     }
