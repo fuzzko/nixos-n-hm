@@ -119,11 +119,6 @@ in
       ".config/winapps/compose.yaml".source = ./configs/winapps/compose.yaml;
       ".config/fish/functions/nixs.fish".source = ./shells/nixs.fish;
       ".config/fish/functions/nixd.fish".source = ./shells/nixd.fish;
-      # Waybar
-      ".config/waybar/fonts/Symbols-2048-em Nerd Font Complete.woff2".source = builtins.fetchurl {
-        url = "https://www.nerdfonts.com/assets/fonts/Symbols-2048-em%20Nerd%20Font%20Complete.woff2";
-        name = "font.woff2";
-      };
     };
 
   home.sessionVariables = rec {
@@ -383,17 +378,10 @@ in
     enable = true;
   };
 
-  programs.waybar = {
+  programs.eww = {
     enable = true;
-    settings = loadConfig "waybar" { };
-    style = ''
-      ${builtins.readFile ./configs/waybar/style.css}
-    '';
-    systemd = {
-      enable = true;
-      target = "hyprland-session.target";
-    };
-  };
+    configDir = ./configs/eww;
+  }
 
   services.hypridle = {
     enable = true;
