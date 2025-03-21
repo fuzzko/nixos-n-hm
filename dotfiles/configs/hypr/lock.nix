@@ -26,7 +26,7 @@
     check_color = "$blue";
     position = "0, -10%";
     shadow_passes = 1;
-    font_family = "Ubuntu Nerd Font";
+    font_family = "Terminess Nerd Font";
     placeholder_text = ''
       <span foreground="##$surface2Alpha"><i>Password...</i></span>
     '';
