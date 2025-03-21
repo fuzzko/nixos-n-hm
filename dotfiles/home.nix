@@ -85,6 +85,7 @@ in
       hyprshot
       hyprpicker
       hyprsunset
+      hyprsysteminfo
       playerctl
       wireplumber
       clipse
