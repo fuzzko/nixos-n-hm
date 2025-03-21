@@ -24,7 +24,7 @@
     font_color = "$mantle";
     fail_color = "$red";
     check_color = "$blue";
-    position = "0, -10%";
+    position = "0, -30%";
     shadow_passes = 1;
     shadow_size = 1;
     font_family = "Terminess Nerd Font";
