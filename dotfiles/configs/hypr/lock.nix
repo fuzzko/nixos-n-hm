@@ -1,37 +1,60 @@
-{ root, ... }:
-let
-  rgba =
-    r: g: b: a:
-    if a == null then
-      "rgba(${toString r},${toString g},${toString b},1.0)"
-    else
-      "rgba(${toString r},${toString g},${toString b},${toString a})";
-  rgb = r: g: b: rgba r g b null;
-in
-{
+{ pkgs, root, ... }: {
   general = {
-    hide_cursor = true;
+    immediate_rendering = true;
     ignore_empty_input = true;
-
+    hide_cursor = true;
   };
 
   background = {
-    path = builtins.toString (/${root}/../resources/wallpapers/sorcerer-casting.jpg);
-    blur_passes = 1;
+    monitor = "";
+    path = "screenshot";
+    blur_passes = 2;
   };
 
   input-field = {
-    size = "200, 50";
-    position = "0, -80";
-    dots_center = true;
+    monitor = "";
+    size = "19%, 7.4%";
+    dots_size = 0.4;
+    outline_thickness = 2;
+    rounding = 23;
     fade_on_empty = false;
-    font_color = rgb 202 211 245;
-    inner_color = rgb 91 96 120;
-    outer_color = rgb 24 25 38;
-    outline_thickness = 5;
+    outer_color = "$base";
+    inner_color = "$overlay1";
+    font_color = "$mantle";
+    fail_color = "$red";
+    check_color = "$blue";
+    position = "0, -10%";
+    shadow_passes = 1;
+    font_family = "Ubuntu Nerd Font";
     placeholder_text = ''
-      <span foreground="##cad3f5">Password...</span>
+      <span foreground="##$surface2Alpha"><i>Password...</i></span>
     '';
-    shadow_passes = 2;
   };
+
+  label =
+  let
+    date_cmd = "${pkgs.nushell}/bin/nu ${toString ./bin/date.nu}";
+  in
+  builtins.map (v: v // { monitor = ""; }) [
+    {
+      text = ''
+        cmd[update:1000] ${date_cmd} clock
+      '';
+      text_align = "left";
+      color = "$text";
+      font_family = "Terminess Nerd Font";
+      shadow_passes = 2;
+      position = "1.8%, 5.8%";
+    }
+    {
+      text = ''
+        cmd[update:0:1] ${date_cmd} date
+      '';
+      text_align = "left";
+      color = "$text";
+      font_family = "Terminess Nerd Font";
+      shadow_passes = 2;
+      position = "1.8%, 1.8%";
+    }
+  ];
 }
