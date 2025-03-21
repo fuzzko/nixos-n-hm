@@ -60,8 +60,9 @@ in
   animations = {
     enabled = true;
     animation = [
-      "windowsIn, 1, 7, default, slide top"
+      "windowsIn, 1, 7, default, slide bottom"
       "windowsOut, 1, 7, default, slide bottom"
+      "windowsMove, 1, 7, easeOutQuint"
       "border, 1, 10, default"
       "borderangle, 1, 8, default"
       "fade, 1, 7, default"
