@@ -1,8 +1,19 @@
 #!/usr/bin/env nu
 
-$env.last = ""
+$env.last = (hyprctl workspaces -j)
 
-def loop []: string -> nothing {
+def filter []: string -> string {
+    from json
+    | each { |x|
+      if ($x.name =~ ^special) {
+        return null
+      }
+      $x
+    }
+    | to json -r
+}
+
+def _loop []: nothing -> nothing {
   let $workspaces = hyprctl workspaces -j
   let $serialized_workspaces = $workspaces
     | from json
@@ -13,14 +24,15 @@ def loop []: string -> nothing {
       $x
     }
     | to json -r
-  if ($in == $serialized_workspaces) {
-    $env.last = $serialized_workspaces
+  if ($env.last != $workspaces) {
+    $env.last = $workspaces
     print $serialized_workspaces
   }
 }
 
 def main []: nothing -> nothing {
+  print ($env.last | from json  
   while (true) {
-    $env.last | loop
+    _loop
   }
 }
