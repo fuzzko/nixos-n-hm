@@ -382,7 +382,7 @@ in
     enable = true;
     package = pkgs.eww.overrideAttrs (prev: {
       buildInputs = prev.buildInputs ++ [ pkgs.nushell ];
-      postInstall = prev.postInstall ++ ''
+      postInstall = prev.postInstall + ''
         wrapProgram $out/bin/eww --prefix PATH : ${toString pkgs.nushell}/bin  
       '';
     });
