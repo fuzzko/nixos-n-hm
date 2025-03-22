@@ -14,14 +14,13 @@ def loop []: string -> nothing {
     }
     | to json -r
   if ($in != $serialized_workspaces) {
-    $env.last = $serialized_workspaces
+    $env.last = $in
     print $serialized_workspaces
   }
 }
 
 def main []: nothing -> nothing {
   while (true) {
-    print $env.last
     $env.last | loop
   }
 }
