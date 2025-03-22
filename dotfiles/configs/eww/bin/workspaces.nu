@@ -1,15 +1,20 @@
 #!/usr/bin/env nu
 
-def main []: nothing -> string {
+def loop []: string -> string {
   let $workspaces = hyprctl workspaces -j
-  print ($workspaces
-  | from json
-  | each { |x|
-    if ($x.name =~ ^special) {
-      return null
+  let $serialized_workspaces = $workspaces
+    | from json
+    | each { |x|
+      if ($x.name =~ ^special) {
+        return null
+      }
+      $x
     }
-    $x
-  }
-  | to json -r)
-  main
+    | to json -r
+  if ($in != $serialized_workspaces | to js)
+  $serialized_workspaces | loop
+}
+
+def main []: nothing -> string {
+  "" | loop
 }
