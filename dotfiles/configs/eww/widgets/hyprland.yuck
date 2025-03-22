@@ -3,12 +3,11 @@
 
 (defwidget hypr-workspace [workspace-id]
   (box :class "hypr-workspace-button hypr-workspace-button-${workspace-id}"
-    (button :nth {workspace-id}
-            :onclick "hyprctl exec workspace ${workspace-id}")))
+    (button :onclick "hyprctl exec workspace ${workspace-id}"
+            {workspace-id})))
 
 (defwidget hypr-workspaces [?spacing ?orientation]
-  (box
-    :spacing {spacing ?: 2}
-    :orientation {orientation ?: "h"}
-    (for workspace in workspaces
-      (hypr-workspace :workspace-id {workspace}))))
+  (box :spacing {spacing ?: 2}
+       :orientation {orientation ?: "h"}
+       (for workspace in workspaces
+         (hypr-workspace :workspace-id {workspace}))))
