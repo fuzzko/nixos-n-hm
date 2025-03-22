@@ -1,6 +1,7 @@
 (defwidget hypr-workspaces [?instance ?spacing]
   (deflisten workspaces :initial ""
-    `hyprctl -j -i ${instance ?: 0} workspaces`)
+    `hyprctl -j -i ${instance ?: 0} workspaces |
+      jq -r '.[]'`)
   (box :class "hypr-workspaces"
     :spacing {spacing ?: 2}
     (for workspace in workspaces
