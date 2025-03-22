@@ -14,4 +14,7 @@
   :exclusive true
   :focusable "exclusive"
   :namespace "bar"
-  )
+  (centerbox
+    ""
+    (hypr-workspaces)
+    ""))
