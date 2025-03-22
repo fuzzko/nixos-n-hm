@@ -10,5 +10,5 @@ def main []: nothing -> string {
     }
     $x
   }
-  | to json
+  | to json -r
 }
