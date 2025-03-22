@@ -1,3 +1,5 @@
+#!/usr/bin/env nu
+
 def main []: nothing -> string {
   let $workspaces = hyprctl workspaces -j
   $workspaces
