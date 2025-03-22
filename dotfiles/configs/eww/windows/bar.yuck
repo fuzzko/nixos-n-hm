@@ -20,4 +20,4 @@
   (centerbox
     ""
     (hypr-workspaces)
-    (box :class {clock})))
+    (box :class "clock" {clock})))
