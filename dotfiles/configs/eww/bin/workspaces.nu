@@ -2,28 +2,21 @@
 
 $env.last = (hyprctl workspaces -j)
 
-def filter []: string -> string {
-    from json
-    | each { |x|
-      if ($x.name =~ ^special) {
-        return null
-      }
-      $x
+def filter_json []: string -> string {
+  $in
+  | from json
+  | each { |x|
+    if ($x.name =~ ^special) {
+      return null
     }
-    | to json -r
+    $x
+  }
+  | to json -r
 }
 
 def _loop []: nothing -> nothing {
   let $workspaces = hyprctl workspaces -j
-  let $serialized_workspaces = $workspaces
-    | from json
-    | each { |x|
-      if ($x.name =~ ^special) {
-        return null
-      }
-      $x
-    }
-    | to json -r
+  let $serialized_workspaces = $workspaces | filter_json
   if ($env.last != $workspaces) {
     $env.last = $workspaces
     print $serialized_workspaces
@@ -31,7 +24,7 @@ def _loop []: nothing -> nothing {
 }
 
 def main []: nothing -> nothing {
-  print ($env.last | from json  
+  print ($env.last | filter_json)
   while (true) {
     _loop
   }
