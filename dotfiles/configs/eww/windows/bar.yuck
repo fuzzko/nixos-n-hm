@@ -22,4 +22,5 @@
     ""
     (box :class "clock"
          :space-evenly false
+         :halign "end"
       {clock})))
