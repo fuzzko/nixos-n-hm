@@ -21,7 +21,7 @@ def main []: nothing -> nothing {
   while (true) {
     let $workspaces = hyprctl workspaces -j
     let $ids = $workspaces | filter_json
-    if ($ids.last_ids != $ids) {
+    if ($env.last_ids != $ids) {
       print ($ids | to json -r)
     }
   }
