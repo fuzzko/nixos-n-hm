@@ -11,4 +11,4 @@
     :spacing {spacing ?: 2}
     :orientation {orientation ?: "h"}
     (for workspace in workspaces
-      (hypr-workspace :workspace-id {workspace.id}))))
+      (hypr-workspace :workspace-id {workspace}))))
