@@ -1,1 +1,3 @@
+(include "./widgets/hyprland.yuck")
+
 (include "./windows/bar.yuck")
