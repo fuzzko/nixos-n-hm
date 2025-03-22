@@ -1,6 +1,5 @@
 #!/usr/bin/env nu
 
-$env.last = (hyprctl workspaces -j)
 
 def filter_json []: string -> list<int> {
   $in
@@ -13,18 +12,17 @@ def filter_json []: string -> list<int> {
   }
 }
 
-$env.state = 0;
-
-def _loop []: nothing -> nothing {
-  let $workspaces = hyprctl workspaces -j
-  let $workspaces_id = $workspaces | filter_json
-  
-}
-
 def main []: nothing -> nothing {
-  print ($env.last | filter_json)
+  $env.last_ids = (do {
+    let $workspaces = hyprctl workspaces -j
+    $workspaces | filter_json
+  })
+  print ($env.last_ids | to json -r)
   while (true) {
-    print ($env.state)
-    _loop
+    let $workspaces = hyprctl workspaces -j
+    let $ids = $workspaces | filter_json
+    if ($ids.last_ids != $ids) {
+      print ($ids | to json -r)
+    }
   }
 }
