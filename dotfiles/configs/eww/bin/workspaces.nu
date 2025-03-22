@@ -11,7 +11,9 @@ def loop []: string -> string {
       $x
     }
     | to json -r
-  if ($in != $serialized_workspaces | to js)
+  if ($in != $serialized_workspaces) {
+    print $serialized_workspaces
+  }
   $serialized_workspaces | loop
 }
 
