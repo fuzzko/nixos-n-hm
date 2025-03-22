@@ -18,6 +18,6 @@
   :exclusive true
   :namespace "bar"
   (centerbox
-    (hypr-workspaces :width "5%")
+    (hypr-workspaces :hexpand true)
     ""
     (box :class "clock" {clock})))
