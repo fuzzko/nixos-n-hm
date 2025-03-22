@@ -380,12 +380,10 @@ in
 
   programs.eww = {
     enable = true;
-    package = pkgs.eww.overrideAttrs (prev: {
-      buildInputs = prev.buildInputs ++ [ pkgs.nushell ];
-      postInstall = prev.postInstall + ''
-        wrapProgram $out/bin/eww --prefix PATH : ${toString pkgs.nushell}/bin  
-      '';
-    });
+    package = pkgs.writeShellScriptBin "eww" ''
+      export PATH="${lib.makeBinPath (with pkgs; [ nushell eww ])}"
+      exec eww "$@"
+    '';
     configDir = ./configs/eww;
   };
 
