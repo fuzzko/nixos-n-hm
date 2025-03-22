@@ -6,8 +6,8 @@
   :monitor 0
   :geometry (geometry :x "0%"
                       :y "0%"
-                      :width "89.5%"
-                      :height "2%"
+                      :width "95.5%"
+                      :height "4%"
                       :anchor "top center")
   ;; TODO: X11 support
   :stacking "fg"
