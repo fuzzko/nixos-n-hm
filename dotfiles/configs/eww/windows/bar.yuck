@@ -3,7 +3,8 @@
 (defvar bar-constants `{}`) ;; Don't attempt to `eww update` this
 
 (defpoll clock :interval "1s"
-               :initial "0")
+               :initial "00:00 AM"
+  `date +'%I:%M %p'`)
 
 (defwindow bar
   :monitor 0
@@ -19,4 +20,4 @@
   (centerbox
     ""
     (hypr-workspaces)
-    ""))
+    (box :class {clock})))
