@@ -7,7 +7,7 @@
             {workspace-id})))
 
 (defwidget hypr-workspaces [?spacing ?orientation]
-  (box :spacing {spacing ?: 2}
+  (box :spacing {spacing ?: 5}
        :orientation {orientation ?: "h"}
-       (for workspace in workspaces
-         (hypr-workspace :workspace-id {workspace}))))
+    (for workspace in workspaces
+      (hypr-workspace :workspace-id {workspace}))))
