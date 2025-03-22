@@ -21,7 +21,7 @@ def _loop []: nothing -> nothing {
   let $serialized_workspaces = $workspaces | filter_json
   if ($env.last != $workspaces) {
     $env.last = $workspaces
-    $env.state += 1
+    $env.state = ($env.state | into int) + 1
     print $serialized_workspaces
   }
 }
