@@ -1,6 +1,6 @@
 (defvar hypr-instance 0)
 
-(deflisten -hypr-workspaces :listen ""
+(deflisten -hypr-workspaces :initial ""
   `hyprctl -j -i ${hypr-instance} workspaces |
     jq -r '[ .[] | select(.name | test("^special") | not) ]'`)
 
