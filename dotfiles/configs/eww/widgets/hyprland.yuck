@@ -1,5 +1,5 @@
 (deflisten workspaces :initial ""
-  `hyprctl -j workspaces | jq -r '[ .[] | select(.name | test("^special") | not) ]'`)
+  `bash -c "hyprctl -j workspaces | jq -r '[ .[] | select(.name | test("^special") | not) ]'"`)
 
 (defwidget hypr-workspace [workspace-id]
   (box :class "hypr-workspace-button hypr-workspace-button-${workspace-id}"
