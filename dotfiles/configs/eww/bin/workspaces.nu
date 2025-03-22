@@ -13,8 +13,8 @@ def loop []: string -> nothing {
       $x
     }
     | to json -r
-  if ($in != $serialized_workspaces) {
-    $env.last = $in
+  if ($in == $serialized_workspaces) {
+    $env.last = $serialized_workspaces
     print $serialized_workspaces
   }
 }
