@@ -21,6 +21,7 @@ def loop []: string -> nothing {
 
 def main []: nothing -> nothing {
   while (true) {
+    print $env.last
     $env.last | loop
   }
 }
