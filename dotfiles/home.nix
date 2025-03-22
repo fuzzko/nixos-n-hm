@@ -90,6 +90,7 @@ in
       wireplumber
       clipse
       wl-clipboard
+      nushell
 
       # For recording
       kooha
@@ -380,11 +381,6 @@ in
 
   programs.eww = {
     enable = true;
-    package = pkgs.writeShellScriptBin "eww" ''
-      PATH+="${lib.makeBinPath (with pkgs; [ nushell eww ])}"
-      export PATH
-      exec eww "$@"
-    '';
     configDir = ./configs/eww;
   };
 
