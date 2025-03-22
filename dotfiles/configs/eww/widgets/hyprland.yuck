@@ -6,5 +6,5 @@
     :spacing {spacing ?: 2}
     :orientation {orientation ?: "h"}
     (for workspace in workspaces
-      (button :class "hypr-workspace-button"
-        :onclick "hyprctl -i ${instance ?: 0} exec workspace ${workspace}"))))
+      (box :class "hypr-workspace-button"
+        (button :onclick "hyprctl -i ${instance ?: 0} exec workspace ${workspace}")))))
