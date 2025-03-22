@@ -1,3 +1,7 @@
 ;;; Bar configuration
 
 (defvar bar-constants `{}`) ;; Don't attempt to `eww update` this
+
+(defwindow bar
+  :monitor 0
+  )
