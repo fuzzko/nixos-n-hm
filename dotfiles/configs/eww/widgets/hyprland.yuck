@@ -9,5 +9,6 @@
 (defwidget hypr-workspaces [?spacing ?orientation]
   (box :spacing {spacing ?: 5}
        :orientation {orientation ?: "h"}
+       :space-evenly
     (for workspace in workspaces
       (hypr-workspace :workspace-id {workspace}))))
