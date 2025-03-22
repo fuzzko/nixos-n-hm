@@ -2,7 +2,7 @@
 
 def main []: nothing -> string {
   let $workspaces = hyprctl workspaces -j
-  $workspaces
+  print ($workspaces
   | from json
   | each { |x|
     if ($x.name =~ ^special) {
@@ -10,6 +10,6 @@ def main []: nothing -> string {
     }
     $x
   }
-  | to json -r
+  | to json -r)
   main
 }
