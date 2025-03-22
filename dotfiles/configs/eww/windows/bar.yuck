@@ -2,7 +2,8 @@
 
 (defvar bar-constants `{}`) ;; Don't attempt to `eww update` this
 
-(defpoll clock)
+(defpoll clock :interval "1s"
+               :initial "0")
 
 (defwindow bar
   :monitor 0
