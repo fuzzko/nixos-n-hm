@@ -1,13 +1,10 @@
-(defvar hypr-instance 0)
-
 (deflisten workspaces :initial ""
-  (literal
-    :content `"hyprctl -j -i ${hypr-instance} workspaces | jq -r '[ .[] | select(.name | test("^special") | not) ]'"`))
+  `"hyprctl -j workspaces | jq -r '[ .[] | select(.name | test("^special") | not) ]'"`)
 
 (defwidget hypr-workspace [workspace-id]
   (box :class "hypr-workspace-button hypr-workspace-button-${workspace-id}"
     (button :nth {workspace-id}
-            :onclick "hyprctl -i ${hypr-instance} exec workspace ${workspace-id}")))
+            :onclick "hyprctl exec workspace ${workspace-id}")))
 
 (defwidget hypr-workspaces [?spacing ?orientation]
   (box
