@@ -8,7 +8,7 @@ def main []: nothing -> string {
     if ($x.name =~ ^special) {
       return null
     }
-    x
+    $x
   }
   | to json
 }
