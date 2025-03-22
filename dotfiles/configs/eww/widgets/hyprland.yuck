@@ -1,5 +1,5 @@
 (defwidget hypr-workspaces [?instance ?spacing ?orientation]
-  (deflisten workspaces :initial ""
+  (deflisten workspaces
     `hyprctl -j -i ${instance ?: 0} workspaces |
       jq -r '[ .[] | select(.name | test("^special") | not) ]'`)
   (box
