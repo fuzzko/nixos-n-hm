@@ -1,6 +1,8 @@
 #!/usr/bin/env nu
 
-def loop []: string -> string {
+$env.last = ""
+
+def loop []: string -> nothing {
   let $workspaces = hyprctl workspaces -j
   let $serialized_workspaces = $workspaces
     | from json
@@ -12,11 +14,13 @@ def loop []: string -> string {
     }
     | to json -r
   if ($in != $serialized_workspaces) {
+    $env.last = $serialized_workspaces
     print $serialized_workspaces
   }
-  $serialized_workspaces | loop
 }
 
-def main []: nothing -> string {
-  "" | loop
+def main []: nothing -> nothing {
+  while (true) {
+    $env.last | loop
+  }
 }
