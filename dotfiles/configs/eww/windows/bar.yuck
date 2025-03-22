@@ -12,7 +12,6 @@
   ;; TODO: X11 support
   :stacking "fg"
   :exclusive true
-  :focusable "exclusive"
   :namespace "bar"
   (centerbox
     ""
