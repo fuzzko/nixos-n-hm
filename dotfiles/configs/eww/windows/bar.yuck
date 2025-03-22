@@ -18,6 +18,6 @@
   :exclusive true
   :namespace "bar"
   (centerbox
-    (hypr-workspaces :halign "baseline")
+    (hypr-workspaces :halign "start")
     ""
     (box :class "clock" {clock})))
