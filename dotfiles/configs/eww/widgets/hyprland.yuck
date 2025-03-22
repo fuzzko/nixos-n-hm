@@ -1,5 +1,5 @@
 (deflisten workspaces :initial "[]"
-  `../bin/workspaces.nu`)
+  `./bin/workspaces.nu`)
 
 (defwidget hypr-workspace [workspace-id]
   (box :class "hypr-workspace-button hypr-workspace-button-${workspace-id}"
