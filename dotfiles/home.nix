@@ -383,7 +383,7 @@ in
     package = pkgs.eww.overrideAttrs (prev: final: {
       buildInputs = prev ++ [ pkgs.nushell ];
       postInstall = lib.mkAfter ''
-        wrapProgram $out/bin/eww --prefix PATH : ${pkgs.nushell}/bin  
+        wrapProgram $out/bin/eww --prefix PATH : ${toStrin pkgs.nushell}/bin  
       '';
     });
     configDir = ./configs/eww;
