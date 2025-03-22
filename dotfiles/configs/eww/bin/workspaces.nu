@@ -2,28 +2,23 @@
 
 $env.last = (hyprctl workspaces -j)
 
-def filter_json []: string -> string {
+def filter_json []: string -> list<int> {
   $in
   | from json
   | each { |x|
     if ($x.name =~ ^special) {
       return null
     }
-    $x
+    $x.id
   }
-  | to json -r
 }
 
 $env.state = 0;
 
 def _loop []: nothing -> nothing {
   let $workspaces = hyprctl workspaces -j
-  let $serialized_workspaces = $workspaces | filter_json
-  if ($env.last != $workspaces) {
-    $env.last = $workspaces
-    $env.state = ($env.state | into int) + 1
-    print $serialized_workspaces
-  }
+  let $workspaces_id = $workspaces | filter_json
+  
 }
 
 def main []: nothing -> nothing {
