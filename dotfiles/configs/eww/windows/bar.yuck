@@ -2,6 +2,8 @@
 
 (defvar bar-constants `{}`) ;; Don't attempt to `eww update` this
 
+(defpoll clock)
+
 (defwindow bar
   :monitor 0
   :geometry (geometry :x "0%"
