@@ -381,7 +381,8 @@ in
   programs.eww = {
     enable = true;
     package = pkgs.writeShellScriptBin "eww" ''
-      export PATH="${lib.makeBinPath (with pkgs; [ nushell eww ])}"
+      PATH+="${lib.makeBinPath (with pkgs; [ nushell eww ])}"
+      export PATH
       exec eww "$@"
     '';
     configDir = ./configs/eww;
