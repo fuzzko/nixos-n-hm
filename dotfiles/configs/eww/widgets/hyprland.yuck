@@ -10,6 +10,7 @@
   (box :spacing {spacing ?: 5}
        :orientation {orientation ?: "h"}
        :hexpand true
+       :vexpand true
        :space-evenly false
     (for workspace in workspaces
       (hypr-workspace :workspace-id {workspace}))))
