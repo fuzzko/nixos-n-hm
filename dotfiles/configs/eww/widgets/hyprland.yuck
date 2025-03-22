@@ -1,4 +1,4 @@
-(deflisten -hypr-workspaces
+(deflisten -hypr-workspaces :listen ""
   `hyprctl -j -i ${hypr-instance ?: 0} workspaces |
     jq -r '[ .[] | select(.name | test("^special") | not) ]'`)
 
