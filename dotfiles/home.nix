@@ -261,11 +261,6 @@ in
         nixfmt-tree
         shellcheck
 
-        (with nur.repos.mbekkomo; [
-          emmylua-codestyle
-          emmylua_ls
-        ])
-
         nil
         bash-language-server
         emmet-language-server
