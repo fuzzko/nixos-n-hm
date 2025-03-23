@@ -44,7 +44,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     emmylua-analyzer = {
-      url = "github:CppCXY/emmylua-analyzer-rust";
+      url = "github:CppCXY/emmylua-analyzer-rust/0.6.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
