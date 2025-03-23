@@ -71,6 +71,7 @@ in
       ouch
 
       # Something that would ease me off
+      luakit
       khal
       fzf
       ripgrep
