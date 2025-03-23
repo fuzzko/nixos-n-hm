@@ -109,10 +109,11 @@
               helixUnstable = helix.outputs.packages.${system}.helix.overrideAttrs {
                 NIX_BUILD_CORES = "8";
               };
-              winapps = winapps.packages."${system}".winapps;
-              winapps-launcher = winapps.packages."${system}".winapps-launcher;
-            } // emmylua-analyzer.packages
+              winapps = winapps.packages.${system}.winapps;
+              winapps-launcher = winapps.packages.${system}.winapps-launcher;
+            }
           )
+          (final: prev: emmylua-analyzer.packages.${system})
           yazi-plugins-overlay.overlays.default
         ];
       };
