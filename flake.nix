@@ -43,18 +43,22 @@
       url = "github:mbekkomo/yazi-plugins-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    emmylua-analyzer = {
+      url = "github:CppCXY/emmylua-analyzer-rust";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {
     extra-subtituters = [
       "https://nix-community.cachix.org"
-      "https://helix.cachix.org"
       "https://winapps.cachix.org"
+      "https://emmylua-analyzer.cachix.org"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
       "winapps.cachix.org-1:HI82jWrXZsQRar/PChgIx1unmuEsiQMQq+zt05CD36g="
+      "emmylua-analyzer.cachix.org-1:5HxEaHV7MqF3e9fL+26ZNK1gZ4iZNAzYPem51TAye2k="
     ];
   };
 
@@ -74,6 +78,7 @@
       helix,
       winapps,
       yazi-plugins-overlay,
+      emmylua-analyzer,
       ...
     }:
     let
@@ -99,8 +104,6 @@
                 };
                 src = passthru.sources."x86_64-linux";
               };
-            }
-            // {
               nix-search = nix-search-cli.outputs.packages.${system}.nix-search;
               nixGLPackages = nixGL.outputs.packages.${system};
               helixUnstable = helix.outputs.packages.${system}.helix.overrideAttrs {
@@ -108,7 +111,7 @@
               };
               winapps = winapps.packages."${system}".winapps;
               winapps-launcher = winapps.packages."${system}".winapps-launcher;
-            }
+            } // emmylua-analyzer.packages
           )
           yazi-plugins-overlay.overlays.default
         ];
