@@ -47,12 +47,12 @@ in
       (with nerd-fonts; [
         terminess-ttf  
       ])
-      (quicksand.overrideAttrs {
-        nativeBuildInputs = [ nerd-font-patcher ];
-        installPhase = ''
+      # (quicksand.overrideAttrs {
+      #   nativeBuildInputs = [ nerd-font-patcher ];
+      #   installPhase = ''
             
-        '';
-      })
+      #   '';
+      # })
       departure-nf
       noto-fonts
       noto-fonts-color-emoji
