@@ -262,6 +262,7 @@ in
         shellcheck
 
         nil
+        emmylua_ls
         bash-language-server
         emmet-language-server
         yaml-language-server
