@@ -121,6 +121,10 @@ in
         std.serde.toTOML (builtins.mapAttrs (name: value: toString value) (loadConfig "winapps" { }))
       );
       ".config/walker/config.json".text = builtins.toJSON (loadConfig "walker" { });
+      ".config/luakit" = {
+        source = ./configs/luakit;
+        recursive = true;
+      };
       # Misc. files
       ".config/winapps/compose.yaml".source = ./configs/winapps/compose.yaml;
       ".config/fish/functions/nixs.fish".source = ./shells/nixs.fish;
