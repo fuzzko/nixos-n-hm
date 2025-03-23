@@ -45,9 +45,14 @@ in
     [
       # Fonts
       (with nerd-fonts; [
-        ubuntu
         terminess-ttf  
       ])
+      (quicksand.overrideAttrs {
+        nativeBuildInputs = [ nerd-font-patcher ];
+        installPhase = ''
+            
+        '';
+      })
       departure-nf
       noto-fonts
       noto-fonts-color-emoji
