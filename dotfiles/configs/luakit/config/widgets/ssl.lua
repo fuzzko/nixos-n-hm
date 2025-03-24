@@ -8,7 +8,7 @@ local secure_icon = "󰌾"
 local unsecure_icon = "󱙱"
 
 local function update(w, ssl)
-  local is_secure = w.viw:ssl_trusted()
+  local is_secure = w.view:ssl_trusted()
   if is_secure == true then
     ssl.fg = theme.trust_fg
     ssl.text = secure_icon
