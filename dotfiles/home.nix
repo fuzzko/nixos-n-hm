@@ -262,7 +262,7 @@ in
         shellcheck
 
         nil
-        emmylua_ls
+        (with nur.repos.mbekkomo; [emmylua_ls])
         bash-language-server
         emmet-language-server
         yaml-language-server
