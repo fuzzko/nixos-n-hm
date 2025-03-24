@@ -43,20 +43,14 @@
       url = "github:mbekkomo/yazi-plugins-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    emmylua-analyzer = {
-      url = "github:CppCXY/emmylua-analyzer-rust/0.6.0";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   nixConfig = {
     extra-subtituters = [
-      "https://emmylua-analyzer.cachix.org"
       "https://nix-community.cachix.org"
       "https://winapps.cachix.org"
     ];
     extra-trusted-public-keys = [
-      "emmylua-analyzer.cachix.org-1:5HxEaHV7MqF3e9fL+26ZNK1gZ4iZNAzYPem51TAye2k="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "winapps.cachix.org-1:HI82jWrXZsQRar/PChgIx1unmuEsiQMQq+zt05CD36g="
     ];
@@ -78,7 +72,6 @@
       helix,
       winapps,
       yazi-plugins-overlay,
-      emmylua-analyzer,
       ...
     }:
     let
@@ -113,7 +106,6 @@
               winapps-launcher = winapps.packages.${system}.winapps-launcher;
             }
           )
-          (final: prev: emmylua-analyzer.packages.${system})
           yazi-plugins-overlay.overlays.default
         ];
       };
