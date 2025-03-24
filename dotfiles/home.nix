@@ -71,7 +71,7 @@ in
       ouch
 
       # Something that would ease me off
-      luakit
+      (wrapGl nur.repos.mbekkomo.luakit_2_4)
       khal
       fzf
       ripgrep
