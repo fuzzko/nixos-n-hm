@@ -45,12 +45,12 @@ in
     [
       # Fonts
       (with nerd-fonts; [
-        terminess-ttf  
+        terminess-ttf
       ])
       # (quicksand.overrideAttrs {
       #   nativeBuildInputs = [ nerd-font-patcher ];
       #   installPhase = ''
-            
+
       #   '';
       # })
       departure-nf
@@ -262,7 +262,7 @@ in
         shellcheck
 
         nil
-        (with nur.repos.mbekkomo; [emmylua_ls])
+        (with nur.repos.mbekkomo; [ emmylua_ls ])
         bash-language-server
         emmet-language-server
         yaml-language-server
