@@ -4,7 +4,7 @@
 (defwidget hypr-workspace [workspace-id]
   (box :class "hypr-workspace-button hypr-workspace-button-${workspace-id}"
     (button :onclick "hyprctl dispatch workspace ${workspace-id}"
-            {workspace-id})))
+      {workspace-id})))
 
 (defwidget hypr-workspaces [?spacing ?orientation]
   (box :spacing {spacing ?: 5}
