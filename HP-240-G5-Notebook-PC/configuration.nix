@@ -147,7 +147,7 @@ in
     enable = true;
     dns = "none";
     settings = {
-      device.wifi.scan-rand-mac-address = false;
+      device."wifi.scan-rand-mac-address" = false;
     };
   };
   networking.nameservers = [
