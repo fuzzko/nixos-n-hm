@@ -144,9 +144,18 @@ in
     dev.enable = true;
   };
 
+  networking.wireless.iwd = {
+    enable = true;
+    settings = {
+      Settings = {
+        AutoConnect = true;
+      };
+    };
+  }; 
   services.connman = {
     enable = true;
     package = pkgs.connmanFull;
+    wifi.backend = "iwd";
   };
   networking.nameservers = [
     "127.0.0.1"
