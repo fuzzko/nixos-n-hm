@@ -146,6 +146,9 @@ in
   networking.networkmanager = {
     enable = true;
     dns = "none";
+    settings = {
+      device.wifi.scan-rand-mac-address = false;
+    };
   };
   networking.nameservers = [
     "127.0.0.1"
