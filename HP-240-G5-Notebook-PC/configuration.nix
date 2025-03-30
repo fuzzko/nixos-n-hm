@@ -45,6 +45,7 @@ in
     gptfdisk
     efibootmgr
     udisks
+    cmst
 
     # greeter
     greetd.regreet
