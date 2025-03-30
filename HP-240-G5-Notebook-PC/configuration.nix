@@ -143,17 +143,9 @@ in
     dev.enable = true;
   };
 
-  networking.networkmanager = {
+  services.connman = {
     enable = true;
-    dns = "none";
-    wifi = {
-      macAddress = "stable-ssid";
-      scanRandMacAddress = false;
-      backend = "iwd";
-    };
-  };
-  networking.wireless.iwd = {
-    enable = true;
+    package = pkgs.connmanFull;
   };
   networking.nameservers = [
     "127.0.0.1"
