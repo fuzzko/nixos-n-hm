@@ -150,6 +150,9 @@ in
       Settings = {
         AutoConnect = true;
       };
+      General = {
+        EnableNetworkConfigure = true;
+      };
     };
   }; 
   services.connman = {
