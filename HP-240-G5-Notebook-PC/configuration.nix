@@ -152,6 +152,9 @@ in
       backend = "iwd";
     };
   };
+  networking.wireless.iwd = {
+    enable = true;
+  };
   networking.nameservers = [
     "127.0.0.1"
     "::1"
