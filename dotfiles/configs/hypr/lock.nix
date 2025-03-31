@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   general = {
     immediate_render = true;
     ignore_empty_input = true;
@@ -35,31 +36,31 @@
   };
 
   label =
-  let
-    date_cmd = "${pkgs.nushell}/bin/nu ${toString ./bin/date.nu}";
-  in
-  builtins.map (v: v // { monitor = ""; }) [
-    {
-      text = ''
-        cmd[update:1000] ${date_cmd} clock
-      '';
-      text_align = "left";
-      color = "$text";
-      font_family = "Terminess Nerd Font";
-      font_size = 27;
-      shadow_passes = 2;
-      position = "1.8%, 5.8%";
-    }
-    {
-      text = ''
-        cmd[update:0:1] ${date_cmd} date
-      '';
-      text_align = "left";
-      color = "$text";
-      font_family = "Terminess Nerd Font";
-      font_size = 20;
-      shadow_passes = 2;
-      position = "1.8%, 1.8%";
-    }
-  ];
+    let
+      date_cmd = "${pkgs.nushell}/bin/nu ${toString ./bin/date.nu}";
+    in
+    builtins.map (v: v // { monitor = ""; }) [
+      {
+        text = ''
+          cmd[update:1000] ${date_cmd} clock
+        '';
+        text_align = "left";
+        color = "$text";
+        font_family = "Terminess Nerd Font";
+        font_size = 27;
+        shadow_passes = 2;
+        position = "1.8%, 5.8%";
+      }
+      {
+        text = ''
+          cmd[update:0:1] ${date_cmd} date
+        '';
+        text_align = "left";
+        color = "$text";
+        font_family = "Terminess Nerd Font";
+        font_size = 20;
+        shadow_passes = 2;
+        position = "1.8%, 1.8%";
+      }
+    ];
 }

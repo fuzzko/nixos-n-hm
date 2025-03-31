@@ -1,7 +1,8 @@
 { root, ... }:
 let
   wallpaper_dir = /${root}/../resources/wallpapers;
-in {
+in
+{
   ipc = "on";
   preload = [
     "${toString wallpaper_dir}/wallpaper.png"

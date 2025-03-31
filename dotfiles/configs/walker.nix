@@ -1,3 +1,4 @@
-{ ... }: {
+{ ... }:
+{
   hotreload_theme = true;
 }

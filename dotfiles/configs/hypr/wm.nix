@@ -57,7 +57,7 @@ in
     bezier = [
       "easeOutQuint, 0.26, 1, 0.36, 1"
     ];
-    
+
     animation = [
       "windowsIn, 1, 7, default, slide bottom"
       "windowsOut, 1, 7, default, slide bottom"
