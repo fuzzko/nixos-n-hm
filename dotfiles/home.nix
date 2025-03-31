@@ -26,7 +26,6 @@ let
 
   loadConfig = x: y: import ./configs/${x}.nix (inputs // { root = ./.; } // y);
   loadConfig' = x: y: import ./configs/${x} (inputs // { root = ./.; } // y);
-  loadConfig' = x: y: import ./configs/${x} (inputs // { root = ./.; } // y);
   toString =
     x:
     if x == true then
