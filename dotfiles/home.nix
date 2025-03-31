@@ -117,7 +117,6 @@ in
     # External Config
     {
       ".config/zls.json".text = builtins.toJSON (loadConfig "zls" { });
-      ".config/wluma/config.toml".text = std.serde.toTOML (loadConfig "wluma" { });
       ".config/winapps/winapps.conf".text = builtins.replaceStrings [ " = \"" ] [ "=\"" ] (
         std.serde.toTOML (builtins.mapAttrs (name: value: toString value) (loadConfig "winapps" { }))
       );
@@ -235,15 +234,6 @@ in
       path = "${homeDir}/.local/share/password-store";
       uri = "https://github.com/mbekkomo/.password-store";
     };
-  };
-
-  systemd.user.services.arRPC = {
-    Unit.PartOf = [ "graphical-session.target" ];
-    Service = {
-      ExecStart = "${pkgs.bun}/bin/bun ${pkgs.arrpc}/lib/node_modules/arrpc/src/index.js";
-      Restart = "always";
-    };
-    Install.WantedBy = [ "hyprland-session.target" ];
   };
 
   fonts.fontconfig.enable = true;
@@ -440,6 +430,15 @@ in
     defaultOptions = [
       "--style full"
     ];
+  };
+
+  services.wluma = {
+    enable = true;
+    settings = loadConfig "wluma" { };
+    systemd = {
+      enable = true;
+      target = "hyprland-session.target";
+    };
   };
 
   caches.cachix = [
