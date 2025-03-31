@@ -86,7 +86,6 @@ in
       # For hyprland
       nautilus
       nautilus-open-any-terminal
-      hyprpolkitagent
       wluma
       hyprshot
       hyprpicker
@@ -439,6 +438,10 @@ in
       enable = true;
       target = "hyprland-session.target";
     };
+  };
+
+  services.hyprpolkitagent = {
+    enable = true;
   };
 
   caches.cachix = [
