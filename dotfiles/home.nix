@@ -25,6 +25,8 @@ let
   };
 
   loadConfig = x: y: import ./configs/${x}.nix (inputs // { root = ./.; } // y);
+  loadConfig' = x: y: import ./configs/${x} (inputs // { root = ./.; } // y);
+  loadConfig' = x: y: import ./configs/${x} ( inputs // {  root = ./.; } // y );
   toString =
     x:
     if x == true then
@@ -96,6 +98,7 @@ in
       clipse
       wl-clipboard
       nushell
+      brightnessctl
 
       # For recording
       kooha
@@ -372,6 +375,7 @@ in
 
   services.dunst = {
     enable = true;
+    settings = loadConfig' "dunst" { };
   };
 
   programs.eww = {
