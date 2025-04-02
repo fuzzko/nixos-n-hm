@@ -1,22 +1,7 @@
 #!/usr/bin/env nu
 
-
-def filter_json []: string -> list<int> {
-  $in
-  | from json
-  | each { |x|
-    if ($x.name =~ ^special) {
-      return null
-    }
-    $x.id
-  }
-}
-
 def main []: nothing -> nothing {
-  $env.last_ids = (do {
-    let $workspaces = hyprctl workspaces -j
-    $workspaces | filter_json
-  })
+  $env.last_ids = (hyprctl activeworkspace -j)
   print ($env.last_ids | to json -r)
   while (true) {
     let $workspaces = hyprctl workspaces -j
