@@ -1,7 +1,9 @@
-(deflisten workspaces :initial "[]"
+(deflisten --workspaces :initial "[]"
   `./bin/workspaces.nu`)
 
-(defwidget hypr-workspace [workspace-id]
+(deflisten --active-workspace )
+
+(defwidget --hypr-workspace [workspace-id]
   (box :class "hypr-workspace-button hypr-workspace-button-${workspace-id}"
     (button :onclick "hyprctl dispatch workspace ${workspace-id}"
       {workspace-id})))
@@ -9,8 +11,8 @@
 (defwidget hypr-workspaces [?spacing ?orientation]
   (box :spacing {spacing ?: 5}
        :orientation {orientation ?: "h"}
-       :hexpand true
-       :vexpand true
        :space-evenly false
-    (for workspace in workspaces
-      (hypr-workspace :workspace-id {workspace}))))
+    (for workspace in --workspaces
+      (--hypr-workspace :workspace-id {workspace}))))
+
+(defwidget hypr-active-workspace)
