@@ -43,6 +43,10 @@
       url = "github:mbekkomo/yazi-plugins-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    lucem = {
+      url = "github:mbekkomo/lucem/add-flake-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {
@@ -72,6 +76,7 @@
       helix,
       winapps,
       yazi-plugins-overlay,
+      lucem,
       ...
     }:
     let
@@ -104,6 +109,7 @@
               };
               winapps = winapps.packages.${system}.winapps;
               winapps-launcher = winapps.packages.${system}.winapps-launcher;
+              lucem = lucem.packages.${system}.lucem;
             }
           )
           yazi-plugins-overlay.overlays.default
