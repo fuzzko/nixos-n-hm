@@ -31,10 +31,14 @@
       url = "github:nix-community/nix-ld";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    helix = {
-      url = "github:helix-editor/helix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    helix =
+      let
+        hash = "44bddf51b76eab8b4096448e52a33964a52f7d2e";
+      in
+      {
+        url = "github:helix-editor/helix/${hash}";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
     winapps = {
       url = "github:winapps-org/winapps";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -92,26 +96,23 @@
         };
         overlays = [
           nur.overlays.default
-          (
-            final: prev:
-            {
-              bun = prev.bun.overrideAttrs rec {
-                passthru.sources."x86_64-linux" = pkgs.fetchurl {
-                  url = "https://github.com/oven-sh/bun/releases/download/bun-v${prev.bun.version}/bun-linux-x64-baseline.zip";
-                  hash = "sha256-DmHnkysLY7dBYCjaS+hHlWLha4gLOo4Htu1FfW0DIuM="; # update this
-                };
-                src = passthru.sources."x86_64-linux";
+          (final: prev: {
+            bun = prev.bun.overrideAttrs rec {
+              passthru.sources."x86_64-linux" = pkgs.fetchurl {
+                url = "https://github.com/oven-sh/bun/releases/download/bun-v${prev.bun.version}/bun-linux-x64-baseline.zip";
+                hash = "sha256-DmHnkysLY7dBYCjaS+hHlWLha4gLOo4Htu1FfW0DIuM="; # update this
               };
-              nix-search = nix-search-cli.outputs.packages.${system}.nix-search;
-              nixGLPackages = nixGL.outputs.packages.${system};
-              helixUnstable = helix.outputs.packages.${system}.helix.overrideAttrs {
-                NIX_BUILD_CORES = "8";
-              };
-              winapps = winapps.packages.${system}.winapps;
-              winapps-launcher = winapps.packages.${system}.winapps-launcher;
-              lucem = lucem.packages.${system}.lucem;
-            }
-          )
+              src = passthru.sources."x86_64-linux";
+            };
+            nix-search = nix-search-cli.outputs.packages.${system}.nix-search;
+            nixGLPackages = nixGL.outputs.packages.${system};
+            helixUnstable = helix.outputs.packages.${system}.helix.overrideAttrs {
+              NIX_BUILD_CORES = "8";
+            };
+            winapps = winapps.packages.${system}.winapps;
+            winapps-launcher = winapps.packages.${system}.winapps-launcher;
+            lucem = lucem.packages.${system}.lucem;
+          })
           yazi-plugins-overlay.overlays.default
         ];
       };
