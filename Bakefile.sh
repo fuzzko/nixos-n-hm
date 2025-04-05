@@ -17,7 +17,7 @@ task.switch-nixos() {
   [[ "$1" != "-" ]] && config="$1"
   shift
 
-  nix run nixpkgs#nh -- os switch -a -H komo -s "$config"
+  nix run nixpkgs#nh -- os switch -a -H komo -s "$config" .
 }
 
 task.boot-nixos() {
@@ -28,7 +28,7 @@ task.boot-nixos() {
   [[ "$1" != "-" ]] && config="$1"
   shift
 
-  nix run nixpkgs#nh -- os boot -a -H komo -s "$config"
+  nix run nixpkgs#nh -- os boot -a -H komo -s "$config" .
 }
 
 task.switch-nix-on-droid() {
