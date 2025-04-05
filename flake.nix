@@ -31,14 +31,10 @@
       url = "github:nix-community/nix-ld";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    helix =
-      let
-        hash = "44bddf51b76eab8b4096448e52a33964a52f7d2e";
-      in
-      {
-        url = "github:helix-editor/helix/${hash}";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
+    helix = {
+      url = "github:helix-editor/helix/44bddf51b76eab8b4096448e52a33964a52f7d2e";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     winapps = {
       url = "github:winapps-org/winapps";
       inputs.nixpkgs.follows = "nixpkgs";
