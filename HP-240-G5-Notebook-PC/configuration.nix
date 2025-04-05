@@ -59,10 +59,6 @@ in
       automatic = true;
       dates = [ "7d" ];
     };
-    gc = {
-      automatic = true;
-      dates = "7d";
-    };
     settings = {
       experimental-features = [
         "nix-command"
