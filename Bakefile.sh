@@ -6,7 +6,7 @@ nix() {
 export -f nix
 
 task.switch-hm() {
-  nix run nixpkgs#nh -- home switch -a -c komo -b backup .
+  nix run nixpkgs#nh -- home switch -a -c komo -b backup . -- --impure "$@"
 }
 
 task.switch-nixos() {
@@ -17,7 +17,7 @@ task.switch-nixos() {
   [[ "$1" != "-" ]] && config="$1"
   shift
 
-  nix run nixpkgs#nh -- os switch -a -H komo -s "$config" .
+  nix run nixpkgs#nh -- os switch -a -H komo -s "$config" . -- --impure "$@"
 }
 
 task.boot-nixos() {
@@ -28,7 +28,7 @@ task.boot-nixos() {
   [[ "$1" != "-" ]] && config="$1"
   shift
 
-  nix run nixpkgs#nh -- os boot -a -H komo -s "$config" .
+  nix run nixpkgs#nh -- os boot -a -H komo -s "$config" . -- --impure "$@"
 }
 
 task.switch-nix-on-droid() {
