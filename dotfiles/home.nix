@@ -174,6 +174,7 @@ in
     fzf.enable = true;
     helix.enable = true;
     fish.enable = true;
+    hyprlock.useDefaultConfig = false;
   };
 
   nix = {
