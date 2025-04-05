@@ -6,9 +6,7 @@ nix() {
 export -f nix
 
 task.switch-hm() {
-  local locked_hm
-  locked_hm="$(nix eval --impure --raw --expr '(builtins.fromJSON (builtins.readFile ./flake.lock)).nodes.home-manager.locked.rev')"
-  nix run github:nix-community/home-manager/"$locked_hm" -- switch --flake .#komo --impure "$@"
+  nix run nixpkgs#nh -- home switch -a -c komo -b backup .
 }
 
 task.switch-nixos() {
@@ -18,8 +16,8 @@ task.switch-nixos() {
   )"
   [[ "$1" != "-" ]] && config="$1"
   shift
-  
-  nixos-rebuild switch --flake .#"$config" --impure "$@"
+
+  nix run nixpkgs#nh -- os switch -a -H komo -s "$config"
 }
 
 task.boot-nixos() {
@@ -30,7 +28,7 @@ task.boot-nixos() {
   [[ "$1" != "-" ]] && config="$1"
   shift
 
-  nixos-rebuild boot --flake .#"$config" --impure "$@"
+  nix run nixpkgs#nh -- os boot -a -H komo -s "$config"
 }
 
 task.switch-nix-on-droid() {
