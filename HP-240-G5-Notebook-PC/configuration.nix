@@ -55,10 +55,6 @@ in
   ];
 
   nix = {
-    optimise = {
-      automatic = true;
-      dates = [ "7d" ];
-    };
     settings = {
       experimental-features = [
         "nix-command"
