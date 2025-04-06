@@ -121,7 +121,7 @@
           nix-index-database.hmModules.nix-index
           catppuccin.homeManagerModules.catppuccin
           nix-flatpak.homeManagerModules.nix-flatpak
-          ./dotfiles/home.nix
+          ./home-manager/home.nix
         ];
         extraSpecialArgs.std = nix-std.lib;
       };
