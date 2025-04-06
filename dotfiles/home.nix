@@ -185,6 +185,7 @@ in
         "flakes"
       ];
       allowed-users = [ username ];
+      auto-optimise-store = true;
     };
     registry.nixpkgs = {
       from = {
