@@ -322,7 +322,7 @@ in
   services.kanata = {
     enable = true;
     keyboards = {
-      "asdf-jkl;" = {
+      home-row = {
         extraDefCfg = ''
           process-unmapped-keys yes
         '';
