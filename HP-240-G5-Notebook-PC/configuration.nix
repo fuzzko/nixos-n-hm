@@ -318,4 +318,15 @@ in
       extraArgs = "--keep 2 --keep-since 3d";
     };
   };
+
+  services.kanata = {
+    enable = true;
+    keyboards = {
+      "asdf-jkl;" = {
+        extraDefCfg = ''
+            process-unmapped-keys yes
+          '';
+      };
+    };
+  };
 }
