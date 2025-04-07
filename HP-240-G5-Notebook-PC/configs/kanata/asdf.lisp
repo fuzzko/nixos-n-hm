@@ -31,13 +31,13 @@
   release-f24 (macro 5 (on-press tap-vkey relf24)))
 
 (defalias
-  s-first (multi f24 (tap-hold $tap-time $hold-time s (layer-while-held s-comb)) release-f24)
-  d-first (multi f24 (tap-hold $tap-time $hold-time d (layer-while-held d-comb)) release-f24)
-  f-first (multi f24 (tap-hold $tap-time $hold-time f (layer-while-held f-comb)) release-f24)
+  s-first (multi f24 (tap-hold $tap-time $hold-time s (layer-while-held s-comb)) @release-f24)
+  d-first (multi f24 (tap-hold $tap-time $hold-time d (layer-while-held d-comb)) @release-f24)
+  f-first (multi f24 (tap-hold $tap-time $hold-time f (layer-while-held f-comb)) @release-f24)
 
-  j-first (multi f24 (tap-hold $tap-time $hold-time j (layer-while-held j-comb)) release-f24)
-  k-first (multi f24 (tap-hold $tap-time $hold-time k (layer-while-held k-comb)) release-f24)
-  l-first (multi f24 (tap-hold $tap-time $hold-time l (layer-while-held l-comb)) release-f24))
+  j-first (multi f24 (tap-hold $tap-time $hold-time j (layer-while-held j-comb)) @release-f24)
+  k-first (multi f24 (tap-hold $tap-time $hold-time k (layer-while-held k-comb)) @release-f24)
+  l-first (multi f24 (tap-hold $tap-time $hold-time l (layer-while-held l-comb)) @release-f24))
 
 (deflayermap (f-comb)
   d ctrl
