@@ -20,7 +20,7 @@
   s d f    #| left home row  |#
   j k l) #| right home row |#
 
-(defvirtualkey
+(defvirtualkeys
   relf24 (release-key f24))
 
 (defvar
