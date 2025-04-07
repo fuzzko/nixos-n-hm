@@ -12,8 +12,8 @@
 
 
 ;; uncomment this if you're not using the NixOS option
-(defcfg
-  process-unmapped-keys yes)
+;; (defcfg
+;;   process-unmapped-keys yes)
 
 (defsrc
   caps s d f j k l)
