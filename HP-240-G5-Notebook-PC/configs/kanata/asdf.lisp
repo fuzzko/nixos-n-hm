@@ -1,7 +1,7 @@
 #|
   ## the asdf-jkl; thing
 
-   . [f + d] → ctrl  . [j + k] → ctrl
+   . [f + d] → ctl   . [j + k] → ctl
    . [s + a] → alt   . [l + ;] → alt
    . [d + s] → shft  . [k + l] → shft
    . [f + s] → met   . [j + l] → met
@@ -40,7 +40,7 @@
   l-first (multi f24 (tap-hold $tap-time $hold-time l (layer-while-held l-comb)) @release-f24))
 
 (deflayermap (f-comb)
-  d ctrl
+  d ctl
   s met)
 
 (deflayermap (s-comb)
@@ -50,7 +50,7 @@
   s shft)
 
 (deflayermap (j-comb)
-  k ctrl
+  k ctl
   l met)
 
 (deflayermap (l-comb)
