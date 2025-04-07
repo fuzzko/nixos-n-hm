@@ -16,9 +16,7 @@
 ;;   process-unmapped-keys yes)
 
 (defsrc
-  caps
-  s d f    #| left home row  |#
-  j k l) #| right home row |#
+  caps s d f j k l)
 
 (defvirtualkeys
   relf24 (release-key f24))
@@ -60,6 +58,4 @@
   l shft)
 
 (deflayer base
-  esc
-  @s-first @d-first @f-first
-  @j-first @k-first @l-first)
+  esc @s-first @d-first @f-first @j-first @k-first @l-first)
