@@ -37,6 +37,9 @@
   k-first (multi f24 (tap-hold $tap-time $hold-time k (layer-while-held k-comb)) @release-f24)
   l-first (multi f24 (tap-hold $tap-time $hold-time l (layer-while-held l-comb)) @release-f24))
 
+(deflayer base
+  esc @s-first @d-first @f-first @j-first @k-first @l-first)
+
 (deflayermap (f-comb)
   d ctl
   s met)
@@ -56,6 +59,3 @@
 
 (deflayermap (k-comb)
   l shft)
-
-(deflayer base
-  esc @s-first @d-first @f-first @j-first @k-first @l-first)
