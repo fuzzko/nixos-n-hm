@@ -324,8 +324,12 @@ in
     keyboards = {
       "asdf-jkl;" = {
         extraDefCfg = ''
-            process-unmapped-keys yes
-          '';
+          process-unmapped-keys yes
+        '';
+        config = ''
+          (defsrc)
+          (deflayer base)
+        '';
       };
     };
   };
