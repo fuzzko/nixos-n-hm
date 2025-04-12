@@ -14,31 +14,31 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules =  [
+  boot.initrd.availableKernelModules = lib.mkForce [
     "ahci"
     "xhci_pci"
     "usb_storage"
     "sd_mod"
   ];
-  boot.initrd.kernelModules =  [ ];
-  boot.kernelModules =  [ ];
-  boot.extraModulePackages =  [ ];
+  boot.initrd.kernelModules = lib.mkForce [ ];
+  boot.kernelModules = lib.mkForce [ ];
+  boot.extraModulePackages = lib.mkForce [ ];
 
-  fileSystems."/" =  {
-    device =  "/dev/disk/by-uuid/a4ed4d74-20a0-445b-ac1a-1e51ba21f260";
-    fsType =  "ext4";
+  fileSystems."/" = lib.mkForce {
+    device = lib.mkForce "/dev/disk/by-uuid/a4ed4d74-20a0-445b-ac1a-1e51ba21f260";
+    fsType = lib.mkForce "ext4";
   };
 
-  fileSystems."/boot" =  {
-    device =  "/dev/disk/by-uuid/5295-D034";
-    fsType =  "vfat";
-    options =  [
+  fileSystems."/boot" = lib.mkForce {
+    device = lib.mkForce "/dev/disk/by-uuid/5295-D034";
+    fsType = lib.mkForce "vfat";
+    options = lib.mkForce [
       "fmask=0077"
       "dmask=0077"
     ];
   };
 
-  swapDevices =  [
+  swapDevices = lib.mkForce [
     { device = "/dev/disk/by-uuid/72c6bb70-2cb2-4c17-9771-16c660f1d9c0"; }
   ];
 
