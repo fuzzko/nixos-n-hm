@@ -122,7 +122,7 @@
         extraSpecialArgs.std = nix-std.lib;
       };
 
-      nixosConfigurations.gudboye = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.komo = nixpkgs.lib.nixosSystem {
         inherit system;
         inherit pkgs;
         modules = [
