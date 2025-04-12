@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   lib,
   ...
@@ -338,7 +339,10 @@ in
         extraDefCfg = ''
           process-unmapped-keys yes
         '';
-        config = builtins.readFile ./configs/kanata/asdf.lisp;
+        config = ''
+          (defsrc)
+          (deflayer base)
+        '';
       };
     };
   };
