@@ -32,17 +32,17 @@ let
   };
 in
 {
-  specialisation = let
-    mkSpec = name: {
-      ${name}.configuration.imports = [
-        ./hardwares/${name}/configuration.nix
-        ./hardwares/${name}/hardware-configuration.nix
-      ];
-    };
-  in
-    (mkSpec "HP-240-G5-Notebook-PC")
-    // (mkSpec "Aspire-TC-605");
-  
+  specialisation =
+    let
+      mkSpec = name: {
+        ${name}.configuration.imports = [
+          ./hardwares/${name}/configuration.nix
+          ./hardwares/${name}/hardware-configuration.nix
+        ];
+      };
+    in
+    (mkSpec "HP-240-G5-Notebook-PC") // (mkSpec "Aspire-TC-605");
+
   system.stateVersion = "24.05";
 
   networking.hostName = "gudboye";
@@ -154,7 +154,7 @@ in
         EnableNetworkConfigure = true;
       };
     };
-  }; 
+  };
   services.connman = {
     enable = true;
     package = pkgs.connmanFull;
