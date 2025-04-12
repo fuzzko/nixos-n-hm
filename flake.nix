@@ -85,26 +85,29 @@
           x = (builtins.getEnv "NIXPKGS_SYSTEM");
         in
         if x == "" then "x86_64-linux" else x;
-      pkgs = ((nixpkgs.legacyPackages.${system}.extend
-          nur.overlays.default).extend
-          yazi-plugins-overlay.overlays.default).extend
-          (final: prev: {
-            bun = prev.bun.overrideAttrs rec {
-              passthru.sources."x86_64-linux" = pkgs.fetchurl {
-                url = "https://github.com/oven-sh/bun/releases/download/bun-v${prev.bun.version}/bun-linux-x64-baseline.zip";
-                hash = "sha256-JdFwwxBgfo894v+7cXf1iB11sPYOHpwQqZYOpx126X0="; # update this
+      pkgs =
+        ((nixpkgs.legacyPackages.${system}.extend nur.overlays.default).extend
+          yazi-plugins-overlay.overlays.default
+        ).extend
+          (
+            final: prev: {
+              bun = prev.bun.overrideAttrs rec {
+                passthru.sources."x86_64-linux" = pkgs.fetchurl {
+                  url = "https://github.com/oven-sh/bun/releases/download/bun-v${prev.bun.version}/bun-linux-x64-baseline.zip";
+                  hash = "sha256-JdFwwxBgfo894v+7cXf1iB11sPYOHpwQqZYOpx126X0="; # update this
+                };
+                src = passthru.sources."x86_64-linux";
               };
-              src = passthru.sources."x86_64-linux";
-            };
-            nix-search = nix-search-cli.outputs.packages.${system}.nix-search;
-            nixGLPackages = nixGL.outputs.packages.${system};
-            helixUnstable = helix.outputs.packages.${system}.helix.overrideAttrs {
-              NIX_BUILD_CORES = "8";
-            };
-            winapps = winapps.packages.${system}.winapps;
-            winapps-launcher = winapps.packages.${system}.winapps-launcher;
-            lucem = lucem.packages.${system}.lucem;
-          });
+              nix-search = nix-search-cli.outputs.packages.${system}.nix-search;
+              nixGLPackages = nixGL.outputs.packages.${system};
+              helixUnstable = helix.outputs.packages.${system}.helix.overrideAttrs {
+                NIX_BUILD_CORES = "8";
+              };
+              winapps = winapps.packages.${system}.winapps;
+              winapps-launcher = winapps.packages.${system}.winapps-launcher;
+              lucem = lucem.packages.${system}.lucem;
+            }
+          );
     in
     {
       homeConfigurations.komo = home-manager.lib.homeManagerConfiguration {
