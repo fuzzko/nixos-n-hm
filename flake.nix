@@ -126,18 +126,7 @@
         extraSpecialArgs.std = nix-std.lib;
       };
 
-      nixosConfigurations.HP-240-G5-Notebook-PC = nixpkgs.lib.nixosSystem {
-        inherit system;
-        inherit pkgs;
-        modules = [
-          nix-flatpak.nixosModules.nix-flatpak
-          nix-ld.nixosModules.nix-ld
-          ./modules/refind/refind.nix
-          ./HP-240-G5-Notebook-PC/configuration.nix
-        ];
-      };
-
-      nixosConfigurations.Aspire-TC-605 = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.komo = nixpkgs.lib.nixosSystem {
         inherit system;
         inherit pkgs;
         modules = [
