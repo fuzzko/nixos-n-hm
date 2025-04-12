@@ -85,13 +85,9 @@
           x = (builtins.getEnv "NIXPKGS_SYSTEM");
         in
         if x == "" then "x86_64-linux" else x;
-      pkgs = import nixpkgs {
-        inherit system;
-        config = {
-          allowUnfree = true;
-        };
-        overlays = [
-          nur.overlays.default
+      pkgs = ((nixpkgs.legacyPackages.${system}.extend
+          nur.overlays.default).extend
+          yazi-plugins-overlay.overlays.default).extend
           (final: prev: {
             bun = prev.bun.overrideAttrs rec {
               passthru.sources."x86_64-linux" = pkgs.fetchurl {
@@ -108,10 +104,7 @@
             winapps = winapps.packages.${system}.winapps;
             winapps-launcher = winapps.packages.${system}.winapps-launcher;
             lucem = lucem.packages.${system}.lucem;
-          })
-          yazi-plugins-overlay.overlays.default
-        ];
-      };
+          });
     in
     {
       homeConfigurations.komo = home-manager.lib.homeManagerConfiguration {
