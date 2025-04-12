@@ -33,21 +33,6 @@ let
   };
 in
 {
-  specialisation =
-    let
-      mkSpec = name: {
-        ${name}.configuration.imports = [
-          ./hardwares/${name}/configuration.nix
-          ./hardwares/${name}/hardware-configuration.nix
-        ];
-      };
-    in
-    (mkSpec "HP-240-G5-Notebook-PC") // (mkSpec "Aspire-TC-605");
-
-  imports = [
-    ./hardwares/HP-240-G5-Notebook-PC/hardware-configuration.nix
-  ];
-
   system.stateVersion = "24.05";
 
   networking.hostName = "gudboye";
