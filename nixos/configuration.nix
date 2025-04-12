@@ -45,6 +45,8 @@ in
   
   system.stateVersion = "24.05";
 
+  networking.hostName = "gudboye";
+
   environment.systemPackages = with pkgs; [
     git
     refind
