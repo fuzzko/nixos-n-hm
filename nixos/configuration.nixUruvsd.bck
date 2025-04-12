@@ -36,8 +36,8 @@ in
     let
       mkSpec = name: {
         ${name}.configuration.imports = [
-          ./hardwares/${name}/hardware-configuration.nix
           ./hardwares/${name}/configuration.nix
+          ./hardwares/${name}/hardware-configuration.nix
         ];
       };
     in
