@@ -157,7 +157,6 @@ in
       "im.nheko.Nheko"
       "org.kde.kwalletmanager5"
       "com.interversehq.qView"
-      "org.vinegarhq.Sober"
     ];
     update.auto = {
       enable = true;
