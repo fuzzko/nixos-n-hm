@@ -205,6 +205,7 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "nixpkgs": [
+          "nixpkgs",
           "nixpkgs"
         ],
         "rust-overlay": "rust-overlay"
@@ -227,6 +228,7 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
+          "nixpkgs",
           "nixpkgs"
         ]
       },
@@ -250,6 +252,7 @@
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils_2",
         "nixpkgs": [
+          "nixpkgs",
           "nixpkgs"
         ]
       },
@@ -302,6 +305,7 @@
     "nix-index-database": {
       "inputs": {
         "nixpkgs": [
+          "nixpkgs",
           "nixpkgs"
         ]
       },
@@ -322,6 +326,7 @@
     "nix-ld": {
       "inputs": {
         "nixpkgs": [
+          "nixpkgs",
           "nixpkgs"
         ]
       },
@@ -345,6 +350,7 @@
         "flake-utils": "flake-utils_3",
         "nix-filter": "nix-filter",
         "nixpkgs": [
+          "nixpkgs",
           "nixpkgs"
         ]
       },
@@ -381,6 +387,7 @@
       "inputs": {
         "flake-utils": "flake-utils_4",
         "nixpkgs": [
+          "nixpkgs",
           "nixpkgs"
         ]
       },
@@ -415,6 +422,25 @@
       }
     },
     "nixpkgs_2": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1744381397,
+        "narHash": "sha256-hItIhtrxZeGrpUbKDulWkRH/Y5+tGgmBvDDHM9r1YYg=",
+        "owner": "numtide",
+        "repo": "nixpkgs-unfree",
+        "rev": "1be80e9444591b9970b479fa62231c423ffd9ac8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs-unfree",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
       "locked": {
         "lastModified": 1743583204,
         "narHash": "sha256-F7n4+KOIfWrwoQjXrL2wD9RhFYLs2/GGe/MQY1sSdlE=",
@@ -424,16 +450,15 @@
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
+        "id": "nixpkgs",
+        "type": "indirect"
       }
     },
     "nur": {
       "inputs": {
         "flake-parts": "flake-parts",
         "nixpkgs": [
+          "nixpkgs",
           "nixpkgs"
         ],
         "treefmt-nix": "treefmt-nix"
@@ -578,6 +603,7 @@
         "flake-compat": "flake-compat_3",
         "flake-utils": "flake-utils_5",
         "nixpkgs": [
+          "nixpkgs",
           "nixpkgs"
         ]
       },
@@ -599,6 +625,7 @@
       "inputs": {
         "flake-utils": "flake-utils_6",
         "nixpkgs": [
+          "nixpkgs",
           "nixpkgs"
         ]
       },
