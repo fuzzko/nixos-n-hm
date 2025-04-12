@@ -2,50 +2,50 @@
   description = "My Nix config :3";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:numtide/nixpkgs-unfree/nixos-unstable";
     nur = {
       url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/latest";
     nix-search-cli = {
       url = "github:peterldowns/nix-search-cli";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
     };
     nixGL = {
       url = "github:nix-community/nixGL";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
     };
     declarative-cachix.url = "github:jonascarpay/declarative-cachix";
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
     };
     catppuccin.url = "github:catppuccin/nix";
     nix-std.url = "github:chessai/nix-std";
     nix-ld = {
       url = "github:nix-community/nix-ld";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
     };
     helix = {
       url = "github:helix-editor/helix/44bddf51b76eab8b4096448e52a33964a52f7d2e";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
     };
     winapps = {
       url = "github:winapps-org/winapps";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
     };
     yazi-plugins-overlay = {
       url = "github:mbekkomo/yazi-plugins-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
     };
     lucem = {
       url = "github:mbekkomo/lucem/add-flake-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
     };
   };
 
