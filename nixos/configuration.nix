@@ -35,7 +35,7 @@ in
   specialisation =
     let
       mkSpec = name: {
-        ${name}.configuration.imports = lib.mkForce [
+        ${name}.configuration.imports = [
           ./hardwares/${name}/hardware-configuration.nix
           ./hardwares/${name}/configuration.nix
         ];
@@ -43,7 +43,7 @@ in
     in
     (mkSpec "HP-240-G5-Notebook-PC") // (mkSpec "Aspire-TC-605");
 
-  imports = lib.mkDefault [
+  imports = [
     ./hardwares/HP-240-G5-Notebook-PC/hardware-configuration.nix
   ];
 
