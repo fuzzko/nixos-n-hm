@@ -17,7 +17,7 @@ task.switch-nixos() {
   [[ "$1" != "-" ]] && config="$1"
   shift
 
-  nix run nixpkgs#nh -- os switch -a -H "$config" . -- --impure "$@"
+  nix run nixpkgs#nh -- os switch -a -H gudboye -s "$config" . -- --impure "$@"
 }
 
 task.boot-nixos() {
