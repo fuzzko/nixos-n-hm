@@ -55,7 +55,7 @@
   l met)
 
 (deflayermap (l-comb)
-  ; alt)
+  ";" alt)
 
 (deflayermap (k-comb)
   l shft)
