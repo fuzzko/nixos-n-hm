@@ -32,10 +32,17 @@ let
   };
 in
 {
-  imports = [
-    ./hardware-configuration.nix
-  ];
-
+  specialisation = let
+    mkSpec = name: {
+      ${name}.configuration.imports = [
+        ./hardwares/${name}/configuration.nix
+        ./hardwares/${name}/hardware-configuration.nix
+      ];
+    };
+  in
+    (mkSpec "HP-240-G5-Notebook-PC")
+    // (mkSpec "Aspire-TC-605");
+  
   system.stateVersion = "24.05";
 
   environment.systemPackages = with pkgs; [
