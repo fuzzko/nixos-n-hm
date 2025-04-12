@@ -27,8 +27,8 @@ task.boot-nixos() {
   )"
   [[ "$1" != "-" ]] && config="$1"
   shift
-
-  nix run nixpkgs#nh -- os boot -a -H "$config" . -- --impure "$@"
+ 
+  nix run nixpkgs#nh -- os boot -a -H gudboye -s "$config" . -- --impure "$@"
 }
 
 task.switch-nix-on-droid() {
