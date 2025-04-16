@@ -5,7 +5,7 @@ nix() {
 }
 export -f nix
 
-task.init-hm-gcroots() {
+task.init-hm-gcroot() {
   if [[ ! -d ~/.local/state/home-manager/gcroots/current-home ]]; then
     bake.warn "Cannot initialize a gcroot for home-manager"
     return 1
