@@ -5,7 +5,19 @@ nix() {
 }
 export -f nix
 
+task.init-hm-gcroots() {
+  if [[ ! -d ~/.local/state/home-manager/gcroots/current-home ]]; then
+    bake.warn "Cannot initialize a gcroot for home-manager"
+    return 1
+  fi
 
+  if [[ -d "/nix/var/nix/gcroots/per-user/${USER}/current-home" ]]; then
+    bake.warn "Gcroot is already initialized"
+    return 1
+  fi
+
+  sudo ln -s ~/.local/state/home-manager/gcroots/current-home "/nix/var/nix/gcroots/per-user/${USER}/current-home"
+}
 
 task.switch-hm() {
   nix run nixpkgs#nh -- home switch -a -c komo -b backup . -- --impure "$@"
