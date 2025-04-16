@@ -16,6 +16,7 @@ task.init-hm-gcroot() {
     return 1
   fi
 
+  sudo mkdir -p "/nix/var/nix/gcroots/per-user/${USER}"
   sudo ln -s ~/.local/state/home-manager/gcroots/current-home "/nix/var/nix/gcroots/per-user/${USER}/current-home"
 }
 
