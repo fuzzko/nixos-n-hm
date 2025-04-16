@@ -8,16 +8,12 @@ export -f nix
 task.init-hm-gcroot() {
   if [[ ! -d ~/.local/state/home-manager/gcroots/current-home ]]; then
     bake.warn "Cannot initialize a gcroot for home-manager"
-    return 1
-  fi
-
-  if [[ -d "/nix/var/nix/gcroots/per-user/${USER}/current-home" ]]; then
+  elif [[ -d "/nix/var/nix/gcroots/per-user/${USER}/current-home" ]]; then
     bake.warn "Gcroot is already initialized"
-    return 1
+  else
+    sudo mkdir -p "/nix/var/nix/gcroots/per-user/${USER}"
+    sudo ln -s ~/.local/state/home-manager/gcroots/current-home "/nix/var/nix/gcroots/per-user/${USER}/current-home"
   fi
-
-  sudo mkdir -p "/nix/var/nix/gcroots/per-user/${USER}"
-  sudo ln -s ~/.local/state/home-manager/gcroots/current-home "/nix/var/nix/gcroots/per-user/${USER}/current-home"
 }
 
 task.switch-hm() {
