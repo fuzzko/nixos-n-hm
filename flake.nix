@@ -32,7 +32,7 @@
       inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
     };
     helix = {
-      url = "github:helix-editor/helix/44bddf51b76eab8b4096448e52a33964a52f7d2e";
+      url = "github:helix-editor/helix";
       inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
     };
     winapps = {
