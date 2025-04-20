@@ -16,10 +16,9 @@ task.init-hm-gcroots() {
       sudo rm -f "${gcroots}/current-home"
     [[ -d "${gcroots}/nixcfg-srcdir" ]] &&
       sudo rm -f "${gcroots}/nixcfg-srcdir"
-  
     sudo mkdir -p "/nix/var/nix/gcroots/per-user/${USER}"
-    sudo ln -sf ~/.local/state/home-manager/gcroots/current-home "${gcroots}/current-home"
-    sudo ln -sf "${srcdir}" "${gcroots}/nixcfg-srcdir"
+    sudo ln -s ~/.local/state/home-manager/gcroots/current-home "${gcroots}/current-home"
+    sudo ln -s "${srcdir}" "${gcroots}/nixcfg-srcdir"
   fi
 }
 
