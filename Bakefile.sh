@@ -6,13 +6,16 @@ nix() {
 export -f nix
 
 task.init-hm-gcroot() {
-  if [[ ! -d ~/.local/state/home-manager/gcroots/current-home ]]; then
+  local srcdir
+  srcdir=$(nix eval --expr '{ json }: (builtins.fromJSON json)' --argstr json "$(nix flake archive --json --dry-run)" path)
+  if [[ ! -d ~/.local/state/home-manager/gcroots/current-home && ! -d "${srcdir}" ]]; then
     bake.warn "Cannot initialize a gcroot for home-manager"
-  elif [[ -d "/nix/var/nix/gcroots/per-user/${USER}/current-home" ]]; then
+  elif [[ -d "/nix/var/nix/gcroots/per-user/${USER}/current-home" && ! -d "${srcdir}" ]]; then
     bake.warn "Gcroot is already initialized"
   else
     sudo mkdir -p "/nix/var/nix/gcroots/per-user/${USER}"
     sudo ln -s ~/.local/state/home-manager/gcroots/current-home "/nix/var/nix/gcroots/per-user/${USER}/current-home"
+    sudo ln -s "${srcdir}" "/nix/var/nix/gcroots/per-user/${USER}/nixcfg-srcdir"
   fi
 }
 
