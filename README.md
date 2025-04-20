@@ -5,6 +5,9 @@ How to use it:
 # If you're only wanted to use the dotfiles
 $ ./bake switch-hm
 
+# Optionally, you can register HM to gcroots
+$ ./bake init-hm-gcroots
+
 # Otherwise
 $ ./bake list-nixos # List NixOS configuration
 # ./bake switch-nixos [config] # Switch to [config] NixOS configuration

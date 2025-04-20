@@ -5,7 +5,7 @@ nix() {
 }
 export -f nix
 
-task.init-hm-gcroot() {
+task.init-hm-gcroots() {
   local srcdir
   local gcroots="/nix/var/nix/gcroots/per-user/${USER}"
   srcdir=$(nix eval --expr '{ json }: (builtins.fromJSON json)' --argstr json "$(nix flake archive --json --dry-run)" path --raw)
