@@ -113,7 +113,7 @@
       homeConfigurations.komo = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
-          declarative-cachix.homeManagerModules.declarative-cachix
+          declarative-cachix.homeModules.declarative-cachix
           nix-index-database.hmModules.nix-index
           catppuccin.homeManagerModules.catppuccin
           nix-flatpak.homeManagerModules.nix-flatpak
