@@ -12,6 +12,11 @@ task.init-hm-gcroots() {
   if [[ ! -d ~/.local/state/home-manager/gcroots/current-home && ! -d "${srcdir}" ]]; then
     bake.warn "Cannot initialize a gcroot for home-manager"
   else
+    [[ -d "${gcroots}/current-home" ]] &&
+      sudo rm -f "${gcroots}/current-home"
+    [[ -d "${gcroots}/nixcfg-srcdir" ]] &&
+      sudo rm -f "${gcroots}/nixcfg-srcdir"
+  
     sudo mkdir -p "/nix/var/nix/gcroots/per-user/${USER}"
     sudo ln -sf ~/.local/state/home-manager/gcroots/current-home "${gcroots}/current-home"
     sudo ln -sf "${srcdir}" "${gcroots}/nixcfg-srcdir"
