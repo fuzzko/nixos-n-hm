@@ -7,7 +7,7 @@ export -f nix
 
 task.init-hm-gcroot() {
   local srcdir
-  srcdir=$(nix eval --expr '{ json }: (builtins.fromJSON json)' --argstr json "$(nix flake archive --json --dry-run)" path)
+  srcdir=$(nix eval --expr '{ json }: (builtins.fromJSON json)' --argstr json "$(nix flake archive --json --dry-run)" path --raw)
   if [[ ! -d ~/.local/state/home-manager/gcroots/current-home && ! -d "${srcdir}" ]]; then
     bake.warn "Cannot initialize a gcroot for home-manager"
   elif [[ -d "/nix/var/nix/gcroots/per-user/${USER}/current-home" && ! -d "${srcdir}" ]]; then
