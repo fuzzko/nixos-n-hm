@@ -90,11 +90,9 @@ _: {
         };
       }
       {
+        inherit indent;
+        
         name = "c";
-        language-servers = [ "ccls" ];
-      }
-      {
-        name = "cpp";
         language-servers = [ "ccls" ];
       }
     ];
