@@ -108,6 +108,7 @@ in
       youtube-music
       openutau
       nchat
+      matui
       lucem
       (with nur.repos.mbekkomo; [
         (wrapGL sklauncher)
