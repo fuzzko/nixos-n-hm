@@ -108,7 +108,6 @@ in
       youtube-music
       openutau
       nchat
-      iamb
       lucem
       (with nur.repos.mbekkomo; [
         (wrapGL sklauncher)
@@ -437,6 +436,11 @@ in
     defaultOptions = [
       "--style full"
     ];
+  };
+
+  programs.iamb = {
+    enable = true;
+    settings = loadConfig' "iamb" { };
   };
 
   services.wluma = {
