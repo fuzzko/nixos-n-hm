@@ -47,6 +47,10 @@
       url = "github:mbekkomo/lucem/add-flake-nix";
       inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
     };
+    matui = {
+      url = "github:pkulak:matui";
+      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
+    };
   };
 
   nixConfig = {
@@ -77,6 +81,7 @@
       winapps,
       yazi-plugins-overlay,
       lucem,
+      matui,
       ...
     }:
     let
@@ -106,6 +111,7 @@
               winapps = winapps.packages.${system}.winapps;
               winapps-launcher = winapps.packages.${system}.winapps-launcher;
               lucem = lucem.packages.${system}.lucem;
+              matui = matui.packages.${system}.matui;
             }
           );
     in
