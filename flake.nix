@@ -48,7 +48,7 @@
       inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
     };
     matui = {
-      url = "github:pkulak:matui";
+      url = "github:pkulak/matui";
       inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
     };
   };
