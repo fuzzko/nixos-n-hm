@@ -225,6 +225,7 @@ in
     drivers = with pkgs; [
       gutenprint
       gutenprintBin
+      epson-201401w
     ];
   };
   services.avahi = {
