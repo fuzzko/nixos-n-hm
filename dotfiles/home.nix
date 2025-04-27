@@ -108,7 +108,6 @@ in
       youtube-music
       openutau
       nchat
-      matui
       lucem
       (with nur.repos.mbekkomo; [
         (wrapGL sklauncher)
@@ -254,7 +253,7 @@ in
       [
         nushell
 
-        nixfmt-tree
+        nixfmt-rfc-style
         shellcheck
 
         nil
