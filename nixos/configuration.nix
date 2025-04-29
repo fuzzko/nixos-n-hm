@@ -44,7 +44,6 @@ in
     efibootmgr
     udisks
     connman-gtk
-    auto-cpufreq
 
     # greeter
     greetd.regreet
@@ -332,9 +331,5 @@ in
         '';
       };
     };
-  };
-
-  services.auto-cpufreq = {
-    enabe = true;
   };
 }
