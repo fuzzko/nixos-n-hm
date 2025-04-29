@@ -44,6 +44,7 @@ in
     efibootmgr
     udisks
     connman-gtk
+    auto-cpufreq
 
     # greeter
     greetd.regreet
@@ -330,6 +331,14 @@ in
           (deflayer base)
         '';
       };
+    };
+  };
+
+  services.auto-cpufreq = {
+    enabe = true;
+    charger = {
+      governor = "performance";
+      
     };
   };
 }
