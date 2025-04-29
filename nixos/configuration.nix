@@ -336,9 +336,5 @@ in
 
   services.auto-cpufreq = {
     enabe = true;
-    charger = {
-      governor = "performance";
-      
-    };
   };
 }
