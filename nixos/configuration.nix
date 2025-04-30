@@ -326,7 +326,7 @@ in
         extraDefCfg = ''
           process-unmapped-keys yes
         '';
-        config = ./configs/kanata/asdf.lisp;
+        config = builtins.readFile ./configs/kanata/asdf.lisp;
       };
     };
   };
