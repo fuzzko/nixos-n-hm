@@ -83,6 +83,7 @@
       yazi-plugins-overlay,
       lucem,
       matui,
+      chaotic,
       ...
     }:
     let
@@ -124,6 +125,7 @@
           nix-index-database.hmModules.nix-index
           catppuccin.homeModules.catppuccin
           nix-flatpak.homeManagerModules.nix-flatpak
+          chaotic.homeManagerModules.default
           ./dotfiles/home.nix
         ];
         extraSpecialArgs.std = nix-std.lib;
@@ -135,6 +137,7 @@
         modules = [
           nix-flatpak.nixosModules.nix-flatpak
           nix-ld.nixosModules.nix-ld
+          chaotic.nixosModules.default
           ./modules/refind/refind.nix
           ./nixos/hardwares/HP-240-G5-Notebook-PC/configuration.nix
           ./nixos/hardwares/HP-240-G5-Notebook-PC/hardware-configuration.nix
@@ -148,6 +151,7 @@
         modules = [
           nix-flatpak.nixosModules.nix-flatpak
           nix-ld.nixosModules.nix-ld
+          chaotic.nixosModules.default
           ./modules/refind/refind.nix
           ./nixos/hardwares/Aspire-TC-605/configuration.nix
           ./nixos/hardwares/Aspire-TC-605/hardware-configuration.nix
