@@ -247,7 +247,7 @@ in
 
   programs.helix = {
     enable = true;
-    package = pkgs.helix_git;
+    package = pkgs.h_git;
     defaultEditor = true;
     extraPackages = lib.flatten (
       with pkgs;
