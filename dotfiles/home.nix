@@ -72,7 +72,7 @@ in
       ouch
 
       # Something that would ease me off
-      (wrapGL nur.repos.mbekkomo.luakit_2_4)
+      (wrapGL nur.repos."0komo".luakit_2_4)
       khal
       fzf
       ripgrep
@@ -83,6 +83,7 @@ in
       sigi
       gum
       xdragon
+      obsidian
 
       # For hyprland
       nautilus
@@ -109,7 +110,7 @@ in
       openutau
       nchat
       lucem
-      (with nur.repos.mbekkomo; [
+      (with nur.repos."0komo"; [
         (wrapGL sklauncher)
       ])
     ]
@@ -257,7 +258,7 @@ in
         shellcheck
 
         nil
-        (with nur.repos.mbekkomo; [ emmylua_ls ])
+        (with nur.repos."0komo"; [ emmylua_ls ])
         bash-language-server
         emmet-language-server
         yaml-language-server
