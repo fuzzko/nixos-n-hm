@@ -31,10 +31,6 @@
       url = "github:nix-community/nix-ld";
       inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
     };
-    helix = {
-      url = "github:helix-editor/helix";
-      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
-    };
     winapps = {
       url = "github:winapps-org/winapps";
       inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
@@ -107,9 +103,6 @@
               };
               nix-search = nix-search-cli.outputs.packages.${system}.nix-search;
               nixGLPackages = nixGL.outputs.packages.${system};
-              helixUnstable = helix.outputs.packages.${system}.helix.overrideAttrs {
-                NIX_BUILD_CORES = "8";
-              };
               winapps = winapps.packages.${system}.winapps;
               winapps-launcher = winapps.packages.${system}.winapps-launcher;
               lucem = lucem.packages.${system}.lucem;
