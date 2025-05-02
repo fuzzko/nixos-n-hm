@@ -77,7 +77,6 @@
       nur,
       nix-flatpak,
       nix-ld,
-      helix,
       winapps,
       yazi-plugins-overlay,
       lucem,
