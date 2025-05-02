@@ -47,7 +47,10 @@
       url = "github:pkulak/matui";
       inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
     };
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    chaotic = {
+      url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
+    };
   };
 
   nixConfig = {
