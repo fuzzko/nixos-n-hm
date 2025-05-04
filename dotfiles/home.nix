@@ -84,6 +84,7 @@ in
       gum
       xdragon
       obsidian
+      cinny-desktop
 
       # For hyprland
       nautilus
