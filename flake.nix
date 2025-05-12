@@ -62,7 +62,6 @@
       nix-std,
       nur,
       nix-flatpak,
-      nix-ld,
       matui,
       chaotic,
       ...
@@ -109,7 +108,6 @@
         inherit pkgs;
         modules = [
           nix-flatpak.nixosModules.nix-flatpak
-          nix-ld.nixosModules.nix-ld
           chaotic.nixosModules.default
           ./modules/refind/refind.nix
           ./nixos/hardwares/HP-240-G5-Notebook-PC/configuration.nix
@@ -123,7 +121,6 @@
         inherit pkgs;
         modules = [
           nix-flatpak.nixosModules.nix-flatpak
-          nix-ld.nixosModules.nix-ld
           chaotic.nixosModules.default
           ./modules/refind/refind.nix
           ./nixos/hardwares/Aspire-TC-605/configuration.nix
