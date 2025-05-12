@@ -399,7 +399,6 @@ in
         projects
         ouch
         diff
-        first-non-directory
         ;
       wl-clipboard = wl-clipboard.overrideAttrs {
         nativeBuildInputs = with pkgs; [ sd ];
