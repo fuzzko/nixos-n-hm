@@ -27,14 +27,6 @@
     };
     catppuccin.url = "github:catppuccin/nix";
     nix-std.url = "github:chessai/nix-std";
-    nix-ld = {
-      url = "github:nix-community/nix-ld";
-      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
-    };
-    winapps = {
-      url = "github:winapps-org/winapps";
-      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
-    };
     matui = {
       url = "github:pkulak/matui";
       inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
@@ -71,8 +63,6 @@
       nur,
       nix-flatpak,
       nix-ld,
-      winapps,
-      lucem,
       matui,
       chaotic,
       ...
@@ -85,8 +75,6 @@
         if x == "" then "x86_64-linux" else x;
       pkgs =
         ((nixpkgs.legacyPackages.${system}.extend nur.overlays.default).extend
-          yazi-plugins-overlay.overlays.default
-        ).extend
           (
             final: prev: {
               bun = prev.bun.overrideAttrs rec {
@@ -98,12 +86,9 @@
               };
               nix-search = nix-search-cli.outputs.packages.${system}.nix-search;
               nixGLPackages = nixGL.outputs.packages.${system};
-              winapps = winapps.packages.${system}.winapps;
-              winapps-launcher = winapps.packages.${system}.winapps-launcher;
-              lucem = lucem.packages.${system}.lucem;
               matui = matui.packages.${system}.matui;
             }
-          );
+          ));
     in
     {
       homeConfigurations.komo = home-manager.lib.homeManagerConfiguration {
