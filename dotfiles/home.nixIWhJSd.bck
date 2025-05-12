@@ -110,6 +110,7 @@ in
       youtube-music
       openutau
       nchat
+      lucem
       (with nur.repos."0komo"; [
         (wrapGL sklauncher)
       ])
@@ -120,6 +121,9 @@ in
     # External Config
     {
       ".config/zls.json".text = builtins.toJSON (loadConfig "zls" { });
+      ".config/winapps/winapps.conf".text = builtins.replaceStrings [ " = \"" ] [ "=\"" ] (
+        std.serde.toTOML (builtins.mapAttrs (name: value: toString value) (loadConfig "winapps" { }))
+      );
       ".config/walker/config.json".text = builtins.toJSON (loadConfig "walker" { });
       ".config/luakit" = {
         source = ./configs/luakit;
