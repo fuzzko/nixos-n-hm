@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  std,
   lib,
   ...
 }@inputs:
@@ -26,14 +25,6 @@ let
 
   loadConfig = x: y: import ./configs/${x}.nix (inputs // { root = ./.; } // y);
   loadConfig' = x: y: import ./configs/${x} (inputs // { root = ./.; } // y);
-  toString =
-    x:
-    if x == true then
-      "true"
-    else if x == false then
-      "false"
-    else
-      builtins.toString x;
 in
 {
   programs.home-manager.enable = true;
@@ -48,12 +39,6 @@ in
       (with nerd-fonts; [
         terminess-ttf
       ])
-      # (quicksand.overrideAttrs {
-      #   nativeBuildInputs = [ nerd-font-patcher ];
-      #   installPhase = ''
-
-      #   '';
-      # })
       departure-nf
       noto-fonts
       noto-fonts-color-emoji
@@ -126,7 +111,6 @@ in
         recursive = true;
       };
       # Misc. files
-      ".config/winapps/compose.yaml".source = ./configs/winapps/compose.yaml;
       ".config/fish/functions/nixs.fish".source = ./shells/nixs.fish;
       ".config/fish/functions/nixd.fish".source = ./shells/nixd.fish;
     };
