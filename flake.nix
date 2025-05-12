@@ -35,14 +35,6 @@
       url = "github:winapps-org/winapps";
       inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
     };
-    yazi-plugins-overlay = {
-      url = "github:mbekkomo/yazi-plugins-overlay";
-      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
-    };
-    lucem = {
-      url = "github:mbekkomo/lucem/add-flake-nix";
-      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
-    };
     matui = {
       url = "github:pkulak/matui";
       inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
@@ -80,7 +72,6 @@
       nix-flatpak,
       nix-ld,
       winapps,
-      yazi-plugins-overlay,
       lucem,
       matui,
       chaotic,
