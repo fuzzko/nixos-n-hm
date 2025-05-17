@@ -132,11 +132,13 @@
           "HP-240-G5-Notebook-PC"
         ];
       in
-      builtins.listToAttrs (
-        map (x: {
-          name = x;
-          value = mkConfig x;
-        }) systems
-      )
+      {
+        nixosConfigurations = builtins.listToAttrs (
+          map (x: {
+            name = x;
+            value = mkConfig x;
+          }) systems
+        );
+      }
     );
 }
