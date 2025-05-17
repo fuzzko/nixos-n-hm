@@ -35,6 +35,9 @@
       url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
       inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
     };
+    lix-module = {
+      url = "git+https://"
+    };
   };
 
   nixConfig = {
