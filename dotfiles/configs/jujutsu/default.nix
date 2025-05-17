@@ -2,7 +2,7 @@
 {
   user =
     let
-      inherit (config.program.git) userName userEmail;
+      inherit (config.programs.git) userName userEmail;
     in
     {
       name = userName;
