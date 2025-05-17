@@ -58,7 +58,6 @@ in
 
       # Something that would ease me off
       (wrapGL nur.repos."0komo".luakit_2_4)
-      riff
       khal
       fzf
       ripgrep
@@ -70,6 +69,7 @@ in
       gum
       xdragon
       obsidian
+      cinny-desktop
 
       # For hyprland
       nautilus
@@ -95,7 +95,6 @@ in
       youtube-music
       equicord
       qview
-      cinny-desktop
       openutau
       nchat
       (with nur.repos."0komo"; [
