@@ -127,7 +127,16 @@
               ./nixos/configuration.nix
             ];
           };
+        systems = [
+          "Aspire-TC-605"
+          "HP-240-G5-Notebook-PC"
+        ];
       in
-      (mkConfig "HP-240-G5-Notebook-PC") // (mkConfig "Aspire-TC-605")
+      builtins.listToAttrs (
+        map (x: {
+          name = x;
+          value = mkConfig x;
+        }) systems
+      )
     );
 }
