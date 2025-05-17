@@ -93,6 +93,7 @@ in
 
       # i don't fucking know why i installed these shits but i installed them anyway
       youtube-music
+      equicord
       openutau
       nchat
       (with nur.repos."0komo"; [
@@ -135,8 +136,6 @@ in
     enable = true;
     packages = [
       "app.zen_browser.zen"
-      "io.github.milkshiift.GoofCord"
-      "im.nheko.Nheko"
       "org.kde.kwalletmanager5"
       "com.interversehq.qView"
       "org.vinegarhq.Sober"
