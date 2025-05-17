@@ -130,7 +130,7 @@ in
   };
 
   programs.nix-ld = {
-    dev.enable = true;
+    enable = true;
   };
 
   networking.wireless.iwd = {
