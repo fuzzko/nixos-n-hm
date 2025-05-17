@@ -1,8 +1,8 @@
-{ configs, ... }:
+{ config, ... }:
 {
   user =
     let
-      inherit (configs.program.git) userName userEmail;
+      inherit (config.program.git) userName userEmail;
     in
     {
       name = userName;
