@@ -107,18 +107,6 @@
         ];
         extraSpecialArgs.std = nix-std.lib;
       };
-      nixosConfigurations.Aspire-TC-605 = nixpkgs.lib.nixosSystem {
-        inherit system;
-        inherit pkgs;
-        modules = [
-          nix-flatpak.nixosModules.nix-flatpak
-          chaotic.nixosModules.default
-          ./modules/refind/refind.nix
-          ./nixos/hardwares/Aspire-TC-605/configuration.nix
-          ./nixos/hardwares/Aspire-TC-605/hardware-configuration.nix
-          ./nixos/configuration.nix
-        ];
-      };
 
       formatter.${system} = pkgs.nixfmt-tree;
     }
