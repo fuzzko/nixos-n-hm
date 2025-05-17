@@ -328,7 +328,6 @@ in
     enable = true;
     userName = "Komo";
     userEmail = "afiqquraisyzulkarnain@gmail.com";
-    extraConfig = loadConfig "git" { };
   };
 
   programs.gh = {
