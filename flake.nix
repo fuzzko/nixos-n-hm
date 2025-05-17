@@ -36,7 +36,8 @@
       inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
     };
     lix-module = {
-      url = "git+https://"
+      url = "git+https://git.lix.systems/lix-project/nixos-module?ref=release-2.93";
+      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
     };
   };
 
@@ -67,6 +68,7 @@
       nix-flatpak,
       matui,
       chaotic,
+      lix-module,
       ...
     }:
     let
@@ -105,20 +107,6 @@
         ];
         extraSpecialArgs.std = nix-std.lib;
       };
-
-      nixosConfigurations.HP-240-G5-Notebook-PC = nixpkgs.lib.nixosSystem {
-        inherit system;
-        inherit pkgs;
-        modules = [
-          nix-flatpak.nixosModules.nix-flatpak
-          chaotic.nixosModules.default
-          ./modules/refind/refind.nix
-          ./nixos/hardwares/HP-240-G5-Notebook-PC/configuration.nix
-          ./nixos/hardwares/HP-240-G5-Notebook-PC/hardware-configuration.nix
-          ./nixos/configuration.nix
-        ];
-      };
-
       nixosConfigurations.Aspire-TC-605 = nixpkgs.lib.nixosSystem {
         inherit system;
         inherit pkgs;
@@ -133,5 +121,21 @@
       };
 
       formatter.${system} = pkgs.nixfmt-tree;
-    };
+    }
+    // (
+      let
+        mkConfig = x: nixpkgs.lib.nixosSystem {
+          inherit system;
+          inherit pkgs;
+          modules = [
+            nix-flatpak.nixosModules.nix-flatpak
+            chaotic.nixosModules.default
+            ./modules/refind/refind.nix
+            ./nixos/hardwares/${x}/configuration.nix
+            ./nixos/hardwares/${x}/hardware-configuration.nix
+            ./nixos/configuration.nix
+          ];
+        };
+      in {}
+    );
 }
