@@ -326,6 +326,7 @@ in
 
   programs.git = {
     enable = true;
+    diff-so-fancy.enable = true;
     userName = "Komo";
     userEmail = "afiqquraisyzulkarnain@gmail.com";
     extraConfig = loadConfig "git" { };
@@ -429,8 +430,7 @@ in
 
   programs.jujutsu = {
     enable = true;
-    settings = loadConfig' "jujutsu" { };
-  };
+    settings = loadConfig' "jujutsu" {};  };
 
   caches.cachix = [
     "nix-community"
