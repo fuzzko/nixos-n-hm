@@ -136,7 +136,6 @@ in
     enable = true;
     packages = [
       "app.zen_browser.zen"
-      "org.kde.kwalletmanager5"
       "com.interversehq.qView"
       "org.vinegarhq.Sober"
     ];
