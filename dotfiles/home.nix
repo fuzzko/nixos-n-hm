@@ -94,6 +94,7 @@ in
       # i don't fucking know why i installed these shits but i installed them anyway
       youtube-music
       equicord
+      qview
       openutau
       nchat
       (with nur.repos."0komo"; [
