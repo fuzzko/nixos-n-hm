@@ -35,6 +35,8 @@ task.switch-nixos() {
   [[ "$1" != "-" ]] && config="$1"
   shift
 
+  echo $config
+
   nix run nixpkgs#nh -- os switch -a -H "$config" . -- --impure "$@"
 }
 
