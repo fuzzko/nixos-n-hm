@@ -428,6 +428,10 @@ in
     enable = true;
   };
 
+  programs.jujutsu = {
+    enable = true;
+    settings = loadConfig' "jujutsu" {};  };
+
   caches.cachix = [
     "nix-community"
     "mbekkomo"
