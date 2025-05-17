@@ -330,4 +330,6 @@ in
       };
     };
   };
+
+  services.gnome.gnome-keyring
 }
