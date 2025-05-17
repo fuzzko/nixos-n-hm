@@ -77,22 +77,22 @@
           x = (builtins.getEnv "NIXPKGS_SYSTEM");
         in
         if x == "" then "x86_64-linux" else x;
-      pkgs = (
-        (nixpkgs.legacyPackages.${system}.extend nur.overlays.default).extend (
-          final: prev: {
-            bun = prev.bun.overrideAttrs rec {
-              passthru.sources."x86_64-linux" = pkgs.fetchurl {
-                url = "https://github.com/oven-sh/bun/releases/download/bun-v${prev.bun.version}/bun-linux-x64-baseline.zip";
-                hash = "sha256-S2L1mQSO8yCnYbrL7rcfh4T143O5dqnVOz7ngR8ZsAQ="; # update this
+      pkgs =
+        ((nixpkgs.legacyPackages.${system}.extend nur.overlays.default).extend
+          (
+            final: prev: {
+              bun = prev.bun.overrideAttrs rec {
+                passthru.sources."x86_64-linux" = pkgs.fetchurl {
+                  url = "https://github.com/oven-sh/bun/releases/download/bun-v${prev.bun.version}/bun-linux-x64-baseline.zip";
+                  hash = "sha256-S2L1mQSO8yCnYbrL7rcfh4T143O5dqnVOz7ngR8ZsAQ="; # update this
+                };
+                src = passthru.sources."x86_64-linux";
               };
-              src = passthru.sources."x86_64-linux";
-            };
-            nix-search = nix-search-cli.outputs.packages.${system}.nix-search;
-            nixGLPackages = nixGL.outputs.packages.${system};
-            matui = matui.packages.${system}.matui;
-          }
-        )
-      );
+              nix-search = nix-search-cli.outputs.packages.${system}.nix-search;
+              nixGLPackages = nixGL.outputs.packages.${system};
+              matui = matui.packages.${system}.matui;
+            }
+          ));
     in
     {
       homeConfigurations.komo = home-manager.lib.homeManagerConfiguration {
@@ -124,22 +124,18 @@
     }
     // (
       let
-        mkConfig =
-          x:
-          nixpkgs.lib.nixosSystem {
-            inherit system;
-            inherit pkgs;
-            modules = [
-              nix-flatpak.nixosModules.nix-flatpak
-              chaotic.nixosModules.default
-              lix-module.nixosModules.default
-              ./modules/refind/refind.nix
-              ./nixos/hardwares/${x}/configuration.nix
-              ./nixos/hardwares/${x}/hardware-configuration.nix
-              ./nixos/configuration.nix
-            ];
-          };
-      in
-      (mkConfig "HP-240-G5-Notebook-PC") // (mkConfig "Aspire-TC-605")
+        mkConfig = x: nixpkgs.lib.nixosSystem {
+          inherit system;
+          inherit pkgs;
+          modules = [
+            nix-flatpak.nixosModules.nix-flatpak
+            chaotic.nixosModules.default
+            ./modules/refind/refind.nix
+            ./nixos/hardwares/${x}/configuration.nix
+            ./nixos/hardwares/${x}/hardware-configuration.nix
+            ./nixos/configuration.nix
+          ];
+        };
+      in {}
     );
 }
