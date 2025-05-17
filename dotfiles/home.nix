@@ -136,7 +136,6 @@ in
     enable = true;
     packages = [
       "app.zen_browser.zen"
-      "com.interversehq.qView"
       "org.vinegarhq.Sober"
     ];
     update.auto = {
@@ -159,7 +158,7 @@ in
   };
 
   nix = {
-    package = pkgs.nix;
+    package = pkgs.lix;
     settings = {
       experimental-features = [
         "nix-command"
@@ -251,7 +250,6 @@ in
       inherits = "catppuccin-mocha";
       "ui.background" = { };
       "ui.text" = { };
-      "ui.cursorline.primary" = { };
       "ui.linenr".fg = "overlay1";
     };
   };
