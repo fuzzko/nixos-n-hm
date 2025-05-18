@@ -422,6 +422,11 @@ in
     };
   };
 
+  services.arrpc = {
+    enable = true;
+    systemdTarget = "hyprland-session.target";
+  };
+
   services.hyprpolkitagent = {
     enable = true;
   };
