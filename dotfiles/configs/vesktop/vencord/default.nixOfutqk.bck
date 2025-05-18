@@ -50,7 +50,7 @@
 
       tagsList =
         let
-          raw = builtins.fetchurl "https://github.com/ravener/termux-bot/raw/main/data/tags.json";
+          raw = builtins.fetchurl "https://github.com/ravener/termux-bot/blob/main/data/tags.json";
           unfixed = builtins.fromJSON (builtins.readFile raw);
           fixed = map (x: {
             name = "termux:${x.name}";
