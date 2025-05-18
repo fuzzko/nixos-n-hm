@@ -93,7 +93,6 @@ in
 
       # i don't fucking know why i installed these shits but i installed them anyway
       youtube-music
-      vesktop
       qview
       cinny-desktop
       openutau
@@ -430,6 +429,14 @@ in
   programs.jujutsu = {
     enable = true;
     settings = loadConfig' "jujutsu" { };
+  };
+
+  programs.vesktop = {
+    enable = true;
+    settings = loadConfig' "vesktop" { };
+    vencord = {
+      settings = loadConfig' "vesktop/vencord" { };
+    };
   };
 
   caches.cachix = [
