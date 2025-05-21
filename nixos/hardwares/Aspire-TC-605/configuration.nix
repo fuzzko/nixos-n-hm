@@ -1,3 +1,3 @@
-{ ... }: {
-  services.kanata.enable = false;
+{ lib, ... }: {
+  services.kanata.enable = lib.mkForce false;
 }
