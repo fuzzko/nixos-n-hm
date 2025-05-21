@@ -304,7 +304,6 @@ in
             sponge
             fzf-fish
             forgit
-            async-prompt
           ]
         );
   };
