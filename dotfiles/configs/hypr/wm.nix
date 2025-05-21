@@ -7,7 +7,7 @@
 let
   inherit (lib) attrsets lists;
 
-  terminal = "alacritty";
+  terminal = "footclient";
   runner = "wofi --show drun";
   fileManager = "nautilus";
   makeEnv = x: attrsets.mapAttrsToList (name: value: "${name},${toString value}") x;
