@@ -1,1 +1,3 @@
-{ ... }: { }
+{ ... }: {
+  services.kanata.enable = false;
+}
