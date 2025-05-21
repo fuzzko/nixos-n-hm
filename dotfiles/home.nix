@@ -255,10 +255,10 @@ in
     };
   };
 
-  programs.alacritty = {
+  programs.foot = {
     enable = true;
-    package = wrapGL pkgs.alacritty;
-    settings = loadConfig "alacritty" { };
+    settings = loadConfig' "foot";
+    server.enable = true;
   };
 
   programs.bun = {
