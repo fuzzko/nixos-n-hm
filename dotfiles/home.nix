@@ -257,7 +257,7 @@ in
 
   programs.foot = {
     enable = true;
-    settings = loadConfig' "foot";
+    settings = loadConfig' "foot" { };
     server.enable = true;
   };
 
