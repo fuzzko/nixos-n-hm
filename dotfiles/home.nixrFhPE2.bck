@@ -291,7 +291,7 @@ in
       map
         (x: {
           name = x.pname;
-          inherit (x) src;
+          src = x;
         })
         (
           with pkgs.fishPlugins;
