@@ -294,7 +294,9 @@ in
       git-abbr
       puffer
       sponge
-      
+      fzf-fish
+      forgit
+      async-prompt
     ];
   };
 
