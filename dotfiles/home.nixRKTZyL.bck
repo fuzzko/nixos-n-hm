@@ -286,14 +286,27 @@ in
 
       fish_default_key_bindings -M insert
       fish_vi_key_bindings --no-erase insert
+
+      bind alt-y 'yy'
+      bind alt-shift-y 'yazi'
     '';
-    plugins = with pkgs.fishPlugins; [
-      fifc
-      done
-      colored-man-pages
-      autopair
-      git-abbr
-    ];
+    plugins = (
+      builtins.map
+        (x: {
+          name = x.name;
+          src = x.src;
+        })
+        (
+          with pkgs.fishPlugins;
+          [
+            fifc
+            done
+            colored-man-pages
+            autopair
+            git-abbr
+          ]
+        )
+    );
   };
 
   programs.direnv = {
