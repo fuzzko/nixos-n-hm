@@ -288,11 +288,13 @@ in
       fish_vi_key_bindings --no-erase insert
     '';
     plugins = with pkgs.fishPlugins; [
-      fifc
       done
       colored-man-pages
       autopair
       git-abbr
+      puffer
+      sponge
+      
     ];
   };
 
