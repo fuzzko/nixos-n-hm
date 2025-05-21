@@ -287,17 +287,26 @@ in
       fish_default_key_bindings -M insert
       fish_vi_key_bindings --no-erase insert
     '';
-    plugins = with pkgs.fishPlugins; [
-      done
-      colored-man-pages
-      autopair
-      git-abbr
-      puffer
-      sponge
-      fzf-fish
-      forgit
-      async-prompt
-    ];
+    plugins =
+      map
+        (x: {
+          name = x.pname;
+          src = x;
+        })
+        (
+          with pkgs.fishPlugins;
+          [
+            done
+            colored-man-pages
+            autopair
+            git-abbr
+            puffer
+            sponge
+            fzf-fish
+            forgit
+            async-prompt
+          ]
+        );
   };
 
   programs.direnv = {
