@@ -237,7 +237,7 @@ in
         shellcheck
 
         nil
-        (with nur.repos."0komo"; [ emmylua_ls ])
+        lua-language-server
         bash-language-server
         emmet-language-server
         yaml-language-server
