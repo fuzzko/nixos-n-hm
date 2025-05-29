@@ -26,7 +26,9 @@ let
 in
 {
   programs.home-manager.enable = true;
-  home.username = "komo";
+  home = {
+    username = "komo";
+  };
   home.stateVersion = "24.05"; # do not change
 
   home.packages = lib.flatten (
@@ -115,7 +117,7 @@ in
     };
 
   home.sessionVariables = rec {
-    "XDG_PICTURES_DIR" = "${homeDir}/Pictures";
+    "XDG_PICTURES_DIR" = "${config.home.homeDirectory}/Pictures";
     "SUDO_PROMPT" = "[sudo 🐺]: ";
     "BROWSER" = "app.zen_browser.zen";
     "PAGER" = "moar";
@@ -162,7 +164,7 @@ in
         "nix-command"
         "flakes"
       ];
-      allowed-users = [ username ];
+      allowed-users = [ config.home.username ];
       auto-optimise-store = true;
     };
     registry.nixpkgs = {
@@ -175,15 +177,6 @@ in
         repo = "nixpkgs";
         ref = (builtins.fromJSON (builtins.readFile ../flake.lock)).nodes.nixpkgs.locked.rev;
         type = "github";
-      };
-    };
-  };
-
-  nixpkgs.config = {
-    allowUnfree = true;
-    packageOverrides = pkgs: {
-      nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-        inherit pkgs;
       };
     };
   };
@@ -209,11 +202,11 @@ in
   services.git-sync = {
     enable = true;
     repositories."nix" = {
-      path = "${homeDir}/nix";
+      path = "${config.home.homeDirectory}/nix";
       uri = "https://github.com/mbekkomo/nix.git";
     };
     repositories."password-store" = {
-      path = "${homeDir}/.local/share/password-store";
+      path = "${config.home.homeDirectory}/.local/share/password-store";
       uri = "https://github.com/mbekkomo/.password-store";
     };
   };
