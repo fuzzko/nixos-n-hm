@@ -13,6 +13,10 @@ let
   makeEnv = x: attrsets.mapAttrsToList (name: value: "${name},${toString value}") x;
 in
 {
+  source = [
+    "${config.home.homeDirectory}/.config/hypr/extra/hyprland.conf"
+  ];
+  
   exec-once = [
     terminal
     "clipse -listen"
