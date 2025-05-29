@@ -5,6 +5,8 @@
   ...
 }@inputs:
 let
+  username = "komo"; # change to your username
+  homeDir = "/home/${username}";
   wrapGL = config.lib.nixGL.wrap;
   # https://github.com/NixOS/nixpkgs/pull/313760#issuecomment-2365160954
   departure-nf = pkgs.departure-mono.overrideAttrs {
@@ -26,7 +28,8 @@ let
 in
 {
   programs.home-manager.enable = true;
-  home.username = "komo";
+  home.username = username;
+  home.homeDirectory = homeDir;
   home.stateVersion = "24.05"; # do not change
 
   home.packages = lib.flatten (
