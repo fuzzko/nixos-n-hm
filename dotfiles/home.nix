@@ -28,6 +28,7 @@ in
   programs.home-manager.enable = true;
   home = {
     username = "komo";
+    homeDirectory = /home/${config.home.username};
   };
   home.stateVersion = "24.05"; # do not change
 
