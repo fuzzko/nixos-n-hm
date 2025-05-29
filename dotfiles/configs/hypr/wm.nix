@@ -96,7 +96,7 @@ in
 
     follow_mouse = 1;
 
-    sensitivity = 0;
+    sensitivity = -.5;
 
     touchpad.natural_scroll = false;
   };
@@ -107,26 +107,17 @@ in
 
   windowrulev2 =
     let
-      alacritty = "^(Alacritty)$";
+      footclient = "^(footclient)$";
       clipse = "^(clipse)$";
-      sober = "^(org.vinegarhq.Sober)$";
       portal = "^(xdg-desktop-portal-.*)$";
     in
     [
       "suppressevent maximize, class:.*"
       "nofocus, class:^$, title:^$, xwayland:1, floating:1, fullscreen:1, pinned:1"
-      "float, class:${alacritty}, title:${alacritty}"
+      "float, class:${footclient}, title:${footclient}"
       "float, class:${clipse}"
       "size 622 652, class:${clipse}"
       "pin, class:${clipse}, title:(Sober)"
-      # *** Sober -> Fix the external UI
-      "float, class:${sober}, title:negative:(Sober)"
-      "size 900 688, class:${sober}, title:negative:(Sober)"
-      "move onscreen, class:${sober}, title:negative:(Sober)"
-      "center, class:${sober}, title:negative:(Sober)"
-      "noborder 1, class:${sober}, title:negative:(Sober)"
-      # ***
-      "fullscreen, class:${sober}" # Might resolve the shiftlock issue
       # *** Make selection more appropriate
       "float, class:${portal}"
       "size 725 443, class:${portal}"
