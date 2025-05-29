@@ -421,17 +421,17 @@ in
     enable = true;
   };
 
-  programs.jujutsu = {
-    enable = true;
-    settings = loadConfig' "jujutsu" { };
-  };
-
   programs.vesktop = {
     enable = true;
     settings = loadConfig' "vesktop" { };
     vencord = {
       settings = loadConfig' "vesktop/vencord" { };
     };
+  };
+
+  programs.atuin = {
+    enable = true;
+    settings = loadConfig' "atuin" { };
   };
 
   caches.cachix = [
