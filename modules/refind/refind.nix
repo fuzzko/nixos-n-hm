@@ -13,11 +13,7 @@ let
 
   efi = config.boot.loader.efi;
 
-  refindBuilder = pkgs.replaceVars {
-    src = ./refind-builder.py;
-
-    isExecutable = true;
-
+  refindBuilder = pkgs.replaceVars ./refind-builder.py {
     inherit (pkgs) python3;
 
     nix = config.nix.package.out;
