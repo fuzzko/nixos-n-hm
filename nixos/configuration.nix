@@ -146,13 +146,26 @@ in
       };
     };
   };
+
+  networking.nameservers = [
+    "116.202.176.26#dot.libredns.gr"
+    "116.202.176.26#noads.libredns.gr"
+  ];
+
+  services.resolved = {
+    enable = true;
+    fallbackDns = [
+      "127.0.0.1"
+      "::1"
+    ];
+    dnsovertls = "true";
+  };
+  
   services.connman = {
     enable = true;
     package = pkgs.connmanFull;
     wifi.backend = "iwd";
   };
-
-
 
   hardware.bluetooth = {
     enable = true;
@@ -229,10 +242,6 @@ in
 
   services.openssh = {
     enable = true;
-  };
-
-  services.resolved = {
-    enable = false;
   };
 
   services.flatpak = {
