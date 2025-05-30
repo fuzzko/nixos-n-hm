@@ -275,6 +275,9 @@ in
       set fish_cursor_replace underscore
       set fish_cursor_visual block
 
+      # disable the stupid autosuggestion
+      set fish_autosuggestion_enabled 0
+
       fish_default_key_bindings -M insert
       fish_vi_key_bindings --no-erase insert
     '';
@@ -292,7 +295,6 @@ in
             autopair
             git-abbr
             puffer
-            sponge
             fzf-fish
             forgit
           ]
