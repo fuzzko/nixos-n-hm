@@ -53,7 +53,11 @@ in
       glow
       libnotify
       unzip
-      ueberzugpp
+      (ueberzugpp.overrideAttrs (prev: {
+        buildInputs = prev.buildInputs ++ [
+          wayland-scanner
+        ];
+      }))
       ouch
 
       # Something that would ease me off
