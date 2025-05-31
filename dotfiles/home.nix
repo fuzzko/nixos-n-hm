@@ -53,11 +53,9 @@ in
       glow
       libnotify
       unzip
-      (ueberzugpp.overrideAttrs (prev: {
-        buildInputs = prev.buildInputs ++ [
-          wayland-scanner
-        ];
-      }))
+      (ueberzugpp.override {
+        enableOpencv = false;
+      })
       ouch
 
       # Something that would ease me off
