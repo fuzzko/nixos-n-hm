@@ -35,7 +35,7 @@ task.switch-nixos() {
   [[ "$1" != "-" ]] && config="$1"
   shift
 
-  nix run nixpkgs#nh -- os switch -a -H gudboye -s "$config" . -- --impure "$@" --show-trace
+  nix run nixpkgs#nh -- os switch -a -H "$config" . -- --impure "$@" --show-trace
 }
 
 task.boot-nixos() {
@@ -46,7 +46,7 @@ task.boot-nixos() {
   [[ "$1" != "-" ]] && config="$1"
   shift
  
-  nix run nixpkgs#nh -- os boot -a -H gudboye -s "$config" . -- --impure "$@" --show-trace
+  nix run nixpkgs#nh -- os boot -a -H "$config" . -- --impure "$@" --show-trace
 }
 
 task.switch-nix-on-droid() {
