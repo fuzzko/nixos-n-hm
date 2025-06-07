@@ -59,6 +59,7 @@ in
       ouch
 
       # Something that would ease me off
+      nyxt
       riff
       khal
       fzf
