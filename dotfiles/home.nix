@@ -59,7 +59,6 @@ in
       ouch
 
       # Something that would ease me off
-      (wrapGL nur.repos."0komo".luakit_2_4)
       riff
       khal
       fzf
