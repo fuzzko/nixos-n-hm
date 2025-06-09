@@ -113,12 +113,8 @@ in
 
   boot = {
     loader = {
-      systemd-boot.enable = lib.mkDefault false;
-      refind.enable = true;
-      refind.extraConfig = ''
-        enable_touch true
-        include themes/rEFInd-minimal-dark/theme.conf
-      '';
+      grub.enable = lib.mkForce false;
+      systemd-boot.enable = lib.mkForce true;
       efi.canTouchEfiVariables = true;
     };
 
