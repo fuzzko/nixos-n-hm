@@ -96,7 +96,11 @@
     in
     {
       homeConfigurations.komo = home-manager.lib.homeManagerConfiguration {
-        pkgs = pkgs.extend lix-module.overlays.default;
+        pkgs = (pkgs.extend lix-module.overlays.default).extend (
+          final: prev: {
+            inherit (pkgs) nix;
+          }
+        );
         modules = [
           declarative-cachix.homeManagerModules.declarative-cachix
           nix-index-database.hmModules.nix-index
