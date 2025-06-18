@@ -227,7 +227,7 @@ in
         nushell
 
         nixfmt-rfc-style
-        nil
+        nil.override
       ]
     );
     settings = loadConfig "helix/config" { };
