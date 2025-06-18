@@ -9,7 +9,6 @@ _: {
     command = "emmet-language-server";
     args = [ "--stdio" ];
   };
-  language-server.ccls.command = "ccls";
   language-server.superhtml = {
     command = "superhtml";
     args = [ "lsp" ];
@@ -70,7 +69,6 @@ _: {
         inherit indent;
         
         name = "c";
-        language-servers = [ "ccls" ];
       }
     ];
 }
