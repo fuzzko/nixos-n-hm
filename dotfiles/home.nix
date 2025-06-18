@@ -227,15 +227,7 @@ in
         nushell
 
         nixfmt-rfc-style
-        shellcheck
-
         nil
-        lua-language-server
-        bash-language-server
-        emmet-language-server
-        yaml-language-server
-        vscode-langservers-extracted
-        zls
       ]
     );
     settings = loadConfig "helix/config" { };
