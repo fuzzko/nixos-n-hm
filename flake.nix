@@ -98,7 +98,7 @@
       homeConfigurations.komo = home-manager.lib.homeManagerConfiguration {
         pkgs = (pkgs.extend lix-module.overlays.default).extend (
           final: prev: {
-            inherit (pkgs) nix;
+            inherit (pkgs) nix; # only user uses lix, not packages
           }
         );
         modules = [
