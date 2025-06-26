@@ -161,7 +161,7 @@ in
   };
 
   nix = {
-    package = pkgs.lix;
+    package = pkgs.lixPackagesSets.latest.lix;
     settings = {
       experimental-features = [
         "nix-command"
