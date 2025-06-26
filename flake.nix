@@ -35,10 +35,6 @@
       url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
       inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
     };
-    lix-module = {
-      url = "git+https://git.lix.systems/lix-project/nixos-module?ref=release-2.93";
-      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
-    };
   };
 
   nixConfig = {
@@ -68,7 +64,6 @@
       nix-flatpak,
       matui,
       chaotic,
-      lix-module,
       ...
     }:
     let
@@ -96,11 +91,7 @@
     in
     {
       homeConfigurations.komo = home-manager.lib.homeManagerConfiguration {
-        pkgs = (pkgs.extend lix-module.overlays.default).extend (
-          final: prev: {
-            inherit (pkgs) nix; # only user uses lix, not packages
-          }
-        );
+        pkgs = pkgs;
         modules = [
           declarative-cachix.homeManagerModules.declarative-cachix
           nix-index-database.hmModules.nix-index
@@ -124,7 +115,6 @@
             modules = [
               nix-flatpak.nixosModules.nix-flatpak
               chaotic.nixosModules.default
-              lix-module.nixosModules.default
               ./modules/refind/refind.nix
               ./nixos/hardwares/${x}/configuration.nix
               ./nixos/hardwares/${x}/hardware-configuration.nix
