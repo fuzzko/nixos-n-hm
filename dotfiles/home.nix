@@ -370,6 +370,11 @@ in
     xwayland.enable = true;
   };
 
+  wayland.windowManager.cwc = {
+    enable = true;
+    extraConfig = ./configs/cwc/rc.lua;
+  };
+
   programs.yazi = {
     enable = true;
     settings = loadConfig "yazi" { };
@@ -429,6 +434,8 @@ in
     enable = true;
     settings = loadConfig' "atuin" { };
   };
+
+
 
   caches.cachix = [
     "nix-community"
