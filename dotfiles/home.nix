@@ -375,6 +375,11 @@ in
     extraConfig = ./configs/cwc/rc.lua;
   };
 
+  xdg.configFile."cwc/config" = {
+    source = ./configs/cwc/config;
+    recursive = true;
+  };
+
   programs.yazi = {
     enable = true;
     settings = loadConfig "yazi" { };
