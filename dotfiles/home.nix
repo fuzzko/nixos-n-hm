@@ -391,8 +391,8 @@ in
     '';
   };
 
-  xdg.configFile."cwc/config" = {
-    source = ./configs/cwc/config;
+  xdg.configFile."cwc" = {
+    source = ./configs/cwc;
     recursive = true;
   };
 
