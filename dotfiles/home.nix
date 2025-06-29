@@ -378,12 +378,12 @@ in
 
       do
         local fnl = require("fennel").install()
-        fnl.path = fnl.path .. [[${config.xdg.configHome}/cwc/?.fnl]]
-        fnl.path = fnl.path .. [[${config.xdg.configHome}/cwc/?/init.fnl]]
-        fnl.macro_path = fnl.macro_path .. fnl.path
-        fnl.macro_path = fnl.macro_path .. [[${config.xdg.configHome}/cwc/?.fnlm]]
-        fnl.macro_path = fnl.macro_path .. [[${config.xdg.configHome}/cwc/?/init.fnlm]]
-        fnl.macro_path = fnl.macro_path .. [[${config.xdg.configHome}/cwc/?/init-macros.fnl]]
+        fnl.path = fnl.path .. [[;${config.xdg.configHome}/cwc/?.fnl]]
+        fnl.path = fnl.path .. [[;${config.xdg.configHome}/cwc/?/init.fnl]]
+        fnl.macro_path = fnl.macro_path .. ";" .. fnl.path
+        fnl.macro_path = fnl.macro_path .. [[;${config.xdg.configHome}/cwc/?.fnlm]]
+        fnl.macro_path = fnl.macro_path .. [[;${config.xdg.configHome}/cwc/?/init.fnlm]]
+        fnl.macro_path = fnl.macro_path .. [[;${config.xdg.configHome}/cwc/?/init-macros.fnl]]
         fnl.dofile [[${config.xdg.configHome}/cwc/rc.fnl]]
       end
     '';
