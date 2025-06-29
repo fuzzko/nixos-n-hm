@@ -376,7 +376,16 @@ in
       package.path = package.path .. [[;${pkgs.luajitPackages.fennel}/share/lua/5.1/?.lua]]
       package.path = package.path .. [[;${pkgs.luajitPackages.fennel}/share/lua/5.1/?/init.lua]]
 
-      require("fennel").install().dofile [[${config.xdg.configHome}/cwc/rc.fnl]]
+      do
+        local fnl = require("fennel").install()
+        fnl.dofile [[${config.xdg.configHome}/cwc/rc.fnl]]
+        fnl.path = fnl.path .. [[${config.xdg.configHome}/cwc/?.fnl]]
+        fnl.path = fnl.path .. [[${config.xdg.configHome}/cwc/?/init.fnl]]
+        fnl.macro_path = fnl.macro_path .. fnl.path
+        fnl.macro_path = fnl.macro_path .. [[${config.xdg.configHome}/cwc/?.fnlm]]
+        fnl.macro_path = fnl.macro_path .. [[${config.xdg.configHome}/cwc/?/init.fnlm]]
+        fnl.macro_path = fnl.macro_path .. [[${config.xdg.configHome}/cwc/?/init-macros.fnl]]
+      end
     '';
   };
 
