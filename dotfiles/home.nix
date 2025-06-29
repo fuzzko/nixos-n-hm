@@ -228,6 +228,8 @@ in
 
         nixfmt-rfc-style
         nil
+
+        fnlfmt
       ]
     );
     settings = loadConfig "helix/config" { };
