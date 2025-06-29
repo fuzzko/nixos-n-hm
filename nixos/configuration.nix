@@ -110,6 +110,11 @@ in
     xwayland.enable = true;
   };
 
+  programs.cwc = {
+    enable = true;
+    withUWSM = true;
+  };
+
   security.pam.services.hyprlock = { };
 
   boot = {
