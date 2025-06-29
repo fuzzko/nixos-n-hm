@@ -372,7 +372,12 @@ in
 
   wayland.windowManager.cwc = {
     enable = true;
-    extraConfig = ./configs/cwc/rc.lua;
+    extraConfig = ''
+      package.path = package.path .. [[;${pkgs.luajitPackages.fennel}/share/lua/5.1/?.lua]]
+      package.path = package.path .. [[;${pkgs.luajitPackages.fennel}/share/lua/5.1/?/init.lua]]
+
+      require("fennel").install().dofile [[${config.xdg.configHome}/cwc/rc.fnl]]
+    '';
   };
 
   xdg.configFile."cwc/config" = {
