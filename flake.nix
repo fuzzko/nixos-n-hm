@@ -35,6 +35,10 @@
       url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
       inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
     };
+    nix-cwc = {
+      url = "github:0komo/nix-cwc";
+      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
+    };
   };
 
   nixConfig = {
@@ -64,6 +68,7 @@
       nix-flatpak,
       matui,
       chaotic,
+      nix-cwc,
       ...
     }:
     let
@@ -73,20 +78,22 @@
         in
         if x == "" then "x86_64-linux" else x;
       pkgs = (
-        (nixpkgs.legacyPackages.${system}.extend nur.overlays.default).extend (
-          final: prev: {
-            bun = prev.bun.overrideAttrs rec {
-              passthru.sources."x86_64-linux" = pkgs.fetchurl {
-                url = "https://github.com/oven-sh/bun/releases/download/bun-v${prev.bun.version}/bun-linux-x64-baseline.zip";
-                hash = "sha256-bqGGHbamzUTRyLS6+yIAb0rkn2otB3Yjvz9FatoCbWc="; # update this
+        ((nixpkgs.legacyPackages.${system}.extend nur.overlays.default).extend nix-cwc.overlays.default)
+        .extend
+          (
+            final: prev: {
+              bun = prev.bun.overrideAttrs rec {
+                passthru.sources."x86_64-linux" = pkgs.fetchurl {
+                  url = "https://github.com/oven-sh/bun/releases/download/bun-v${prev.bun.version}/bun-linux-x64-baseline.zip";
+                  hash = "sha256-bqGGHbamzUTRyLS6+yIAb0rkn2otB3Yjvz9FatoCbWc="; # update this
+                };
+                src = passthru.sources."x86_64-linux";
               };
-              src = passthru.sources."x86_64-linux";
-            };
-            nix-search = nix-search-cli.outputs.packages.${system}.nix-search;
-            nixGLPackages = nixGL.outputs.packages.${system};
-            matui = matui.packages.${system}.matui;
-          }
-        )
+              nix-search = nix-search-cli.outputs.packages.${system}.nix-search;
+              nixGLPackages = nixGL.outputs.packages.${system};
+              matui = matui.packages.${system}.matui;
+            }
+          )
       );
     in
     {
@@ -98,6 +105,7 @@
           catppuccin.homeModules.catppuccin
           nix-flatpak.homeManagerModules.nix-flatpak
           chaotic.homeManagerModules.default
+          nix-cwc.homeManagerModules.default
           ./dotfiles/home.nix
         ];
         extraSpecialArgs.std = nix-std.lib;
