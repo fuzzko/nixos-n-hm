@@ -288,11 +288,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1751151566,
-        "narHash": "sha256-J9tXCTwE3VIhRtWyhEPvzi2aWwvtcAn8uJNhHzlccxY=",
+        "lastModified": 1751157221,
+        "narHash": "sha256-xp3dRjVg4Gts8qxzEw1uVke7up4CgytxacvgQ0MwoFY=",
         "owner": "0komo",
         "repo": "nix-cwc",
-        "rev": "038029d7406209baca1153e21706dd0aa282300b",
+        "rev": "ff37b9b249ffbed0ecf61e032e99dbd57fda728f",
         "type": "github"
       },
       "original": {
