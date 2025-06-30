@@ -190,6 +190,8 @@ in
     installScripts = [ "mesa" ];
   };
 
+  xdg.portal.enable = lib.mkForce true;
+
   programs.password-store = {
     enable = true;
     package = pkgs.pass.withExtensions (
