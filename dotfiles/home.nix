@@ -388,7 +388,9 @@ in
         macro_path = macro_path .. [[;${config.xdg.configHome}/cwc/?/init.fnlm]]
         macro_path = macro_path .. [[;${config.xdg.configHome}/cwc/?/init-macros.fnl]]
         fnl["macro-path"] = fnl["macro-path"] .. macro_path
-        fnl.dofile [[${config.xdg.configHome}/cwc/rc.fnl]]
+        fnl.dofile([[${config.xdg.configHome}/cwc/rc.fnl]], {
+          allowedGlobals = { "cwc" },
+        })
       end
     '';
   };

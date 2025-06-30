@@ -123,7 +123,6 @@
             modules = [
               nix-flatpak.nixosModules.nix-flatpak
               chaotic.nixosModules.default
-              { _module.args.pkgs = pkgs; }
               nix-cwc.nixosModules.default
               ./modules/refind/refind.nix
               ./nixos/hardwares/${x}/configuration.nix
