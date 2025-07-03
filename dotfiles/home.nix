@@ -265,7 +265,7 @@ in
       zoxide init fish | source
       source ${builtins.toString ./etc/lscolors.fish}
 
-      set fzf_preview_dir_cmd eza --all --color=always --icons=always
+      set fzf_preview_dir_cmd "eza --all --color=always --icons=always"
 
       set fish_cursor_default block
       set fish_cursor_insert line
@@ -278,6 +278,8 @@ in
 
       fish_default_key_bindings -M insert
       fish_vi_key_bindings --no-erase insert
+
+      alias edit hx
     '';
     plugins =
       map
