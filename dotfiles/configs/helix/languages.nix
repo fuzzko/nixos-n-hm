@@ -76,7 +76,7 @@ _: {
     {
       name = "fennel";
       source = {
-        rev = (builtins.fetchGit {
+        path = (builtins.fetchGit {
           url = "https://github.com/0komo/tree-sitter-fennel.git";
           ref = "merged";
         }).outPath;
