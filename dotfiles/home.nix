@@ -279,7 +279,7 @@ in
       fish_default_key_bindings -M insert
       fish_vi_key_bindings --no-erase insert
 
-      alias edit hx
+      alias edit $EDITOR
     '';
     plugins =
       map
