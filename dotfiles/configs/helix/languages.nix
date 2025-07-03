@@ -76,8 +76,10 @@ _: {
     {
       name = "fennel";
       source = {
-        git = "https://github.com/0komo/tree-sitter-fennel.git";
-        rev = "3904bd9476a81cdc542a8ed001c5ae707df4db6a";
+        rev = (builtins.fetchGit {
+          url = "https://github.com/0komo/tree-sitter-fennel.git";
+          ref = "merged";
+        }).outPath;
       };
     }
   ];
