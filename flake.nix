@@ -39,6 +39,10 @@
       url = "github:0komo/nix-cwc";
       inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
     };
+    zen-browser = {
+      url = "github:pfaj/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
+    };
   };
 
   nixConfig = {
@@ -69,6 +73,7 @@
       matui,
       chaotic,
       nix-cwc,
+      zen-browser,
       ...
     }:
     let
@@ -92,6 +97,14 @@
               nix-search = nix-search-cli.outputs.packages.${system}.nix-search;
               nixGLPackages = nixGL.outputs.packages.${system};
               matui = matui.packages.${system}.matui;
+              zen-browser =
+                let
+                  packs = zen-browser.outputs.packages.${system};
+                  passthru = builtins.removeAttrs packs [ "default" ];
+                in
+                packs.default.overrideAttrs {
+                  inherit passthru;
+                };
             }
           )
       );
