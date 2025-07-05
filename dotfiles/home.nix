@@ -99,6 +99,7 @@ in
       cinny-desktop
       openutau
       nchat
+      legcord
       (with nur.repos."0komo"; [
         (wrapGL sklauncher)
       ])
@@ -450,14 +451,6 @@ in
 
   services.hyprpolkitagent = {
     enable = true;
-  };
-
-  programs.vesktop = {
-    enable = true;
-    settings = loadConfig' "vesktop" { };
-    vencord = {
-      settings = loadConfig' "vesktop/vencord" { };
-    };
   };
 
   programs.atuin = {
