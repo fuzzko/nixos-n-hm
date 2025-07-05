@@ -524,7 +524,8 @@
         "nix-std": "nix-std",
         "nixGL": "nixGL",
         "nixpkgs": "nixpkgs_2",
-        "nur": "nur"
+        "nur": "nur",
+        "zen-browser": "zen-browser"
       }
     },
     "rust-overlay": {
@@ -617,6 +618,27 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1751656832,
+        "narHash": "sha256-/lXYQ1X52/+ucPLhYXTrmJl1BnNYRdc9VO1EiQ2AfGM=",
+        "owner": "pfaj",
+        "repo": "zen-browser-flake",
+        "rev": "d1cc9e19f6fe24b6811574dd147ee49c1cdecf97",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pfaj",
+        "repo": "zen-browser-flake",
         "type": "github"
       }
     }
