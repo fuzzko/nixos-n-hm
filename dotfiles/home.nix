@@ -139,6 +139,7 @@ in
   services.flatpak = {
     enable = true;
     packages = [
+      "io.itch.itch"
       "org.vinegarhq.Sober"
     ];
     update.auto = {

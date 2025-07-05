@@ -43,6 +43,7 @@ in
     efibootmgr
     udisks
     connman-gtk
+    zen-browser
 
     # greeter
     greetd.regreet
@@ -244,13 +245,6 @@ in
 
   services.openssh = {
     enable = true;
-  };
-
-  services.flatpak = {
-    enable = true;
-    packages = [
-      "io.itch.itch"
-    ];
   };
 
   services.udisks2 = {
