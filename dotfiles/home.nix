@@ -123,7 +123,7 @@ in
   home.sessionVariables = rec {
     "XDG_PICTURES_DIR" = "${config.home.homeDirectory}/Pictures";
     "SUDO_PROMPT" = "[sudo 🐺]: ";
-    "BROWSER" = "app.zen_browser.zen";
+    "BROWSER" = "zen";
     "PAGER" = "moar";
     "GIT_PAGER" = PAGER;
     "SYSTEMD_PAGERSECURE" = "true";
@@ -139,7 +139,6 @@ in
   services.flatpak = {
     enable = true;
     packages = [
-      "app.zen_browser.zen"
       "org.vinegarhq.Sober"
     ];
     update.auto = {
