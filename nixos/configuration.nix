@@ -151,8 +151,8 @@ in
   };
 
   networking.nameservers = [
-    "116.202.176.26#dot.libredns.gr"
-    "116.202.176.26#noads.libredns.gr"
+    "1.1.1.1"
+    "1.0.0.1"
   ];
 
   services.resolved = {
