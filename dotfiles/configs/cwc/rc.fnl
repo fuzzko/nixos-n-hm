@@ -14,6 +14,11 @@
   (pointer.set_edge_threshold 32)
   (pointer.set_edge_snapping_overlay_color 0.1 0.2 0.3 0.05))
 
+(let [repeat-rate 30
+      repeat-delay 300]
+  (kbd.set_repeat_rate repeat-rate)
+  (kbd.set_repeat_delay repeat-delay))
+
 (when (cwc.is_startup)
   (require :startup))
 
