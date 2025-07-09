@@ -19,4 +19,6 @@
   (pointer.set_edge_threshold 32)
   (pointer.set_edge_snapping_overlay_color .1 .2 .3 .05))
 
+(print (os.getenv "WAYLAND_DISPLAY"))
+
 nil
