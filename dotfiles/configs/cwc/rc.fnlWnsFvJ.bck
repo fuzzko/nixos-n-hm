@@ -16,7 +16,7 @@
   ; (set pointer.cursor_size 19.5)
   (set pointer.inactive_timeout 5)
   (set pointer.edge_threshold 32)
-  (print cwc.pointer.cursor_size)
+  (print ((. (require :fennel) view) cwc.pointer))
   (pointer.set_edge_snapping_overlay_color .1 .2 .3 .05))
 
 nil
