@@ -1,4 +1,4 @@
-(local {:protected_call protected-call
+(local {: protected-call
         &as gears}
        (require :gears))
 
