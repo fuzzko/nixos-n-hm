@@ -150,7 +150,7 @@ in
 
   catppuccin = {
     flavor = "mocha";
-    accent = "blue";
+    accent = "sky";
     enable = true;
 
     cursors.enable = true;
