@@ -7,9 +7,9 @@
        cwc)
 
 (when (cwc.is_startup)
-  (protected-call require :oneshot))
+  (require :oneshot))
 
-(protected-call require :keybinds)
+(require :keybinds)
 
 (do "pointer config"
   (set pointer.cursor_size 20)
