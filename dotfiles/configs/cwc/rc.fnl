@@ -13,10 +13,9 @@
 
 (do "cursor config"
   (cwc.setenv :HYPRCURSOR_THEME :catppuccin-mocha-sky-cursors)
-  ; (set pointer.cursor_size 19.5)
-  (set pointer.inactive_timeout 5)
-  (set pointer.edge_threshold 32)
-  (print ((. (require :fennel) :view) cwc.pointer))
+  (pointer.set_cursor_size 19.5)
+  (pointer.set_inactive_timeout 5)
+  (pointer.set_edge_threshold 32)
   (pointer.set_edge_snapping_overlay_color .1 .2 .3 .05))
 
 nil
