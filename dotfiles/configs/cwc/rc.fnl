@@ -7,11 +7,12 @@
        cwc)
 
 (when (cwc.is_startup)
-  (require :oneshot))
+  (require :startup))
 
 (require :keybinds)
 
-(do "pointer config"
+(do "cursor config"
+  (cwc.setenv :HYPRCURSOR_THEME :catppuccin-mocha-sky-cursors)
   (set pointer.cursor_size 20)
   (set pointer.inactive_timeout 5)
   (set pointer.edge_threshold 32)
