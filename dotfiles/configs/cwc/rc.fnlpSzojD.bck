@@ -1,6 +1,10 @@
-(local {:protected_call protected-call &as gears} (require :gears))
+(local {:protected_call protected-call
+        &as gears}
+       (require :gears))
 
-(local {: pointer : kbd} cwc)
+(local {: pointer
+        : kbd}
+       cwc)
 
 (require :keybinds)
 
@@ -12,7 +16,9 @@
   (pointer.set_cursor_size size)
   (pointer.set_inactive_timeout 5)
   (pointer.set_edge_threshold 32)
-  (pointer.set_edge_snapping_overlay_color 0.1 0.2 0.3 0.05))
+  (pointer.set_edge_snapping_overlay_color .1 .2 .3 .05))
+
+(print (os.getenv "WAYLAND_DISPLAY"))
 
 (when (cwc.is_startup)
   (require :startup))
