@@ -380,6 +380,7 @@ in
   wayland.windowManager.cwc = {
     enable = true;
     package = null;
+    systemd.enable = false;
     extraConfig = ''
       package.path = package.path .. [[;${pkgs.luajitPackages.fennel}/share/lua/5.1/?.lua]]
       package.path = package.path .. [[;${pkgs.luajitPackages.fennel}/share/lua/5.1/?/init.lua]]
