@@ -12,6 +12,7 @@
       bind (partial pointer.bind mod-key)]
   (bind button.LEFT move_interactive stop_interactive)
   (bind button.RIGHT resize_interactive stop_interactive)
-  (bind button.EXTRA
-        (fn []
-          )))
+  (bind button.EXTRA #(let [position (pointer.get_position)]
+                        (case (client.at (unpack position))
+                          client* (set client*.floating (not client*.floating))
+                          nil nil))))
