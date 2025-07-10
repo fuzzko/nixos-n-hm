@@ -16,7 +16,7 @@
         #(case (client.focused)
            client* (set client*.floating (not client*.floating)))))
 
-(let [bind (partial kbd.bind mod-key bind-ctrl
-                    (partial kbd.bind [mod-key mod.CTRL]))]
+(let [bind (partial kbd.bind mod-key)
+      bind-ctrl (partial kbd.bind [mod-key mod.CTRL])]
   (bind-ctrl :Delete cwc.quit)
   (bind-ctrl :r cwc.reload))
