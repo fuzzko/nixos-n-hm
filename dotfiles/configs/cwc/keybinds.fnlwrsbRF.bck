@@ -3,7 +3,7 @@
 
 (local {:modifier mod :mouse_btn button} enum)
 
-(local {: pointer : client : kbd} cwc)
+(local {: pointer : client} cwc)
 
 (local mod-key mod.LOGO)
 (local terminal "footclient || foot")
@@ -12,11 +12,7 @@
       bind (partial pointer.bind mod-key)]
   (bind button.LEFT move_interactive stop_interactive)
   (bind button.RIGHT resize_interactive stop_interactive)
-  (bind button.MIDDLE
-        #(case (client.focused)
-           client* (set client*.floating (not client*.floating)))))
-
-(let [bind (partial kbd.bind mod-key bind-ctrl
-                    (partial kbd.bind [mod-key mod.CTRL]))]
-  (bind-ctrl :Delete cwc.quit)
-  (bind-ctrl :r cwc.reload))
+  (bind button.MIDDLE #(let [position (pointer.get_position)]
+                         (case (client.at (unpack position))
+                           client* (set client*.floating (not client*.floating))
+                           nil nil))))
