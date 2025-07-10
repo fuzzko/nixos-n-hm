@@ -3,7 +3,7 @@
 
 (local {:modifier mod :mouse_btn button} enum)
 
-(local {: pointer : client : kbd} cwc)
+(local {: pointer : client : kbd :spawn_with_shell spawn} cwc)
 
 (local mod-key mod.LOGO)
 (local terminal "footclient || foot")
@@ -19,4 +19,5 @@
 (let [bind (partial kbd.bind mod-key)
       bind-ctrl (partial kbd.bind [mod-key mod.CTRL])]
   (bind-ctrl :Delete cwc.quit)
-  (bind-ctrl :r cwc.reload))
+  (bind-ctrl :r cwc.reload)
+  (bind :t #(spawn terminal)))
