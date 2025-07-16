@@ -24,7 +24,7 @@ task.init-hm-gcroots() {
 
 task.switch-hm() {
   nix run nixpkgs#nh -- home switch -c komo -b backup . -- --impure "$@" --show-trace
-  ./bake init-hm-gcroots
+  # ./bake init-hm-gcroots
 }
 
 task.switch-nixos() {
