@@ -42,7 +42,30 @@ in
     gptfdisk
     efibootmgr
     udisks
-    connman-gtk
+    (connman-gtk.overrideAttrs (
+      final: prev: {
+        version = "0-unstable-6-16-2018";
+        src = fetchFromGitHub {
+          owner = "jgke";
+          repo = "connman-gtk";
+          rev = "b72c6ab3bb19c07325c8e659902b046daa23c506";
+          hash = "sha256-6lX6FYERDgLj9G6nwnP35kF5x8dpRJqfJB/quZFtFzM=";
+        };
+        nativeBuildInputs = [
+          meson
+          ninja
+          pkg-config
+          python3Packages.python
+          intltool
+          wrapGAppsHook3
+        ];
+        preConfigure = null;
+        postPatch = ''
+          substituteInPlace ./data/meson.build \
+            --replace-warn "'meson_post_install.py'" "'python3', '../data/meson_post_install.py'"
+        '';
+      }
+    ))
     zen-browser
 
     # greeter
@@ -168,7 +191,7 @@ in
     ];
     dnsovertls = "true";
   };
-  
+
   services.connman = {
     enable = true;
     package = pkgs.connmanFull;
