@@ -4,6 +4,9 @@
 
 (require :keybinds)
 
+(do "uwsm integration"
+  (cwc.setenv :APP2UNIT_SLICES "a=app-graphical.slice b=background-graphical.slice s=session-graphical.slice"))
+
 (let [theme :catppuccin-mocha-sky-cursors
       size 20]
   (cwc.setenv :HYPRCURSOR_THEME theme)

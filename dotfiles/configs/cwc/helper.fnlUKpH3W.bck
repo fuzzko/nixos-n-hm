@@ -1,5 +1,3 @@
-(local {:spawn_with_shell spawn} cwc)
-
 (lambda spawn-app [cmd]
   (spawn (.. "app2unit -- " cmd)))
 
