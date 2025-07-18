@@ -1,5 +1,7 @@
 (local {:spawn_with_shell spawn} cwc)
-(local {: spawn-app} (require :helper))
+
+(lambda spawn-app [cmd]
+  (spawn (.. "app2unit -- " cmd)))
 
 (spawn (table.concat ["uwsm finalize"
                       :CWC_SOCK
