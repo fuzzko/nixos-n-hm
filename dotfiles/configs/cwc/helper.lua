@@ -16,4 +16,4 @@ package.preload["helper"] = package.preload["helper"] or function(...)
 end
 local _local_1_ = require("helper")
 local percent__3epixel = _local_1_["percent->pixel"]
-return print(cwc.screen.focused()[width], percent__3epixel(50))
+return print(cwc.screen.focused().width, percent__3epixel(50))
