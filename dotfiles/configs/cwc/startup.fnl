@@ -7,4 +7,4 @@
                       :XCURSOR_THEME
                       :XCURSOR_SIZE] " "))
 
-(spawn-app "foot")
+(spawn "foot")
