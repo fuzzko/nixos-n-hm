@@ -1,10 +1,12 @@
-(local {:protected_call protected-call &as gears} (require :gears))
+(local {:protected_call protected-call : color &as gears} (require :gears))
+(local {: percent->number} (require :helpers))
 
-(local {: pointer : kbd} cwc)
+(local {: pointer : kbd : client} cwc)
 
 (require :keybinds)
 
 (do
+  "uwsm integration"
   (cwc.setenv :APP2UNIT_SLICES
               "a=app-graphical.slice b=background-graphical.slice s=session-graphical.slice"))
 
@@ -23,7 +25,15 @@
   (kbd.set_repeat_rate repeat-rate)
   (kbd.set_repeat_delay repeat-delay))
 
-(cwc.connect_signal "client::map")
+(do
+  "client settings"
+  (client.set_border_color_focus (color "#89dceb"))
+  (client.set_border_color_normal (color "#313244")))
+
+(cwc.connect_signal "client::map"
+                    (fn [client]
+                      (set client.border_width
+                           (percent->number client.width 10))))
 
 (when (cwc.is_startup)
   (require :startup))
