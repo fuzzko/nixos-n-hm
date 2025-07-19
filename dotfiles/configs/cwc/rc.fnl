@@ -31,7 +31,7 @@
 (cwc.connect_signal "client::map"
                     (fn [client]
                       (set client.border_width
-                           (-> (percent->number client.screen.width 0.38)
+                           (-> (percent->number client.screen.width 0.40)
                                (+ 0.5)
                                (math.floor)))))
 
