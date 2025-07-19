@@ -1,3 +1,3 @@
 (local {: percent->pixel} (require :helper))
 
-(print (percent->pixel 50))
+(print (. (cwc.screen.focused) width) (percent->pixel 50))
