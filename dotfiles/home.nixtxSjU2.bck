@@ -398,9 +398,6 @@ in
         fnl.dofile([[${config.xdg.configHome}/cwc/rc.fnl]])
       end
     '';
-    plugins = lib.flatten [
-      (map )
-    ];
   };
 
   xdg.configFile."cwc" = {
