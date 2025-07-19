@@ -24,5 +24,3 @@
 
 (when (cwc.is_startup)
   (require :startup))
-
-nil
