@@ -1,3 +1,4 @@
 (local {: percent->pixel} (require :helper))
 
-(print (. (cwc.screen.focused) :width) (percent->pixel 50))
+(cwc.connect_signal "screen::new"
+                    #(print $1.width (percent-pixel $1 50)))
