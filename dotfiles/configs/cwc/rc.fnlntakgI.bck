@@ -25,17 +25,13 @@
   (kbd.set_repeat_delay repeat-delay))
 
 (do
-  (client.set_border_color_focus (color {:type :linear
-                                         :from [0 0]
-                                         :to [0 0]
-                                         :stops [[0.5 "#89b4fa"]
-                                                 [1 ""]]}))
+  (client.set_border_color_focus (color "#89dceb"))
   (client.set_border_color_normal (color "#313244")))
 
 (cwc.connect_signal "client::map"
                     (fn [client]
                       (set client.border_width
-                           (-> (percent->number client.screen.width 0.4)
+                           (-> (percent->number client.screen.width 0.40)
                                (+ 0.5)
                                (math.floor)))))
 
