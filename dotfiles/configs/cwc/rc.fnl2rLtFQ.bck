@@ -1,5 +1,5 @@
-(local {:protected_call protected-call : color :filesystem fs &as gears} (require :gears))
-(local {: percent->number : spawn-background} (require :helper))
+(local {:protected_call protected-call : color &as gears} (require :gears))
+(local {: percent->number} (require :helper))
 
 (local {: pointer : kbd : client} cwc)
 
@@ -9,7 +9,7 @@
   (cwc.setenv :APP2UNIT_SLICES
               "a=app-graphical.slice b=background-graphical.slice s=session-graphical.slice"))
 
-(let [theme :catppuccin-mocha-rosewater-cursors
+(let [theme :catppuccin-mocha-sky-cursors
       size 20]
   (cwc.setenv :HYPRCURSOR_THEME theme)
   (cwc.setenv :XCURSOR_THEME theme)
@@ -24,13 +24,11 @@
   (kbd.set_repeat_rate repeat-rate)
   (kbd.set_repeat_delay repeat-delay))
 
-(let [bgs [:* (.. (fs.get_configuration_dir) "/wallpaper")]])
-
 (do
   (client.set_border_color_focus (color {:type :linear
                                          :from [0 0]
                                          :to [0 0]
-                                         :stops [[0.3 "#fab387"] [1 "#f9e2af"]]}))
+                                         :stops [[0.3 "#89b4fa"] [1 "#89dceb"]]}))
   (client.set_border_color_normal (color "#313244")))
 
 ;; border width
