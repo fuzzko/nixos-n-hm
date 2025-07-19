@@ -1,5 +1,5 @@
 (local {:protected_call protected-call : color &as gears} (require :gears))
-(local {: percent->number} (require :helpers))
+(local {: percent->number} (require :helper))
 
 (local {: pointer : kbd : client} cwc)
 
