@@ -122,7 +122,6 @@ in
 
   home.sessionVariables = rec {
     "XDG_PICTURES_DIR" = "${config.home.homeDirectory}/Pictures";
-    "SUDO_PROMPT" = "[sudo 🐺]: ";
     "BROWSER" = "zen";
     "PAGER" = "moar";
     "GIT_PAGER" = PAGER;
