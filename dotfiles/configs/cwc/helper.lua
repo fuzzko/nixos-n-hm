@@ -6,15 +6,17 @@ package.preload["helper"] = package.preload["helper"] or function(...)
     _G.assert((nil ~= cmd), "Missing argument cmd on ./helper.fnl:3")
     return spawn(("app2unit -- " .. cmd))
   end
-  local function percent__3epixel(num)
+  local function percent__3epixel(scr, num)
     _G.assert((nil ~= num), "Missing argument num on ./helper.fnl:6")
-    local current_screen = screen.focused()
-    local width = current_screen.width
+    _G.assert((nil ~= scr), "Missing argument scr on ./helper.fnl:6")
+    local width = scr["width"]
     return ((num * width) / 100)
   end
   return {["spawn-app"] = spawn_app, ["percent->pixel"] = percent__3epixel}
 end
 local _local_1_ = require("helper")
 local percent__3epixel = _local_1_["percent->pixel"]
--- return print(cwc.screen.focused().width, percent__3epixel(50))
-print(cwc.screen.focused())
+local function _2_(_241)
+  return print(_241.width, __fnl_global__percent_2dpixel(_241, 50))
+end
+return cwc.connect_signal("screen::new", _2_)
