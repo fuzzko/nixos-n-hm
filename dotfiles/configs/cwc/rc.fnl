@@ -53,9 +53,9 @@
                         (where focused
                                (and focused.fullscreen
                                     (not= client*.parent focused)))
-                        (client:lower))
-                      (client:raise)
-                      (client:focus)))
+                        (client*:lower))
+                      (client*:raise)
+                      (client*:focus)))
 
 (when (cwc.is_startup)
   (require :startup))
