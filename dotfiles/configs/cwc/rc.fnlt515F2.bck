@@ -33,11 +33,10 @@
 
 (cwc.connect_signal "client::map"
                     (fn [client]
-                      (when (not client.managed)
-                        (set client.border_width
-                             (-> (percent->number client.screen.width 0.4)
-                                 (+ 0.5)
-                                 (math.floor))))))
+                      (set client.border_width
+                           (-> (percent->number client.screen.width 0.4)
+                               (+ 0.5)
+                               (math.floor)))))
 
 (when (cwc.is_startup)
   (require :startup))
