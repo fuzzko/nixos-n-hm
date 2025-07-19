@@ -28,8 +28,7 @@
   (client.set_border_color_focus (color {:type :linear
                                          :from [0 0]
                                          :to [0 0]
-                                         :stops [[0.5 "#89b4fa"]
-                                                 [1 ""]]}))
+                                         :stops [[0.3 "#89b4fa"] [1 "#89dceb"]]}))
   (client.set_border_color_normal (color "#313244")))
 
 (cwc.connect_signal "client::map"
