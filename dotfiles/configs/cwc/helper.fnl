@@ -8,4 +8,4 @@
         width current-screen.width]
     (/ (* num width) 100)))
 
-{: spawn-app}
+{: spawn-app : percent->pixel}
