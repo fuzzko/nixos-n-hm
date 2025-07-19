@@ -24,7 +24,7 @@ task.init-hm-gcroots() {
 
 task.switch-hm() {
   nix run nixpkgs#nh -- home switch -c komo -b backup . -- --impure "$@" --show-trace
-  # ./bake init-hm-gcroots
+  ./bake init-hm-gcroots
 }
 
 task.switch-nixos() {
@@ -35,7 +35,7 @@ task.switch-nixos() {
   [[ "$1" != "-" ]] && config="$1"
   shift
 
-  nix run nixpkgs#nh -- os switch -H "$config" . -- --impure "$@" --show-trace
+  nix run nixpkgs#nh -- os switch -a -H "$config" . -- --impure "$@" --show-trace
 }
 
 task.boot-nixos() {
@@ -46,7 +46,7 @@ task.boot-nixos() {
   [[ "$1" != "-" ]] && config="$1"
   shift
  
-  nix run nixpkgs#nh -- os boot -H "$config" . -- --impure "$@" --show-trace
+  nix run nixpkgs#nh -- os boot -a -H "$config" . -- --impure "$@" --show-trace
 }
 
 task.switch-nix-on-droid() {

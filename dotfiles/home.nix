@@ -396,7 +396,7 @@ in
       end
     '';
     plugins = lib.flatten [
-      (map (x: config.wayland.windowManager.cwc + /share/cwc/plugins/${x}.so) [
+      (map (x: pkgs.cwc + /share/cwc/plugins/${x}.so) [
         "cwcle"
         "flayout"
       ])
