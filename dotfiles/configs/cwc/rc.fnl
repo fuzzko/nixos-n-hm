@@ -34,16 +34,15 @@
 ;; border width
 (cwc.connect_signal "client::map"
                     (fn [client*]
-                      (when (not client*.managed)
-                        (set client*.border_width
-                             (-> (percent->number client*.screen.width 0.4)
-                                 (+ 0.5)
-                                 (math.floor))))))
+                      (set client*.border_width
+                           (-> (percent->number client*.screen.width 0.4)
+                               (+ 0.5)
+                               (math.floor)))))
 
 ;; center floating client
 (cwc.connect_signal "client::map"
                     (fn [client*]
-                      (when (and (not client*.managed) client*.floating)
+                      (when client*.floating
                         (client*:center))))
 
 ;; focus client
