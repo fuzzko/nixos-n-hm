@@ -4,4 +4,8 @@
 
 def main [
   cmd
-]
+  -C
+  -n
+] {
+  
+}
