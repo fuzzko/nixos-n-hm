@@ -31,13 +31,31 @@
                                          :stops [[0.3 "#89b4fa"] [1 "#89dceb"]]}))
   (client.set_border_color_normal (color "#313244")))
 
+;; border width
 (cwc.connect_signal "client::map"
-                    (fn [client]
-                      (when (not client.managed)
-                        (set client.border_width
-                             (-> (percent->number client.screen.width 0.4)
+                    (fn [client*]
+                      (when (not client*.managed)
+                        (set client*.border_width
+                             (-> (percent->number client*.screen.width 0.4)
                                  (+ 0.5)
                                  (math.floor))))))
+
+;; center floating client
+(cwc.connect_signal "client::map"
+                    (fn [client*]
+                      (when (and (not client*.managed) client*.floating)
+                        (client*:center))))
+
+;; focus client
+(cwc.connect_signal "client::map"
+                    (fn [client*]
+                      (case client*.focused
+                        (where focused
+                               (and focused.fullscreen
+                                    (not= client*.parent focused)))
+                        (client:lower))
+                      (client:raise)
+                      (client:focus)))
 
 (when (cwc.is_startup)
   (require :startup))
