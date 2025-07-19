@@ -24,7 +24,6 @@
   (kbd.set_repeat_rate repeat-rate)
   (kbd.set_repeat_delay repeat-delay))
 
-(let [bgs [:* (.. (fs.get_configuration_dir) "/wallpaper")]])
 
 (do
   (client.set_border_color_focus (color {:type :linear
