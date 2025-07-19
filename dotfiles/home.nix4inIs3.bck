@@ -395,6 +395,12 @@ in
         fnl.dofile([[${config.xdg.configHome}/cwc/rc.fnl]])
       end
     '';
+    plugins = lib.flatten [
+      (map (x: pkgs.cwc + /share/cwc/plugins/${x}.so) [
+        "cwcle"
+        "flayout"
+      ])
+    ];
   };
 
   xdg.configFile."cwc" = {
