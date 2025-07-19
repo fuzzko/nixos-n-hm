@@ -137,7 +137,7 @@ in
   programs.cwc = {
     enable = true;
     package = pkgs.cwc.override {
-      withLuaEnv = pkgs.luajitPackages.withPackages (
+      withLuaEnv = pkgs.luajit.withPackages (
         p: with p; [
           lgi
           fennel
