@@ -1,4 +1,4 @@
-(local {:spawn_with_shell spawn} cwc)
+(local {:spawn_with_shell spawn : screen : client} cwc)
 
 (lambda spawn-app [cmd]
   "spawn an executable with app2unit"
