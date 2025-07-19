@@ -6,7 +6,6 @@
 (require :keybinds)
 
 (do
-  "uwsm integration"
   (cwc.setenv :APP2UNIT_SLICES
               "a=app-graphical.slice b=background-graphical.slice s=session-graphical.slice"))
 
@@ -26,14 +25,13 @@
   (kbd.set_repeat_delay repeat-delay))
 
 (do
-  "client settings"
   (client.set_border_color_focus (color "#89dceb"))
   (client.set_border_color_normal (color "#313244")))
 
 (cwc.connect_signal "client::map"
                     (fn [client]
                       (set client.border_width
-                           (percent->number client.width 10))))
+                           (percent->number client.screen.width 3))))
 
 (when (cwc.is_startup)
   (require :startup))
