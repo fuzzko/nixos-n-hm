@@ -2,4 +2,6 @@
 
 #>> A simple sudoedit clone for doas <<#
 
-def main
+def main [
+  cmd
+]
