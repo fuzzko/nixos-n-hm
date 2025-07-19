@@ -127,6 +127,7 @@ in
     "PAGER" = "moar";
     "GIT_PAGER" = PAGER;
     "SYSTEMD_PAGERSECURE" = "true";
+    "APP2UNIT_SLICES" = "a=app-graphical.slice b=background-graphical.slice s=session-graphical.slice";
   };
 
   home.pointerCursor = {
@@ -456,8 +457,6 @@ in
     enable = true;
     settings = loadConfig' "atuin" { };
   };
-
-
 
   caches.cachix = [
     "nix-community"
