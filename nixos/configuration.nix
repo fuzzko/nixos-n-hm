@@ -66,6 +66,7 @@ in
         '';
       }
     ))
+    doas-sudo-shim
     zen-browser
 
     # greeter
