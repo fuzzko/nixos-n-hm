@@ -17,6 +17,6 @@ end
 local _local_1_ = require("helper")
 local percent__3epixel = _local_1_["percent->pixel"]
 local function _2_(_241)
-  return print(_241.width, __fnl_global__percent_2dpixel(_241, 50))
+  return print(_241.width, percent__3epixel(_241, 50))
 end
 return cwc.connect_signal("screen::new", _2_)
