@@ -88,9 +88,6 @@ in
       nushell
       brightnessctl
 
-      # For CwC
-      app2unit
-
       # For recording
       kooha
       scrcpy
