@@ -4,9 +4,8 @@
 
 (require :keybinds)
 
-(do
-  (cwc.setenv :APP2UNIT_SLICES
-              "a=app-graphical.slice b=background-graphical.slice s=session-graphical.slice"))
+(do "uwsm integration"
+  (cwc.setenv :APP2UNIT_SLICES "a=app-graphical.slice b=background-graphical.slice s=session-graphical.slice"))
 
 (let [theme :catppuccin-mocha-sky-cursors
       size 20]
@@ -22,8 +21,6 @@
       repeat-delay 300]
   (kbd.set_repeat_rate repeat-rate)
   (kbd.set_repeat_delay repeat-delay))
-
-(cwc.connect_signal "client::map")
 
 (when (cwc.is_startup)
   (require :startup))
