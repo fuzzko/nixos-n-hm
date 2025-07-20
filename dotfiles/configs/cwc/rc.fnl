@@ -66,6 +66,9 @@
                             (client*:raise)
                             (client*:focus)))))
 
+(cwc.connect_signal "client::map"
+              )
+
 (cwc.connect_signal "client::unmap"
                     (fn [client*]
                       (when (= client* (client.focused))
