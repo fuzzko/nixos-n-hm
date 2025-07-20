@@ -1,4 +1,4 @@
-(local {:protected_call protected-call : color :filesystem fs &as gears} (require :gears))
+(local {:protected_call protected-call : color &as gears} (require :gears))
 (local {: percent->number : spawn-background} (require :helper))
 
 (local {: pointer : kbd : client} cwc)
@@ -23,7 +23,6 @@
       repeat-delay 300]
   (kbd.set_repeat_rate repeat-rate)
   (kbd.set_repeat_delay repeat-delay))
-
 
 (do
   (client.set_border_color_focus (color {:type :linear
@@ -57,6 +56,17 @@
                         _ (do
                             (client*:raise)
                             (client*:focus)))))
+
+(cwc.connect_signal "signal::unmap"
+                    (fn [client*]
+                      (when (= client* (client.focused))
+                        (case client*.container.client_stack
+                          (where stack (> 1 (length stack))) (: (. stack 2)
+                                                                :focus)
+                          _ (let [latest-focus-after (. (client*.screen:get_focus_stack true)
+                                                        2)]
+                              (when latest-focus-after
+                                (latest-focus-after:focus)))))))
 
 (when (cwc.is_startup)
   (require :startup))
