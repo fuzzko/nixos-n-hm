@@ -4,7 +4,7 @@
 
 (local {:modifier mod :mouse_btn button} enum)
 
-(local {: pointer : client : kbd} cwc)
+(local {: pointer : client : kbd : container} cwc)
 
 (local mod-key (if (cwc.is_nested)
                    mod.ALT
@@ -22,7 +22,14 @@
                  client* (set client*.floating (not client*.floating)))))
 
 (let [bind (partial kbd.bind mod-key)
-      bind-ctrl (partial kbd.bind [mod-key mod.CTRL])]
+      bind-ctrl (partial kbd.bind [mod-key mod.CTRL])
+      bind-shift (partial kbd.bind [mod-key mod.SHIFT])]
   (bind-ctrl :Delete cwc.quit)
   (bind-ctrl :r cwc.reload)
-  (bind :t #(spawn terminal)))
+  (bind :t #(spawn terminal))
+  (bind :Delete #(collectgarbage :collect))
+  (bind :Escape container.reset_mark)
+  (for [i 0 9]
+    (kbd.bind [mod.CTRL mod.ALT] (.. :F i) #(cwc.chvt i)))
+  (bind-shift :q #(case (client.focused)
+                    c (c:close))))
