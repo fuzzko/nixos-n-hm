@@ -1,7 +1,7 @@
 (local {:protected_call protected-call : color &as gears} (require :gears))
 (local {: percent->number : spawn-background} (require :helper))
 
-(local {: pointer : kbd : client : container} cwc)
+(local {: pointer : kbd : client} cwc)
 
 (require :keybinds)
 
@@ -57,7 +57,7 @@
                             (client*:raise)
                             (client*:focus)))))
 
-(cwc.connect_signal "client::unmap"
+(cwc.connect_signal "signal::unmap"
                     (fn [client*]
                       (when (= client* (client.focused))
                         (case client*.container.client_stack
@@ -67,19 +67,6 @@
                                                         2)]
                               (when latest-focus-after
                                 (latest-focus-after:focus)))))))
-
-(cwc.connect_signal "client::focus" #($1:raise))
-
-(cwc.connect_signal "client::mouse_enter"
-                    (fn [client*]
-                      (let [focused (client.focused)]
-                        (when (and focused focused.floating)
-                          (client*:focus)))))
-
-(cwc.connect_signal "container::insert"
-                    #(do
-                       (container.reset_mark)
-                       ($2:focus)))
 
 (when (cwc.is_startup)
   (require :startup))
