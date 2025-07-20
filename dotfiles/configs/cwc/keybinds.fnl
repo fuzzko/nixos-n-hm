@@ -6,7 +6,10 @@
 
 (local {: pointer : client : kbd} cwc)
 
-(local mod-key mod.LOGO)
+(local mod-key (if (cwc.is_nested)
+                   mod.ALT
+                   mod.LOGO))
+
 (local terminal "footclient || foot")
 
 (let [{: stop_interactive : move_interactive : resize_interactive} pointer
