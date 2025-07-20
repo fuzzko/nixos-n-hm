@@ -11,4 +11,4 @@
                       :XCURSOR_SIZE] " "))
 
 (spawn-background "swww-daemon")
-(spawn-background (.. "swww img " (fs.get_configuration_dir) "wallpapers/default.jpg"))
+(spawn-app (.. "swww img " (fs.get_configuration_dir) "wallpapers/default.jpg"))
