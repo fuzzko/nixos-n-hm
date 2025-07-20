@@ -3,7 +3,7 @@
 (local {: percent->number : spawn-background} (require :helper))
 
 (local {: pointer : kbd : client : container} cwc)
-(local {:layout_mdoe layout} enum)
+(local {:layout_mode layout} enum)
 
 (require :keybinds)
 
