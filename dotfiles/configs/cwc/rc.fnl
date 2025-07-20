@@ -77,7 +77,7 @@
                           (client*:focus)))))
 
 (cwc.connect_signal "container::insert"
-                    (fn [_ client*]
+                    (fn [_cont client*]
                       (container.reset_mark)
                       (client*:focus)))
 
