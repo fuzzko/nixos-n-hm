@@ -26,7 +26,7 @@
       bind-shift (partial kbd.bind [mod-key mod.SHIFT])]
   (bind-ctrl :Delete cwc.quit)
   (bind-ctrl :r cwc.reload)
-  (bind :t #(spawn-app terminal))
+  (bind :t #(spawn terminal))
   (bind :Delete #(collectgarbage :collect))
   (bind :Escape container.reset_mark)
   (for [i 1 12]
