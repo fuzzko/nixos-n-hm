@@ -77,9 +77,9 @@
                           (client*:focus)))))
 
 (cwc.connect_signal "container::insert"
-                    #(do
-                       (container.reset_mark)
-                       ($2:focus)))
+                    (fn [_ client*]
+                      (container.reset_mark)
+                      (client*:focus)))
 
 (when (cwc.is_startup)
   (require :startup))
