@@ -29,7 +29,7 @@
   (bind :t #(spawn terminal))
   (bind :Delete #(collectgarbage :collect))
   (bind :Escape container.reset_mark)
-  (for [i 0 9]
+  (for [i 1 12]
     (kbd.bind [mod.CTRL mod.ALT] (.. :F i) #(cwc.chvt i)))
   (bind-shift :q #(case (client.focused)
                     c (c:close)))
