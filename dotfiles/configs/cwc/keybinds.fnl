@@ -32,4 +32,6 @@
   (for [i 0 9]
     (kbd.bind [mod.CTRL mod.ALT] (.. :F i) #(cwc.chvt i)))
   (bind-shift :q #(case (client.focused)
-                    c (c:close))))
+                    c (c:close)))
+  (bind-ctrl :q #(case (client.focused)
+                   c (c:kill))))
