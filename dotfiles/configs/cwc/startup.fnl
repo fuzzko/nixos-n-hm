@@ -3,13 +3,13 @@
 
 (local {:spawn_with_shell spawn} cwc)
 
-
-(spawn (table.concat ["uwsm finalize"
-                      :CWC_SOCK
-                      :HYPRCURSOR_THEME
-                      :XCURSOR_THEME
-                      :XCURSOR_SIZE] " "))
+(when (not (cwc.is_nested))
+  (spawn (table.concat ["uwsm finalize"
+                        :CWC_SOCK
+                        :HYPRCURSOR_THEME
+                        :XCURSOR_THEME
+                        :XCURSOR_SIZE] " ")))
 
 ; (spawn-background "swww-daemon")
 ; (spawn-app (.. "swww img " (fs.get_configuration_dir) "wallpapers/default.jpg"))
-(spawn-app "foot")
+(spawn-app :foot)
