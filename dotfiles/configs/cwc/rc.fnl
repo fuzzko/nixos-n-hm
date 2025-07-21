@@ -67,18 +67,23 @@
                             (client*:focus)))))
 
 (cwc.connect_signal "client::map"
-              )
+                    (fn [client*]
+                      (when (= :flameshot client*.appid)
+                        (set client*.border_enabled false)
+                        (set client*.fullscreen false)
+                        (set client*.floating true))))
 
 (cwc.connect_signal "client::unmap"
                     (fn [client*]
                       (when (= client* (client.focused))
                         (case client*.container.client_stack
-                          (where stack (> 1 (length stack))) (: (. stack 2)
-                                                                :focus)
-                          _ (let [latest-focus-after (. (client*.screen:get_focus_stack true)
-                                                        2)]
-                              (when latest-focus-after
-                                (latest-focus-after:focus)))))))
+                          (where stack (> 1 (length stack))) (let [last-client-stack (. stack
+                                                                                        2)]
+                                                               (last-client-stack:focus))
+                          _ (let [last-focus-after (. (client*.screen:get_focus_stack true)
+                                                      2)]
+                              (when last-focus-after
+                                (last-focus-after:focus)))))))
 
 (cwc.connect_signal "client::focus" #($1:raise))
 
