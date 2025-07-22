@@ -1,6 +1,6 @@
 (local {: enum : tag :client cfl-client &as cfl} (require :cuteful))
 (local {&as gears} (require :gears))
-(local {: spawn-app} (require :helper))
+(local {: spawn-app : make-vertical : make-horizontal} (require :helper))
 
 (local {:modifier mod :mouse_btn button : direction} enum)
 
@@ -81,5 +81,5 @@
               client* (let [{: x : y} client*.geometry]
                         (set client*.maximize false) ;; workaround, will probably slowdown
                         (if (> x y)
-                            (cfl-client.maximize_vertical)
-                            (cfl-client.maximize_horizontal))))))
+                            (make-vertical)
+                            (make-horizontal))))))
