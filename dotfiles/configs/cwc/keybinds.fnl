@@ -47,4 +47,7 @@
                             (: :toggle)))
       (bind-shift str-i
                   #(case (client.focused)
-                     client* (client*:move_to_tag str-i))))))
+                     client* (client*:move_to_tag str-i)))
+      (bind-ctrl-shift str-i
+                       #(case (client.focused)
+                          client* (client*:toggle_tag str-i))))))
