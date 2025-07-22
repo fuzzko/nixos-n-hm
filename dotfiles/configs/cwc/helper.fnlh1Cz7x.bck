@@ -28,13 +28,4 @@
               (set new-geometry.height workarea.height)
               (set c.geometry new-geometry))))
 
-(lambda make-horizontal [client]
-  "make the client stretch horizontally"
-  (case (or client (cwc-client.focused))
-    client* (let [workarea client*.screen.workarea
-                  new-geometry client*.geometry]
-              (set new-geometry.x workarea.x)
-              (set new-geometry.width workarea.width)
-              (set c.geometry new-geometry))))
-
 {: spawn-app : spawn-background : spawn-session : percent->number}
