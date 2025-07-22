@@ -5,7 +5,7 @@
 (local {: pointer : kbd : client : container} cwc)
 (local {:layout_mode layout} enum)
 
-(set _G.config-state {})
+(set _G.config_state {})
 
 (require :keybinds)
 
