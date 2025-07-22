@@ -29,7 +29,6 @@
   ;; General binds
   (bind-ctrl :Delete cwc.quit)
   (bind-ctrl :r cwc.reload)
-  (bind :t #(spawn-app terminal))
   (bind :Delete #(collectgarbage :collect))
   (bind :Escape container.reset_mark)
   (bind-shift :q #(case (client.focused)
@@ -70,4 +69,6 @@
                          nearest (nearest:focus)))))
   ;; Changing client state binds
   (bind :v #(case (client.focused)
-              client* (set client*.floating (not client*.floating)))))
+              client* (set client*.floating (not client*.floating))))
+  ;; Utility
+  (bind :t #(spawn-app terminal)))
