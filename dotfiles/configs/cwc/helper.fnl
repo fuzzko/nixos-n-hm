@@ -26,7 +26,7 @@
                   new-geometry client*.geometry]
               (set new-geometry.y workarea.y)
               (set new-geometry.height workarea.height)
-              (set c.geometry new-geometry))))
+              (set client*.geometry new-geometry))))
 
 (lambda make-horizontal [?client]
   "make the client stretch horizontally"
@@ -35,6 +35,6 @@
                   new-geometry client*.geometry]
               (set new-geometry.x workarea.x)
               (set new-geometry.width workarea.width)
-              (set c.geometry new-geometry))))
+              (set client*.geometry new-geometry))))
 
 {: spawn-app : spawn-background : spawn-session : percent->number : make-vertical : make-horizontal}
