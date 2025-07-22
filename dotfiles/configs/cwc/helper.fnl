@@ -1,4 +1,4 @@
-(local {:spawn_with_shell spawn :client cwc-client spawn} cwc)
+(local {:spawn_with_shell spawn :client cwc-client} cwc)
 (local app-prefix (if (cwc.is_nested) "" "app2unit -s a --"))
 (local background-prefix (if (cwc.is_nested) "" "app2unit -s b  --"))
 (local session-prefix (if (cwc.is_nested) "" "app2unit -s s --"))
