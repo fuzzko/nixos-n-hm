@@ -79,7 +79,6 @@
            client* (set client*.fullscreen (not client*.fullscreen))))
   (bind :j #(case (client.focused)
               client* (let [{: x : y} client*.geometry]
-                        (set client*.maximize false) ;; workaround, will probably slowdown
                         (if (> x y)
                             (cfl-client.maximize_vertical)
                             (cfl-client.maximize_horizontal))))))
