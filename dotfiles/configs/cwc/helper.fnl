@@ -21,11 +21,10 @@
 
 (lambda make-vertical [client]
   "make the client stretch vertically"
-  (case (or client (cwc-client.focused) client*
-            (let [workarea client*.screen.workarea
+  (case (or client (cwc-client.focused)) client* (let [workarea client*.screen.workarea
                   new-geometry client*.geometry]
               (set new-geometry.y workarea.y)
               (set new-geometry.height workarea.height)
-              (set c.geometry new-geometry)))))
+              (set c.geometry new-geometry))))
 
 {: spawn-app : spawn-background : spawn-session : percent->number}
