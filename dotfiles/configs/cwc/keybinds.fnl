@@ -64,7 +64,7 @@
   (bind :equal #(tag.incgap 1))
   (bind :minus #(tag.incgap -1))
   ;; Navigation binds
-  (for [_ k (pairs [:Left :Up :Right :Down])]
+  (each [_ k (pairs [:Left :Up :Right :Down])]
     (bind k #(case (client.focused)
                client* (case (client*:get_nearest (. direction (k:upper)))
                          nearest (nearest:focus)))))
