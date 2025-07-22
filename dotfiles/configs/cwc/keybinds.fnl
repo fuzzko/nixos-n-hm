@@ -23,15 +23,26 @@
 
 (let [bind (partial kbd.bind mod-key)
       bind-ctrl (partial kbd.bind [mod-key mod.CTRL])
-      bind-shift (partial kbd.bind [mod-key mod.SHIFT])]
+      bind-shift (partial kbd.bind [mod-key mod.SHIFT])
+      bind-ctrl-shift (partial kbd.bind [mod-key mod.CTRL mod.SHIFT])]
   (bind-ctrl :Delete cwc.quit)
   (bind-ctrl :r cwc.reload)
   (bind :t #(spawn-app terminal))
   (bind :Delete #(collectgarbage :collect))
   (bind :Escape container.reset_mark)
   (for [i 1 12]
-    (kbd.bind [mod.CTRL mod.ALT] (.. :F i) #(cwc.chvt i)))
+    (let [str-i (tostring i)]
+      (kbd.bind [mod.CTRL mod.ALT] (.. :F str-i) #(cwc.chvt i))))
   (bind-shift :q #(case (client.focused)
                     c (c:close)))
   (bind-ctrl :q #(case (client.focused)
-                   c (c:kill))))
+                   c (c:kill)))
+  (for [i 1 9]
+    (let [str-i (tostring i)]
+      (bind str-i #(-> (cwc.screen.focused)
+                       (: :get_tag i)
+                       (: :view_only))
+      (bind-ctrl str-i #(-> (cwc.screen.focused)
+                            (: :get_tag i)
+                            (: :toggle))))
+      (bind-shift str-i #(-> )))))
