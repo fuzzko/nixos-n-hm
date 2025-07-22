@@ -19,4 +19,4 @@
   "converts a percent unit to a number"
   (/ (* value max-value) 100))
 
-{: spawn-app : percent->number}
+{: spawn-app : spawn-background : spawn-session : percent->number}
