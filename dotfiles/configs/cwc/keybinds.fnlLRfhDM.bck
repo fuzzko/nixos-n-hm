@@ -1,8 +1,8 @@
-(local {: enum : tag &as cfl} (require :cuteful))
+(local {: enum &as cfl} (require :cuteful))
 (local {&as gears} (require :gears))
 (local {: spawn-app} (require :helper))
 
-(local {:modifier mod :mouse_btn button : direction} enum)
+(local {:modifier mod :mouse_btn button} enum)
 
 (local {: pointer : client : kbd : container : screen} cwc)
 
@@ -50,16 +50,4 @@
                      client* (client*:move_to_tag str-i)))
       (bind-ctrl-shift str-i
                        #(case (client.focused)
-                          client* (client*:toggle_tag str-i)))))
-  (bind :0 #(let [screens (screen.get)]
-              (each [_ screen* (pairs screens)]
-                (tag.viewnone screen*))))
-  (bind :comma tag.viewprev)
-  (bind :period tag.viewnext)
-  (bind :grave tag.history.restore)
-  (bind :equal #(tag.incgap 1))
-  (bind :minus #(tag.incgap -1))
-  (for [_ k (pairs [:Left :Up :Right :Down])]
-    (bind k #(case (client.focused)
-               client* (case (client*:get_nearest (. direction k))
-                         nearest (nearest:focus))))))
+                          client* (client*:toggle_tag str-i))))))
