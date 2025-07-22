@@ -4,7 +4,7 @@
 
 (local {:modifier mod :mouse_btn button} enum)
 
-(local {: pointer : client : kbd : container} cwc)
+(local {: pointer : client : kbd : container : screen} cwc)
 
 (local mod-key (if (cwc.is_nested)
                    mod.ALT
@@ -39,10 +39,12 @@
                    c (c:kill)))
   (for [i 1 9]
     (let [str-i (tostring i)]
-      (bind str-i #(-> (cwc.screen.focused)
+      (bind str-i #(-> (screen.focused)
                        (: :get_tag i)
-                       (: :view_only))
-      (bind-ctrl str-i #(-> (cwc.screen.focused)
+                       (: :view_only)))
+      (bind-ctrl str-i #(-> (screen.focused)
                             (: :get_tag i)
-                            (: :toggle))))
-      (bind-shift str-i #(-> )))))
+                            (: :toggle)))
+      (bind-shift str-i
+                  #(case (client.focused)
+                     client* (client*:move_to_tag str-i))))))
