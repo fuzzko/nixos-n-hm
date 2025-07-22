@@ -19,7 +19,7 @@
   "converts a percent unit to a number"
   (/ (* value max-value) 100))
 
-(lambda make-vertical [client]
+(lambda make-vertical [?client]
   "make the client stretch vertically"
   (case (or client (cwc-client.focused))
     client* (let [workarea client*.screen.workarea
@@ -28,7 +28,7 @@
               (set new-geometry.height workarea.height)
               (set c.geometry new-geometry))))
 
-(lambda make-horizontal [client]
+(lambda make-horizontal [?client]
   "make the client stretch horizontally"
   (case (or client (cwc-client.focused))
     client* (let [workarea client*.screen.workarea
