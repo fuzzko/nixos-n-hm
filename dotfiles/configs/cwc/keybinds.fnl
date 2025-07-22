@@ -71,9 +71,6 @@
   ;; Changing client state binds
   (bind :v #(case (client.focused)
               client* (set client*.floating (not client*.floating))))
-  (bind :f
-        #(case (client.focused)
-           client* (set client*.fullscreen (not client*.fullscreen))))
   (bind :j #(case (client.focused)
               client* (let [{: x : y} client*.geometry]
                         (set client*.maximize false)
