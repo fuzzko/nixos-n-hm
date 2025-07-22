@@ -37,4 +37,4 @@
               (set new-geometry.width workarea.width)
               (set c.geometry new-geometry))))
 
-{: spawn-app : spawn-background : spawn-session : percent->number}
+{: spawn-app : spawn-background : spawn-session : percent->number : make-vertical : make-horizontal}
