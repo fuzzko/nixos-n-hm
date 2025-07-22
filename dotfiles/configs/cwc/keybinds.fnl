@@ -70,11 +70,4 @@
                          nearest (nearest:focus)))))
   ;; Changing client state binds
   (bind :v #(case (client.focused)
-              client* (set client*.floating (not client*.floating))))
-  (bind :j #(case (client.focused)
-              client* (let [{: x : y} client*.geometry]
-                        (set client*.maximize false)
-                        ;; workaround, will probably slowdown
-                        (if (> x y)
-                            (make-vertical)
-                            (make-horizontal))))))
+              client* (set client*.floating (not client*.floating)))))
