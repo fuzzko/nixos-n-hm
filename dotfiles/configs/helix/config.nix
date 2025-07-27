@@ -13,7 +13,7 @@
     default-line-ending = "lf";
     popup-border = "all";
     preview-completion-insert = false;
-    completion-trigger-len = 3;
+    completion-trigger-len = 2;
     shell = [
       "nu"
       "--stdin"
@@ -55,7 +55,6 @@
   editor.indent-guides = {
     render = true;
     character = "╎";
-    skip-levels = 2;
   };
 
   editor.soft-wrap = {
