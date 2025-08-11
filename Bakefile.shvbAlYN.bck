@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-export NIXPKGS_ALLOW_UNFREE=1
-
 nix() {
   command nix --extra-experimental-features "nix-command flakes" "$@"
 }
