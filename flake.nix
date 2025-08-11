@@ -2,46 +2,46 @@
   description = "My Nix config :3";
 
   inputs = {
-    nixpkgs.url = "github:numtide/nixpkgs-unfree/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nur = {
       url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/latest";
     nix-search-cli = {
       url = "github:peterldowns/nix-search-cli";
-      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nixGL = {
       url = "github:nix-community/nixGL";
-      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     declarative-cachix.url = "github:jonascarpay/declarative-cachix";
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
-      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     catppuccin.url = "github:catppuccin/nix";
     nix-std.url = "github:chessai/nix-std";
     matui = {
       url = "github:pkulak/matui";
-      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     chaotic = {
       url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-cwc = {
       url = "github:0komo/nix-cwc";
-      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser = {
       url = "github:pfaj/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs/nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
