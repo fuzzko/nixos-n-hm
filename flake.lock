@@ -24,7 +24,6 @@
         "home-manager": "home-manager",
         "jovian": "jovian",
         "nixpkgs": [
-          "nixpkgs",
           "nixpkgs"
         ],
         "rust-overlay": "rust-overlay"
@@ -218,7 +217,6 @@
     "home-manager_2": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs",
           "nixpkgs"
         ]
       },
@@ -263,7 +261,6 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "nixpkgs": [
-          "nixpkgs",
           "nixpkgs"
         ],
         "rust-overlay": "rust-overlay_2"
@@ -287,7 +284,6 @@
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils_2",
         "nixpkgs": [
-          "nixpkgs",
           "nixpkgs"
         ]
       },
@@ -362,7 +358,6 @@
     "nix-index-database": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs",
           "nixpkgs"
         ]
       },
@@ -386,7 +381,6 @@
         "flake-utils": "flake-utils_3",
         "nix-filter": "nix-filter",
         "nixpkgs": [
-          "nixpkgs",
           "nixpkgs"
         ]
       },
@@ -423,7 +417,6 @@
       "inputs": {
         "flake-utils": "flake-utils_4",
         "nixpkgs": [
-          "nixpkgs",
           "nixpkgs"
         ]
       },
@@ -458,25 +451,6 @@
       }
     },
     "nixpkgs_2": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_3"
-      },
-      "locked": {
-        "lastModified": 1754835811,
-        "narHash": "sha256-vAvWzNbfBY+ROaA/mrZR02NeWEYokC25yAXZ0WUp9nk=",
-        "owner": "numtide",
-        "repo": "nixpkgs-unfree",
-        "rev": "3dce4a171b408c206ce9a0f063860b0c66cf7af3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs-unfree",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
       "locked": {
         "lastModified": 1754725699,
         "narHash": "sha256-iAcj9T/Y+3DBy2J0N+yF9XQQQ8IEb5swLFzs23CdP88=",
@@ -486,15 +460,16 @@
         "type": "github"
       },
       "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "nur": {
       "inputs": {
         "flake-parts": "flake-parts",
         "nixpkgs": [
-          "nixpkgs",
           "nixpkgs"
         ]
       },
@@ -620,7 +595,6 @@
     "zen-browser": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs",
           "nixpkgs"
         ]
       },
