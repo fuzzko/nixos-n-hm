@@ -99,10 +99,9 @@ in
       # i don't fucking know why i installed these shits but i installed them anyway
       youtube-music
       qview
-      cinny-desktop
       openutau
       nchat
-      legcord
+      dorion
       (with nur.repos."0komo"; [
         (wrapGL sklauncher)
       ])
