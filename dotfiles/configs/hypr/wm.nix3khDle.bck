@@ -9,7 +9,7 @@ let
 
   terminal = "footclient";
   runner = "wofi --show drun";
-  fileManager = "nemo";
+  fileManager = "nautilus";
   makeEnv = x: attrsets.mapAttrsToList (name: value: "${name},${toString value}") x;
 in
 {
