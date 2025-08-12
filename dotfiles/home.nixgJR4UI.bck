@@ -101,6 +101,7 @@ in
       qview
       openutau
       nchat
+      dorion
       (with nur.repos."0komo"; [
         (wrapGL sklauncher)
       ])
