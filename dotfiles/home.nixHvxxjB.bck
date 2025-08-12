@@ -59,6 +59,7 @@ in
       ouch
 
       # Something that would ease me off
+      nyxt
       riff
       khal
       fzf
@@ -73,9 +74,8 @@ in
       obsidian
 
       # For hyprland
-      nemo
-      nemo-preview
-      nemo-fileroller
+      nautilus
+      nautilus-open-any-terminal
       wluma
       hyprshot
       hyprpicker
