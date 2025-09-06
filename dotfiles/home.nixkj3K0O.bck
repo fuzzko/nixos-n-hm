@@ -53,6 +53,9 @@ in
       glow
       libnotify
       unzip
+      (ueberzugpp.override {
+        enableOpencv = false;
+      })
       ouch
 
       # Something that would ease me off
