@@ -93,13 +93,13 @@ in
       scrcpy
       mumble
 
-      kdePackages.kdenlive
-
       # i don't fucking know why i installed these shits but i installed them anyway
       youtube-music
       qview
       openutau
       nchat
+      kdePackages.kdenlive
+      bottles
       (with nur.repos."0komo"; [
         (wrapGL sklauncher)
       ])
