@@ -99,7 +99,8 @@ in
       openutau
       nchat
       kdePackages.kdenlive
-      bottles
+      audacity
+      igrep
       (with nur.repos."0komo"; [
         (wrapGL sklauncher)
       ])
@@ -123,6 +124,7 @@ in
   home.sessionVariables = rec {
     "XDG_PICTURES_DIR" = "${config.home.homeDirectory}/Pictures";
     "BROWSER" = "zen";
+    "IGREP_CUSTOM_EDITOR" = "hx {file_name}:{line_number}";
     "PAGER" = "moar";
     "GIT_PAGER" = PAGER;
     "SYSTEMD_PAGERSECURE" = "true";
