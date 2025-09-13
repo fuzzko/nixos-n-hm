@@ -143,6 +143,8 @@ in
     packages = [
       "io.itch.itch"
       "org.vinegarhq.Sober"
+      "io.github.nozwock.Packet"
+      "com.usebottles.bottles"
     ];
     update.auto = {
       enable = true;
