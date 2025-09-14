@@ -101,6 +101,7 @@ in
       kdePackages.kdenlive
       audacity
       igrep
+      packet
       (with nur.repos."0komo"; [
         (wrapGL sklauncher)
       ])
@@ -143,7 +144,6 @@ in
     packages = [
       "io.itch.itch"
       "org.vinegarhq.Sober"
-      "io.github.nozwock.Packet"
       "com.usebottles.bottles"
     ];
     update.auto = {
