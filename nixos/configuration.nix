@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }:
 let
@@ -294,6 +295,9 @@ in
     extraPortals = with pkgs; [
       xdg-desktop-portal-hyprland
       xdg-desktop-portal-gtk
+    ];
+    configPackages = [
+      config.programs.hyprland.package
     ];
   };
 
