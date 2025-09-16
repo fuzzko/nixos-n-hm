@@ -371,4 +371,6 @@ in
       }
     ];
   };
+
+  programs.niri.enable = true;
 }
