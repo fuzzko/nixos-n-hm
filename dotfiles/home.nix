@@ -403,6 +403,11 @@ in
     '';
   };
 
+  programs.niri.enable = true;
+  programs.niri = {
+    settings = loadConfig' "niri" { };
+  };
+
   xdg.configFile."cwc" = {
     source = ./configs/cwc;
     recursive = true;
