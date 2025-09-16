@@ -61,7 +61,6 @@
       chaotic,
       nix-cwc,
       zen-browser,
-      niri-flake,
       ...
     }:
     let
@@ -107,7 +106,6 @@
           nix-flatpak.homeManagerModules.nix-flatpak
           chaotic.homeManagerModules.default
           nix-cwc.homeManagerModules.default
-          niri-flake.homeModules.default
           ./dotfiles/home.nix
         ];
         extraSpecialArgs.std = nix-std.lib;
@@ -126,7 +124,6 @@
               nix-flatpak.nixosModules.nix-flatpak
               chaotic.nixosModules.default
               nix-cwc.nixosModules.default
-              niri-flake.nixosModules.default
               ./nixos/hardwares/${x}/configuration.nix
               ./nixos/hardwares/${x}/hardware-configuration.nix
               ./nixos/configuration.nix
