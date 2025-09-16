@@ -108,6 +108,7 @@
           chaotic.homeManagerModules.default
           nix-cwc.homeManagerModules.default
           niri-flake.homeModules.default
+          niri-flake.homeModules.config
           ./dotfiles/home.nix
         ];
         extraSpecialArgs.std = nix-std.lib;
