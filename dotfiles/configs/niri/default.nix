@@ -11,7 +11,12 @@ in
 
   binds =
   let
-    workspaceBinds = listToAttrs (map (i: { name = "Mod+${i}"; value = actions.focus-workspace i; }) (lib.range 1 9));
+    workspaceBinds = listToAttrs (map (i: {
+      name = "Mod+${i}";
+      value = {
+        action = with actions; focus-workspace 1;
+      };
+    }) (lib.range 1 9));
   in
   workspaceBinds //
   {
