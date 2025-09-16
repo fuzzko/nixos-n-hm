@@ -3,22 +3,13 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nur.url = "github:nix-community/NUR";
+    home-manager.url = "github:nix-community/home-manager/master";
     nix-flatpak.url = "github:gmodena/nix-flatpak/latest";
-    nix-search-cli = {
-      url = "github:peterldowns/nix-search-cli";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nixGL = {
+    nix-search-cli.url = "github:peterldowns/nix-search-cli";
+    nixGL.
       url = "github:nix-community/nixGL";
-      inputs.nixpkgs.follows = "nixpkgs";
+    nixGL = {
     };
     declarative-cachix.url = "github:jonascarpay/declarative-cachix";
     nix-index-database = {
@@ -43,6 +34,12 @@
       url = "github:pfaj/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nur.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nix-search-cli.inputs.nixpkgs.follows = "nixpkgs";
+    nixGL.
+      inputs.nixpkgs.follows = "nixpkgs";
   };
 
   nixConfig = {
