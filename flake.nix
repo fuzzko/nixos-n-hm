@@ -16,6 +16,7 @@
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     nix-cwc.url = "github:0komo/nix-cwc";
     zen-browser.url = "github:pfaj/zen-browser-flake";
+    niri-flake.url = "github:sodiboo/niri-flake";
 
     nur.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -26,6 +27,7 @@
     chaotic.inputs.nixpkgs.follows = "nixpkgs";
     nix-cwc.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
+    niri-flake.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   nixConfig = {
