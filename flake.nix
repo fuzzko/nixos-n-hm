@@ -17,6 +17,7 @@
     nix-cwc.url = "github:0komo/nix-cwc";
     zen-browser.url = "github:pfaj/zen-browser-flake";
     niri-flake.url = "github:sodiboo/niri-flake";
+    xwayland-satellite.url = "github:Supreeeme/xwayland-satellite";
 
     nur.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -28,6 +29,7 @@
     nix-cwc.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
     niri-flake.inputs.nixpkgs.follows = "nixpkgs";
+    xwayland-satellite.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   nixConfig = {
@@ -62,6 +64,7 @@
       nix-cwc,
       zen-browser,
       niri-flake,
+      xwayland-satellite,
       ...
     }:
     let
@@ -75,26 +78,27 @@
         nur.overlays.default
         nix-cwc.overlays.default
         niri-flake.overlays.niri
-        (final: prev: {
-          bun = prev.bun.overrideAttrs rec {
-            passthru.sources."x86_64-linux" = pkgs.fetchurl {
-              url = "https://github.com/oven-sh/bun/releases/download/bun-v${prev.bun.version}/bun-linux-x64-baseline.zip";
-              hash = "sha256-x1BMIW2HKRBdF4E4VmXjrCxj3r27XeTv3BLi1sSmy0o="; # update this
-            };
-            src = passthru.sources."x86_64-linux";
-          };
-          nix-search = nix-search-cli.outputs.packages.${system}.nix-search;
-          nixGLPackages = nixGL.outputs.packages.${system};
-          matui = matui.packages.${system}.matui;
-          zen-browser =
-            let
-              packs = zen-browser.outputs.packages.${system};
-              passthru = builtins.removeAttrs packs [ "default" ];
-            in
-            packs.default.overrideAttrs {
-              inherit passthru;
-            };
-        })
+        (
+          final: prev:
+          let
+            inherit (prev) system;
+          in
+          {
+            inherit (nix-search-cli.outputs.packages.${system}) nix-search;
+            inherit (xwayland-satellite.outputs.packages.${system}) xwayland-satellite;
+            nixGLPackages = nixGL.outputs.packages.${system};
+            matui = matui.packages.${system}.matui;
+            zen-browser =
+              let
+                packs = zen-browser.outputs.packages.${system};
+                passthru = builtins.removeAttrs packs [ "default" ];
+              in
+              packs.default.overrideAttrs {
+                inherit passthru;
+              };
+
+          }
+        )
       ];
     in
     {
