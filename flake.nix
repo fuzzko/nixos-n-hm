@@ -85,7 +85,7 @@
           in
           {
             inherit (nix-search-cli.outputs.packages.${system}) nix-search;
-            inherit (xwayland-satellite.outputs.packages.${system}) xwayland-satellite;
+            xwayland-satellite-unstable = xwayland-satellite.outputs.packages.${system}.xwayland-satellite;
             nixGLPackages = nixGL.outputs.packages.${system};
             matui = matui.packages.${system}.matui;
             zen-browser =
@@ -96,7 +96,6 @@
               packs.default.overrideAttrs {
                 inherit passthru;
               };
-
           }
         )
       ];
