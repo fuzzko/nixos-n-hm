@@ -10,6 +10,12 @@ in
     focus-at-startup = true;
   };
 
+  input = {
+    workspace-auto-back-and-forth = true;
+  };
+
+  workspaces."special" = {};
+
   binds =
     let
       workspaceBinds = listToAttrs (
@@ -23,7 +29,10 @@ in
     in
     workspaceBinds
     // {
+      "Mod+0".action = with actions; focus-workspace "special";
       "Mod+Alt+Right".action = with actions; focus-workspace-up;
       "Mod+Alt+Left".action = with actions; focus-workspace-down;
     };
+
+  xwayland-satellite.enable = true;
 }
