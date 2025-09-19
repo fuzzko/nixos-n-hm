@@ -1,6 +1,6 @@
 { pkgs, lib, ... }:
 {
-  theme = lib.mkForce "catppuccin-mocha_ts";
+  theme = lib.mkForce "ao";
 
   editor = {
     true-color = true;
