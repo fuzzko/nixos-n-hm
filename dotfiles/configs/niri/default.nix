@@ -22,14 +22,18 @@ in
       sh = sh: { inherit sh; };
     in
     [
-      # uncomment this if you're not using home-manager
-      (sh ''
-        if ! test -f /tmp/wired.sock; then
-          exec wired
-        fi
-      '')
-      (spawn "hypridle" [])
-      (spawn "waypaper" ["--restore"])
+      ## uncomment this if you're not using home-manager
+      # (sh ''
+      #   if ! test -f /tmp/wired.sock; then
+      #     exec wired
+      #   fi
+      # '')
+      # (sh ''
+      #   if ! test -f /tmp/wpaperd.sock || ! test -f /run/user/1000/wpaperd.sock; then
+      #     exec wpaperd -d
+      #   fi
+      # '')
+      # (spawn "hypridle" [])
     ];
 
   binds =
@@ -42,12 +46,16 @@ in
           };
         }) (lib.range 1 9)
       );
+      sh = with actions; spawn "sh" "-c";
     in
     workspaceBinds
     // {
       "Mod+0".action = with actions; focus-workspace "special";
       "Mod+Alt+Right".action = with actions; focus-workspace-up;
       "Mod+Alt+Left".action = with actions; focus-workspace-down;
+
+      "Mod+Q".action = with actions; spawn "anyrun";
+      "Mod+Shift+Q".action = with actions;
     };
 
   xwayland-satellite.enable = true;
