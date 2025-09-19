@@ -55,14 +55,7 @@ in
       "Mod+Alt+Left".action = with actions; focus-workspace-down;
 
       "Mod+Q".action = with actions; spawn "anyrun";
-      "Mod+Shift+Q".action = sh ''
-        footclient true
-        if test "$?" -eq 220; then
-          exec footclient
-        else
-          exec foot
-        fi
-      '';
+      "Mod+Shift+Q".action = with actions; spawn "foot";
     };
 
   xwayland-satellite.enable = true;
