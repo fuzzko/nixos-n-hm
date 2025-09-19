@@ -55,7 +55,7 @@ in
       "Mod+Alt+Left".action = with actions; focus-workspace-down;
 
       "Mod+Q".action = with actions; spawn "anyrun";
-      "Mod+Shift+Q".action = with actions; sh ''
+      "Mod+Shift+Q".action = sh ''
         footclient true
         if test "$?" -eq 220; then
           exec footclient
