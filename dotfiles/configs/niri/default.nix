@@ -16,6 +16,19 @@ in
 
   workspaces."special" = {};
 
+  spawn-at-startup =
+    let
+      spawn = prog: xs: { argv = [prog] ++ xs; };
+      sh = sh: { inherit sh; };
+    in
+    [
+      (sh ''
+        if ! test -f /tmp/wired.sock; then
+          wired &
+        fi
+      '' [])
+    ]
+
   binds =
     let
       workspaceBinds = listToAttrs (
