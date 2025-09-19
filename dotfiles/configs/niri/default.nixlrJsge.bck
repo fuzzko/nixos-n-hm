@@ -18,17 +18,10 @@ in
 
   spawn-at-startup =
     let
-      spawn = {
-        argv = [];
-        __functor = self: arg: self // {
-          argv = self.argv ++ [arg];
-        };
-      };
+      spawn = prog: xs: { argv = [prog] ++ xs; };
       sh = sh: { inherit sh; };
     in
     [
-      (spawn "niri" "msg" "action" "focus-workspace" "1")
-      
       ## uncomment this if you're not using home-manager
       # (sh ''
       #   if ! test -f /tmp/wired.sock; then
@@ -40,7 +33,7 @@ in
       #     exec wpaperd -d
       #   fi
       # '')
-      # (spawn "hypridle")
+      # (spawn "hypridle" [])
     ];
 
   binds =
