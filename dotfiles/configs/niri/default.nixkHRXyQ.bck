@@ -22,15 +22,12 @@ in
       sh = sh: { inherit sh; };
     in
     [
-      # uncomment this if you're not using home-manager
       (sh ''
         if ! test -f /tmp/wired.sock; then
           exec wired
         fi
       '')
-      (spawn "hypridle" [])
-      (spawn "waypaper" ["--restore"])
-    ];
+    ]
 
   binds =
     let

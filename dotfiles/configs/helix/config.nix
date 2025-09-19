@@ -47,11 +47,6 @@
     ];
   };
 
-  editor.cursor-shape = {
-    insert = "bar";
-    select = "hidden";
-  };
-
   editor.indent-guides = {
     render = true;
     character = "╎";
