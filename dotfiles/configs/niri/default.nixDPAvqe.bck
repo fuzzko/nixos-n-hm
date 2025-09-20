@@ -16,11 +16,6 @@ in
 
   workspaces."special" = {};
 
-  environment = {
-    "ELECTRON_OZONE_PLATFORM_HINT" = "auto";
-    "_JAVA_AWT_WM_NONREPARENTING" = "1";
-  };
-
   spawn-at-startup =
     let
       spawn = {
@@ -59,6 +54,7 @@ in
           };
         }) (lib.range 1 9)
       );
+      sh = with actions; spawn "sh" "-c";
     in
     workspaceBinds
     // {
@@ -68,9 +64,6 @@ in
 
       "Mod+Q".action = with actions; spawn "anyrun";
       "Mod+Shift+Q".action = with actions; spawn "foot";
-      
-      "Print".action = with actions; screenshot;
-      "Mod+Print".action = with actions; screenshot-window;
     };
 
   xwayland-satellite.enable = true;
