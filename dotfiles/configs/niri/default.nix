@@ -41,6 +41,7 @@ in
       #   fi
       # '')
       # (spawn "hypridle")
+      # (spawn "eww" "daemon")
     ];
 
   binds =
