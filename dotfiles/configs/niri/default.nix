@@ -20,7 +20,7 @@ in
   };
 
   # a hidden* workspace, used to hide windows
-  workspaces."special" = {};
+  workspaces."special" = { };
 
   environment = {
     # force electron to open as wayland client
@@ -33,10 +33,13 @@ in
     let
       # wrapper for `argv`, behaves like actions.spawn
       spawn = {
-        argv = [];
-        __functor = self: arg: self // {
-          argv = self.argv ++ [arg];
-        };
+        argv = [ ];
+        __functor =
+          self: arg:
+          self
+          // {
+            argv = self.argv ++ [ arg ];
+          };
       };
       # wrapper for `sh`, behaves like actions.spawn-sh
       spawn-sh = sh: { inherit sh; };
@@ -45,7 +48,7 @@ in
       (spawn "niri" "msg" "action" "focus-workspace" "1")
       (spawn "wl-paste" "--type" "text" "--watch" "cliphist" "store")
       (spawn "wl-paste" "--type" "image" "--watch" "cliphist" "store")
-      
+
       ## uncomment this if you're not using home-manager
       # (spawn "wired")
       # (spawn "wpaperd" "-d")
@@ -69,7 +72,7 @@ in
     // {
       "Mod+Shift+/" = with actions; show-hotkey-overlay;
       "Ctrl+Alt+Delete" = with actions; quit;
-      
+
       "Mod+0".action = with actions; focus-workspace "special";
 
       "Mod+Left".action = with actions; focus-column-left;
@@ -86,9 +89,11 @@ in
       "Mod+Shift+Down".action = with actions; move-window-to-workspace-down { focus = true; };
 
       # don't ask why this was binded as clipboard history
-      "Alt+XF86Calculator".action = with actions; spawn-sh ''
-        cliphist list | anyrun --plugins libstdin.so | cliphist decode | wl-copy
-      '';
+      "Alt+XF86Calculator".action =
+        with actions;
+        spawn-sh ''
+          cliphist list | anyrun --plugins libstdin.so | cliphist decode | wl-copy
+        '';
 
       "Mod+C" = {
         action = with actions; close-window;
@@ -104,53 +109,53 @@ in
 
       "Mod+Q".action = with actions; spawn "anyrun";
       "Mod+Shift+Q".action = with actions; spawn "foot";
-      
+
       "Print".action = with actions; screenshot;
       "Mod+Print".action = with actions; screenshot-window;
       # "Ctrl+Print".action = with actions; screenshot-screen;
     };
 
   window-rules =
-  let
-    inherit (utils) matches;
-  in
-  [
-    {
-      open-focused = true;
-      clip-to-geometry = true;
-    }
+    let
+      inherit (utils) matches;
+    in
+    [
+      {
+        open-focused = true;
+        clip-to-geometry = true;
+      }
 
-    {
-      matches = with matches; [
-        (app-id "^steam$")
-        (title ''^notificationtoasts_\d+_desktop$'')
-      ];
+      {
+        matches = with matches; [
+          (app-id "^steam$")
+          (title ''^notificationtoasts_\d+_desktop$'')
+        ];
 
-      default-floating-position = {
-        x = 10;
-        y = 10;
-        relative-to = "bottom-right";
-      };
-    }
-    
-    {
-      matches = with matches; [
-        (app-id "^xdg-desktop-portal-.*$")
-      ];
+        default-floating-position = {
+          x = 10;
+          y = 10;
+          relative-to = "bottom-right";
+        };
+      }
 
-      open-floating = true;
-      default-column-width.proportion = .55;
-      default-window-height.proportion = .57;
-    }
+      {
+        matches = with matches; [
+          (app-id "^xdg-desktop-portal-.*$")
+        ];
 
-    {
-      matches = with matches; [
-        (app-id "^foot$")
-      ];
+        open-floating = true;
+        default-column-width.proportion = .55;
+        default-window-height.proportion = .57;
+      }
 
-      open-floating = true;
-    }
-  ];
+      {
+        matches = with matches; [
+          (app-id "^foot$")
+        ];
+
+        open-floating = true;
+      }
+    ];
 
   xwayland-satellite.enable = true;
 }
