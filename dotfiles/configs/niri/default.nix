@@ -67,14 +67,22 @@ in
       "Mod+Shift+Right".action = with actions; move-column-right;
       "Mod+Shift+Up".action = with actions; move-window-to-workspace-up { focus = true; };
       "Mod+Shift+Down".action = with actions; move-window-to-workspace-down { focus = true; };
-      
+
+      "Mod+C" = {
+        action = with actions; close-window;
+        repeat = false;
+      };
+      "Mod+Alt+C" = {
+        action = with actions; spawn "nu" (toString ./scripts/sigkill-focused-window.nu);
+        repeat = false;
+      };
 
       "Mod+Q".action = with actions; spawn "anyrun";
       "Mod+Shift+Q".action = with actions; spawn "foot";
       
       "Print".action = with actions; screenshot;
       "Mod+Print".action = with actions; screenshot-window;
-      "Ctrl+Print".action = with actions; screenshot-screen;
+      # "Ctrl+Print".action = with actions; screenshot-screen;
     };
 
   xwayland-satellite.enable = true;
