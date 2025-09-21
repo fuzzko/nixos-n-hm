@@ -40,12 +40,8 @@ in
     in
     [
       (spawn "niri" "msg" "action" "focus-workspace" "1")
-      (spawn-sh ''
-        for type in text image; do
-          wl-paste --type "$type" --watch cliphist store &
-          disown
-        done
-      '')
+      (spawn "wl-paste" "--type" "text" "--watch" "cliphist" "store")
+      (spawn "wl-paste" "--type" "image" "--watch" "cliphist" "store")
       
       ## uncomment this if you're not using home-manager
       # (spawn "wired")
