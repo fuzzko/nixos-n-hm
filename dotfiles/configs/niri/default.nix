@@ -31,18 +31,10 @@ in
 
   spawn-at-startup =
     let
-      # wrapper for `argv`, behaves like actions.spawn
-      spawn = {
-        argv = [ ];
-        __functor =
-          self: arg:
-          self
-          // {
-            argv = self.argv ++ [ arg ];
-          };
-      };
-      # wrapper for `sh`, behaves like actions.spawn-sh
-      spawn-sh = sh: { inherit sh; };
+      inherit (utils.spawn-at-startup)
+        spawn
+        spawn-sh
+        ;
     in
     [
       (spawn "niri" "msg" "action" "focus-workspace" "1")
@@ -117,7 +109,7 @@ in
 
   window-rules =
     let
-      inherit (utils) matches;
+      inherit (utils.window-rules) matches;
     in
     [
       {
