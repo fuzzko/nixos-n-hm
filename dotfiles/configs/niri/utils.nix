@@ -7,7 +7,7 @@ in
 {
   # TODO: replace `matches.*` with smth like `matches { app-id = ...; title = [ ... ]; }`
 
-  # a lambda that generates an attr for `matches` option
+  # attrs of lambda that generates an attr for `matches` option
   window-rules.matches = listToAttrs (
     (map
       (name: {
