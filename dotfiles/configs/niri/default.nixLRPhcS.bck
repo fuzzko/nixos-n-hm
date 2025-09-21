@@ -92,21 +92,5 @@ in
       # "Ctrl+Print".action = with actions; screenshot-screen;
     };
 
-  window-rules = [
-    {
-      open-focused = true;
-    }
-    
-    {
-      matches = [
-        { app-id = "^xdg-desktop-portal-.*$"; }
-      ];
-
-      open-floating = true;
-      default-column-width.proportion = 752;
-      default-window-height.proportion = 443;
-    }
-  ];
-
   xwayland-satellite.enable = true;
 }
