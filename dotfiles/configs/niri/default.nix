@@ -151,20 +151,25 @@ in
 
   animations =
     let
-      inherit (utils.animations) kind;
+      inherit (utils.animations)
+        kind
+        mkCurveArgs
+        ;
 
       animations = {
-        window-open = [.05 .7 .1 1];
+        window-open = mkCurveArgs .05 .7 .1 1;
       };
     in
     {
       enable = true;
 
       window-open.enable = true;
-      window-open.kind = with kind; easing {
-        curve = "cubic-bezier";
-        curve-args = animations.window-open;
-      };
+      window-open.kind =
+        with kind;
+        easing {
+          curve = "cubic-bezier";
+          curve-args = animations.window-open;
+        };
     };
 
   hotkey-overlay.hide-not-bound = true;
