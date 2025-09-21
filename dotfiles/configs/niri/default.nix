@@ -62,15 +62,27 @@ in
     in
     workspaceBinds
     // {
+      "Ctrl+Alt+Delete" = with actions; quit;
+      
       "Mod+0".action = with actions; focus-workspace "special";
-      "Mod+Alt+Right".action = with actions; focus-workspace-up;
-      "Mod+Alt+Left".action = with actions; focus-workspace-down;
+
+      "Mod+Left".action = with actions; focus-column-left;
+      "Mod+Right".action = with actions; focus-column-right;
+      "Mod+Up".action = with actions; focus-window-up-or-to-workspace-up;
+      "Mod+Down".action = with actions; focus-window-down-or-to-workspace-down;
+
+      "Mod+Shift+Left".action = with actions; move-column-left;
+      "Mod+Shift+Right".action = with actions; move-column-right;
+      "Mod+Shift+Up".action = with actions; move-window-to-workspace-up { focus = true; };
+      "Mod+Shift+Down".action = with actions; move-window-to-workspace-down { focus = true; };
+      
 
       "Mod+Q".action = with actions; spawn "anyrun";
       "Mod+Shift+Q".action = with actions; spawn "foot";
       
       "Print".action = with actions; screenshot;
       "Mod+Print".action = with actions; screenshot-window;
+      "Ctrl+Print".action = with actions; screenshot-screen;
     };
 
   xwayland-satellite.enable = true;
