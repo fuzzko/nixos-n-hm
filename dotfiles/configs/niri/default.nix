@@ -78,7 +78,7 @@ in
       "Mod+Shift+Down".action = with actions; move-window-to-workspace-down { focus = true; };
 
       # don't ask why this was binded as clipboard history
-      "Shift+XF86Calculator".action = with actions; spawn-sh ''
+      "Alt+XF86Calculator".action = with actions; spawn-sh ''
         cliphist list | anyrun --plugins libstdin.so | cliphist decode | wl-copy
       '';
 
