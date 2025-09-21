@@ -158,7 +158,6 @@ in
 
       animations = {
         window-open = mkCurveArgs .05 .7 .1 1;
-        window-close = mkCurveArgs .25 1 .25 1;
       };
     in
     {
@@ -170,14 +169,6 @@ in
         easing {
           curve = "cubic-bezier";
           curve-args = animations.window-open;
-        };
-
-      window-close.enable = true;
-      window-close.kind =
-        with kind;
-        easing {
-          curve = "cubic-bezier";
-          curve-args = animations.window-close;
         };
     };
 
