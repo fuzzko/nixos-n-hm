@@ -8,14 +8,12 @@ in
   # TODO: replace `matches.*` with smth like `matches { app-id = ...; title = [ ... ]; }`
 
   # a lambda that generates an attr for `matches` option
-  window-rules.matches =
-    listToAttrs
-      (
-        (map (name: {
-          inherit name;
-          value = x: { "${name}" = x; };
-        }))
-      )
+  window-rules.matches = listToAttrs (
+    (map
+      (name: {
+        inherit name;
+        value = x: { "${name}" = x; };
+      })
       [
         "app-id"
         "title"
@@ -26,7 +24,9 @@ in
         "is-urgent"
         "is-window-cast-target"
         "at-startup"
-      ];
+      ]
+    )
+  );
 
   spawn-at-startup = {
     # wrapper for `argv`, behaves like actions.spawn
