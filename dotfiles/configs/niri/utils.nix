@@ -7,6 +7,8 @@ let
     ;
 in
 {
+  # TODO: replace `matches` with smth like `matches { app-id = ...; title = ...; }`
+  
   # a lambda that generates an attr for `matches` option
   matches =
     listToAttrs
