@@ -5,6 +5,8 @@ let
     ;
   inherit (config.lib.niri) actions;
 
+  utils = import ./utils.nix;
+
   defaultTerminal = "foot";
   defaultLauncher = "anyrun";
 in
@@ -23,6 +25,7 @@ in
   environment = {
     # force electron to open as wayland client
     "ELECTRON_OZONE_PLATFORM_HINT" = "auto";
+    # fix java apps shows up blank under xwayland-satellite
     "_JAVA_AWT_WM_NONREPARENTING" = "1";
   };
 
@@ -107,15 +110,32 @@ in
       # "Ctrl+Print".action = with actions; screenshot-screen;
     };
 
-  window-rules = [
+  window-rules =
+  let
+    inherit (utils) matches;
+  in
+  [
     {
       open-focused = true;
       clip-to-geometry = true;
     }
+
+    {
+      matches = with matches; [
+        (app-id "^steam$")
+        (title ''^notificationtoasts_\d+_desktop$'')
+      ];
+
+      default-floating-position = {
+        x = 10;
+        y = 10;
+        relative-to = "bottom-right";
+      };
+    }
     
     {
-      matches = [
-        { app-id = "^xdg-desktop-portal-.*$"; }
+      matches = with matches; [
+        (app-id "^xdg-desktop-portal-.*$")
       ];
 
       open-floating = true;
@@ -124,8 +144,8 @@ in
     }
 
     {
-      matches = [
-        { app-id = "^foot$"; }
+      matches = with matches; [
+        (app-id "^foot$")
       ];
 
       open-floating = true;
