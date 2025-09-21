@@ -54,6 +54,7 @@ in
     in
     workspaceBinds
     // {
+      "Mod+Shift+/" = with actions; show-hotkey-overlay;
       "Ctrl+Alt+Delete" = with actions; quit;
       
       "Mod+0".action = with actions; focus-workspace "special";
