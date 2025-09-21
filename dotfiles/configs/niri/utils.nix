@@ -34,9 +34,9 @@ in
       argv = [ ];
       __functor =
         self: arg:
-        self
-        // {
-          argv = self.argv ++ [ arg ];
+        {
+          inherit (self) __functor;
+          argv = self.argv ++ [arg];
         };
     };
     # wrapper for `sh`, behaves like actions.spawn-sh
