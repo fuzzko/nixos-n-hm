@@ -95,6 +95,7 @@ in
   window-rules = [
     {
       open-focused = true;
+      clip-to-geometry = true;
     }
     
     {
@@ -103,8 +104,16 @@ in
       ];
 
       open-floating = true;
-      default-column-width.proportion = 752;
-      default-window-height.proportion = 443;
+      default-column-width.proportion = .55;
+      default-window-height.proportion = .57;
+    }
+
+    {
+      matches = [
+        { app-id = "^foot$"; }
+      ];
+
+      open-floating = true;
     }
   ];
 
