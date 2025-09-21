@@ -35,16 +35,8 @@ in
       (spawn "niri" "msg" "action" "focus-workspace" "1")
       
       ## uncomment this if you're not using home-manager
-      # (sh ''
-      #   if ! test -f /tmp/wired.sock; then
-      #     exec wired
-      #   fi
-      # '')
-      # (sh ''
-      #   if ! test -f /tmp/wpaperd.sock || ! test -f /run/user/1000/wpaperd.sock; then
-      #     exec wpaperd -d
-      #   fi
-      # '')
+      # (spawn "wired")
+      # (spawn "wpaperd" "-d")
       # (spawn "hypridle")
       # (spawn "eww" "daemon")
     ];
