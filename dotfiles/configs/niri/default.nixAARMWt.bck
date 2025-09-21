@@ -4,9 +4,6 @@ let
     listToAttrs
     ;
   inherit (config.lib.niri) actions;
-
-  defaultTerminal = "foot";
-  defaultLauncher = "anyrun";
 in
 {
   outputs."eDP-1" = {
