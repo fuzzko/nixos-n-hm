@@ -17,35 +17,27 @@ in
     workspace-auto-back-and-forth = true;
   };
 
-  # a hidden* workspace, used to hide windows
   workspaces."special" = {};
 
   environment = {
-    # force electron to open as wayland client
     "ELECTRON_OZONE_PLATFORM_HINT" = "auto";
     "_JAVA_AWT_WM_NONREPARENTING" = "1";
   };
 
   spawn-at-startup =
     let
-      # wrapper for `argv`, behaves like actions.spawn
       spawn = {
         argv = [];
         __functor = self: arg: self // {
           argv = self.argv ++ [arg];
         };
       };
-      # wrapper for `sh`, behaves like actions.spawn-sh
-      spawn-sh = sh: { inherit sh; };
+      sh = sh: { inherit sh; };
     in
     [
       (spawn "niri" "msg" "action" "focus-workspace" "1")
-      (spawn-sh ''
-        for type in text image; do
-          wl-paste --type "$type" --watch cliphist store &
-          disown
-        done
-      '')
+      (spawn "wl-paste" "--type" "text" "--watch" "cliphist" "store")
+      (spawn "wl-paste" "--type" "image" "--watch" "cliphist" "store")
       
       ## uncomment this if you're not using home-manager
       # (spawn "wired")
@@ -56,7 +48,6 @@ in
 
   binds =
     let
-      # generates `Mod+${i}` binds to switch workspace based on idx
       workspaceBinds = listToAttrs (
         map (i: {
           name = "Mod+${i}";
