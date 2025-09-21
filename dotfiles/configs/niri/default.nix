@@ -77,6 +77,8 @@ in
         repeat = false;
       };
 
+      "Mod+F".action = with actions; toggle-window-floating;
+
       "Mod+Q".action = with actions; spawn "anyrun";
       "Mod+Shift+Q".action = with actions; spawn "foot";
       
