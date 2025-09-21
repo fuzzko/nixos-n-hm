@@ -63,6 +63,9 @@ in
       "Mod+Up".action = with actions; focus-window-up-or-to-workspace-up;
       "Mod+Down".action = with actions; focus-window-down-or-to-workspace-down;
 
+      "Mod+Home".action = with actions; focus-column-first;
+      "Mod+End".action = with actions; focus-column-left;
+
       "Mod+Shift+Left".action = with actions; move-column-left;
       "Mod+Shift+Right".action = with actions; move-column-right;
       "Mod+Shift+Up".action = with actions; move-window-to-workspace-up { focus = true; };
@@ -78,6 +81,7 @@ in
       };
 
       "Mod+F".action = with actions; toggle-window-floating;
+      "Mod+V".action = with actions; fullscreen-window;
 
       "Mod+Q".action = with actions; spawn "anyrun";
       "Mod+Shift+Q".action = with actions; spawn "foot";
