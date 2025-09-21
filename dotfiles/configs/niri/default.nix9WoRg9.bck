@@ -33,8 +33,6 @@ in
     in
     [
       (spawn "niri" "msg" "action" "focus-workspace" "1")
-      (spawn "wl-paste" "--type" "text" "--watch" "cliphist" "store")
-      (spawn "wl-paste" "--type" "image" "--watch" "cliphist" "store")
       
       ## uncomment this if you're not using home-manager
       # (spawn "wired")
@@ -73,11 +71,6 @@ in
       "Mod+Shift+Right".action = with actions; move-column-right;
       "Mod+Shift+Up".action = with actions; move-window-to-workspace-up { focus = true; };
       "Mod+Shift+Down".action = with actions; move-window-to-workspace-down { focus = true; };
-
-      # don't ask why this was binded as clipboard-history
-      "XF86Calculator".action = with actions; spawn-sh ''
-        cliphist list | anyrun --plugins libstdin.so | cliphist decode | wl-copy
-      '';
 
       "Mod+C" = {
         action = with actions; close-window;
