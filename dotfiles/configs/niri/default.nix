@@ -176,11 +176,13 @@ in
         };
 
       workspace-switch.enable = true;
-      workspace-switch.kind = with kind; spring {
-        damping-ratio = 1;
-        stiffness = 1000;
-        epsilon = 0.0001;
-      };
+      workspace-switch.kind =
+        with kind;
+        spring {
+          damping-ratio = 1;
+          stiffness = 1000;
+          epsilon = 0.0001;
+        };
     };
 
   hotkey-overlay.hide-not-bound = true;
