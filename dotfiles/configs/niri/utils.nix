@@ -16,11 +16,13 @@ in
 {
   # TODO: replace `matches.*` with smth like `matches { app-id = ...; title = [ ... ]; }`
 
+  # lambdas to create a tagged union for `kind` option
   animations.kind = fromListToTaggedUnion [
     "easing"
     "spring"
   ];
 
+  # create a bezier curve
   animations.mkCurveArgs = a: b: c: d: [a b c d];
 
   # lambdas to create a tagged union for `matches` option
