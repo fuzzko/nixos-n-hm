@@ -149,7 +149,6 @@ in
       }
     ];
 
-  animations.enable = true;
   animations =
     let
       inherit (utils.animations)
@@ -158,6 +157,8 @@ in
         ;
     in
     {
+      /*animations.*/enable = true;
+      
       window-open.enable = true;
       window-open.kind =
         with kind;
