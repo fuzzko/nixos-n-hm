@@ -183,6 +183,33 @@ in
           stiffness = 1000;
           epsilon = 0.0001;
         };
+
+      horizontal-view-movement.enable = true;
+      horizontal-view-movement.kind =
+        with kind;
+        spring {
+          damping-ratio = 1;
+          stiffness = 800;
+          epsilon = 0.0001;
+        };
+
+      window-movement.enable = true;
+      window-movement.kind = 
+        with kind;
+        spring {
+          damping-ratio = 1;
+          stiffness = 800;
+          epsilon = 0.0001;
+        };
+
+      window-resize.enable = true;
+      window-resize.kind =
+        with kind;
+        spring {
+          damping-ratio = 1;
+          stiffness = 800;
+          epsilon = 0.0001;
+        };
     };
 
   hotkey-overlay.hide-not-bound = true;
