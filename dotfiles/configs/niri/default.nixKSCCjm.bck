@@ -157,7 +157,7 @@ in
         ;
     in
     {
-      enable = true;
+      /*animations.*/enable = true;
       
       window-open.enable = true;
       window-open.kind =
