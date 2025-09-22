@@ -155,11 +155,6 @@ in
         kind
         mkCurveArgs
         ;
-
-      animations = {
-        window-open = mkCurveArgs 0.25 1 0.5 1;
-        window-close = mkCurveArgs 0.25 1 0.5 1;
-      };
     in
     {
       enable = true;
@@ -168,16 +163,16 @@ in
       window-open.kind =
         with kind;
         easing {
-          curve = "cubic-bezier";
-          curve-args = animations.window-open;
+          duration-ms = 150;
+          curve = "ease-out-cubic";
         };
 
       window-close.enable = true;
       window-close.kind =
         with kind;
         easing {
-          curve = "cubic-bezier";
-          curve-args = animations.window-close;
+          duration-ms = 150;
+          curve = "ease-out-expo";
         };
     };
 
