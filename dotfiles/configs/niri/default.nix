@@ -219,6 +219,23 @@ in
           stiffness = 800;
           epsilon = 0.0001;
         };
+
+      screenshot-ui-open.enable = true;
+      screenshot-ui-open.kind =
+        with kind;
+        easing {
+          duration-ms = 200;
+          curve = "ease-out-quad";
+        };
+
+      overview-open-close.enable = true;
+      overview-open-close.kind =
+        with kind;
+        spring {
+          damping-ratio = 1;
+          stiffness = 800;
+          epsilon = 0.0001;
+        };
     };
 
   hotkey-overlay.hide-not-bound = true;
