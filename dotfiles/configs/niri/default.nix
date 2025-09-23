@@ -128,9 +128,9 @@ in
       );
     in
     workspaceBinds
-    // builtins.mapAttrs (_: x: { action = builtins.removeAttrs x.action [ "__functor" ]; }) {
-      "Mod+Shift+/" = with actions; show-hotkey-overlay;
-      "Ctrl+Alt+Delete" = with actions; quit;
+    // {
+      "Mod+Shift+/".action = with actions; show-hotkey-overlay;
+      "Ctrl+Alt+Delete".action = with actions; quit;
 
       "Mod+0".action = with actions; focus-workspace "special";
 
