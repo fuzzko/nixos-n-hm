@@ -32,63 +32,60 @@ in
     hot-corners.enable = true;
   };
 
-  layout = {
-    gaps = 16;
+  layout =
+    let
+      inherit (utils)
+        decoration
+        ;
+    in
+    {
+      gaps = 16;
 
-    center-focused-column = "on-overflow";
-    always-center-single-column = true;
-    empty-workspace-above-first = true;
+      center-focused-column = "on-overflow";
+      always-center-single-column = true;
+      empty-workspace-above-first = true;
 
-    default-column-width = { };
+      default-column-width = { };
 
-    border =
-      let
-        inherit (utils)
-          decoration
-          ;
-      in
-      {
+      border = {
         enable = true;
 
         width = 2.0;
 
-        shadow.enable = true;
-        shadow = {
-          color = "#000";
-          softness = 8;
-          offset = {
-            x = 3;
-            y = 3;
+        active =
+          with decoration;
+          gradient {
+            relative-to = "workspace";
+            angle = 45;
+            from = "#2c5484";
+            to = "#6eb0ff";
           };
-        };
+        inactive = with decoration; color "#838a97";
+        urgent = with decoration; color "#9d5800";
+      };
 
-        border.enable = true;
-        border = {
-          active =
-            with decoration;
-            gradient {
-              relative-to = "workspace";
-              angle = 45;
-              from = "#2c5484";
-              to = "#6eb0ff";
-            };
-          inactive = with decoration; color "#838a97";
-          urgent = with decoration; color "#9d5800";
-        };
-
-        insert-hint.enable = true;
-        insert-hint.display = with decoration; color "254862";
-
-        background-color = "#2c5484";
-
-        struts = {
-          top = 10;
-          bottom = 10;
+      shadow.enable = true;
+      shadow = {
+        color = "#000";
+        softness = 8;
+        offset = {
+          x = 3;
+          y = 3;
         };
       };
 
-    focus-ring.enable = false;
-  };
+      focus-ring.enable = false;
+
+      insert-hint.enable = true;
+      insert-hint.display = with decoration; color "254862";
+
+      struts = {
+        top = 10;
+        bottom = 10;
+      };
+
+      background-color = "#2c5484";
+    };
 
   # a hidden* workspace, used to hide windows
   workspaces."special" = { };
