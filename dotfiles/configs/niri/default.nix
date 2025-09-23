@@ -254,8 +254,8 @@ in
       workspace-switch.kind =
         with kind;
         spring {
-          damping-ratio = 1;
-          stiffness = 1000;
+          damping-ratio = 1.0;
+          stiffness = 1000.0;
           epsilon = 0.0001;
         };
 
@@ -263,8 +263,8 @@ in
       horizontal-view-movement.kind =
         with kind;
         spring {
-          damping-ratio = 1;
-          stiffness = 800;
+          damping-ratio = 1.0;
+          stiffness = 800.0;
           epsilon = 0.0001;
         };
 
@@ -272,8 +272,8 @@ in
       window-movement.kind =
         with kind;
         spring {
-          damping-ratio = 1;
-          stiffness = 800;
+          damping-ratio = 1.0;
+          stiffness = 800.0;
           epsilon = 0.0001;
         };
 
@@ -281,8 +281,8 @@ in
       window-resize.kind =
         with kind;
         spring {
-          damping-ratio = 1;
-          stiffness = 800;
+          damping-ratio = 1.0;
+          stiffness = 800.0;
           epsilon = 0.0001;
         };
 
@@ -290,8 +290,8 @@ in
       config-notification-open-close.kind =
         with kind;
         spring {
-          damping-ratio = 0.6;
-          stiffness = 800;
+          damping-ratio = 0.6.0;
+          stiffness = 800.0;
           epsilon = 0.0001;
         };
 
@@ -307,8 +307,8 @@ in
       overview-open-close.kind =
         with kind;
         spring {
-          damping-ratio = 1;
-          stiffness = 800;
+          damping-ratio = 1.0;
+          stiffness = 800.0;
           epsilon = 0.0001;
         };
     };
