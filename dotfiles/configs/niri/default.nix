@@ -136,8 +136,8 @@ in
 
       "Mod+Left".action = with actions; focus-column-left;
       "Mod+Right".action = with actions; focus-column-right;
-      "Mod+Up".action = with actions; focus-window-up-or-to-workspace-up;
-      "Mod+Down".action = with actions; focus-window-down-or-to-workspace-down;
+      "Mod+Up".action = with actions; focus-window-or-workspace-up;
+      "Mod+Down".action = with actions; focus-window-or-workspace-down;
 
       "Mod+Home".action = with actions; focus-column-first;
       "Mod+End".action = with actions; focus-column-left;
