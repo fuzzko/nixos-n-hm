@@ -70,6 +70,9 @@ in
           inactive = with decoration; color "#838a97";
           urgent = with decoration; color "#9d5800";
         };
+
+        insert-hint.enable = true;
+        insert-hint.display = with decoration; color "254862";
       };
 
     focus-ring.enable = false;
