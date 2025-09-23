@@ -35,23 +35,31 @@ in
     center-focused-column = "on-overflow";
     always-center-single-column = true;
     empty-workspace-above-first = true;
-    
-    default-column-width = {};
+
+    default-column-width = { };
 
     border =
-    let
-      inherit (utils)
-        decoration
-        ;
-    in
-    {
-      enable = true;
-      
-      width = 2.0;
-      
-    };
+      let
+        inherit (utils)
+          decoration
+          ;
+      in
+      {
+        enable = true;
+
+        width = 2.0;
+
+        active = with decoration; gradient {
+          relative-to = "workspace";
+          angle = 45;
+          from = "#2c5484";
+          to = "#6eb0ff";
+        };
+      };
+
+    focus-ring.enable = false;
   };
-  
+
   # a hidden* workspace, used to hide windows
   workspaces."special" = { };
 
@@ -191,7 +199,7 @@ in
     in
     {
       enable = true;
-      
+
       window-open.enable = true;
       window-open.kind =
         with kind;
