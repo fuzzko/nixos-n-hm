@@ -110,7 +110,7 @@
           nix-flatpak.homeManagerModules.nix-flatpak
           chaotic.homeManagerModules.default
           nix-cwc.homeManagerModules.default
-          niri-flake.homeModules.default
+          niri-flake.homeModules.niri
           niri-flake.homeModules.config
           ./dotfiles/home.nix
         ];

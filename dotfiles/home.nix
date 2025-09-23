@@ -405,6 +405,7 @@ in
 
   programs.niri.enable = true;
   programs.niri = {
+    package = pkgs.niri-stable;
     settings = loadConfig' "niri" { };
   };
 
