@@ -73,6 +73,8 @@ in
 
         insert-hint.enable = true;
         insert-hint.display = with decoration; color "254862";
+
+        background-color = "#2c5484";
       };
 
     focus-ring.enable = false;
