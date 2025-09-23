@@ -50,7 +50,7 @@ in
       border = {
         enable = true;
 
-        width = 2.0;
+        width = 4.0;
 
         active =
           with decoration;
