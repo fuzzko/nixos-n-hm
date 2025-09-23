@@ -290,7 +290,7 @@ in
       config-notification-open-close.kind =
         with kind;
         spring {
-          damping-ratio = 0.6.0;
+          damping-ratio = 0.6;
           stiffness = 800.0;
           epsilon = 0.0001;
         };
