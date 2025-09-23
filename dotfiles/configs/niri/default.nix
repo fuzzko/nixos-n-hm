@@ -17,6 +17,9 @@ in
 
   input = {
     workspace-auto-back-and-forth = true;
+
+    focus-follow.enable = true;
+    focus-follow.max-scroll-amount = "10%";
   };
 
   gestures = {
@@ -176,11 +179,19 @@ in
   window-rules =
     let
       inherit (utils.window-rules) matches;
+
+      radius = x: {
+        bottom-left = x;
+        bottom-right = x;
+        top-left = x;
+        top-right = x;
+      };
     in
     [
       {
         open-focused = true;
         clip-to-geometry = true;
+        geometry-corner-radius = radius 12;
       }
 
       {
