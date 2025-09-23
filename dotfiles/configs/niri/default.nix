@@ -29,6 +29,14 @@ in
     hot-corners.enable = true;
   };
 
+  layout = {
+    gaps = 16;
+    center-focused-column = "on-overflow";
+    always-center-single-column = true;
+    empty-workspace-above-first = true;
+    default-column-width = {};
+  };
+  
   # a hidden* workspace, used to hide windows
   workspaces."special" = { };
 
@@ -109,8 +117,8 @@ in
       "Mod+F".action = with actions; toggle-window-floating;
       "Mod+V".action = with actions; fullscreen-window;
 
-      "Mod+Q".action = with actions; spawn "anyrun";
-      "Mod+Shift+Q".action = with actions; spawn "foot";
+      "Mod+Q".action = with actions; spawn defaultLauncher;
+      "Mod+Shift+Q".action = with actions; spawn defaultTerminal;
 
       "Print".action = with actions; screenshot;
       "Mod+Print".action = with actions; screenshot-window;
