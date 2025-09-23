@@ -106,7 +106,6 @@ in
         ;
     in
     [
-      (spawn "niri" "msg" "action" "focus-workspace" "1")
       (spawn "wl-paste" "--type" "text" "--watch" "cliphist" "store")
       (spawn "wl-paste" "--type" "image" "--watch" "cliphist" "store")
 
