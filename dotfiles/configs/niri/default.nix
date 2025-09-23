@@ -49,11 +49,26 @@ in
 
         width = 2.0;
 
-        active = with decoration; gradient {
-          relative-to = "workspace";
-          angle = 45;
-          from = "#2c5484";
-          to = "#6eb0ff";
+        shadow.enable = true;
+        shadow = {
+          color = "#000";
+          softness = 8;
+          offset = {
+            x = 3;
+            y = 3;
+          };
+        };
+
+        border.enable = true;
+        border = {
+          active = with decoration; gradient {
+            relative-to = "workspace";
+            angle = 45;
+            from = "#2c5484";
+            to = "#6eb0ff";
+          };
+          inactive = with decoration; color "#838a97";
+          urgent = with decoration; color "#9d5800";
         };
       };
 
