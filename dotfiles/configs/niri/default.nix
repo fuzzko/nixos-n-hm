@@ -189,7 +189,7 @@ in
       {
         open-focused = true;
         clip-to-geometry = true;
-        geometry-corner-radius = radius 12;
+        geometry-corner-radius = radius 12.0;
       }
 
       {
