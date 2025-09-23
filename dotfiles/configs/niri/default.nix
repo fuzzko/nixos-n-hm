@@ -18,8 +18,8 @@ in
   input = {
     workspace-auto-back-and-forth = true;
 
-    focus-follow.enable = true;
-    focus-follow.max-scroll-amount = "10%";
+    # focus-follow.enable = true;
+    # focus-follow.max-scroll-amount = "10%";
   };
 
   gestures = {
