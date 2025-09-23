@@ -122,7 +122,7 @@ in
       # generates `Mod+${i}` binds to switch workspace based on idx
       workspaceBinds = listToAttrs (
         map (i: {
-          name = "Mod+${i}";
+          name = "Mod+${toString i}";
           value = {
             action = with actions; focus-workspace i;
           };
