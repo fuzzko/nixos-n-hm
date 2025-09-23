@@ -31,10 +31,24 @@ in
 
   layout = {
     gaps = 16;
+
     center-focused-column = "on-overflow";
     always-center-single-column = true;
     empty-workspace-above-first = true;
+    
     default-column-width = {};
+
+    border.enable = true;
+    border =
+    let
+      inherit (utils)
+        decoration
+        ;
+    in
+    {
+      width = 2.0;
+      
+    };
   };
   
   # a hidden* workspace, used to hide windows
