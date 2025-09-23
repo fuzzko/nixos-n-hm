@@ -107,7 +107,7 @@ in
         spawn-sh
         ;
     in
-    assert builtins.trace (spawn "a");
+    assert builtins.trace (spawn "a") true;
     [
       (spawn "wl-paste" "--type" "text" "--watch" "cliphist" "store")
       (spawn "wl-paste" "--type" "image" "--watch" "cliphist" "store")
