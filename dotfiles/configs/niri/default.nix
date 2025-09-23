@@ -38,7 +38,6 @@ in
     
     default-column-width = {};
 
-    border.enable = true;
     border =
     let
       inherit (utils)
@@ -46,6 +45,8 @@ in
         ;
     in
     {
+      enable = true;
+      
       width = 2.0;
       
     };
