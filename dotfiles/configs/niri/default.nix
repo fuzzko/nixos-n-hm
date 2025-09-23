@@ -107,7 +107,8 @@ in
         spawn-sh
         ;
     in
-    map (x: builtins.removeAttrs [ "__functor" ] x) [
+    assert builtins.trace (spawn "a");
+    [
       (spawn "wl-paste" "--type" "text" "--watch" "cliphist" "store")
       (spawn "wl-paste" "--type" "image" "--watch" "cliphist" "store")
 
