@@ -255,7 +255,7 @@ in
         with kind;
         spring {
           damping-ratio = 1.0;
-          stiffness = 1000.0;
+          stiffness = 1000;
           epsilon = 0.0001;
         };
 
@@ -264,7 +264,7 @@ in
         with kind;
         spring {
           damping-ratio = 1.0;
-          stiffness = 800.0;
+          stiffness = 800;
           epsilon = 0.0001;
         };
 
@@ -273,7 +273,7 @@ in
         with kind;
         spring {
           damping-ratio = 1.0;
-          stiffness = 800.0;
+          stiffness = 800;
           epsilon = 0.0001;
         };
 
@@ -282,7 +282,7 @@ in
         with kind;
         spring {
           damping-ratio = 1.0;
-          stiffness = 800.0;
+          stiffness = 800;
           epsilon = 0.0001;
         };
 
@@ -291,7 +291,7 @@ in
         with kind;
         spring {
           damping-ratio = 0.6;
-          stiffness = 800.0;
+          stiffness = 800;
           epsilon = 0.0001;
         };
 
@@ -308,7 +308,7 @@ in
         with kind;
         spring {
           damping-ratio = 1.0;
-          stiffness = 800.0;
+          stiffness = 800;
           epsilon = 0.0001;
         };
     };
