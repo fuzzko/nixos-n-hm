@@ -19,6 +19,16 @@ in
     workspace-auto-back-and-forth = true;
   };
 
+  gestures = {
+    dnd-edge-view-scroll = {
+      trigger-width = 100;
+      delay-ms = 300;
+      max-speed = 3000;
+    };
+
+    hot-corners.enable = true;
+  };
+
   # a hidden* workspace, used to hide windows
   workspaces."special" = { };
 
