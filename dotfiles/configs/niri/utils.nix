@@ -38,6 +38,11 @@ in
     "at-startup"
   ];
 
+  decoration = fromListToTaggedUnion [
+    "color"
+    "gradient"
+  ];
+
   spawn-at-startup = {
     # wrapper for `argv`, behaves like actions.spawn
     spawn = {
