@@ -64,12 +64,14 @@ in
 
         border.enable = true;
         border = {
-          active = with decoration; gradient {
-            relative-to = "workspace";
-            angle = 45;
-            from = "#2c5484";
-            to = "#6eb0ff";
-          };
+          active =
+            with decoration;
+            gradient {
+              relative-to = "workspace";
+              angle = 45;
+              from = "#2c5484";
+              to = "#6eb0ff";
+            };
           inactive = with decoration; color "#838a97";
           urgent = with decoration; color "#9d5800";
         };
@@ -105,7 +107,7 @@ in
         spawn-sh
         ;
     in
-    [
+    map (x: builtins.removeAttrs [ "__functor" ] x) [
       (spawn "wl-paste" "--type" "text" "--watch" "cliphist" "store")
       (spawn "wl-paste" "--type" "image" "--watch" "cliphist" "store")
 
