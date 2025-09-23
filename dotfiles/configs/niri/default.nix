@@ -129,7 +129,7 @@ in
     in
     workspaceBinds
     // {
-      "Mod+Shift+/".action = with actions; show-hotkey-overlay;
+      "Mod+Shift+Slash".action = with actions; show-hotkey-overlay;
       "Ctrl+Alt+Delete".action = with actions; quit;
 
       "Mod+0".action = with actions; focus-workspace "special";
