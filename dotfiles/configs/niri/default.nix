@@ -148,11 +148,15 @@ in
       "Mod+Shift+Down".action = with actions; move-window-to-workspace-down { focus = true; };
 
       # don't ask why this was binded as clipboard history
-      "Alt+XF86Calculator".action =
-        with actions;
-        spawn-sh ''
-          cliphist list | anyrun --plugins libstdin.so | cliphist decode | wl-copy
-        '';
+      "Alt+XF86Calculator" = {
+        action =
+          with actions;
+          spawn-sh ''
+            cliphist list | anyrun --plugins libstdin.so | cliphist decode | wl-copy
+          '';
+        repeat = false;
+        hotkey-overlay.title = "Open clipboard history";
+      };
 
       "Mod+C" = {
         action = with actions; close-window;
@@ -161,6 +165,7 @@ in
       "Mod+Alt+C" = {
         action = with actions; spawn "nu" (toString ./scripts/sigkill-focused-window.nu);
         repeat = false;
+        hotkey-overlay.title = "Force close a window";
       };
 
       "Mod+F".action = with actions; toggle-window-floating;
