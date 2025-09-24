@@ -34,7 +34,7 @@ in
             list: path:
             lib.mapAttrsToList (
               basename: type: if type == "directory" then go list (path + /${basename}) else path + /${basename}
-            ) (readDir path);
+            ) (builtins.readDir path);
         in
         lib.flatten (go [ ] dir);
     in
