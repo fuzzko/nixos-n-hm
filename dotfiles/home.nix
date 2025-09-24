@@ -25,6 +25,21 @@ let
   loadConfig' = x: y: import ./configs/${x} (inputs // { root = ./.; } // y);
 in
 {
+  import =
+    let
+      filesInDir =
+        dir:
+        let
+          go =
+            list: path:
+            lib.mapAttrsToList (
+              basename: type: if type == "directory" then go list (path + /${basename}) else path + /${basename}
+            ) (readDir path);
+        in
+        lib.flatten (go [ ] dir);
+    in
+    (filesInDir ./options) ++ [ ];
+
   programs.home-manager.enable = true;
   home = {
     username = "komo";
