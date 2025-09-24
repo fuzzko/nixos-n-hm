@@ -356,11 +356,6 @@ in
     settings = loadConfig' "dunst" { };
   };
 
-  programs.eww = {
-    enable = true;
-    configDir = ./configs/eww;
-  };
-
   services.hypridle = {
     enable = true;
     settings = loadConfig "hypr/idle" { };
@@ -401,11 +396,6 @@ in
         fnl.dofile([[${config.xdg.configHome}/cwc/rc.fnl]])
       end
     '';
-  };
-
-  programs.niri.enable = true;
-  programs.niri = {
-    settings = loadConfig' "niri" { };
   };
 
   xdg.configFile."cwc" = {
