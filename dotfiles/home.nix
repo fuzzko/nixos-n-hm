@@ -37,8 +37,9 @@ in
             ) (builtins.readDir path);
         in
         lib.flatten (go [ ] dir);
+      filterFilesInDir = filterLambda: dir: builtins.filter filterLambda (filesInDir dir);
     in
-    (filesInDir ./options) ++ [ ];
+    (filterFilesInDir (x: lib.hasSuffix ".nix" (toString x)) ./options) ++ [ ];
 
   programs.home-manager.enable = true;
   home = {
