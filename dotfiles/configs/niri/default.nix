@@ -132,7 +132,10 @@ in
       "Mod+Shift+Slash".action = with actions; show-hotkey-overlay;
       "Ctrl+Alt+Delete".action = with actions; quit;
 
-      "Mod+0".action = with actions; focus-workspace "special";
+      "Mod+0" = {
+        action = with actions; focus-workspace "special";
+        hotkey-overlay.title = "Open special workspace";
+      };
 
       "Mod+Left".action = with actions; focus-column-left;
       "Mod+Right".action = with actions; focus-column-right;
