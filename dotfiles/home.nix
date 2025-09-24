@@ -39,7 +39,7 @@ in
         lib.flatten (go [ ] dir);
       filterFilesInDir = filterLambda: dir: builtins.filter filterLambda (filesInDir dir);
     in
-    (filterFilesInDir (x: lib.hasSuffix ".nix" (toString x)) ./options) ++ [ ];
+    (filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./options) ++ [ ];
 
   programs.home-manager.enable = true;
   home = {
