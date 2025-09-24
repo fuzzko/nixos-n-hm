@@ -103,16 +103,16 @@ in
         spawn
         spawn-sh
         ;
+      service = spawn "systemctl" "--user" "start";
     in
     map (x: builtins.removeAttrs x [ "__functor" ]) [
       (spawn "wl-paste" "--type" "text" "--watch" "cliphist" "store")
       (spawn "wl-paste" "--type" "image" "--watch" "cliphist" "store")
 
-      ## uncomment this if you're not using home-manager
-      # (spawn "wired")
-      # (spawn "wpaperd" "-d")
-      # (spawn "hypridle")
-      # (spawn "eww" "daemon")
+      (service "wpaperd.service")
+      (service "wired.service")
+      (service "hypridle.service")
+      (spawn "eww" "daemon")
     ];
 
   binds =
