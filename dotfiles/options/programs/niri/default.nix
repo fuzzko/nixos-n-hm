@@ -12,6 +12,8 @@
     /*
     foot
     eww
+    hypridle
+    hyprlock
     */
   ];
 }
