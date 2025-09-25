@@ -8,5 +8,8 @@
     xwayland-satellite-unstable
     cliphist
     wl-clipboard
+
+    # foot
+    # eww
   ];
 }
