@@ -3,4 +3,8 @@
   programs.niri = {
     settings = import ./settings.nix attrs;
   };
+
+  home.packages = with pkgs; [
+    xwayland-satellite-unstable
+  ];
 }
