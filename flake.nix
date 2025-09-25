@@ -70,6 +70,7 @@
       zen-browser,
       niri-flake,
       xwayland-satellite,
+      kidex,
       ...
     }:
     let
@@ -110,12 +111,13 @@
         pkgs = pkgs;
         modules = [
           declarative-cachix.homeManagerModules.declarative-cachix
-          nix-index-database.hmModules.nix-index
+          nix-index-database.homeModules.nix-index
           catppuccin.homeModules.catppuccin
           nix-flatpak.homeManagerModules.nix-flatpak
           chaotic.homeManagerModules.default
           nix-cwc.homeManagerModules.default
           niri-flake.homeModules.niri
+          kidex.homeModules.kidex
           ./dotfiles/home.nix
         ];
         extraSpecialArgs.std = nix-std.lib;
