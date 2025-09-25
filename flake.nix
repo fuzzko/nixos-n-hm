@@ -19,6 +19,7 @@
     niri-flake.url = "github:sodiboo/niri-flake";
     xwayland-satellite.url = "github:Supreeeme/xwayland-satellite";
     kidex.url = "github:Kirottu/kidex";
+    wired.url = "github:Toqozz/wired-notify";
 
     nur.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -35,6 +36,7 @@
       nixpkgs.follows = "nixpkgs";
       home-manager.follows = "home-manager";
     };
+    wired.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   nixConfig = {
@@ -71,6 +73,7 @@
       niri-flake,
       xwayland-satellite,
       kidex,
+      wired,
       ...
     }:
     let
@@ -118,6 +121,7 @@
           nix-cwc.homeManagerModules.default
           niri-flake.homeModules.niri
           kidex.homeModules.kidex
+          wired.homeManagerModules.default
           ./dotfiles/home.nix
         ];
         extraSpecialArgs.std = nix-std.lib;
