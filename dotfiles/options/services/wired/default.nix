@@ -1,4 +1,4 @@
 { ... }: {
   services.wired.enable = true;
-  config = ./wired.ron;
+  services.wired.config = ./wired.ron;
 }
