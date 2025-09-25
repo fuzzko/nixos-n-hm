@@ -18,6 +18,7 @@
     zen-browser.url = "github:pfaj/zen-browser-flake";
     niri-flake.url = "github:sodiboo/niri-flake";
     xwayland-satellite.url = "github:Supreeeme/xwayland-satellite";
+    kidex.url = "github:Kirottu/kidex";
 
     nur.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -30,6 +31,10 @@
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
     niri-flake.inputs.nixpkgs.follows = "nixpkgs";
     xwayland-satellite.inputs.nixpkgs.follows = "nixpkgs";
+    kidex.inputs = {
+      nixpkgs.follows = "nixpkgs";
+      home-manager.follows = "home-manager";
+    };
   };
 
   nixConfig = {
