@@ -12,6 +12,6 @@ in
       "${pkg}/lib/libapplications.so"
       "${pkg}/lib/libsymbols.so"
     ]
-    ++ lib.optional config.services.kidex.enable "${pkg}/lib/libkidex.so";
+    ++ lib.optional (config.services.kidex.enable) "${pkg}/lib/libkidex.so";
   };
 }
