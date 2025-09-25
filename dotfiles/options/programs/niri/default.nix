@@ -9,7 +9,9 @@
     cliphist
     wl-clipboard
 
-    # foot
-    # eww
+    /*
+    foot
+    eww
+    */
   ];
 }
