@@ -112,6 +112,7 @@ in
       (service "wpaperd.service")
       (service "wired.service")
       (service "hypridle.service")
+      (service "kidex.service")
       (spawn "eww" "daemon")
     ];
 
