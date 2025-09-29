@@ -258,12 +258,6 @@ in
     };
   };
 
-  programs.foot = {
-    enable = true;
-    settings = loadConfig' "foot" { };
-    server.enable = true;
-  };
-
   programs.starship = {
     enable = true;
     settings = loadConfig "starship" { };
