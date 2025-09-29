@@ -11,8 +11,6 @@
       };
       bell.system = false;
     };
-
-    server.enable = true;
   };
 
   home.packages = with pkgs; [
