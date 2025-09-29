@@ -1,4 +1,10 @@
-{ lib, ... }: {
+{ lib, ... }:
+let
+  inherit (builtins)
+    filter
+    readDir
+    ;
+in {
   komo = rec {
       filesInDir =
         dir:
@@ -7,9 +13,9 @@
             list: path:
             lib.mapAttrsToList (
               basename: type: if type == "directory" then go list (path + /${basename}) else path + /${basename}
-            ) (builtins.readDir path);
+            ) (readDir path);
         in
         lib.flatten (go [ ] dir);
-      filterFilesInDir = filterLambda: dir: builtins.filter filterLambda (filesInDir dir);
+      filterFilesInDir = filterLambda: dir: filter filterLambda (filesInDir dir);
   };
 }
