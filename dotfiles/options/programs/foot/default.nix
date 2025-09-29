@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   programs.foot.enable = true;
   programs.foot = {
@@ -14,4 +14,8 @@
 
     server.enable = true;
   };
+
+  home.packages = with pkgs; [
+    nerd-fonts.gohufont
+  ];
 }
