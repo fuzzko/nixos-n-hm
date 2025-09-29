@@ -21,25 +21,14 @@ let
     '';
   };
 
+  inherit (config.lib) komo;
+
   loadConfig = x: y: import ./configs/${x}.nix (inputs // { root = ./.; } // y);
   loadConfig' = x: y: import ./configs/${x} (inputs // { root = ./.; } // y);
 in
 {
   import =
-    let
-      filesInDir =
-        dir:
-        let
-          go =
-            list: path:
-            lib.mapAttrsToList (
-              basename: type: if type == "directory" then go list (path + /${basename}) else path + /${basename}
-            ) (builtins.readDir path);
-        in
-        lib.flatten (go [ ] dir);
-      filterFilesInDir = filterLambda: dir: builtins.filter filterLambda (filesInDir dir);
-    in
-    (filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./options) ++ [ ];
+    (komo.filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./options) ++ [ ];
 
   programs.home-manager.enable = true;
   home = {
