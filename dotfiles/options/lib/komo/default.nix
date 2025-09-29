@@ -6,7 +6,7 @@ let
     ;
 in
 {
-  komo = rec {
+  lib.komo = rec {
     # returns a list of files inside a directory
     # cannot follows symlink due to lacking of readlink utility
     filesInDir =
