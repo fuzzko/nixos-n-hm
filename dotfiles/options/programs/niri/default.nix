@@ -7,6 +7,7 @@
   home.packages = with pkgs; [
     xwayland-satellite-unstable
     cliphist
+    libnotify
     wl-clipboard
 
     /*

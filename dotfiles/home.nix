@@ -27,8 +27,7 @@ let
   loadConfig' = x: y: import ./configs/${x} (inputs // { root = ./.; } // y);
 in
 {
-  import =
-    (komo.filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./options) ++ [ ];
+  import = (komo.filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./options) ++ [ ];
 
   programs.home-manager.enable = true;
   home = {
