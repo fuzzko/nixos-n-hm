@@ -1,15 +1,17 @@
 { ... }:
 {
-  enable = true;
-  settings = {
-    main = {
-      shell = "fish";
-      login-shell = true;
+  programs.foot.enable = true;
+  programs.foot = {
+    settings = {
+      main = {
+        shell = "fish";
+        login-shell = true;
 
-      font = "DepartureMono Nerd Font Mono:size=10";
+        font = "DepartureMono Nerd Font Mono:size=10";
+      };
+      bell.system = false;
     };
-    bell.system = false;
-  };
 
-  server.enable = true;
+    server.enable = true;
+  };
 }
