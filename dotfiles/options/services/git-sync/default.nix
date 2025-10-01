@@ -1,6 +1,7 @@
-{ config, ... }: {
-    services.git-sync = {
-    enable = true;
+{ config, ... }:
+{
+  services.git-sync.enable = true;
+  services.git-sync = {
     repositories."nix" = {
       path = "${config.home.homeDirectory}/nix";
       uri = "https://github.com/mbekkomo/nix.git";
