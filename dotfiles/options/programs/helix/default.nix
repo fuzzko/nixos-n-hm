@@ -17,6 +17,7 @@
     );
     languages = loadConfig "helix/languages" { };
   };
+
   programs.helix.settings = {
     theme = lib.mkForce "ao";
 
