@@ -27,7 +27,6 @@ let
   loadConfig' = x: y: import ./configs/${x} (inputs // { root = ./.; } // y);
 in
 {
-  # A simple business logic to import all configs in ./options, you should check that dir too
   import = (komo.filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./options) ++ [ ];
 
   programs.home-manager.enable = true;
@@ -198,6 +197,25 @@ in
 
   fonts.fontconfig.enable = true;
   fonts.fontconfig.defaultFonts.emoji = [ "Noto Color Emoji" ];
+
+  programs.helix = {
+    enable = true;
+    package = pkgs.helix_git;
+    defaultEditor = true;
+    extraPackages = lib.flatten (
+      with pkgs;
+      [
+        nushell
+
+        nixfmt-rfc-style
+        nil
+
+        fnlfmt
+      ]
+    );
+    settings = loadConfig "helix/config" { };
+    languages = loadConfig "helix/languages" { };
+  };
 
   programs.starship = {
     enable = true;
