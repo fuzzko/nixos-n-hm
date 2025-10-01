@@ -168,30 +168,6 @@ in
     hyprlock.useDefaultConfig = false;
   };
 
-  nix = {
-    package = pkgs.lixPackageSets.latest.lix;
-    settings = {
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-      allowed-users = [ config.home.username ];
-      auto-optimise-store = true;
-    };
-    registry.nixpkgs = {
-      from = {
-        id = "nixpkgs";
-        type = "indirect";
-      };
-      to = {
-        owner = "NixOS";
-        repo = "nixpkgs";
-        ref = (builtins.fromJSON (builtins.readFile ../flake.lock)).nodes.nixpkgs.locked.rev;
-        type = "github";
-      };
-    };
-  };
-
   nixGL = {
     packages = pkgs.nixGLPackages;
     defaultWrapper = "mesa";
@@ -218,17 +194,6 @@ in
     );
   };
 
-  services.git-sync = {
-    enable = true;
-    repositories."nix" = {
-      path = "${config.home.homeDirectory}/nix";
-      uri = "https://github.com/mbekkomo/nix.git";
-    };
-    repositories."password-store" = {
-      path = "${config.home.homeDirectory}/.local/share/password-store";
-      uri = "https://github.com/mbekkomo/.password-store";
-    };
-  };
 
   fonts.fontconfig.enable = true;
   fonts.fontconfig.defaultFonts.emoji = [ "Noto Color Emoji" ];
@@ -250,12 +215,6 @@ in
     );
     settings = loadConfig "helix/config" { };
     languages = loadConfig "helix/languages" { };
-    themes.catppuccin-mocha_ts = {
-      inherits = "catppuccin-mocha";
-      "ui.background" = { };
-      "ui.text" = { };
-      "ui.linenr".fg = "overlay1";
-    };
   };
 
   programs.starship = {
