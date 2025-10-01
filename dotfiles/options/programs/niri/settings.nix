@@ -114,6 +114,8 @@ in
       (service "hypridle.service")
       (service "kidex.service")
       (spawn "eww" "daemon")
+      (service "niri-session.target")
+
     ];
 
   binds =
