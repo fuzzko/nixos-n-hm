@@ -8,11 +8,8 @@
       with pkgs;
       [
         nushell
-
         nixfmt-rfc-style
         nil
-
-        fnlfmt
       ]
     );
   };
