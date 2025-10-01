@@ -30,7 +30,6 @@ in
       (with nerd-fonts; [
         terminess-ttf
       ])
-      departure-nf
       noto-fonts
       noto-fonts-color-emoji
 
