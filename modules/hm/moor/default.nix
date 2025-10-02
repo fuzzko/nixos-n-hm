@@ -31,7 +31,7 @@
       home.packages = lib.singleton cfg.package;
 
       home.sessionVariables = {
-        "${if (lib.compareVersions cfg.package.version "2.0.0") < 1 then "MOAR" else "MOOR"}" =
+        "${lib.toUpper cfg.package.name}" =
           lib.concatStringsSep " " cfg.extraOptions;
       };
 
