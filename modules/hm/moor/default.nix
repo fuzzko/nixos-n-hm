@@ -31,7 +31,7 @@
       home.packages = lib.singleton cfg.package;
 
       home.sessionVariables = {
-        "${lib.toUpper cfg.package.name}" =
+        "${lib.toUpper cfg.package.pname}" =
           lib.concatStringsSep " " cfg.extraOptions;
       };
 
