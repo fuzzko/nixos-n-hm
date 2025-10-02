@@ -32,7 +32,8 @@
       home.packages = lib.mkIf (cfg.package != null) [ cfg.package ];
 
       home.sessionVariables = {
-        "${if pkgs ? moor then "MOOR" else "MOAR"}" = lib.concatStringsSep " " cfg.extraOptions;
+        "${if (lib.compareVersions cfg.package.version "2.0.0") < 1 then "MOAR" else "MOOR"}" =
+          lib.concatStringsSep " " cfg.extraOptions;
       };
 
     };
