@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   options.programs.moor = {
     enable = lib.mkEnableOption "moor";
@@ -11,7 +16,7 @@
     extraOptions = lib.mkOption {
       type = with lib.types; listOf str;
       description = "Extra command line options passed to moor";
-      default = [];
+      default = [ ];
       example = [
         "--statusbar=bold"
         "--no-linenumbers"
