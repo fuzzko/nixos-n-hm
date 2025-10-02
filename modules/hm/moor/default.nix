@@ -3,7 +3,7 @@
   options.programs.moor = {
     enable = lib.mkEnableOption "moor";
 
-    package = lib.mkPackageOption pkgs "moor" {
+    package = lib.mkPackageOption pkgs (if pkgs ? moor then "moor" else "moar") {
       description = "Which package to use for installing moor";
       nullable = true;
     };
