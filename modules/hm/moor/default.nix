@@ -2,10 +2,12 @@
 {
   options.programs.moor = {
     enable = lib.mkEnableOption "moor";
+
     package = lib.mkPackageOption pkgs "moor" {
       description = "Which package to use for installing moor";
       nullable = true;
     };
+
     extraOptions = lib.mkOption {
       type = with lib.types; listOf str;
       description = "Extra command line options passed to moor";
