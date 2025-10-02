@@ -27,7 +27,7 @@
       home.packages = lib.mkIf (cfg.package != null) [ cfg.package ];
 
       home.sessionVariables = {
-        "MOOR" = lib.concatStringsSep " " cfg.extraOptions;
+        "${if pkgs ? moor then "MOOR" else "MOAR"}" = lib.concatStringsSep " " cfg.extraOptions;
       };
 
     };
