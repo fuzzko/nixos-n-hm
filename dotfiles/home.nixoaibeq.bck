@@ -14,9 +14,7 @@ let
 in
 {
   # A simple business logic to import all configs in ./options, you should check that dir too
-  import = (komo.filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./options) ++ [
-    ../modules/hm/moor
-  ];
+  import = (komo.filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./options) ++ [ ];
 
   programs.home-manager.enable = true;
   home = {
