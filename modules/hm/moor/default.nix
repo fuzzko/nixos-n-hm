@@ -22,10 +22,11 @@
       cfg = config.programs.moor;
     in
     lib.mkIf cfg.enable {
+      home.packages = lib.mkIf (cfg.package != null) [ cfg.package ];
+
       home.sessionVariables = {
         "MOOR" = lib.concatStringsSep " " cfg.extraOptions;
       };
 
-      home.packages = lib.mkIf (cfg.package != null) [ cfg.package ];
     };
 }
