@@ -10,7 +10,6 @@
 
     package = lib.mkPackageOption pkgs (if pkgs ? moor then "moor" else "moar") {
       description = "Which package to use for installing moor";
-      nullable = true;
     };
 
     extraOptions = lib.mkOption {
@@ -29,7 +28,7 @@
       cfg = config.programs.moor;
     in
     lib.mkIf cfg.enable {
-      home.packages = lib.mkIf (cfg.package != null) [ cfg.package ];
+      home.packages = lib.singleton cfg.package;
 
       home.sessionVariables = {
         "${if (lib.compareVersions cfg.package.version "2.0.0") < 1 then "MOAR" else "MOOR"}" =
