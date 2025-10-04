@@ -1,4 +1,4 @@
-{ config, ... }:
+{ ... }:
 {
   services.flatpak.enable = true;
   services.flatpak = {
@@ -21,7 +21,7 @@
       Environment = {
         XCURSOR_PATH = "/run/host/user-share/icons:/run/host/share/icons";
 
-        GTK_THEME = config.gtk.theme.name;
+        GTK_THEME = "Adwaita:dark";
       };
     };
   };
