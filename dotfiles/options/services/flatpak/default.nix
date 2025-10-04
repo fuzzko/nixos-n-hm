@@ -1,6 +1,7 @@
-{ ... }: {
-    services.flatpak = {
-    enable = true;
+{ ... }:
+{
+  services.flatpak.enable = true;
+  services.flatpak = {
     packages = [
       "io.itch.itch"
       "org.vinegarhq.Sober"
