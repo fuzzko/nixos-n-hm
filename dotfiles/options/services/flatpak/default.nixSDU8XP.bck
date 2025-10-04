@@ -1,0 +1,16 @@
+{ ... }:
+{
+  services.flatpak.enable = true;
+  services.flatpak = {
+    update.auto = {
+      enable = true;
+
+    };
+    uninstallUnmanaged = true;
+  };
+  services.flatpak.packages = [
+    "io.itch.itch"
+    "org.vinegarhq.Sober"
+    "com.usebottles.bottles"
+  ];
+}
