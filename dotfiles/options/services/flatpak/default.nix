@@ -28,7 +28,7 @@
 
   services.flatpak.packages = [
     "io.itch.itch"
-    "org.vinegarhq.Sober"
     "com.usebottles.bottles"
+    "org.vinegarhq.Sober"
   ];
 }
