@@ -26,8 +26,5 @@
     };
   };
 
-  services.flatpak.packages = [
-    "org.gnome.Fractal"
-    "io.github.nokse22.asciidraw"
-  ];
+  services.flatpak.packages = [];
 }
