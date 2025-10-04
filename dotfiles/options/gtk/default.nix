@@ -1,8 +1,12 @@
 { pkgs, ... }:
 {
   gtk.enable = true;
+  gtk = {
+    colorScheme = "dark";
+  };
+  
   gtk.theme = {
-    theme = "Adwaita-dark";
+    theme = "Adwaita";
   };
   gtk.gtk3.theme = {
     package = pkgs.adw-gtk3;
