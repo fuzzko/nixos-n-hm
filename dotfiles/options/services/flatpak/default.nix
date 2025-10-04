@@ -27,8 +27,7 @@
   };
 
   services.flatpak.packages = [
-    "io.itch.itch"
-    "com.usebottles.bottles"
-    "org.vinegarhq.Sober"
+    "org.gnome.Fractal"
+    "io.github.nokse22.asciidraw"
   ];
 }
