@@ -307,8 +307,6 @@ in
     extraGroups = [
       "networkmanager"
       "wheel"
-      "video"
-      "i2c"
     ];
   };
 
@@ -374,8 +372,6 @@ in
     ];
   };
 
-  hardware.i2c.enable = true;
-  
   programs.niri.enable = true;
   programs.niri.package = pkgs.niri-unstable;
 }
