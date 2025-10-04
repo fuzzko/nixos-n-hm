@@ -130,19 +130,6 @@ in
     x11.enable = true;
   };
 
-  services.flatpak = {
-    enable = true;
-    packages = [
-      "io.itch.itch"
-      "org.vinegarhq.Sober"
-      "com.usebottles.bottles"
-    ];
-    update.auto = {
-      enable = true;
-    };
-    uninstallUnmanaged = true;
-  };
-
   catppuccin = {
     flavor = "mocha";
     accent = "sky";
