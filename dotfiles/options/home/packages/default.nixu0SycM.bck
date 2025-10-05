@@ -14,8 +14,5 @@ let
   };
 in
 {
-  home.packages = lib.flatten (
-    map (x: builtins.attrValues x)
-        (builtins.attrValues apps)
-  );
+  home.packages = lib.flatten (map (x: builtins.attrValues x) (builtins.attrValues apps));
 }
