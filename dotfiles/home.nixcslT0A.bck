@@ -167,6 +167,10 @@ in
     );
   };
 
+
+  fonts.fontconfig.enable = true;
+  fonts.fontconfig.defaultFonts.emoji = [ "Noto Color Emoji" ];
+
   programs.starship = {
     enable = true;
     settings = loadConfig "starship" { };
