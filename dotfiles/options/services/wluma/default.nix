@@ -14,7 +14,15 @@
     output.backlight = [
       {
         name = "eDP-1";
-        path = "/sys/class/backlight/intel_backlight"
+        path = "/sys/class/backlight/intel_backlight";
+        capturer = "wayland";
+      }
+    ];
+
+    output.ddcutil = [
+      {
+        name = "VGA-1";
+        capturer = "wayland";
       }
     ];
   };
