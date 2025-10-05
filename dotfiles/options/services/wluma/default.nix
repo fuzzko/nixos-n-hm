@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   services.wluma.enable = true;
   services.wluma = {
     systemd.enable = true;

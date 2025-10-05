@@ -11,7 +11,7 @@ let
   defaultLauncher = "anyrun";
 in
 {
-  outputs."eDP-1" = {
+  outputs."VGA-1" = {
     focus-at-startup = true;
   };
 
