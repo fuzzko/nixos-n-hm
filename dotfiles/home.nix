@@ -65,7 +65,6 @@ in
       nemo
       nemo-preview
       nemo-fileroller
-      wluma
       hyprshot
       hyprpicker
       hyprsunset
