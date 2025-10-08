@@ -44,14 +44,6 @@ in
   programs.fish.functions = {
     fish_greeting = ''
       cat ${toString ./logo.raw}
-      echo
-      echo (set_color -u -i)"welcome back"(set_color normal)", it's currently "(date +"%A (%d/%m) at [%I:%M %P]")
-      echo
-      if nc -vz google.com 443 >/dev/null 2>&1
-        curl wttr.in/?d
-      else
-        echo (set_color -i)"no weather report for today..."
-      end 
     '';
 
     fish_title = ''
