@@ -20,6 +20,7 @@
     xwayland-satellite.url = "github:Supreeeme/xwayland-satellite";
     kidex.url = "github:Kirottu/kidex";
     wired.url = "github:Toqozz/wired-notify";
+    ls_colors.url = "github.com/trapd00r/LS_COLORS";
 
     nur.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -37,6 +38,7 @@
       home-manager.follows = "home-manager";
     };
     wired.inputs.nixpkgs.follows = "nixpkgs";
+    ls_colors.flake = false;
   };
 
   nixConfig = {
