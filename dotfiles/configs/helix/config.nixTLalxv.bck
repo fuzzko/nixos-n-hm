@@ -70,11 +70,6 @@
     other-lines = "info";
   };
 
-  editor.whitespace = {
-    render = "tab";
-    characters.tab = "↦";
-  };
-
   keys.normal = {
     C-m = {
       s = "save_selection";
