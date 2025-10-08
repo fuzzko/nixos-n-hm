@@ -40,7 +40,7 @@ in
   programs.fish.interactiveShellInit = ''
     source ${lsColors}/lscolors.csh
 
-    set -Ux fzf_preview_dir_cmd "eza --all --color=always --icons=always"
+    set fzf_preview_dir_cmd "eza --all --color=always --icons=always"
 
     set fish_cursor_default block
     set fish_cursor_insert line
