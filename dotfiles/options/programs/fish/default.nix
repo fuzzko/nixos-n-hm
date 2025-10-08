@@ -37,6 +37,16 @@ in
         );
   };
 
+  programs.fish.shellAliases = {
+    ftodo = "ig TODO";
+  };
+
+  programs.fish.functions = {
+    fish_greeting = ''
+      cat ${toString ./logo.raw}
+    '';
+  };
+
   programs.fish.interactiveShellInit = ''
     source ${lsColors}/lscolors.csh
 
@@ -53,7 +63,5 @@ in
 
     fish_default_key_bindings -M insert
     fish_vi_key_bindings --no-erase insert
-
-    alias ftodo "ig TODO"
   '';
 }
