@@ -66,7 +66,8 @@
 
   editor.end-of-line-diagnostics = "warning";
   editor.inline-diagnostics = {
-    cursor-line = "error";
+    cursor-line = "disable";
+    other-lines = "info";
   };
 
   keys.normal = {
