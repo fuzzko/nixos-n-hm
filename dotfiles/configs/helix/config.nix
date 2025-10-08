@@ -21,11 +21,15 @@
     ];
   };
 
+  editor.cursor-shape = {
+    insert = "underline";
+  };
+
   editor.statusline = {
     mode = {
-      normal = "NOR";
-      insert = "INS";
-      select = "SEL";
+      normal = "NORMAL";
+      insert = "INSERT";
+      select = "SELECT";
     };
     center = [
       "read-only-indicator"
