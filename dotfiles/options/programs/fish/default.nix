@@ -1,4 +1,19 @@
 { pkgs, ... }:
+let
+  flakeLock = builtins.fromJSON (builtins.readFile ../../../../flake.lock);
+
+  lsColors =
+    let
+      info = flakeLock.node.ls_colors.locked;
+    in
+    pkgs.fetchFromGitHub {
+      inherit (info)
+        owner
+        repo
+        rev
+        ;
+    };
+in
 {
   programs.fish = {
     enable = true;
