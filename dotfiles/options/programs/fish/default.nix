@@ -45,6 +45,11 @@ in
     fish_greeting = ''
       cat ${toString ./logo.raw}
     '';
+
+    fish_title = ''
+    set -q argv[1]; or set argv fish
+    echo (fish_prompt_pwd_dir_length=1 prompt_pwd): $argv;
+    '';
   };
 
   programs.fish.interactiveShellInit = ''
