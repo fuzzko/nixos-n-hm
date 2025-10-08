@@ -14,12 +14,13 @@
     popup-border = "all";
     preview-completion-insert = false;
     completion-trigger-len = 2;
-    shell = [
-      "nu"
-      "--stdin"
-      "-c"
-    ];
   };
+
+  editor.shell = [
+    "nu"
+    "--stdin"
+    "-c"
+  ];
 
   editor.cursor-shape = {
     insert = "underline";
