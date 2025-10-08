@@ -78,4 +78,13 @@
     tab = "move_parent_node_end";
     S-tab = "move_parent_node_start";
   };
+
+  keys.insert = {
+    S-tab = "move_parent_node_start";
+  };
+
+  keys.select = {
+    tab = "extend_parent_node_end";
+    S-tab = "extend_parent_node_start";
+  };
 }
