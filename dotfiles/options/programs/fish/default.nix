@@ -42,6 +42,25 @@ in
   };
 
   programs.fish.functions = {
+    nxs = ''
+      if contains -- --command $argv
+        nix shell $argv
+      else
+        nix shell $argv --command fish
+      end
+    '';
+
+    nxd = ''
+      if contains -- --command $argv
+        nix develop $argv
+      else
+        nix develop $argv --command fish
+      end
+    '';
+  };
+
+  # fish_* related functions
+  programs.fish.functions = {
     fish_greeting = ''
       echo (set_color -i)"welcome back "(set_color -o)"$USER"(set_color normal)", it's currently "(date +"%A (%d/%m) at [%I:%M %P]")
       echo
