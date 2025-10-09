@@ -62,7 +62,10 @@ in
   # fish_* related functions
   programs.fish.functions = {
     fish_greeting = ''
-      echo (set_color -i)"welcome back "(set_color -o)"$USER"(set_color normal)", it's currently "(date +"%A (%d/%m) at [%I:%M %P]")
+      if test $SHLVL -eq 1
+        echo (set_color -i)"welcome back "(set_color -o)"$USER"(set_color normal)", it's currently "(date +"%A (%d/%m) at [%I:%M %P]")
+      else
+        echo (set_color -i)"welcome back "(set_color -o)"$USER"(set_color normal)", your current shell level is $SHLVL"
       echo
       if nc -vz wttr.in 443 >/dev/null 2>&1; and test $SHLVL -eq 1
         curl wttr.in/?1
