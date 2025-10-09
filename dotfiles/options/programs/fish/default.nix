@@ -18,22 +18,18 @@ let
 in
 {
   programs.fish.enable = true;
-  programs.fish = {
-    plugins =
-        komo.wrapFishPlugins
-        (
-          with pkgs.fishPlugins;
-          [
-            done
-            colored-man-pages
-            autopair
-            git-abbr
-            puffer
-            fzf-fish
-            forgit
-          ]
-        );
-  };
+  programs.fish.plugins = komo.wrapFishPlugins (
+    with pkgs.fishPlugins;
+    [
+      done
+      colored-man-pages
+      autopair
+      git-abbr
+      puffer
+      fzf-fish
+      forgit
+    ]
+  );
 
   programs.fish.shellAliases = {
     ftodo = "ig TODO";
