@@ -19,7 +19,13 @@ in
           ) (readDir path);
       in
       lib.flatten (go [ ] dir);
+
     # same as `filter (p: ...) (filesInDir path)`
     filterFilesInDir = filterLambda: dir: filter filterLambda (filesInDir dir);
+
+    wrapFishPlugins = x: map (p: {
+      name = p.pname;
+      inherit (p) src;
+    }) x;
   };
 }
