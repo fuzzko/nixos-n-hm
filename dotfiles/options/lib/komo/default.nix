@@ -23,7 +23,7 @@ in
     # same as `filter (p: ...) (filesInDir path)`
     filterFilesInDir = filterLambda: dir: filter filterLambda (filesInDir dir);
 
-    # wraps list of packages
+    # wraps list of packages or attrs
     wrapFishPlugins =
       x:
       map (
