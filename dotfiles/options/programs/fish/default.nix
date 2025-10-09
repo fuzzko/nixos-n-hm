@@ -1,5 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 let
+  inherit (config.lib) komo;
+
   flakeLock = builtins.fromJSON (builtins.readFile ../../../../flake.lock);
 
   lsColors =
@@ -18,11 +20,7 @@ in
   programs.fish.enable = true;
   programs.fish = {
     plugins =
-      map
-        (x: {
-          name = x.pname;
-          inherit (x) src;
-        })
+        komo.wrapFishPlugins
         (
           with pkgs.fishPlugins;
           [
