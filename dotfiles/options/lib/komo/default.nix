@@ -23,9 +23,18 @@ in
     # same as `filter (p: ...) (filesInDir path)`
     filterFilesInDir = filterLambda: dir: filter filterLambda (filesInDir dir);
 
-    wrapFishPlugins = x: map (p: {
-      name = p.pname;
-      inherit (p) src;
-    }) x;
+    # wraps list of packages
+    wrapFishPlugins =
+      x:
+      map (
+        p:
+        if lib.isDerivation p then
+          {
+            name = p.pname;
+            src = p;
+          }
+        else
+          p
+      ) x;
   };
 }
