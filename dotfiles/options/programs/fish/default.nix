@@ -60,7 +60,6 @@ in
                   %S")
         math "$tmp[1] - ($tmp[2] * 3600) - ($tmp[3] * 60) - $tmp[4]"
       end)
-      echo $now (date +%s)
       set file_date (begin
         set tmp (date -r $argv[1] +"%s
                   %H
@@ -73,15 +72,12 @@ in
 
     komo_cache_or_get = ''
       set filename $argv[1]
-      set content $argv[2]
 
-      if ! test -f $filename
-        echo $content > $filename
-        return
+      if ! test -f $filename; or test (komo_modified_when $filename) -gt 0
+        command $argv[2..] > $filename
       end
 
-      if test (komo_modified_when $filename) -gt 0;
-      
+      cat $filename
     '';
   };
 
@@ -94,6 +90,7 @@ in
         gum format -- "> welcome back *$USER*, your current shell level is **$SHLVL**!
           ...be careful down there!"
       end
+
       if nc -vz wttr.in 443 >/dev/null 2>&1; and test $SHLVL -eq 1
         gum style \
           --border=double \
@@ -104,10 +101,12 @@ in
             --spinner.foreground=31 \
             --spinner=dot \
             --title="getting weather report..." \
-            -- curl -s wttr.in/Kendari?1)
+            -- fish -c \
+              komo_cache_or_get ~/.cache/wttr.in curl -s wttr.in/Kendari?1)
       else if test $SHLVL -eq 1
-          gum format -- "> *no weather report for today...*"
-      end    '';
+        gum format -- "> *no weather report for today...*"
+      end
+    '';
 
     fish_title = ''
       set -q argv[1]; or set argv fish
