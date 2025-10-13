@@ -51,22 +51,37 @@ in
         nix develop $argv --command fish
       end
     '';
+
+    modified_when = ''
+      set now (date +%s)
+      set file_date (date -r $argv[1] +%s)
+      math "round(($now - $file_date) / 86400)"
+    '';
   };
 
   # fish_* related functions
   programs.fish.functions = {
     fish_greeting = ''
       if test $SHLVL -eq 1
-        echo (set_color -i)"welcome back "(set_color -o)"$USER"(set_color normal)", it's currently "(date +"%A (%d/%m) at [%I:%M %P]")
+        gum format -- "> welcome back *$USER*, it's currently $(date +"*%A* (%d/%m) at *%I:%M %P*")"
       else
-        echo (set_color -i)"welcome back "(set_color -o)"$USER"(set_color normal)", your current shell level is $SHLVL, be careful down there!"
-      echo
-      if nc -vz wttr.in 443 >/dev/null 2>&1; and test $SHLVL -eq 1
-        curl wttr.in/?1
-      else if test $SHLVL -eq 1
-        echo (set_color -i)"no weather report for today..."
+        gum format -- "> welcome back *$USER*, your current shell level is **$SHLVL**!
+          ...be careful down there!"
       end
-    '';
+      if nc -vz wttr.in 443 >/dev/null 2>&1; and test $SHLVL -eq 1
+        gum style \
+          --border=double \
+          --margin='0 3' \
+          --padding='0 2' \
+          --border-foreground=26 \
+          (gum spin \
+            --spinner.foreground=31 \
+            --spinner=dot \
+            --title="getting weather report..." \
+            -- curl -s wttr.in/Kendari?1)
+      else if test $SHLVL -eq 1
+          gum format -- "> *no weather report for today...*"
+      end    '';
 
     fish_title = ''
       set -q argv[1]; or set argv fish
