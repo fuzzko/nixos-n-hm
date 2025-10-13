@@ -52,36 +52,10 @@ in
       end
     '';
 
-    komo_modified_when = ''
-      set now (begin
-        set tmp (date +"%s
-                  %H
-                  %M
-                  %S")
-        math "$tmp[1] - ($tmp[2] * 3600) - ($tmp[3] * 60) - $tmp[4]"
-      end)
-      echo $now (date +%s)
-      set file_date (begin
-        set tmp (date -r $argv[1] +"%s
-                  %H
-                  %M
-                  %S")
-        math "$tmp[1] - ($tmp[2] * 3600) - ($tmp[3] * 60) - $tmp[4]"
-      end)
+    modified_when = ''
+      set now (date +%s)
+      set file_date (date -r $argv[1] +%s)
       math "round(($now - $file_date) / 86400)"
-    '';
-
-    komo_cache_or_get = ''
-      set filename $argv[1]
-      set content $argv[2]
-
-      if ! test -f $filename
-        echo $content > $filename
-        return
-      end
-
-      if test (komo_modified_when $filename) -gt 0;
-      
     '';
   };
 
