@@ -67,7 +67,7 @@ in
                   %S")
         math "$tmp[1] - ($tmp[2] * 3600) - ($tmp[3] * 60) - $tmp[4]"
       end)
-      math "round(($now - $file_date) / 86400)"
+      math "($now - $file_date) / 86400"
     '';
 
     komo_cache_or_get = ''
