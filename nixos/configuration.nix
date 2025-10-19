@@ -43,30 +43,6 @@ in
     gptfdisk
     efibootmgr
     udisks
-    (connman-gtk.overrideAttrs (
-      final: prev: {
-        version = "0-unstable-6-16-2018";
-        src = fetchFromGitHub {
-          owner = "jgke";
-          repo = "connman-gtk";
-          rev = "b72c6ab3bb19c07325c8e659902b046daa23c506";
-          hash = "sha256-6lX6FYERDgLj9G6nwnP35kF5x8dpRJqfJB/quZFtFzM=";
-        };
-        nativeBuildInputs = [
-          meson
-          ninja
-          pkg-config
-          python3Packages.python
-          intltool
-          wrapGAppsHook3
-        ];
-        preConfigure = null;
-        postPatch = ''
-          substituteInPlace ./data/meson.build \
-            --replace-warn "'meson_post_install.py'" "'python3', '../data/meson_post_install.py'"
-        '';
-      }
-    ))
     doas-sudo-shim
     zen-browser
 
@@ -202,11 +178,12 @@ in
     dnsovertls = "true";
   };
 
-  services.connman = {
-    enable = true;
-    package = pkgs.connmanFull;
+  networking.networkmanager.enable = true;
+  networking.networkmanager = {
     wifi.backend = "iwd";
   };
+
+  programs.nm-applet.enable = true;
 
   hardware.bluetooth = {
     enable = true;
