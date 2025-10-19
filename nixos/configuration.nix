@@ -181,6 +181,7 @@ in
   networking.networkmanager.enable = true;
   networking.networkmanager = {
     wifi.backend = "iwd";
+    wifi.powersave = false;
   };
 
   programs.nm-applet.enable = true;
