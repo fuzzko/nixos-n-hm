@@ -142,7 +142,7 @@
               nix-flatpak.nixosModules.nix-flatpak
               chaotic.nixosModules.default
               nix-cwc.nixosModules.default
-              niri-flake.nixosModules.default
+              niri-flake.nixosModules.niri
               ./nixos/hardwares/${x}/configuration.nix
               ./nixos/hardwares/${x}/hardware-configuration.nix
               ./nixos/configuration.nix
