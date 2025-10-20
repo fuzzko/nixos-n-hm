@@ -164,6 +164,13 @@ in
     };
   };
 
+  environment.etc = {
+    "systemd/system/iwd.d/001-enable-debugging".text = ''
+      [Service]
+      ExecStart=${config.networking.wireless.iwd.package}/bin/iwd"
+    '';
+  };
+
   networking.nameservers = [
     "1.1.1.1"
     "1.0.0.1"
