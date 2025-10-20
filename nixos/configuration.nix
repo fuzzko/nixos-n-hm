@@ -184,6 +184,13 @@ in
     wifi.powersave = false;
   };
 
+  networking.networkmanager.settings = {
+    logging = {
+      level = "TRACE";
+      domains = "ALL";
+    };
+  };
+
   programs.nm-applet.enable = true;
 
   hardware.bluetooth = {
