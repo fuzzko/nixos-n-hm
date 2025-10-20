@@ -154,14 +154,6 @@ in
 
   networking.wireless.iwd = {
     enable = true;
-    settings = {
-      Settings = {
-        AutoConnect = true;
-      };
-      General = {
-        EnableNetworkConfigure = true;
-      };
-    };
   };
 
   networking.nameservers = [
