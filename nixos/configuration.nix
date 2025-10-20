@@ -165,7 +165,7 @@ in
   };
 
   environment.etc = {
-    "systemd/system/iwd.d/001-enable-debugging".text = ''
+    "systemd/system/iwd.d/001-enable-debugging.conf".text = ''
       [Service]
       ExecStart=${config.networking.wireless.iwd.package}/bin/iwd"
     '';
