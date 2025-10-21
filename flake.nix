@@ -21,6 +21,7 @@
     kidex.url = "github:Kirottu/kidex";
     wired.url = "github:Toqozz/wired-notify";
     ls_colors.url = "github:trapd00r/LS_COLORS";
+    stylix.url = "github:nix-community/stylix";
 
     nur.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -39,6 +40,7 @@
     };
     wired.inputs.nixpkgs.follows = "nixpkgs";
     ls_colors.flake = false;
+    stylix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   nixConfig = {
