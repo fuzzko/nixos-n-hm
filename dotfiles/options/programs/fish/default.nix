@@ -1,6 +1,10 @@
 { pkgs, config, ... }:
 let
   inherit (config.lib) komo;
+  inherit (builtins)
+    readFile
+    fromJSON
+    ;
 
   flakeLock = builtins.fromJSON (builtins.readFile ../../../../flake.lock);
 
@@ -131,4 +135,38 @@ in
     fish_default_key_bindings -M insert
     fish_vi_key_bindings --no-erase insert
   '';
+
+  ## extra clis
+
+  programs.direnv.enable = true;
+  programs.direnv.nix-direnv.enable = true;
+
+  programs.eza.enable = true;
+  programs.eza = {
+    theme =
+      let
+        themeName = "frosty";
+
+        lock = fromJSON (readFile ../../../../flake.lock);
+        info = lock.nodes.eza-themes.locked;
+        src = pkgs.fetchFromGitHub {
+          inherit (info)
+            owner
+            repo
+            rev
+            ;
+          hash = info.narHash;
+        };
+      in
+      komo.fromYAML (readFile "${src}/${themeName}.yml");
+    icons = "auto";
+    extraOptions = [
+      "--color=auto"
+    ];
+  };
+
+  programs.ripgrep.enable = true;
+  programs.ripgrep.arguments = [
+    
+  ];
 }
