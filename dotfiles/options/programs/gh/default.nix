@@ -1,6 +1,15 @@
-{ pkgs, ... }: {
+{ config, pkgs, lib, ... }:
+let
+  inherit (config.lib) komo;
+in
+{
   programs.gh.enable = true;
-  programs.gh.extensions = with pkgs; [
+  programs.gh.extensions =
+    let
+      extraExtensions = map (x: import x pkgs) (komo.filesInDir ./extensions);
+    in
+    with pkgs;
+    [
       gh-poi
       gh-eco
       gh-screensaver
@@ -8,5 +17,6 @@
       gh-f
       gh-notify
       gh-markdown-preview
-  ];
+      (lib.flatten extraExtensions)
+    ];
 }
