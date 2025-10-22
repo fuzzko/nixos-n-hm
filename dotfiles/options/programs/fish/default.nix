@@ -165,6 +165,8 @@ in
     extraOptions = [
       "--classify=auto"
       "--sort=type"
+      "--git-ignore"
+      "--git"
     ];
   };
 
