@@ -24,6 +24,7 @@ in
     ];
 
   programs.gh.settings = {
+    editor = "hx";
     aliases = {
       rcl = "repo clone";
       rfk = "repo fork";
