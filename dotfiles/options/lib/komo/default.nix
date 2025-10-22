@@ -3,6 +3,8 @@ let
   inherit (builtins)
     filter
     readDir
+    readFile
+    fromJSON
     ;
 in
 {
@@ -46,6 +48,6 @@ in
           ${pkgs.yj}/bin/yj < ${yamlFile} > $out
         '';
       in
-      builtins.fromJSON (builtins.readFile jsonFile);
+      fromJSON (readFile jsonFile);
   };
 }
