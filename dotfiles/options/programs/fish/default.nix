@@ -159,9 +159,12 @@ in
         };
       in
       komo.fromYAML (readFile "${src}/${themeName}.yml");
-    icons = "auto";
+
+    icons = true;
+    color = "auto";
     extraOptions = [
-      "--color=auto"
+      "--classify=auto"
+      "--sort=type"
     ];
   };
 
