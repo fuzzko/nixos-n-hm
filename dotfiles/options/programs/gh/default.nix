@@ -22,4 +22,13 @@ in
       gh-markdown-preview
       (lib.flatten extraExtensions)
     ];
+
+  programs.gh.settings = {
+    aliases = {
+      rcl = "repo clone";
+      rfk = "repo fork";
+      rmv = "repo rename";
+      rdl = "repo delete --yes";
+    };
+  };
 }
