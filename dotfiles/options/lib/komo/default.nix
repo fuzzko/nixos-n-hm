@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ pkgs, lib, ... }:
 let
   inherit (builtins)
     filter
@@ -36,5 +36,16 @@ in
         else
           p
       ) x;
+
+    # parses a yaml
+    fromYAML =
+      yaml:
+      let
+        yamlFile = pkgs.writeText "file.yaml" yaml;
+        jsonFile = pkgs.runCommandNoCC "yaml.json" ''
+          ${pkgs.yj}/bin/yj < ${yamlFile} > $out
+        '';
+      in
+      builtins.fromJSON (builtins.readFile jsonFile);
   };
 }
