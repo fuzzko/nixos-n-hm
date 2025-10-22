@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 let
   inherit (config.lib) komo;
 in
@@ -11,9 +16,7 @@ in
     with pkgs;
     [
       gh-poi
-      gh-eco
       gh-screensaver
-      gh-s
       gh-f
       gh-notify
       gh-markdown-preview
