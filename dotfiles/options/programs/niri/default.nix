@@ -19,7 +19,7 @@
     */
   ];
 
-  xdg.portal.configPackages = lib.optionalsi (config.programs.niri.enable) [
+  xdg.portal.configPackages = lib.optionals (config.programs.niri.enable) [
     config.programs.niri.package
   ];
 }
