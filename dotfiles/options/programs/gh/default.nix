@@ -24,7 +24,7 @@ in
     ];
 
   programs.gh.settings = {
-    editor = "hx";
+    prefer_editor_prompt = "enabled";
     aliases = {
       rcl = "repo clone";
       rfk = "repo fork";
