@@ -150,9 +150,6 @@ in
   xdg.portal.enable = lib.mkForce true;
   xdg.portal = {
     xdgOpenUsePortal = true;
-    configPackages = [
-      pkgs.hyprland
-    ];
   };
 
   programs.password-store = {

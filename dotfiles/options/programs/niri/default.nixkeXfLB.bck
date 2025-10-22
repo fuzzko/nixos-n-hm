@@ -1,5 +1,4 @@
-{ lib, pkgs, config, ... }@attrs:
-{
+{ pkgs, ... }@attrs: {
   programs.niri.enable = true;
   programs.niri = {
     settings = import ./settings.nix attrs;
@@ -12,14 +11,10 @@
     wl-clipboard
 
     /*
-      foot
-      eww
-      hypridle
-      hyprlock
+    foot
+    eww
+    hypridle
+    hyprlock
     */
-  ];
-
-  xdg.portal.configPackages = lib.optionalsi (config.programs.niri.enable) [
-    config.programs.niri.package
   ];
 }
