@@ -175,13 +175,20 @@ in
   programs.ripgrep.arguments = [
     "--smart-case"
     "--ignore"
+
     "--context=2"
     "--color=auto"
-
     "--colors=match:fg:black"
     "--colors=match:bg:red"
+    "--field-context-separator=: "
+    "--field-match-separator=: "
+    "--heading"
+    "--line-number"
+  ];
 
-    "--field-context-separator= "
-    "--field-match-separator= "
+  programs.fd.enable = true;
+  programs.fd.extraOptions = [
+    "--glob"
+    "--ignore-vcs"
   ];
 }
