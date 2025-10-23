@@ -16,7 +16,7 @@ in
     core.pager = config.home.sessionVariables.PAGER;
   };
 
-  home.sessionVariables = rec {
+  home.sessionVariables = {
     "PAGER" = lib.mkDefault cfg.package.meta.mainProgram;
   };
 }
