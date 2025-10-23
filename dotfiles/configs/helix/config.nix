@@ -53,7 +53,7 @@
   };
 
   editor.indent-guides = {
-    render = true;
+    render = false;
     character = "╎";
     skip-levels = 1;
   };
