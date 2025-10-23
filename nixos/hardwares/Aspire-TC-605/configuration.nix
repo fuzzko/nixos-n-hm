@@ -3,5 +3,6 @@
 
   networking.networkmanager = {
     wifi.powersave = false;
+    wifi.scanRandMacAddress = false;
   };
 }
