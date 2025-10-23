@@ -169,44 +169,12 @@ in
     settings = loadConfig "starship" { };
   };
 
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-  };
-
   programs.nix-index.enable = true;
-
-  programs.eza = {
-    enable = true;
-    icons = "auto";
-    extraOptions = [
-      "--color=auto"
-    ];
-  };
 
   programs.git = {
     enable = true;
     userName = "Komo";
     userEmail = "afiqquraisyzulkarnain@gmail.com";
-  };
-
-  programs.gh = {
-    enable = true;
-    extensions = with pkgs; [
-      gh-poi
-      gh-eco
-      gh-screensaver
-      gh-s
-      gh-f
-      gh-notify
-      gh-markdown-preview
-    ];
-    settings.aliases = {
-      rcl = "repo clone";
-      rfk = "repo fork";
-      rmv = "repo rename";
-      rdl = "repo delete --yes";
-    };
   };
 
   programs.wofi = {
@@ -289,32 +257,8 @@ in
     ];
   };
 
-  programs.iamb = {
-    enable = true;
-    settings = loadConfig' "iamb" { };
-  };
-
-  services.wluma = {
-    enable = true;
-    settings = loadConfig "wluma" { };
-    systemd = {
-      enable = true;
-      target = "hyprland-session.target";
-    };
-  };
-
   services.arrpc = {
     enable = true;
-    systemdTarget = "hyprland-session.target";
-  };
-
-  services.hyprpolkitagent = {
-    enable = true;
-  };
-
-  programs.atuin = {
-    enable = true;
-    settings = loadConfig' "atuin" { };
   };
 
   caches.cachix = [
