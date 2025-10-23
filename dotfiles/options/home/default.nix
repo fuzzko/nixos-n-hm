@@ -83,7 +83,6 @@
   home.file =
     {
       ".config/zls.json".text = builtins.toJSON (loadConfig "zls" { });
-      ".config/walker/config.json".text = builtins.toJSON (loadConfig "walker" { });
     };
 
   home.sessionVariables = rec {
