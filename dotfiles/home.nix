@@ -214,7 +214,7 @@ in
 
   caches.cachix = [
     "nix-community"
-    "mbekkomo"
+    "0komo"
   ];
 
   gtk = {
