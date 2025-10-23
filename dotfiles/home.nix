@@ -208,41 +208,6 @@ in
     xwayland.enable = true;
   };
 
-  wayland.windowManager.cwc = {
-    enable = true;
-    package = null;
-    systemd.enable = false;
-    extraConfig = ''
-      do
-        local fnl = require("fennel").install()
-        fnl.path = fnl.path .. [[;${config.xdg.configHome}/cwc/?.fnl]]
-        fnl.path = fnl.path .. [[;${config.xdg.configHome}/cwc/?/init.fnl]]
-        local macro_path = ""
-        macro_path = macro_path .. ";" .. fnl.path
-        macro_path = macro_path .. [[;${config.xdg.configHome}/cwc/?.fnlm]]
-        macro_path = macro_path .. [[;${config.xdg.configHome}/cwc/?/init.fnlm]]
-        macro_path = macro_path .. [[;${config.xdg.configHome}/cwc/?/init-macros.fnl]]
-        fnl["macro-path"] = fnl["macro-path"] .. macro_path
-        fnl.dofile([[${config.xdg.configHome}/cwc/rc.fnl]])
-      end
-    '';
-  };
-
-  xdg.configFile."cwc" = {
-    source = ./configs/cwc;
-    recursive = true;
-  };
-
-  programs.fzf = {
-    enable = true;
-    defaultCommand = ''
-      fd --type f --strip-cwd-prefix
-    '';
-    defaultOptions = [
-      "--style full"
-    ];
-  };
-
   services.arrpc = {
     enable = true;
   };
