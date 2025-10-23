@@ -1,5 +1,6 @@
 { config, lib, pkgs, ... }: {
   programs.home-manager.enable = true;
+  
   home = {
     username = "komo";
     homeDirectory = /home/${config.home.username};
@@ -80,10 +81,6 @@
     ]
   );
 
-  xdg.configFile = {
-    "zls.json".source = ../../extras/zls.json;
-  };
-
   home.sessionVariables = rec {
     "XDG_PICTURES_DIR" = "${config.home.homeDirectory}/Pictures";
     "BROWSER" = "zen";
@@ -92,4 +89,9 @@
     "GIT_PAGER" = PAGER;
     "SYSTEMD_PAGERSECURE" = "true";
   };
+
+  home.keyboard.options = [
+    "caps:none"
+    "shift:both_capslock_cancel"
+  ];
 }
