@@ -16,7 +16,8 @@ in
     core.pager = config.home.sessionVariables.PAGER;
   };
 
-  home.sessionVariables = {
+  home.sessionVariables = rec {
     "PAGER" = lib.mkDefault cfg.package.meta.mainProgram;
+    "GIT_PAGER" = PAGER;
   };
 }
