@@ -122,51 +122,17 @@ in
     "SYSTEMD_PAGERSECURE" = "true";
   };
 
+  home.pointerCursor.enable = true;
+  home.pointerCursor.size = 15;
   home.pointerCursor = {
-    enable = true;
-    size = 15;
     hyprcursor.enable = true;
     x11.enable = true;
-  };
-
-  catppuccin = {
-    flavor = "mocha";
-    accent = "sky";
-    enable = true;
-
-    cursors.enable = true;
-    fzf.enable = true;
-    helix.enable = true;
-    fish.enable = true;
-    hyprlock.useDefaultConfig = false;
   };
 
   nixGL = {
     packages = pkgs.nixGLPackages;
     defaultWrapper = "mesa";
     installScripts = [ "mesa" ];
-  };
-
-  xdg.portal.enable = lib.mkForce true;
-  xdg.portal = {
-    xdgOpenUsePortal = true;
-  };
-
-  programs.password-store = {
-    enable = true;
-    package = pkgs.pass.withExtensions (
-      exts: with exts; [
-        pass-otp
-        pass-genphrase
-        pass-update
-        pass-audit
-      ]
-    );
-  };
-
-  programs.starship = {
-    enable = true;
-    settings = loadConfig "starship" { };
   };
 
   programs.nix-index.enable = true;
@@ -216,8 +182,4 @@ in
     "nix-community"
     "0komo"
   ];
-
-  gtk = {
-    enable = true;
-  };
 }
