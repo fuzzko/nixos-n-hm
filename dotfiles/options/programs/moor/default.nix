@@ -18,6 +18,5 @@ in
 
   home.sessionVariables = rec {
     "PAGER" = lib.mkDefault cfg.package.meta.mainProgram;
-    "GIT_PAGER" = PAGER;
   };
 }
