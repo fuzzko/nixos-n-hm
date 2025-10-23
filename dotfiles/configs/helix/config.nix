@@ -76,11 +76,6 @@
   };
 
   keys.normal = {
-    C-m = {
-      s = "save_selection";
-      "." = "jump_forward";
-      "," = "jump_backward";
-    };
     tab = "move_parent_node_end";
     S-tab = "move_parent_node_start";
   };
