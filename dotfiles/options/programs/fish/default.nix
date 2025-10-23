@@ -193,4 +193,15 @@ in
     "--glob"
     "--ignore-vcs"
   ];
+
+  programs.fzf.enable = true;
+  programs.fzf.defaultOptions = [
+    "--reverse"
+    "--cycle"
+    "--pointer=>"
+    "--marker=|"
+    "--list-border=sharp"
+    "--input-border=bold"
+  ];
+  programs.fzf.fileWidgetCommand = "fd --type f --strip-cwd-prefix --hidden --follow --exclude .git";
 }
