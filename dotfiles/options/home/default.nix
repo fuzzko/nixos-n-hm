@@ -80,10 +80,9 @@
     ]
   );
 
-  home.file =
-    {
-      ".config/zls.json".text = builtins.toJSON (loadConfig "zls" { });
-    };
+  xdg.configFile = {
+    "zls.json".source = ../../extras/zls.json;
+  };
 
   home.sessionVariables = rec {
     "XDG_PICTURES_DIR" = "${config.home.homeDirectory}/Pictures";
