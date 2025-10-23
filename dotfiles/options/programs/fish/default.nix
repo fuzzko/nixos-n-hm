@@ -36,7 +36,8 @@ in
   );
 
   programs.fish.shellAliases = {
-    ftodo = "ig TODO";
+    fztodo = "ig TODO";
+    fzhx = "hx .";
   };
 
   programs.fish.functions = {
@@ -182,6 +183,7 @@ in
     "--colors=match:bg:red"
     "--field-context-separator=: "
     "--field-match-separator=: "
+    "--trim"
     "--heading"
     "--line-number"
   ];
