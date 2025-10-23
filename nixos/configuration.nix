@@ -170,7 +170,6 @@ in
   networking.networkmanager = {
     wifi.backend = "iwd";
     wifi.powersave = false;
-    wifi.scanRandMacAddress = false;
   };
 
   networking.networkmanager.settings = {
