@@ -233,6 +233,20 @@ in
     recursive = true;
   };
 
+  programs.yazi = {
+    enable = true;
+    settings = loadConfig "yazi" { };
+    keymap = loadConfig "yazi/keymaps" { };
+    plugins = with pkgs.yaziPlugins; {
+      inherit
+        bypass
+        projects
+        ouch
+        diff
+        ;
+    };
+  };
+
   programs.fzf = {
     enable = true;
     defaultCommand = ''
