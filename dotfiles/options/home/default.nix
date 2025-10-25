@@ -88,4 +88,11 @@
     "caps:none"
     "shift:both_capslock_cancel"
   ];
+
+  home.pointerCursor.enable = true;
+  home.pointerCursor.size = 15;
+  home.pointerCursor = {
+    hyprcursor.enable = true;
+    x11.enable = true;
+  };
 }
