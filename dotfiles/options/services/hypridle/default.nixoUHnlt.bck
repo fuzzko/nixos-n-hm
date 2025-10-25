@@ -20,14 +20,15 @@
         mkListener = timeout: set: { inherit timeout; } // set;
       in
       [
-        (mkListener 150 {
+        {
+          timeout = 150;
           on-timeout = ''
             brightnessctl -s set 10
           '';
           on-resume = ''
             brightnessctl -r
           '';
-        })
+        }
         {
           timeout = 300;
           on-timeout = ''
