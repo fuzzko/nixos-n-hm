@@ -18,21 +18,6 @@ in
     ../modules/hm/moor
   ];
 
-  home.pointerCursor.enable = true;
-  home.pointerCursor.size = 15;
-  home.pointerCursor = {
-    hyprcursor.enable = true;
-    x11.enable = true;
-  };
-
-  programs.nix-index.enable = true;
-
-  programs.git = {
-    enable = true;
-    userName = "Komo";
-    userEmail = "afiqquraisyzulkarnain@gmail.com";
-  };
-
   services.hypridle = {
     enable = true;
     settings = loadConfig "hypr/idle" { };
