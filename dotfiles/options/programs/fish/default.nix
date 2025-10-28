@@ -226,4 +226,10 @@ in
     "--list-border=none"
     "--input-border=line"
   ];
+
+  programs.zoxide.enable = true;
+
+  home.sessionVariables = {
+    _Z_ECHO = 1;
+  };
 }
