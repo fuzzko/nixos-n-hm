@@ -11,7 +11,7 @@
         loginctl lock-session
       '';
       after_sleep_cmd = ''
-        hyprctl dispatch dpms on
+        niri msg power-on-monitors
       '';
     };
 
@@ -37,10 +37,10 @@
         {
           timeout = 330;
           on-timeout = ''
-            hyprctl dispatch dpms off
+            niri msg power-off-monitors
           '';
           on-resume = ''
-            hyprctl dispatch dpms on
+            niri msg power-on-monitors
           '';
         }
         {
