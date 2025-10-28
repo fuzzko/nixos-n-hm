@@ -80,6 +80,9 @@
     C-p = "command_palette";
     tab = "move_parent_node_end";
     S-tab = "move_parent_node_start";
+
+    C-b.q = ":buffer-close";
+    C-b.Q = ":buffer-close!";
   };
 
   keys.insert = {
