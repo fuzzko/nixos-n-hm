@@ -42,6 +42,7 @@ in
   programs.fish.shellAliases = {
     fztodo = "ig TODO";
     fzhx = "hx .";
+    tempcd = "cd (mktemp -d)";
   };
 
   programs.fish.functions = {
@@ -71,10 +72,6 @@ in
       set tempfile (mktemp)
       echo $argv[2..] > $tempfile
       nxd $argv[1] --command "fish $tempfile"
-    '';
-
-    tempcd = ''
-      cd (mktemp -d)
     '';
 
     komo_modified_when = ''
