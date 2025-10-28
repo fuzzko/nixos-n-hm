@@ -77,11 +77,14 @@
 
   keys.normal = {
     esc = "command_mode";
+    C-p = "command_palette";
     tab = "move_parent_node_end";
     S-tab = "move_parent_node_start";
   };
 
   keys.insert = {
+    S-esc = "command_mode";
+    C-p = "command_palette";
     S-tab = "move_parent_node_start";
   };
 
