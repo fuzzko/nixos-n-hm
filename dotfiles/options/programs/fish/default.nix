@@ -73,6 +73,10 @@ in
       nxd $argv[1] --command "fish $tempfile"
     '';
 
+    tempcd = ''
+      cd (mktemp -d)
+    '';
+
     komo_modified_when = ''
       set now (begin
         set tmp (date +"%s
