@@ -35,6 +35,10 @@ in
     ]
   );
 
+  programs.fish.shellAbbrs = {
+    nixs = "nix-search";
+  };
+
   programs.fish.shellAliases = {
     fztodo = "ig TODO";
     fzhx = "hx .";
@@ -55,6 +59,18 @@ in
       else
         nix develop $argv --command fish
       end
+    '';
+
+    with-nxs = ''
+      set tempfile (mktemp)
+      echo $argv[2..] > $tempfile
+      nxs $argv[1] --command "fish $tempfile"
+    '';
+
+    with-nxd = ''
+      set tempfile (mktemp)
+      echo $argv[2..] > $tempfile
+      nxd $argv[1] --command "fish $tempfile"
     '';
 
     komo_modified_when = ''
