@@ -42,7 +42,7 @@ in
   programs.fish.shellAliases = {
     fztodo = "ig TODO";
     fzhx = "hx .";
-    tempcd = "cd (mktemp -d)";
+    cdt = "cd (mktemp -d)";
   };
 
   programs.fish.functions = {
