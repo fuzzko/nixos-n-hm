@@ -230,6 +230,7 @@ in
   programs.zoxide.enable = true;
 
   home.sessionVariables = {
-    _Z_ECHO = 1;
+    _ZO_ECHO = 1;
+    _ZO_FZF_OPTS = builtins.concatStringsSep " " [];
   };
 }
