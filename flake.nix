@@ -126,7 +126,7 @@
           niri-flake.homeModules.niri
           kidex.homeModules.kidex
           wired.homeManagerModules.default
-          ./dotfiles/home.nix
+          ./home
         ];
         extraSpecialArgs.std = nix-std.lib;
       };
