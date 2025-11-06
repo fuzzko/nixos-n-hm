@@ -116,6 +116,8 @@
         homeConfigurations.komo = {
           system = "x86_64-linux";
           modules = [
+            ./home/options/lib/komo
+            ./home
             declarative-cachix.homeManagerModules.declarative-cachix
             nix-index-database.homeModules.nix-index
             catppuccin.homeModules.catppuccin
@@ -125,11 +127,7 @@
             niri-flake.homeModules.niri
             kidex.homeModules.kidex
             wired.homeManagerModules.default
-            ./home/options/lib/komo
-            ./home
           ];
-          extraSpecialArgs.config = {};
-          extraSpecialArgs.pkgs = {};
         };
 
         nixosConfigurations =
