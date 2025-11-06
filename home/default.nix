@@ -15,6 +15,4 @@ in
     in
     assert builtins.trace x true;
     x;
-
-  home.stateVersion = "24.05";
 }
