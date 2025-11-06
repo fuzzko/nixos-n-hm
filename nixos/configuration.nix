@@ -340,8 +340,8 @@ in
     enable = true;
     extraRules = [
       {
-        users = ["komo"];
-        persist = true; 
+        users = [ "komo" ];
+        persist = true;
       }
     ];
   };
@@ -354,7 +354,7 @@ in
     ACTION=="add", SUBSYSTEM=="leds", RUN+="${pkgs.coreutils}/bin/chgrp video /sys/class/leds/%k/brightness"
     ACTION=="add", SUBSYSTEM=="leds", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/leds/%k/brightness"
   '';
-  
+
   programs.niri.enable = true;
   programs.niri.package = pkgs.niri-unstable;
 }

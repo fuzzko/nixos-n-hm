@@ -1,32 +1,43 @@
 ## Minimalist rEFInd Themes
 
-[rEFInd](http://www.rodsbooks.com/refind/) is a boot manager for UEFI based systems. These are 4 clean and minimal themes for it.
+[rEFInd](http://www.rodsbooks.com/refind/) is a boot manager for UEFI based
+systems. These are 4 clean and minimal themes for it.
 
-This version is based on the 2013 theme by [Evan Purkhiser][evan] with some modifications and additional dark theme, nord theme, and gruvbox theme.
+This version is based on the 2013 theme by [Evan Purkhiser][evan] with some
+modifications and additional dark theme, nord theme, and gruvbox theme.
 
 ##### Light Theme
+
 ![rEFInd Minimalist Light Theme](./screenshots/screenshot_light.png)
+
 ##### Dark Theme
+
 ![rEFInd Minimalist Dark Theme](./screenshots/screenshot_dark.png)
+
 ##### Nord Theme
+
 ![rEFInd Minimalist Nord Theme](./screenshots/screenshot_nord.png)
+
 ##### Gruvbox Theme
+
 ![rEFInd Minimalist Gruvbox Theme](./screenshots/screenshot_gruvbox.png)
 
 ### Usage
 
- 1. Install rEFInd and locate your refind EFI directory. This is commonly `/boot/EFI/refind`
-    though it will depend on where you mount your ESP and where rEFInd is installed. 
-    `fdisk -l` and `mount` may help.
+1.  Install rEFInd and locate your refind EFI directory. This is commonly
+    `/boot/EFI/refind` though it will depend on where you mount your ESP and
+    where rEFInd is installed. `fdisk -l` and `mount` may help.
 
- 2. Create a folder called `themes` inside it, if it doesn't already exist.
+2.  Create a folder called `themes` inside it, if it doesn't already exist.
 
- 3. Clone this repository into the `themes` directory.
+3.  Clone this repository into the `themes` directory.
 
- 4. To enable the theme add `include themes/rEFInd-minimal-themes/<your-theme-style>/theme.conf` at the end of `refind.conf`. 
- For example, `include themes/rEFInd-minimal-themes/rEFInd-minimal-light/theme.conf`
- Or just copy 3 folders and use a shorter directory line.
-5. Uncomment `scanfor external,manual` in `refind.conf`.
+4.  To enable the theme add
+    `include themes/rEFInd-minimal-themes/<your-theme-style>/theme.conf` at the
+    end of `refind.conf`. For example,
+    `include themes/rEFInd-minimal-themes/rEFInd-minimal-light/theme.conf` Or
+    just copy 3 folders and use a shorter directory line.
+5.  Uncomment `scanfor external,manual` in `refind.conf`.
 
 Here's an example menuentry configuration (from the screenshot):
 
@@ -65,16 +76,21 @@ menuentry "Debian Linux" {
 ```
 
 Entries that are autodetected should also show the proper icons.
-* For the `volume` token, use the partition label that contain the OS.
-If this label isn't unique, use `blkid` command to get the PARTUUID (GUID) of that partition.
-* For other tokens, just modify as match as `/boot/grub/grub.cfg`.
-* Remember to config `theme.cfg` again after a system kernel upgrade.
+
+- For the `volume` token, use the partition label that contain the OS. If this
+  label isn't unique, use `blkid` command to get the PARTUUID (GUID) of that
+  partition.
+- For other tokens, just modify as match as `/boot/grub/grub.cfg`.
+- Remember to config `theme.cfg` again after a system kernel upgrade.
 
 Read more about rEFInd configuration at [this link][refind-config]
 
 ### Background sizes
 
-If you find the background looks blurry it may be due to the included wallpaper being an incorrect resolution for your monitor. You can download the [original high quality wallpaper][wallpaper], resize it as appropriate, and replace the `background_<style>.png`.
+If you find the background looks blurry it may be due to the included wallpaper
+being an incorrect resolution for your monitor. You can download the [original
+high quality wallpaper][wallpaper], resize it as appropriate, and replace the
+`background_<style>.png`.
 
 You can of course also choose your own background!
 
@@ -83,14 +99,15 @@ You can of course also choose your own background!
 The OS icons are from [Lightness for burg][icons] by [SWOriginal][icon-author].
 The OS icons color of dark theme and gruvbox theme was colorized by me.
 
-The light background is [Minimalist Wallpaper][wallpaper] by [LeonardoAIanB][wallpaper-author]. Thank you to [Padster][padster] for locating it!
+The light background is [Minimalist Wallpaper][wallpaper] by
+[LeonardoAIanB][wallpaper-author]. Thank you to [Padster][padster] for locating
+it!
 
 [evan]: https://github.com/EvanPurkhiser/rEFInd-minimal
 [icons]: http://sworiginal.deviantart.com/art/Lightness-for-burg-181461810
 [icon-author]: http://sworiginal.deviantart.com/
-
 [padster]: https://github.com/theRealPadster
-[wallpaper]: http://leonardoalanb.deviantart.com/art/Minimalist-wallpaper-295519786
+[wallpaper]:
+  http://leonardoalanb.deviantart.com/art/Minimalist-wallpaper-295519786
 [wallpaper-author]: http://leonardoalanb.deviantart.com/
 [refind-config]: https://www.rodsbooks.com/refind/configfile.html
-
