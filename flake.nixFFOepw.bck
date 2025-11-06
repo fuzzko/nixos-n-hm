@@ -128,7 +128,6 @@
             ./home/options/lib/komo
             ./home
           ];
-          extraArgs.config = {};
         };
 
         nixosConfigurations =
