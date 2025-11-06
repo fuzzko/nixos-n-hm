@@ -116,7 +116,6 @@
         homeConfigurations.komo = {
           system = "x86_64-linux";
           modules = [
-            config.propagationModule
             declarative-cachix.homeManagerModules.declarative-cachix
             nix-index-database.homeModules.nix-index
             catppuccin.homeModules.catppuccin
@@ -128,6 +127,11 @@
             wired.homeManagerModules.default
             ./home/options/lib/komo
             ./home
+            {
+              disabled = [
+                config.propagationModule
+              ];
+            }
           ];
           extraSpecialArgs.std = nix-std.lib;
         };
