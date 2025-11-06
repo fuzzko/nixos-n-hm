@@ -128,7 +128,6 @@
             ./home/options/lib/komo
             ./home/default.nix
           ];
-          extraSpecialArgs.std = nix-std.lib;
         };
 
         nixosConfigurations =
