@@ -188,7 +188,7 @@ in
           hash = info.narHash;
         };
       in
-      komo.fromYAML (readFile "${src}/${themeName}.yml");
+      komo.fromYAML pkgs (readFile "${src}/${themeName}.yml");
 
     icons = true;
     color = "auto";
