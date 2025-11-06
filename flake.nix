@@ -112,44 +112,47 @@
             }
           )
         ];
-
-        homeConfigurations.komo = home-manager.lib.homeManagerConfiguration {
-          modules = [
-            config.propagationModule
-            declarative-cachix.homeManagerModules.declarative-cachix
-            nix-index-database.homeModules.nix-index
-            catppuccin.homeModules.catppuccin
-            nix-flatpak.homeManagerModules.nix-flatpak
-            chaotic.homeManagerModules.default
-            nix-cwc.homeManagerModules.default
-            niri-flake.homeModules.niri
-            kidex.homeModules.kidex
-            wired.homeManagerModules.default
-            ./home
-          ];
-          extraSpecialArgs.std = nix-std.lib;
-        };
-
-        nixosConfigurations =
-          let
-            mkSystem = x: {
-              system = "x86_64-linux";
-              modules = [
-                config.propagationModule
-                nix-flatpak.nixosModules.nix-flatpak
-                chaotic.nixosModules.default
-                nix-cwc.nixosModules.default
-                niri-flake.nixosModules.niri
-                ./nixos/hardwares/${x}/configuration.nix
-                ./nixos/hardwares/${x}/hardware-configuration.nix
-                ./nixos/configuration.nix
-              ];
-            };
-          in
-          {
-            Aspire-TC-605 = mkSystem "Aspire-TC-605";
-            HP-240-G5-Notebook-PC = mkSystem "HP-240-G5-Notebook-PC";
+        perSystem = pkgs: {
+          homeConfigurations.komo = home-manager.lib.homeManagerConfiguration {
+            inherit pkgs;
+            modules = [
+              config.propagationModule
+              declarative-cachix.homeManagerModules.declarative-cachix
+              nix-index-database.homeModules.nix-index
+              catppuccin.homeModules.catppuccin
+              nix-flatpak.homeManagerModules.nix-flatpak
+              chaotic.homeManagerModules.default
+              nix-cwc.homeManagerModules.default
+              niri-flake.homeModules.niri
+              kidex.homeModules.kidex
+              wired.homeManagerModules.default
+              ./home
+            ];
+            extraSpecialArgs.std = nix-std.lib;
           };
+
+          nixosConfigurations =
+            let
+              mkSystem = x: {
+                inherit pkgs;
+                inherit (pkgs) system;
+                modules = [
+                  config.propagationModule
+                  nix-flatpak.nixosModules.nix-flatpak
+                  chaotic.nixosModules.default
+                  nix-cwc.nixosModules.default
+                  niri-flake.nixosModules.niri
+                  ./nixos/hardwares/${x}/configuration.nix
+                  ./nixos/hardwares/${x}/hardware-configuration.nix
+                  ./nixos/configuration.nix
+                ];
+              };
+            in
+            {
+              Aspire-TC-605 = mkSystem "Aspire-TC-605";
+              HP-240-G5-Notebook-PC = mkSystem "HP-240-G5-Notebook-PC";
+            };
+        };
 
         formatters =
           pkgs: with pkgs; {
