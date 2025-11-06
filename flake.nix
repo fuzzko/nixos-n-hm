@@ -83,7 +83,7 @@
       ...
     }@inputs:
     flakelight ./. (
-      { lib, ... }:
+      { lib, config, ... }:
       {
         inherit inputs;
 
@@ -115,6 +115,7 @@
 
         homeConfigurations.komo = home-manager.lib.homeManagerConfiguration {
           modules = [
+            config.propagationModule
             declarative-cachix.homeManagerModules.declarative-cachix
             nix-index-database.homeModules.nix-index
             catppuccin.homeModules.catppuccin
@@ -126,14 +127,15 @@
             wired.homeManagerModules.default
             ./home
           ];
-          config.propagationModule = true;
           extraSpecialArgs.std = nix-std.lib;
         };
 
         nixosConfigurations =
           let
             mkSystem = x: {
+              system = "x86_64-linux";
               modules = [
+                config.propagationModule
                 nix-flatpak.nixosModules.nix-flatpak
                 chaotic.nixosModules.default
                 nix-cwc.nixosModules.default
