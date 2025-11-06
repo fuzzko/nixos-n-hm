@@ -7,7 +7,7 @@
 
   caches.cachix = [
     "nix-community"
-    "0komo"
+    "mbekkomo"
   ];
 
   nixGL = {
