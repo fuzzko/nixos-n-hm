@@ -191,7 +191,7 @@ in
       komo.fromYAML pkgs (readFile "${src}/${themeName}.yml");
 
     icons = true;
-    color = "auto";
+    colors = "auto";
     extraOptions = [
       "--classify=auto"
       "--sort=type"
