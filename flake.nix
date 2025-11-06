@@ -148,6 +148,8 @@
 
       formatters = pkgs: with pkgs; {
         "*.nix" = lib.getExe nixfmt;
+        "*.sh" = lib.getExe shfmt;
+        
       };
     });
 }
