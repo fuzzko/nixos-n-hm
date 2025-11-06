@@ -126,7 +126,6 @@
             wired.homeManagerModules.default
             ./home
           ];
-          config.propagationModule = true;
           extraSpecialArgs.std = nix-std.lib;
         };
 
