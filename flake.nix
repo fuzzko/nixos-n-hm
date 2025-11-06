@@ -22,6 +22,7 @@
     wired.url = "github:Toqozz/wired-notify";
     ls_colors.url = "github:trapd00r/LS_COLORS";
     eza-themes.url = "github:eza-community/eza-themes";
+    flakelight.url = "github:nix-community/flakelight";
 
     nur.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -41,6 +42,7 @@
     wired.inputs.nixpkgs.follows = "nixpkgs";
     ls_colors.flake = false;
     eza-themes.flake = false;
+    flakelight.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   nixConfig = {
@@ -60,7 +62,6 @@
 
   outputs =
     {
-      nixpkgs,
       home-manager,
       nix-search-cli,
       nixGL,
@@ -78,16 +79,91 @@
       xwayland-satellite,
       kidex,
       wired,
+      flakelight,
       ...
-    }:
-    let
-      system =
-        let
-          x = (builtins.getEnv "NIXPKGS_SYSTEM");
-        in
-        if x == "" then "x86_64-linux" else x;
-      withOverlays = pkgs: xs: builtins.foldl' (o1: o2: o1.extend o2) pkgs xs;
-      pkgs = withOverlays nixpkgs.legacyPackages.${system} [
+    }@inputs:
+    # let
+    #   pkgs = withOverlays nixpkgs.legacyPackages.${system} [
+    #     nur.overlays.default
+    #     nix-cwc.overlays.default
+    #     niri-flake.overlays.niri
+    #     (
+    #       final: prev:
+    #       let
+    #         inherit (prev) system;
+    #       in
+    #       {
+    #         inherit (nix-search-cli.outputs.packages.${system}) nix-search;
+    #         xwayland-satellite-unstable = xwayland-satellite.outputs.packages.${system}.xwayland-satellite;
+    #         nixGLPackages = nixGL.outputs.packages.${system};
+    #         matui = matui.packages.${system}.matui;
+    #         zen-browser =
+    #           let
+    #             packs = zen-browser.outputs.packages.${system};
+    #             passthru = builtins.removeAttrs packs [ "default" ];
+    #           in
+    #           packs.default.overrideAttrs {
+    #             inherit passthru;
+    #           };
+    #       }
+    #     )
+    #   ];
+    # in
+    # {
+    #   homeConfigurations.komo = home-manager.lib.homeManagerConfiguration {
+    #     pkgs = pkgs;
+    #     modules = [
+    #       declarative-cachix.homeManagerModules.declarative-cachix
+    #       nix-index-database.homeModules.nix-index
+    #       catppuccin.homeModules.catppuccin
+    #       nix-flatpak.homeManagerModules.nix-flatpak
+    #       chaotic.homeManagerModules.default
+    #       nix-cwc.homeManagerModules.default
+    #       niri-flake.homeModules.niri
+    #       kidex.homeModules.kidex
+    #       wired.homeManagerModules.default
+    #       ./home
+    #     ];
+    #     extraSpecialArgs.std = nix-std.lib;
+    #   };
+
+    #   formatter.${system} = pkgs.nixfmt-tree;
+    # }
+    # // (
+    #   let
+    #     mkConfig =
+    #       x:
+    #       nixpkgs.lib.nixosSystem {
+    #         inherit system;
+    #         inherit pkgs;
+    #         modules = [
+    #           nix-flatpak.nixosModules.nix-flatpak
+    #           chaotic.nixosModules.default
+    #           nix-cwc.nixosModules.default
+    #           niri-flake.nixosModules.niri
+    #           ./nixos/hardwares/${x}/configuration.nix
+    #           ./nixos/hardwares/${x}/hardware-configuration.nix
+    #           ./nixos/configuration.nix
+    #         ];
+    #       };
+    #     systems = [
+    #       "Aspire-TC-605"
+    #       "HP-240-G5-Notebook-PC"
+    #     ];
+    #   in
+    #   {
+    #     nixosConfigurations = builtins.listToAttrs (
+    #       map (x: {
+    #         name = x;
+    #         value = mkConfig x;
+    #       }) systems
+    #     );
+    #   }
+    # );
+    flakelight ./. {
+      inherit inputs;
+
+      withOverlays = [
         nur.overlays.default
         nix-cwc.overlays.default
         niri-flake.overlays.niri
@@ -112,10 +188,8 @@
           }
         )
       ];
-    in
-    {
+
       homeConfigurations.komo = home-manager.lib.homeManagerConfiguration {
-        pkgs = pkgs;
         modules = [
           declarative-cachix.homeManagerModules.declarative-cachix
           nix-index-database.homeModules.nix-index
@@ -130,38 +204,5 @@
         ];
         extraSpecialArgs.std = nix-std.lib;
       };
-
-      formatter.${system} = pkgs.nixfmt-tree;
-    }
-    // (
-      let
-        mkConfig =
-          x:
-          nixpkgs.lib.nixosSystem {
-            inherit system;
-            inherit pkgs;
-            modules = [
-              nix-flatpak.nixosModules.nix-flatpak
-              chaotic.nixosModules.default
-              nix-cwc.nixosModules.default
-              niri-flake.nixosModules.niri
-              ./nixos/hardwares/${x}/configuration.nix
-              ./nixos/hardwares/${x}/hardware-configuration.nix
-              ./nixos/configuration.nix
-            ];
-          };
-        systems = [
-          "Aspire-TC-605"
-          "HP-240-G5-Notebook-PC"
-        ];
-      in
-      {
-        nixosConfigurations = builtins.listToAttrs (
-          map (x: {
-            name = x;
-            value = mkConfig x;
-          }) systems
-        );
-      }
-    );
+    };
 }
