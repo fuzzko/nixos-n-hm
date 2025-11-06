@@ -113,38 +113,27 @@
           )
         ];
 
-        homeConfigurations.komo = {
-          system = "x86_64-linux";
-          modules = [
-            declarative-cachix.homeManagerModules.declarative-cachix
-            nix-index-database.homeModules.nix-index
-            catppuccin.homeModules.catppuccin
-            nix-flatpak.homeManagerModules.nix-flatpak
-            chaotic.homeManagerModules.default
-            nix-cwc.homeManagerModules.default
-            niri-flake.homeModules.niri
-            kidex.homeModules.kidex
-            wired.homeManagerModules.default
-            ./modules/hm/moor
-            ./home/options/lib/komo
-            (
-              {
-                config,
-                lib,
-                ...
-              }:
-              let
-                inherit (config.lib) komo;
-              in
-              {
-                # A simple business logic to import all configs in ./options, you should check that dir too
-                imports = komo.filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./home/options;
-
-                home.stateVersion = "24.05";
-              }
-            )
-          ];
-        };
+        homeConfigurations.komo =
+          let
+            komoLib = import ./lib lib;
+          in
+          {
+            system = "x86_64-linux";
+            modules = [
+              declarative-cachix.homeManagerModules.declarative-cachix
+              nix-index-database.homeModules.nix-index
+              catppuccin.homeModules.catppuccin
+              nix-flatpak.homeManagerModules.nix-flatpak
+              chaotic.homeManagerModules.default
+              nix-cwc.homeManagerModules.default
+              niri-flake.homeModules.niri
+              kidex.homeModules.kidex
+              wired.homeManagerModules.default
+              ./modules/hm/moor
+              ./home/options/lib/komo
+              (komoLib.filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./home/options)
+            ];
+          };
 
         nixosConfigurations =
           let
