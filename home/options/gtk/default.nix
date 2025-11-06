@@ -6,10 +6,10 @@
   };
 
   gtk.theme = {
-    theme = "Adwaita-dark";
+    name = "Adwaita-dark";
   };
   gtk.gtk3.theme = {
     package = pkgs.adw-gtk3;
-    theme = "adw-gtk3-dark";
+    name = "adw-gtk3-dark";
   };
 }
