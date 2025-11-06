@@ -125,6 +125,7 @@
             niri-flake.homeModules.niri
             kidex.homeModules.kidex
             wired.homeManagerModules.default
+            ./modules/hm/moor
             ./home/options/lib/komo
             (
               {
@@ -137,9 +138,7 @@
               in
               {
                 # A simple business logic to import all configs in ./options, you should check that dir too
-                imports = (komo.filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./options) ++ [
-                  ./modules/hm/moor
-                ];
+                imports = komo.filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./home/options;
 
                 home.stateVersion = "24.05";
               }
