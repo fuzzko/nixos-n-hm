@@ -47,7 +47,7 @@ rec {
       yaml:
       let
         yamlFile = pkgs.writeText "file.yaml" yaml;
-        jsonFile = pkgs.runCommandNoCC "yaml.json" ''
+        jsonFile = pkgs.runCommand "yaml.json" {} ''
           ${pkgs.yj}/bin/yj < ${yamlFile} > $out
         '';
       in
