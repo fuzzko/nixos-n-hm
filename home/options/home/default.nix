@@ -11,7 +11,6 @@
     username = "komo";
     homeDirectory = /home/${config.home.username};
   };
-  home.stateVersion = "24.05"; # do not change
 
   home.packages = lib.flatten (
     with pkgs;
