@@ -34,7 +34,7 @@ rec {
         p:
         if lib.isDerivation p then
           {
-            name = p.pname;
+            name = p.name;
             src = p;
           }
         else
