@@ -8,7 +8,7 @@ let
 in
 {
   # A simple business logic to import all configs in ./options, you should check that dir too
-  imports = lib.mkIf true ((komo.filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./options) ++ [
+  imports = lib.mkIf false ((komo.filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./options) ++ [
     ../modules/hm/moor
   ]);
 
