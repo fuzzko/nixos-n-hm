@@ -204,5 +204,22 @@
         ];
         extraSpecialArgs.std = nix-std.lib;
       };
+      nixosConfigurations =
+        let
+
+          mkSystem = x: {
+            modules = [
+              nix-flatpak.nixosModules.nix-flatpak
+              chaotic.nixosModules.default
+              nix-cwc.nixosModules.default
+              niri-flake.nixosModules.niri
+              ./nixos/hardwares/${x}/configuration.nix
+              ./nixos/hardwares/${x}/hardware-configuration.nix
+              ./nixos/configuration.nix
+            ];
+          };
+        in
+        null;
     };
+
 }
