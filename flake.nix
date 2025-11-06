@@ -82,85 +82,7 @@
       flakelight,
       ...
     }@inputs:
-    # let
-    #   pkgs = withOverlays nixpkgs.legacyPackages.${system} [
-    #     nur.overlays.default
-    #     nix-cwc.overlays.default
-    #     niri-flake.overlays.niri
-    #     (
-    #       final: prev:
-    #       let
-    #         inherit (prev) system;
-    #       in
-    #       {
-    #         inherit (nix-search-cli.outputs.packages.${system}) nix-search;
-    #         xwayland-satellite-unstable = xwayland-satellite.outputs.packages.${system}.xwayland-satellite;
-    #         nixGLPackages = nixGL.outputs.packages.${system};
-    #         matui = matui.packages.${system}.matui;
-    #         zen-browser =
-    #           let
-    #             packs = zen-browser.outputs.packages.${system};
-    #             passthru = builtins.removeAttrs packs [ "default" ];
-    #           in
-    #           packs.default.overrideAttrs {
-    #             inherit passthru;
-    #           };
-    #       }
-    #     )
-    #   ];
-    # in
-    # {
-    #   homeConfigurations.komo = home-manager.lib.homeManagerConfiguration {
-    #     pkgs = pkgs;
-    #     modules = [
-    #       declarative-cachix.homeManagerModules.declarative-cachix
-    #       nix-index-database.homeModules.nix-index
-    #       catppuccin.homeModules.catppuccin
-    #       nix-flatpak.homeManagerModules.nix-flatpak
-    #       chaotic.homeManagerModules.default
-    #       nix-cwc.homeManagerModules.default
-    #       niri-flake.homeModules.niri
-    #       kidex.homeModules.kidex
-    #       wired.homeManagerModules.default
-    #       ./home
-    #     ];
-    #     extraSpecialArgs.std = nix-std.lib;
-    #   };
-
-    #   formatter.${system} = pkgs.nixfmt-tree;
-    # }
-    # // (
-    #   let
-    #     mkConfig =
-    #       x:
-    #       nixpkgs.lib.nixosSystem {
-    #         inherit system;
-    #         inherit pkgs;
-    #         modules = [
-    #           nix-flatpak.nixosModules.nix-flatpak
-    #           chaotic.nixosModules.default
-    #           nix-cwc.nixosModules.default
-    #           niri-flake.nixosModules.niri
-    #           ./nixos/hardwares/${x}/configuration.nix
-    #           ./nixos/hardwares/${x}/hardware-configuration.nix
-    #           ./nixos/configuration.nix
-    #         ];
-    #       };
-    #     systems = [
-    #       "Aspire-TC-605"
-    #       "HP-240-G5-Notebook-PC"
-    #     ];
-    #   in
-    #   {
-    #     nixosConfigurations = builtins.listToAttrs (
-    #       map (x: {
-    #         name = x;
-    #         value = mkConfig x;
-    #       }) systems
-    #     );
-    #   }
-    # );
-    flakelight ./. {
+    flakelight ./. ({ lib, ...}: {
       inherit inputs;
 
       withOverlays = [
@@ -204,9 +126,9 @@
         ];
         extraSpecialArgs.std = nix-std.lib;
       };
+
       nixosConfigurations =
         let
-
           mkSystem = x: {
             modules = [
               nix-flatpak.nixosModules.nix-flatpak
@@ -219,7 +141,13 @@
             ];
           };
         in
-        null;
-    };
+        {
+          Aspire-TC-605 = mkSystem "Aspire-TC-605";
+          HP-240-G5-Notebook-PC = mkSystem "HP-240-G5-Notebook-PC";
+        };
 
+      formatters = pkgs: with pkgs; {
+        "*.nix" = lib.getExe nixfmt;
+      };
+    });
 }
