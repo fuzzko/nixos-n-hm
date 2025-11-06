@@ -126,6 +126,7 @@
             niri-flake.homeModules.niri
             kidex.homeModules.kidex
             wired.homeManagerModules.default
+            ./home/options/lib/komo
             ./home
           ];
           extraSpecialArgs.std = nix-std.lib;
