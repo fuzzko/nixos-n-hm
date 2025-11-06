@@ -126,7 +126,7 @@
             kidex.homeModules.kidex
             wired.homeManagerModules.default
             ./home/options/lib/komo
-            ./home/default.nix
+            ./home
           ];
         };
 
