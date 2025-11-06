@@ -5,9 +5,6 @@ let
     readDir
     readFile
     fromJSON
-    split
-    typeOf
-    concatStringsSep
     ;
 in
 {
@@ -52,21 +49,5 @@ in
         '';
       in
       fromJSON (readFile jsonFile);
-
-    trimEveryLineWith = attrs: s:
-      let
-        lines =
-          let
-            matches = split "([^\n]+)" s;
-            filtered = filter (l: typeOf l == "list") matches;
-            normalized = lib.flatten filtered;
-          in
-          normalized;
-        trimmed = map (s: lib.trimWith attrs s) lines;
-        joined = concatStringsSep "\n" trimmed;
-      in
-      joined;
-    
-    trimEveryLine = trimEveryLineWith { start = true; end = true; };
   };
 }
