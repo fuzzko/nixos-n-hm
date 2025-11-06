@@ -131,8 +131,8 @@
               wired.homeManagerModules.default
               ./modules/hm/moor
               ./home/options/lib/komo
-              (komoLib.filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./home/options)
-            ];
+            ]
+            ++ (komoLib.filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./home/options);
           };
 
         nixosConfigurations =
