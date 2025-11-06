@@ -1,9 +1,9 @@
 {
-  pkgs,
+  config,
   ...
 }:
 let
-  komo = import ../lib pkgs;
+  inherit (config.lib) komo;
 in
 {
   # A simple business logic to import all configs in ./options, you should check that dir too
