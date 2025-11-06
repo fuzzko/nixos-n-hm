@@ -8,9 +8,7 @@
     "postfix": "@"
   },
   "diagnostics": {
-    "disable": [
-      "undefined-global"
-    ],
+    "disable": ["undefined-global"],
     "enable": true,
     "globals": [],
     "globalsRegex": [],

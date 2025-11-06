@@ -4,7 +4,7 @@
   gtk = {
     colorScheme = "dark";
   };
-  
+
   gtk.theme = {
     theme = "Adwaita-dark";
   };

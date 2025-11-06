@@ -82,74 +82,78 @@
       flakelight,
       ...
     }@inputs:
-    flakelight ./. ({ lib, ...}: {
-      inherit inputs;
+    flakelight ./. (
+      { lib, ... }:
+      {
+        inherit inputs;
 
-      withOverlays = [
-        nur.overlays.default
-        nix-cwc.overlays.default
-        niri-flake.overlays.niri
-        (
-          final: prev:
-          let
-            inherit (prev) system;
-          in
-          {
-            inherit (nix-search-cli.outputs.packages.${system}) nix-search;
-            xwayland-satellite-unstable = xwayland-satellite.outputs.packages.${system}.xwayland-satellite;
-            nixGLPackages = nixGL.outputs.packages.${system};
-            matui = matui.packages.${system}.matui;
-            zen-browser =
-              let
-                packs = zen-browser.outputs.packages.${system};
-                passthru = builtins.removeAttrs packs [ "default" ];
-              in
-              packs.default.overrideAttrs {
-                inherit passthru;
-              };
-          }
-        )
-      ];
-
-      homeConfigurations.komo = home-manager.lib.homeManagerConfiguration {
-        modules = [
-          declarative-cachix.homeManagerModules.declarative-cachix
-          nix-index-database.homeModules.nix-index
-          catppuccin.homeModules.catppuccin
-          nix-flatpak.homeManagerModules.nix-flatpak
-          chaotic.homeManagerModules.default
-          nix-cwc.homeManagerModules.default
-          niri-flake.homeModules.niri
-          kidex.homeModules.kidex
-          wired.homeManagerModules.default
-          ./home
+        withOverlays = [
+          nur.overlays.default
+          nix-cwc.overlays.default
+          niri-flake.overlays.niri
+          (
+            final: prev:
+            let
+              inherit (prev) system;
+            in
+            {
+              inherit (nix-search-cli.outputs.packages.${system}) nix-search;
+              xwayland-satellite-unstable = xwayland-satellite.outputs.packages.${system}.xwayland-satellite;
+              nixGLPackages = nixGL.outputs.packages.${system};
+              matui = matui.packages.${system}.matui;
+              zen-browser =
+                let
+                  packs = zen-browser.outputs.packages.${system};
+                  passthru = builtins.removeAttrs packs [ "default" ];
+                in
+                packs.default.overrideAttrs {
+                  inherit passthru;
+                };
+            }
+          )
         ];
-        extraSpecialArgs.std = nix-std.lib;
-      };
 
-      nixosConfigurations =
-        let
-          mkSystem = x: {
-            modules = [
-              nix-flatpak.nixosModules.nix-flatpak
-              chaotic.nixosModules.default
-              nix-cwc.nixosModules.default
-              niri-flake.nixosModules.niri
-              ./nixos/hardwares/${x}/configuration.nix
-              ./nixos/hardwares/${x}/hardware-configuration.nix
-              ./nixos/configuration.nix
-            ];
-          };
-        in
-        {
-          Aspire-TC-605 = mkSystem "Aspire-TC-605";
-          HP-240-G5-Notebook-PC = mkSystem "HP-240-G5-Notebook-PC";
+        homeConfigurations.komo = home-manager.lib.homeManagerConfiguration {
+          modules = [
+            declarative-cachix.homeManagerModules.declarative-cachix
+            nix-index-database.homeModules.nix-index
+            catppuccin.homeModules.catppuccin
+            nix-flatpak.homeManagerModules.nix-flatpak
+            chaotic.homeManagerModules.default
+            nix-cwc.homeManagerModules.default
+            niri-flake.homeModules.niri
+            kidex.homeModules.kidex
+            wired.homeManagerModules.default
+            ./home
+          ];
+          extraSpecialArgs.std = nix-std.lib;
         };
 
-      formatters = pkgs: with pkgs; {
-        "*.nix" = lib.getExe nixfmt;
-        "*.sh" = lib.getExe shfmt;
-        
-      };
-    });
+        nixosConfigurations =
+          let
+            mkSystem = x: {
+              modules = [
+                nix-flatpak.nixosModules.nix-flatpak
+                chaotic.nixosModules.default
+                nix-cwc.nixosModules.default
+                niri-flake.nixosModules.niri
+                ./nixos/hardwares/${x}/configuration.nix
+                ./nixos/hardwares/${x}/hardware-configuration.nix
+                ./nixos/configuration.nix
+              ];
+            };
+          in
+          {
+            Aspire-TC-605 = mkSystem "Aspire-TC-605";
+            HP-240-G5-Notebook-PC = mkSystem "HP-240-G5-Notebook-PC";
+          };
+
+        formatters =
+          pkgs: with pkgs; {
+            "*.nix" = lib.getExe nixfmt;
+            "*.sh" = lib.getExe shfmt;
+
+          };
+      }
+    );
 }
