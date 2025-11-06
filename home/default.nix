@@ -1,14 +1,9 @@
 {
   # pkgs,
   # config,
-  pkgs,
+  # pkgs,
   ...
-}@attrs:
-# let
-#   inherit (config.lib) komo;
-# in
-# assert builtins.trace (builtins.typeOf pkgs) false;
-assert builtins.trace pkgs true;
+}:
 {
   # # A simple business logic to import all configs in ./options, you should check that dir too
   # imports = (komo.filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./options) ++ [
