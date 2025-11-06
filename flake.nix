@@ -126,12 +126,7 @@
             kidex.homeModules.kidex
             wired.homeManagerModules.default
             ./home/options/lib/komo
-            ./home
-            {
-              disabled = [
-                config.propagationModule
-              ];
-            }
+            ./home/default.nix
           ];
           extraSpecialArgs.std = nix-std.lib;
         };
