@@ -96,7 +96,7 @@
   ];
 
   home.pointerCursor.enable = true;
-  home.pointerCursor.name = "";
+  home.pointerCursor.name = "Catppuccin Mocha Blue";
   home.pointerCursor.size = 15;
   home.pointerCursor = {
     hyprcursor.enable = true;
