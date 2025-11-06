@@ -1,4 +1,0 @@
-{ ... }:
-{
-  hotreload_theme = true;
-}
