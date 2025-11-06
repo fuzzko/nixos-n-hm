@@ -96,6 +96,7 @@
   ];
 
   home.pointerCursor.enable = true;
+  home.pointerCursor.name = "";
   home.pointerCursor.size = 15;
   home.pointerCursor = {
     hyprcursor.enable = true;
