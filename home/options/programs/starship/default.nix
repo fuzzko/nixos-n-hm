@@ -1,112 +1,94 @@
-{ ... }:
+{ config, ... }:
+let
+  inherit (config.lib) komo;
+in
 {
   programs.starship.enable = true;
 
   programs.starship.settings = {
-    username =
-      let
-        root = "#ff8533";
-        user = "#ffff80";
-      in
-      {
-        style_root = "bold fg:${root}";
-        style_user = "bold fg:${user}";
-        format = "[$user]($style)";
-        show_always = true;
-      };
+    add_newline = false;
+    
+    format = komo.trimEveryLine ''
+      [╭────╴](228) $hostname [╶$fill╴](228)
+      [├╴](228)$directory(
+      [├╴](228)$git_branch( $git_state)( $git_commit)( $git_status)( $git_metrics))(
+      [├╴](228)$shlvl)(
+      [├╴](228)$jobs)
+      [╰─╴](228)($nix_shell )$character
+    '';
 
-    directory =
-      let
-        directory = "#668cff";
-      in
-      {
-        style = "bold fg:${directory}";
-        read_only = " ";
-        format = "[$read_only]($style)[$path]($style)";
-      };
-
-    character =
-      let
-        symbol = "🞂";
-        viSymbol = "V";
-      in
-      {
-        success_symbol = "[${symbol}](bold green)";
-        error_symbol = "[${symbol}](bold red)";
-        vimcmd_symbol = "[${viSymbol}](bold green)";
-        vimcmd_replace_one_symbol = "[${viSymbol}](bold purple)";
-        vimcmd_replace_symbol = "[${viSymbol}](bold purple)";
-        vimcmd_visual_symbol = "[${viSymbol}](bold yellow)";
-      };
-
-    git_branch =
-      let
-        symbol = "";
-        branch = "#cc66ff";
-      in
-      {
-        symbol = "${symbol} ";
-        style = "bold fg:${branch}";
-        format = "([$symbol$branch(:$remote_branch)]($style) )";
-      };
-
-    git_commit =
-      let
-        symbol = "";
-        commit = "#4dff4d";
-      in
-      {
-        tag_symbol = " ${symbol} ";
-        style = "bold fg:${commit}";
-      };
-
-    git_state.style = "bold fg:#66ffe0";
-
-    git_status =
-      let
-        conflicted = "󰦍";
-        ahead = "󱊽";
-        behind = "󱊾";
-        renamed = "󰏫";
-        deleted = "";
-      in
-      {
-        inherit conflicted;
-        inherit ahead;
-        inherit behind;
-        inherit renamed;
-        inherit deleted;
-      };
-
-    env_var.NIX_SHELL =
-      let
-        symbol = "󱄅";
-      in
-      {
-        inherit symbol;
-        style = "bold fg:110";
-        format = "[$symbol ]($style)";
-      };
-
-    env_var.DEVENV_ROOT = {
-      style = "fg:63";
-      format = ''[\(devenv\) ]($style)'';
+    character = {
+      format = "$symbol ";
+      vimcmd_replace_one_symbol = "[H](bold purple)";
+      vimcmd_replace_symbol = "[H](bold purple)";
+      vimcmd_symbol = "[H](bold green)";
+      vimcmd_visual_symbol = "[H](bold yellow)";
     };
 
-    env_var.YAZI_PROMPT = {
-      style = "fg:93";
-      format = ''[\(yazi\) ]($style)'';
+    directory = {
+      format = "📁 [$path]($style) [$read_only]($read_only_style)";
+      style = "yellow bold";
+      truncate_to_repo = true;
+      truncation_length = 8;
+      truncation_symbol = "…/";
     };
 
-    fill.symbol = " ";
+    fill = {
+      style = "228";
+      symbol = "─";
+    };
 
-    format = ''
-      $battery''${env_var.YAZI_PROMPT}''${env_var.DEVENV_ROOT}''${env_var.NIX_SHELL}$username [@](fg:#a6a6a6) $directory$fill${
-        # prevent nixfmt from formatting this line
-        "$git_branch$git_commit$git_state$git_metrics$git_status"
-        #
-        # + "$cmd_duration"
-      }
-      [ └─╴](grey)$character'';
+    git_branch = {
+      format = "[$symbol $branch(:$remote_branch)]($style)";
+      style = "208 bold";
+      symbol = "";
+    };
+
+    git_commit = {
+      format = "[\\($hash$tag\\)]($style)";
+      only_detached = true;
+      style = "208 bold";
+      tag_symbol = " 󰓹 ";
+    };
+
+    git_metrics = {
+      disabled = false;
+    };
+
+    git_status = {
+      ahead = "🡱";
+      behind = "🡳";
+      diverged = "⮁";
+      format = "[($all_status$ahead_behind)]($style)";
+      style = "119 bold";
+    };
+
+    hostname = {
+      format = "[@$hostname]($style)";
+      ssh_only = false;
+      style = "221 bold";
+      trim_at = "";
+    };
+
+    jobs = {
+      format = "[$symbol [$number](bold blue) jobs]($style)";
+      number_threshold = 1;
+      style = "bold 68";
+      symbol = "⚙️";
+    };
+
+    nix_shell = {
+      format = "[\\($symbol\\)]($style)";
+      heuristic = false;
+      style = "75 bold";
+      symbol = "❄️";
+    };
+
+    shlvl = {
+      disabled = false;
+      format = "[$symbol $shlvl]($style)";
+      style = "255 bold";
+      symbol = "[lv](white bold)";
+    };
   };
 }
