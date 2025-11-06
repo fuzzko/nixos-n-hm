@@ -129,6 +129,7 @@
             ./home
           ];
           extraSpecialArgs.config = {};
+          extraSpecialArgs.pkgs = {};
         };
 
         nixosConfigurations =
