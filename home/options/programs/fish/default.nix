@@ -162,6 +162,12 @@ in
 
   ## extra clis
 
+  home.packages = with pkgs; [
+    gum
+    glow
+    gut
+  ];
+
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
 
