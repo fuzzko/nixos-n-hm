@@ -1,6 +1,5 @@
-pkgs:
+lib:
 let
-  inherit (pkgs) lib;
   inherit (builtins)
     filter
     readDir
@@ -44,6 +43,7 @@ rec {
 
     # parses a yaml
     fromYAML =
+      pkgs:
       yaml:
       let
         yamlFile = pkgs.writeText "file.yaml" yaml;
