@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, ... }:
 {
-  lib.komo = import ../../../../lib;
+  lib.komo = import ../../../../lib lib;
 }
