@@ -114,6 +114,7 @@
         ];
 
         homeConfigurations.komo = {
+          system = "x86_64-linux";
           modules = [
             config.propagationModule
             declarative-cachix.homeManagerModules.declarative-cachix
