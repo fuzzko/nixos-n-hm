@@ -1,4 +1,5 @@
-{ lib, ... }: {
+{ lib, ... }:
+{
   services.kanata.enable = lib.mkForce false;
 
   networking.networkmanager = {

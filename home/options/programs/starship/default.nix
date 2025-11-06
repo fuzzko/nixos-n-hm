@@ -7,7 +7,7 @@ in
 
   programs.starship.settings = {
     add_newline = false;
-    
+
     format = komo.trimEveryLine ''
       [╭────╴](228) $hostname [╶$fill╴](228)
       [├╴](228)$directory(

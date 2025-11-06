@@ -1,6 +1,12 @@
-{ config, lib, pkgs, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   programs.home-manager.enable = true;
-  
+
   home = {
     username = "komo";
     homeDirectory = /home/${config.home.username};

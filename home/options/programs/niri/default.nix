@@ -1,4 +1,9 @@
-{ lib, pkgs, config, ... }@attrs:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}@attrs:
 {
   programs.niri.enable = true;
   programs.niri = {

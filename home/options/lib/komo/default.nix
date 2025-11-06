@@ -53,7 +53,8 @@ in
       in
       fromJSON (readFile jsonFile);
 
-    trimEveryLineWith = attrs: s:
+    trimEveryLineWith =
+      attrs: s:
       let
         lines =
           let
@@ -66,7 +67,10 @@ in
         joined = concatStringsSep "\n" trimmed;
       in
       joined;
-    
-    trimEveryLine = trimEveryLineWith { start = true; end = true; };
+
+    trimEveryLine = trimEveryLineWith {
+      start = true;
+      end = true;
+    };
   };
 }

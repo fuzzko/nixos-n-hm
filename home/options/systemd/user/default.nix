@@ -1,4 +1,5 @@
-{ config, lib, ... }: {
+{ config, lib, ... }:
+{
   systemd.user.enable = true;
   systemd.user.targets = lib.optionalAttrs config.programs.niri.enable {
     niri-session.Unit = {

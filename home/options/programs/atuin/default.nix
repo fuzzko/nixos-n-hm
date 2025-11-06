@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   programs.atuin.enable = true;
 
   programs.atuin.settings = {

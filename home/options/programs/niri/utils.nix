@@ -23,7 +23,12 @@ in
   ];
 
   # create a bezier curve
-  animations.mkCurveArgs = a: b: c: d: [a b c d];
+  animations.mkCurveArgs = a: b: c: d: [
+    a
+    b
+    c
+    d
+  ];
 
   # lambdas to create a tagged union for `matches` option
   window-rules.matches = fromListToTaggedUnion [
