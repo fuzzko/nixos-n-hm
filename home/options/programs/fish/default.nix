@@ -174,6 +174,10 @@ in
         themeName = "frosty";
 
         input = komo.getFlakeInputGithub "eza-themes";
+        src = pkgs.fetchFromGitHub {
+          inherit (input.locked) owner repo rev;
+          hash = input.locked.narHash;
+        };
       in
       komo.fromYAML pkgs (readFile "${src}/themes/${themeName}.yml");
 
