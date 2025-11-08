@@ -11,67 +11,73 @@ let
     ;
 in
 rec {
-    # returns a list of files inside a directory
-    # cannot follows symlink due to lacking of readlink utility
-    filesInDir =
-      dir:
-      let
-        go =
-          list: path:
-          lib.mapAttrsToList (
-            basename: type: if type == "directory" then go list (path + /${basename}) else path + /${basename}
-          ) (readDir path);
-      in
-      lib.flatten (go [ ] dir);
+  # returns a list of files inside a directory
+  # cannot follows symlink due to lacking of readlink utility
+  filesInDir =
+    dir:
+    let
+      go =
+        list: path:
+        lib.mapAttrsToList (
+          basename: type: if type == "directory" then go list (path + /${basename}) else path + /${basename}
+        ) (readDir path);
+    in
+    lib.flatten (go [ ] dir);
 
-    # same as `filter (p: ...) (filesInDir path)`
-    filterFilesInDir = filterLambda: dir: filter filterLambda (filesInDir dir);
+  # same as `filter (p: ...) (filesInDir path)`
+  filterFilesInDir = filterLambda: dir: filter filterLambda (filesInDir dir);
 
-    # wraps list of packages or attrs
-    wrapFishPlugins =
-      x:
-      map (
-        p:
-        if lib.isDerivation p then
-          {
-            name = p.name;
-            src = p;
-          }
-        else
-          p
-      ) x;
+  # wraps list of packages or attrs
+  wrapFishPlugins =
+    x:
+    map (
+      p:
+      if lib.isDerivation p then
+        {
+          name = p.name;
+          src = p;
+        }
+      else
+        p
+    ) x;
 
-    # parses a yaml
-    fromYAML =
-      pkgs:
-      yaml:
-      let
-        yamlFile = pkgs.writeText "file.yaml" yaml;
-        jsonFile = pkgs.runCommand "yaml.json" {} ''
-          ${pkgs.yj}/bin/yj < ${yamlFile} > $out
-        '';
-      in
-      fromJSON (readFile jsonFile);
+  # parses a yaml
+  fromYAML =
+    pkgs: yaml:
+    let
+      yamlFile = pkgs.writeText "file.yaml" yaml;
+      jsonFile = pkgs.runCommand "yaml.json" { } ''
+        ${pkgs.yj}/bin/yj < ${yamlFile} > $out
+      '';
+    in
+    fromJSON (readFile jsonFile);
 
-    trimEveryLineWith =
-      attrs: s:
-      let
-        lines =
-          let
-            matches = split "([^\n]+)" s;
-            filtered = filter (l: typeOf l == "list") matches;
-            normalized = lib.flatten filtered;
-          in
-          normalized;
-        trimmed = map (s: lib.trimWith attrs s) lines;
-        joined = concatStringsSep "\n" trimmed;
-      in
-      joined;
+  trimEveryLineWith =
+    attrs: s:
+    let
+      lines =
+        let
+          matches = split "([^\n]+)" s;
+          filtered = filter (l: typeOf l == "list") matches;
+          normalized = lib.flatten filtered;
+        in
+        normalized;
+      trimmed = map (s: lib.trimWith attrs s) lines;
+      joined = concatStringsSep "\n" trimmed;
+    in
+    joined;
 
-    trimEveryLine = trimEveryLineWith {
-      start = true;
-      end = true;
-    };
+  trimEveryLine = trimEveryLineWith {
+    start = true;
+    end = true;
+  };
 
-  get
+  getGitHubFlakeInput =
+    s:
+    let
+      flakeLock = fromJSON (readFile ../flake.lock);
+      input = flakeLock.nodes.${s};
+    in
+    assert input.locked.type == "github";
+    input;
 }
