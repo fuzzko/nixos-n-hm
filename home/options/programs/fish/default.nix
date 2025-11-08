@@ -5,20 +5,6 @@ let
     readFile
     fromJSON
     ;
-
-  flakeLock = builtins.fromJSON (builtins.readFile ../../../../flake.lock);
-
-  lsColors =
-    let
-      info = flakeLock.nodes.ls_colors.locked;
-    in
-    pkgs.fetchFromGitHub {
-      inherit (info)
-        owner
-        repo
-        rev
-        ;
-    };
 in
 {
   programs.fish.enable = true;
@@ -143,7 +129,15 @@ in
   };
 
   programs.fish.interactiveShellInit = ''
-    source ${lsColors}/lscolors.csh
+    source ${
+      let
+        input = komo.getGithubFlakeInput "ls_colors";
+      in
+      pkgs.fetchFromGitHub {
+        inherit (input.locked) owner repo rev;
+        hash = input.locked.narHash;
+      }
+    }/lscolors.csh
 
     set fzf_preview_dir_cmd "eza --all --color=always --icons=always"
 
