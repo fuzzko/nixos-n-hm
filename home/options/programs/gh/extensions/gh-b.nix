@@ -18,7 +18,7 @@ buildGoModule (final: {
     hash = input.locked.narHash;
   };
 
-  vendorHash = pkgs.lib.fakeHash;
+  vendorHash = "sha256-Qq7denlGwBdMjhdno9uLKsu64SaGEFXH8zCplNivsIM=";
 
   meta = {
     mainProgram = "gh-b";
