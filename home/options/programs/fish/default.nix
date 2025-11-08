@@ -10,7 +10,7 @@ let
 
   lsColors =
     let
-      info = flakeLock.node.ls_colors.locked;
+      info = flakeLock.nodes.ls_colors.locked;
     in
     pkgs.fetchFromGitHub {
       inherit (info)
