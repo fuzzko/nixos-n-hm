@@ -131,7 +131,7 @@ in
   programs.fish.interactiveShellInit = ''
     source ${
       let
-        input = komo.getGithubFlakeInput "ls_colors";
+        input = komo.getFlakeInputGithub "ls_colors";
       in
       (toString (
         pkgs.fetchFromGitHub {
@@ -173,16 +173,7 @@ in
       let
         themeName = "frosty";
 
-        lock = fromJSON (readFile ../../../../flake.lock);
-        info = lock.nodes.eza-themes.locked;
-        src = pkgs.fetchFromGitHub {
-          inherit (info)
-            owner
-            repo
-            rev
-            ;
-          hash = info.narHash;
-        };
+        input = komo.getFlakeInputGithub "eza-themes";
       in
       komo.fromYAML pkgs (readFile "${src}/themes/${themeName}.yml");
 
