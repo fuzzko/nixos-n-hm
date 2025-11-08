@@ -14,13 +14,13 @@ in
       extraExtensions = map (x: import x pkgs) (komo.filesInDir ./extensions);
     in
     with pkgs;
-    [
+    lib.flatten [
       gh-poi
       gh-screensaver
       gh-f
       gh-notify
       gh-markdown-preview
-      (lib.flatten extraExtensions)
+      extraExtensions
     ];
 
   programs.gh.settings = {
