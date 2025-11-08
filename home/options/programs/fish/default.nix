@@ -133,11 +133,12 @@ in
       let
         input = komo.getGithubFlakeInput "ls_colors";
       in
-      pkgs.fetchFromGitHub {
+      (pkgs.fetchFromGitHub {
         inherit (input.locked) owner repo rev;
         hash = input.locked.narHash;
-      }
-    }/lscolors.csh
+      })
+      + /lscolors.csh
+    }
 
     set fzf_preview_dir_cmd "eza --all --color=always --icons=always"
 
