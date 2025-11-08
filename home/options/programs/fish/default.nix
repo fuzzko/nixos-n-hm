@@ -156,8 +156,7 @@ in
     # disable the stupid autosuggestion
     set fish_autosuggestion_enabled 0
 
-    fish_default_key_bindings -M insert
-    fish_vi_key_bindings --no-erase insert
+    fish_helix_key_bindings
   '';
 
   ## extra clis
@@ -188,7 +187,7 @@ in
           hash = info.narHash;
         };
       in
-      komo.fromYAML pkgs (readFile "${src}/${themeName}.yml");
+      komo.fromYAML pkgs (readFile "${src}/themes/${themeName}.yml");
 
     icons = true;
     colors = "auto";
