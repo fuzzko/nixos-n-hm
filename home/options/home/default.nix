@@ -29,7 +29,7 @@
 
       # Misc.
       micro
-      moar
+      moor
       glow
       libnotify
       unzip
