@@ -96,6 +96,7 @@
   ];
 
   home.pointerCursor.enable = true;
+  home.pointerCursor.package = pkgs.catppuccin-cursors;
   home.pointerCursor.name = "Catppuccin Mocha Blue";
   home.pointerCursor.size = 15;
   home.pointerCursor = {
