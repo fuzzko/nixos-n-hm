@@ -181,8 +181,9 @@ in
       "Mod+Q".action = with actions; spawn defaultLauncher;
       "Mod+Shift+Q".action = with actions; spawn defaultTerminal;
 
-      "Print".action = with actions; screenshot;
-      "Mod+Print".action = with actions; screenshot-window;
+      # this is bullshit, why are they removing screenshot and screenshot-window from the action set
+      "Print".action.screenshot = {};
+      "Mod+Print".action.screenshot-window = {};
       # "Ctrl+Print".action = with actions; screenshot-screen;
     };
 
