@@ -283,6 +283,23 @@
         "type": "github"
       }
     },
+    "gh-b": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1661210928,
+        "narHash": "sha256-7mgmgDqJZE2NqQ+dqK1e+kmsLXM4VARZI1akUWaSCPI=",
+        "owner": "joaom00",
+        "repo": "gh-b",
+        "rev": "791155a72b9309fc39d40c92c1381620a153909f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "joaom00",
+        "ref": "v0.2.3",
+        "repo": "gh-b",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -744,6 +761,7 @@
         "declarative-cachix": "declarative-cachix",
         "eza-themes": "eza-themes",
         "flakelight": "flakelight",
+        "gh-b": "gh-b",
         "home-manager": "home-manager_2",
         "kidex": "kidex",
         "ls_colors": "ls_colors",
