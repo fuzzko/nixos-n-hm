@@ -1,19 +1,21 @@
 pkgs:
 let
+  komo = import ../../../../../lib pkgs.lib;
+  
   inherit (pkgs)
     buildGoModule
     fetchFromGitHub
     ;
+
+  input = komo.getFlakeInputGithub "gh-b";
 in
 buildGoModule (final: {
   pname = "gh-b";
   version = "0.2.3";
 
   src = fetchFromGitHub {
-    owner = "joaom00";
-    repo = "gh-b";
-    tag = "v${final.version}";
-    hash = "sha256-GzgGY+b++Y1pCpI1a99TEpv1I950TiByH5Bd/K2Egw0=";
+    inherit (input.locked) owner repo rev;
+    hash = input.locked.narHash;
   };
 
   vendorHash = pkgs.lib.fakeHash;
