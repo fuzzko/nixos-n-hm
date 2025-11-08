@@ -72,7 +72,7 @@ rec {
     end = true;
   };
 
-  getGitHubFlakeInput =
+  getFlakeInputGithub =
     s:
     let
       flakeLock = fromJSON (readFile ../flake.lock);
