@@ -8,7 +8,7 @@
   options.programs.moor = {
     enable = lib.mkEnableOption "moor";
 
-    package = lib.mkPackageOption pkgs (if pkgs ? moor then "moor" else "moar") {};
+    package = lib.mkPackageOption pkgs (if pkgs ? moor then "moor" else "moar");
 
     extraOptions = lib.mkOption {
       type = with lib.types; listOf str;
