@@ -23,7 +23,7 @@
     ls_colors.url = "github:trapd00r/LS_COLORS";
     eza-themes.url = "github:eza-community/eza-themes";
     flakelight.url = "github:nix-community/flakelight";
-    gh-b.url = "github:joaom00/gh-b";
+    gh-b.url = "github:joaom00/gh-b/v0.2.3";
 
     nur.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
