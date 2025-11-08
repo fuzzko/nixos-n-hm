@@ -2,7 +2,7 @@
 { pkgs, ... }:
 {
   xdg.configFile = {
-    "zls.json".source = ../../extras/zls.json;
+    "zls.json".source = ../extras/zls.json;
   };
 
   caches.cachix = [
