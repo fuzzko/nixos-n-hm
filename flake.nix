@@ -23,7 +23,7 @@
     ls_colors.url = "github:trapd00r/LS_COLORS";
     eza-themes.url = "github:eza-community/eza-themes";
     flakelight.url = "github:nix-community/flakelight";
-    gh-b
+    gh-b.url = "github:joaom00/gh-b";
 
     nur.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -44,6 +44,7 @@
     ls_colors.flake = false;
     eza-themes.flake = false;
     flakelight.inputs.nixpkgs.follows = "nixpkgs";
+    gh-b.flake = false;
   };
 
   nixConfig = {
