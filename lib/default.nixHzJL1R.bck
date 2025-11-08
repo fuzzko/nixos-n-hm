@@ -72,6 +72,4 @@ rec {
       start = true;
       end = true;
     };
-
-  get
 }
