@@ -46,7 +46,7 @@
       bat
       sigi
       gum
-      xdragon
+      dragon-drop
       obsidian
 
       # For hyprland
