@@ -87,6 +87,10 @@
       {
         inherit inputs;
 
+        nixpkgs.config = {
+          allowUnfree = true;
+        };
+
         withOverlays = [
           nur.overlays.default
           nix-cwc.overlays.default
