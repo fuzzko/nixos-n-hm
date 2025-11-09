@@ -92,7 +92,10 @@ rec {
       mapAttrs (
         bezierName: xys:
         assert length xys == 4;
-        "${bezierName}, ${elemAt xys 0}, ${elemAt xys 1}, ${elemAt xys 2}, ${elemAt xys 3}"
+        let
+          xys' = map toString xys;
+        in
+        "${bezierName}, ${elemAt xys' 0}, ${elemAt xys' 1}, ${elemAt xys' 2}, ${elemAt xys' 3}"
       ) attrs;
 
     mkAnimations =
@@ -105,5 +108,7 @@ rec {
         + "${option.curve}"
         + (if option ? style then ",${option.style}" else "")
       ) attrs;
+
+    percentXY = x: y: "${toString x}%, ${toString y}%";
   };
 }
