@@ -112,7 +112,5 @@ rec {
     percentXY = x: y: "${toString x}%, ${toString y}%";
 
     rgb = r: g: b: "rgb(${toString r}, ${toString g}, ${toString b})";
-
-    textCmd = updateMs: cmd: "cmd[update:${toString updateMs}] ${cmd}";
   };
 }
