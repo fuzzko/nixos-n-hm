@@ -110,5 +110,7 @@ rec {
       ) attrs;
 
     percentXY = x: y: "${toString x}%, ${toString y}%";
+
+    rgb = r: g: b: "rgb(${toString r}, ${toString g}, ${toString b})"
   };
 }
