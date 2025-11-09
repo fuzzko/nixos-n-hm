@@ -10,7 +10,7 @@ let
     concatStringsSep
     mapAttrs
     elemAt
-    hasAttr
+    length
     ;
 in
 rec {
@@ -90,7 +90,9 @@ rec {
     mkBeziers =
       attrs:
       mapAttrs (
-        bezierName: xys: "${bezierName}, ${elemAt xys 0}, ${elemAt xys 1}, ${elemAt xys 2}, ${elemAt xys 3}"
+        bezierName: xys:
+        assert length xys == 4;
+        "${bezierName}, ${elemAt xys 0}, ${elemAt xys 1}, ${elemAt xys 2}, ${elemAt xys 3}"
       ) attrs;
 
     mkAnimations =
