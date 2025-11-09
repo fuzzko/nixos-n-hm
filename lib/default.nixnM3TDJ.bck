@@ -8,9 +8,6 @@ let
     split
     typeOf
     concatStringsSep
-    mapAttrs
-    elemAt
-    hasAttr
     ;
 in
 rec {
@@ -83,25 +80,4 @@ rec {
     in
     assert input.locked.type == "github";
     input;
-
-  fromBoolToNumStr = b: if b then "1" else "0";
-
-  hypr = {
-    mkBeziers =
-      attrs:
-      mapAttrs (
-        bezierName: xys: "${bezierName}, ${elemAt xys 0}, ${elemAt xys 1}, ${elemAt xys 2}, ${elemAt xys 3}"
-      ) attrs;
-
-    mkAnimations =
-      attrs:
-      mapAttrs (
-        animName: option:
-        "${animName},"
-        + "${fromBoolToNumStr (option.enable or true)},"
-        + "${toString option.speed},"
-        + "${option.curve}"
-        + (if option ? style then ",${option.style}" else "")
-      ) attrs;
-  };
 }
