@@ -6,25 +6,11 @@
           :tooltip {formattime(EWW_TIME, "%a, %B %d, %Y")}
     {formattime(EWW_TIME, "%I:%M")}))
 
-(defwidget date-win []
-  (calendar))
-
 (defwidget bar []
   (better-centerbox
     (date)
     ""
     "ddddddddd"))
-
-(defwindow date-win
-           :monitor 0
-           :geometry (geometry :x "1.5%"
-                               :y "13px"
-                               :width "5%"
-                               :height "10%"
-                               :anchor "top left")
-           :stacking "fg"
-           :exclusive false
-  (date-win))
 
 (defwindow bar
            :monitor 0
