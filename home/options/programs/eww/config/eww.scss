@@ -23,6 +23,8 @@ $bg-color: #14262f;
 }
 
 tooltip {
+  font-size: 1.1rem;
+
   &.background {
     @include box;
   }
