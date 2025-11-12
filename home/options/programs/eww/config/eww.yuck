@@ -2,7 +2,9 @@
   (box :space-evenly true
        :valign "center"
        :halign "start"
-    (label :text "aaaa")))
+    "foo"
+    "bar"
+    "bwah"))
 
 (defwindow bar
            :monitor 0
