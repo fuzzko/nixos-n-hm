@@ -16,8 +16,12 @@ $bg-color: #14262f;
 .bar {
   @include box;
 
-  .time, .date-tooltip {
+  .time {
     font-weight: bold;
     font-size: 0.95rem;
   }
+
+  .date-tooltip {
+    @include box;
+  };
 }
