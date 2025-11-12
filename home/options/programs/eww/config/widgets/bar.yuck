@@ -1,0 +1,10 @@
+(defpoll time :interval "1s"
+              :initial "00:00"
+  `date +%I:%M`)
+
+(defwidget bar []
+  (box
+    "aaaa"
+    "bbbb"
+    "ccccc"
+    "ddddddddd"))
