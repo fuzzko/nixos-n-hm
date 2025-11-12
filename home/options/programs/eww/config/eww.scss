@@ -2,11 +2,11 @@
   all: unset;
 }
 
-@define-color bg-color #14262f;
-@define-color border-color #0085ac;
+$bg-color: #14262f;
+$border-color: #0085ac;
 
 .bar {
-  background-color: @bg-color;
-  border-color: @border-color;
+  background-color: $bg-color;
+  border-color: $border-color;
   padding: 3%;
 }
