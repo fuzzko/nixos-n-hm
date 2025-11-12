@@ -1,5 +1,5 @@
 (defwidget bar []
-  (box :space-evenly true
+  (box ;:space-evenly true
     "aaaa"
     "bbbb"
     "ccccc"
