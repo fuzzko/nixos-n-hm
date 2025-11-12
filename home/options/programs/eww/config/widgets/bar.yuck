@@ -1,6 +1,5 @@
 (defwidget bar []
-  (box
+  (centerbox
     {formattime(EWW_TIME, "%I:%M")}
-    "bbbb"
     "ccccc"
     "ddddddddd"))
