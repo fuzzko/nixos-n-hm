@@ -33,6 +33,7 @@ tooltip {
   font-size: 0.93rem;
 
   &.background {
+    background-color: $bg-color;
     padding: 1px;
   }
 
