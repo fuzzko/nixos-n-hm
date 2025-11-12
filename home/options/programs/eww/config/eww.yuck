@@ -1,6 +1,6 @@
 (defwidget bar []
   (box :space-evenly true
-       :orientation "h"
+       :orientation "v"
     "aaaa"
     "bbbb"
     "ccccc"
