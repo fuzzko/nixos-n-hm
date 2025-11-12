@@ -6,7 +6,7 @@ $bg-color: #14262f;
 
 .bar {
   background-color: $bg-color;
-  box-shadow: black 10px 5px 5px;
+  box-shadow: black 6px 6px 20px;
   padding: 5px 8px;
   border-radius: 10px;
 }
