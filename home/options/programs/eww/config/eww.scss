@@ -23,7 +23,7 @@ $bg-color: #14262f;
 }
 
 tooltip {
-  & .background {
+  &.background {
     @include box;
     
   }
