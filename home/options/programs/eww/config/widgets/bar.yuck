@@ -1,5 +1,5 @@
 (defwidget better-centerbox []
-  (box
+  (box :class "centerbox"
     (box :class "centerbox-start"
          :halign "start"
       (children :nth 0))
@@ -10,13 +10,12 @@
          :halign "end"
       (children :nth 2))))
 
-(defwidget time [format ?class]
-  (box :class class
+(defwidget time [format]
+  (box :class "time"
     {formattime(EWW_TIME, format)}))
 
 (defwidget bar []
   (better-centerbox
-    (time :class "time"
-          :format "%I:%M")
+    (time :format "%I:%M")
     ""
     "ddddddddd"))
