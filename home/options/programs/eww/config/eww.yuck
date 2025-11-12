@@ -16,4 +16,4 @@
            :namespace "eww-bar"
   (bar :class "bar"
        :vexpand true
-       :hexpand true))
+       :hexpand false))
