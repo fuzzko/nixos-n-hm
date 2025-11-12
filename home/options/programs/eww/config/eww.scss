@@ -33,11 +33,11 @@ tooltip {
   font-size: 0.93rem;
 
   &.background {
-    @include box;
+    padding: 1px;
   }
 
   * {
-    margin: 5px;
+    margin: 3px;
   }
 }
 
