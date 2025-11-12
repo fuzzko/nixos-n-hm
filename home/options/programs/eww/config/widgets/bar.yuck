@@ -13,5 +13,5 @@
 (defwidget bar []
   (better-centerbox
     {formattime(EWW_TIME, "%I:%M")}
-    "ccccc"
+    ""
     "ddddddddd"))
