@@ -1,1 +1,16 @@
+(defwidget bar []
+  )
 
+(defwindow bar
+           :monitor 0
+           :geometry (geometry :x "0%"
+                               :y "15px"
+                               :width "90%"
+                               :height "35px"
+                               :anchor "top center")
+           :stacking "fg"
+           :exclusive true
+           :namespace "eww-bar"
+  (bar :class "bar"
+       :vexpand true
+       :hexpand true))
