@@ -4,6 +4,7 @@ alias eww = ^$env.EWW_CMD
 
 def "main pop" [window: string] {
   if (eww list-windows | str contains $window) == null {
+    echo "A"
     exit 1
   }
 
