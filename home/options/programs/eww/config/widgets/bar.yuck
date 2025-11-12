@@ -1,5 +1,5 @@
 (defwidget bar []
-  (centerbox 
+  (centerbox :hexpand false
     {formattime(EWW_TIME, "%I:%M")}
     "ccccc"
     "ddddddddd"))
