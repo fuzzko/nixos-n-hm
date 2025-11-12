@@ -1,7 +1,6 @@
 (defwidget bar []
   (box :space-evenly true
-       :valign "center"
-       :halign "start"
+       :halign "fill"
     "foo"
     "bar"
     "bwah"))
