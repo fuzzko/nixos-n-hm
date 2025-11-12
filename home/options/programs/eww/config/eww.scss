@@ -35,5 +35,6 @@ tooltip {
 }
 
 button:hover {
+  @include box;
   background-color: rgba(128 128 128 / 50%)
 }
