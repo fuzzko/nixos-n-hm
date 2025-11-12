@@ -1,7 +1,7 @@
 (defwidget bar []
   (centerbox
      "foo"
-     "aa"
+     ""
      "bar"))
 
 (defwindow bar
@@ -15,5 +15,5 @@
            :exclusive true
            :namespace "eww-bar"
   (bar :class "bar"
-       :vexpand false
+       :vexpand true
        :hexpand true))
