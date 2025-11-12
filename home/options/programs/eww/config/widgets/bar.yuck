@@ -10,8 +10,9 @@
          :halign "end"
       (children :nth 2))))
 
-(defwidget time [format]
-  (box {formattime(EWW_TIME, format)}))
+(defwidget time [format ?class]
+  (box :class class
+    {formattime(EWW_TIME, format)}))
 
 (defwidget bar []
   (better-centerbox
