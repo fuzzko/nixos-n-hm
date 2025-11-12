@@ -10,4 +10,8 @@ $border-color: #0085ac;
   padding: 5px 8px;
   border: 2px solid $border-color;
   border-radius: 5px;
+
+  .bar-content {
+    border: 0px;
+  }
 }
