@@ -1,9 +1,8 @@
 (defwidget bar []
-  (box :space-evenly true
-       :halign "baseline"
-    "foo"
-    "bar"
-    "bwah"))
+  (centerbox
+     "foo"
+     ""
+     "bar"))
 
 (defwindow bar
            :monitor 0
