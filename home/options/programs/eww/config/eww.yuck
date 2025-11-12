@@ -1,5 +1,9 @@
 (defwidget bar []
-  )
+  (box :class "bar-outer"
+       :space-evenly true
+       :valign "center"
+       :halign "start")
+    "aaaaa")
 
 (defwindow bar
            :monitor 0
