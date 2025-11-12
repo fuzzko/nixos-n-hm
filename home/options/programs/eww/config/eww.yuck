@@ -1,10 +1,17 @@
 (include "./widgets/utils.yuck")
 
+(defwidget date []
+  (tooltip
+    (box :class "date-tooltip"
+      (time :format "%A, %B %d, %Y")
+    (button :onclick "EWW_CMD=${EWW_CMD} nu ./script.nu"))))
+
 (defwidget bar []
   (better-centerbox
     (time :format "%I:%M")
     ""
     "ddddddddd"))
+
 
 (defwindow bar
            :monitor 0
