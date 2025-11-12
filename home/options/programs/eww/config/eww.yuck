@@ -1,9 +1,4 @@
-(defwidget bar []
-  (box
-    "aaaa"
-    "bbbb"
-    "ccccc"
-    "ddddddddd"))
+(include "./widgets/bar.yuck")
 
 (defwindow bar
            :monitor 0
