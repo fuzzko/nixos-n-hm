@@ -10,8 +10,11 @@
          :halign "end"
       (children :nth 2))))
 
+(defwidget time []
+  {formattime(EWW_TIME, "%I:%M")})
+
 (defwidget bar []
   (better-centerbox
-    {formattime(EWW_TIME, "%I:%M")}
+    (time)
     ""
     "ddddddddd"))
