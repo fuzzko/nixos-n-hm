@@ -36,7 +36,6 @@ tooltip {
 
 button:hover {
   margin: 2px;
-  padding: 0px 1px;
   border-radius: 10px;
   background-color: rgba(128 128 128 / 25%)
 }
