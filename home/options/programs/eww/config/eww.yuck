@@ -2,7 +2,7 @@
   (box :space-evenly true
        :hexpand true
        :vexpand true
-       ; :valign "center"
+       :valign "center"
        ; :halign "start"
     "foo"
     "bar"
