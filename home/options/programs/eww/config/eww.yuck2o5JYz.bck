@@ -3,7 +3,7 @@
        :hexpand true
        :vexpand true
        :valign "center"
-       :halign "start"
+       ; :halign "start"
     "foo"
     "bar"
     "bwah"))
