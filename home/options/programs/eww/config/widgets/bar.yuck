@@ -15,7 +15,7 @@
 
 (defwidget bar []
   (better-centerbox
-    (time :format "%I:%M"
-          :class "time")
+    (time :class "time"
+          :format "%I:%M")
     ""
     "ddddddddd"))
