@@ -4,9 +4,8 @@
   (tooltip
     (box :class "date-tooltip"
       (time :format "%A, %B %d, %Y")
-    (box
-      (button :onclick "EWW_CMD=${EWW_CMD} nu ./script.nu pop date-win")
-      (time :format "%I:%M")))))
+      (button :onclick "EWW_CMD=${EWW_CMD} nu ./script.nu pop date-win"
+        (time :format "%I:%M")))))
 
 (defwidget bar []
   (better-centerbox
