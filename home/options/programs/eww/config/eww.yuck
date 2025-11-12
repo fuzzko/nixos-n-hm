@@ -2,8 +2,8 @@
 
 (defwidget date []
   (button :onclick "EWW_CMD=${EWW_CMD} nu ./script.nu pop date-win"
-          :tooltip (time :format "%A, %B %d, %Y")
-    (time :format "%I:%M")))
+          :tooltip {formattime(EWW_TIME, "%A, %B %d, %Y")}
+    {formattime(EWW_TIME, "%I:%A")}))
 
 (defwidget bar []
   (better-centerbox
