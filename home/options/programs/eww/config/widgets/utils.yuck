@@ -1,4 +1,3 @@
-
 (defwidget better-centerbox []
   (box :class "centerbox"
     (box :class "centerbox-start"
