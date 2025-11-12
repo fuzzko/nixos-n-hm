@@ -1,6 +1,5 @@
 (defwidget bar []
-  (box :class "bar-content"
-       :space-evenly true
+  (box :space-evenly true
        :valign "center"
        :halign "start"
     (label :text "aaaa")))
@@ -8,7 +7,7 @@
 (defwindow bar
            :monitor 0
            :geometry (geometry :x "0%"
-                               :y "15px"
+                               :y "10px"
                                :width "98.5%"
                                :height "35px"
                                :anchor "top center")
