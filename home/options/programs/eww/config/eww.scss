@@ -7,10 +7,12 @@
 $bg-color: #14262f;
 
 .bar {
-  background-color: $bg-color;
+  * {
+    background-color: $bg-color;
 
-  padding: 5px 8px;
-  border-radius: 10px;
+    padding: 5px 8px;
+    border-radius: 10px;
+  }
 
   .time {
     font-weight: bold;
