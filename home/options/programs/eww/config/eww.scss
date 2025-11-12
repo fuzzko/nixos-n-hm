@@ -1,0 +1,11 @@
+* {
+  all: unset;
+}
+
+@define-color bg-color #14262f;
+@define-color border-color #0085ac;
+
+.bar {
+  background-color: $bar-bg;
+  padding:
+}
