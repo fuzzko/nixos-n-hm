@@ -23,6 +23,6 @@ $bg-color: #14262f;
 }
 
 tooltip {
-  .background { @include box; }
+  &.background { @include box; }
   /* label { margin: 2px; } */
 }
