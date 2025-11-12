@@ -1,5 +1,5 @@
 (defwidget bar []
-  (box :spacing 30
+  (box
     "aaaa"
     "bbbb"
     "ccccc"
