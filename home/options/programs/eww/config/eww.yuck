@@ -1,7 +1,5 @@
 (defwidget bar []
   (box :space-evenly true
-       :hexpand true
-       :vexpand true
        :valign "center"
        :halign "start"
     "foo"
