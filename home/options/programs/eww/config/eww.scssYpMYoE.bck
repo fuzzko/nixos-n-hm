@@ -34,7 +34,6 @@ tooltip {
 
   &.background {
     background-color: $bg-color;
-    border-radius: 10px;
     padding: 1px;
   }
 
