@@ -1,5 +1,5 @@
 (defwidget bar []
-  (centerbox :width 30000
+  (centerbox :width 500
     {formattime(EWW_TIME, "%I:%M")}
     "ccccc"
     "ddddddddd"))
