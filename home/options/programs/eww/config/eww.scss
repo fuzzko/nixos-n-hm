@@ -8,10 +8,11 @@ $border-color: #0085ac;
 .bar {
   background-color: $bg-color;
   padding: 5px 8px;
-  border: 2px solid $border-color;
+  outline: 2px solid $border-color;
+  /* border: 2px solid $border-color; */
   /* border-radius: 5px; */
 }
 
-.bar-content {
-  border-right: 2px solid $border-color;
-}
+/* .bar-content { */
+  /* border-right: 2px solid $border-color; */
+/* } */
