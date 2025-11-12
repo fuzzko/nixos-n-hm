@@ -2,8 +2,8 @@
   (box :space-evenly true
        :hexpand true
        :vexpand true
-       :valign "center"
-       :halign "start"
+       ; :valign "center"
+       ; :halign "start"
     "foo"
     "bar"
     "bwah"))
