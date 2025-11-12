@@ -2,7 +2,7 @@
   all: unset;
 
   font-family: "Noto Sans";
-  font-weight: light;
+  font-weight: bolder;
 }
 
 $bg-color: #14262f;
