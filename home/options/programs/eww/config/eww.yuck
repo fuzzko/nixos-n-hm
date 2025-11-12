@@ -9,7 +9,7 @@
            :monitor 0
            :geometry (geometry :x "0%"
                                :y "15px"
-                               :width "90%"
+                               :width "98%"
                                :height "35px"
                                :anchor "top center")
            :stacking "fg"
