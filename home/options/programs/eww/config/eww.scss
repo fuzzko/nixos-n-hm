@@ -6,6 +6,7 @@
 @define-color border-color #0085ac;
 
 .bar {
-  background-color: $bar-bg;
-  padding:
+  background-color: @bg-color;
+  border-color: @border-color;
+  padding: 3%;
 }
