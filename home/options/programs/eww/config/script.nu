@@ -2,7 +2,7 @@ const cache_path = "~/.cache/eww"
 
 alias eww = ^$env.EWW_CMD
 
-def "main pop" [window: string, ...args: string] {
+def "main pop" [window: string] {
   if (eww list-windows | str contains $window) == null {
     exit 1
   }
@@ -11,9 +11,9 @@ def "main pop" [window: string, ...args: string] {
 
   if ($lockfile | path exists) {
     rm -f $lockfile
-    eww close $window ...$args
+    eww close $window
   } else {
     touch $lockfile
-    eww open $window ...$args
+    eww open $window
   }
 }
