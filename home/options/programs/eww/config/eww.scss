@@ -6,11 +6,15 @@
 
 $bg-color: #14262f;
 
-.bar {
+@mixin box {
   background-color: $bg-color;
 
   padding: 5px 8px;
   border-radius: 10px;
+}
+
+.bar {
+  @include box;
 
   .time {
     font-weight: bold;
