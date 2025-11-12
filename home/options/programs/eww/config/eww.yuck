@@ -15,6 +15,4 @@
            :stacking "fg"
            :exclusive true
            :namespace "eww-bar"
-  (bar :class "bar"
-       :vexpand true
-       :hexpand true))
+  (bar :class "bar"))
