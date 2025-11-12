@@ -14,6 +14,6 @@ def "main pop" [window: string] {
     eww close $window
   } else {
     touch $lockfile
-    eww open
+    eww open $window
   }
 }
