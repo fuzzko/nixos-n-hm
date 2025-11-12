@@ -1,5 +1,6 @@
 (defwidget bar []
-  (box :space-evenly true
+  (box :class "bar-content"
+       :space-evenly true
        :valign "center"
        :halign "start"
     "aaaaa"))
