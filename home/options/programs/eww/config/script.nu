@@ -34,8 +34,8 @@ def "main toggle-var" [var: string] {
     if $env.LAST_EXIT_CODE > 0 {
       exit 1
     }
-
+    eww get $var | into bool
   }
 
-  eww update $"($var)=($value | into string)"
+  eww update $"($var)=(! $value)"
 }
