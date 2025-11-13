@@ -1,6 +1,10 @@
 const cache_path = "~/.cache/eww"
 
-alias eww = ^$env.EWW_CMD
+def eww [...args] {
+  let cmd = $env.EWW_CMD | split words | get 0
+  let argv = $env.EWW_CMD | split words | reject 0
+  ^$cmd ...$argv ...$args
+}
 
 def main [] {
   $env.EWW_CMD | save /tmp/eww_cmd
