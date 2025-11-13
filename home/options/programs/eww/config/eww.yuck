@@ -9,6 +9,7 @@
             sleep 0.5
             ./script.nu pop date-win
           }"
+          :timeout "600ms"
           :tooltip {formattime(EWW_TIME, "%a, %B %d, %Y")}
     {formattime(EWW_TIME, "%I:%M")}))
 
