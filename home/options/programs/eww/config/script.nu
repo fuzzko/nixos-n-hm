@@ -3,6 +3,7 @@ const cache_path = "~/.cache/eww" | path expand
 def eww [...args] {
   let cmd = $env.EWW_CMD | split words | get 0
   let argv = $env.EWW_CMD | split words | reject 0
+  print $cmd $argv $args
   ^$cmd ...$argv ...$args
 }
 
