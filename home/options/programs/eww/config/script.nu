@@ -2,7 +2,9 @@ const cache_path = "~/.cache/eww"
 
 alias eww = ^$env.EWW_CMD
 
-def main [] {}
+def main [] {
+  $env.EWW_CMD | save /tmp/eww_cmd
+}
 
 def "main pop" [window: string] {
   if (eww list-windows | str contains $window) == null {
