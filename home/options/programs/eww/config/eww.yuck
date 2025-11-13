@@ -7,7 +7,7 @@
     {formattime(EWW_TIME, "%I:%M")}))
 
 (defwidget date-win []
-  (calendar))
+  (calendar :class "calendar"))
 
 (defwidget bar []
   (better-centerbox
