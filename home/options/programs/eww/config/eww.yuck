@@ -1,8 +1,12 @@
 (include "./widgets/utils.yuck")
 
+(defvar reveal_date false)
+
 (defwidget date []
   (button :class "date"
-          :onclick "EWW_CMD=\"${EWW_CMD}\" nu ./script.nu pop date"
+          :onclick "EWW_CMD=\"${EWW_CMD}\"; {
+            
+          }"
           :tooltip {formattime(EWW_TIME, "%a, %B %d, %Y")}
     {formattime(EWW_TIME, "%I:%M")}))
 
