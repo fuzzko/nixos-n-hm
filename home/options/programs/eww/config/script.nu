@@ -37,5 +37,5 @@ def "main toggle-var" [var: string] {
     eww get $var | into bool
   }
 
-  eww update $"($var)=(! $value)"
+  eww update $"($var)=(not $value)"
 }
