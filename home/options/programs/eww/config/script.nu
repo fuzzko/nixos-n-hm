@@ -1,3 +1,4 @@
+#!/usr/bin/env nu
 const cache_path = "~/.cache/eww" | path expand
 
 def eww [...args] {
