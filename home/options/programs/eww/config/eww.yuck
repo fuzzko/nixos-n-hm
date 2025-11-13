@@ -7,7 +7,7 @@
           :onclick "export EWW_CMD=\"${EWW_CMD}\"; {
             ./script.nu toggle reveal_date
             sleep 0.5
-            ./script.nu pop date-win
+            ./script.nu pop date
           }"
           :timeout "600ms"
           :tooltip {formattime(EWW_TIME, "%a, %B %d, %Y")}
