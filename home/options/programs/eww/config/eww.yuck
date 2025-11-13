@@ -6,7 +6,7 @@
   (button :class "date"
           :onclick "export EWW_CMD=\"${EWW_CMD}\"; {
             ./script.nu toggle reveal_date
-            sleep 0.5
+            sleep 0.3
             ./script.nu pop date
           }"
           :timeout "500ms"
