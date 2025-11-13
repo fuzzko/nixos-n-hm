@@ -16,7 +16,10 @@
   (revealer :transition "slidedown"
             :duration "200ms"
             :reveal reveal_date
-    (calendar :class "calendar")))
+    (calendar :class "calendar"
+              :day {formattime(EWW_TIME, "%d")}
+              :month {formattime(EWW_TIME, "%m")}
+              :year {formattime(EWW_TIME, "%Y")})))
 
 (defwidget bar []
   (better-centerbox
