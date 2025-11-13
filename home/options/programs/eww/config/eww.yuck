@@ -2,7 +2,7 @@
 
 (defwidget date []
   (button :class "date"
-          :onclick "${EWW_CMD} open date"
+          :onclick "EWW_CMD=\"${EWW_CMD}\" nu ./script.nu pop date"
           :tooltip {formattime(EWW_TIME, "%a, %B %d, %Y")}
     {formattime(EWW_TIME, "%I:%M")}))
 
