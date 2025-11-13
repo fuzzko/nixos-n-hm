@@ -8,7 +8,7 @@ def eww [...args] {
 }
 
 def main [] {
-  eww -h
+  eww
 }
 
 def "main pop" [window: string] {
