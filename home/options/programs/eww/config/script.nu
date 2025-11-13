@@ -7,7 +7,7 @@ def eww [...args] {
 }
 
 def main [] {
-  $env.EWW_CMD | save /tmp/eww_cmd
+  
 }
 
 def "main pop" [window: string] {
