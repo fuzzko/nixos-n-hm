@@ -8,7 +8,7 @@ def eww [...args] {
 }
 
 def main [] {
-  eww
+  echo $cache_path
 }
 
 def "main pop" [window: string] {
