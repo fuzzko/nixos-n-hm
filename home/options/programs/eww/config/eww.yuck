@@ -4,8 +4,9 @@
 
 (defwidget date []
   (button :class "date"
-          :onclick "EWW_CMD=\"${EWW_CMD}\"; {
-            
+          :onclick "export EWW_CMD=\"${EWW_CMD}\"; {
+            ./script.nu toggle reveal_date
+            ./script.nu pop date-win
           }"
           :tooltip {formattime(EWW_TIME, "%a, %B %d, %Y")}
     {formattime(EWW_TIME, "%I:%M")}))
