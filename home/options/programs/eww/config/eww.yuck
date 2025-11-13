@@ -9,12 +9,13 @@
             sleep 0.5
             ./script.nu pop date
           }"
-          :timeout "1s"
+          :timeout "500ms"
           :tooltip {formattime(EWW_TIME, "%a, %B %d, %Y")}
     {formattime(EWW_TIME, "%I:%M")}))
 
 (defwidget date-win []
   (revealer :transition "slidedown"
+            :duration "200ms"
             :reveal reveal_date
     (calendar :class "calendar")))
 
