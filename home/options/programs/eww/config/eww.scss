@@ -13,6 +13,10 @@ $bg-color: #14262f;
   border-radius: 10px;
 }
 
+.calendar {
+  @include box;
+}
+
 .bar {
   @include box;
 
