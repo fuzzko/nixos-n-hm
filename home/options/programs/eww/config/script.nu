@@ -26,6 +26,8 @@ def "main pop" [window: string] {
     touch $lockfile
     eww open $window
   }
+
+  null
 }
 
 def "main toggle" [var: string] {
