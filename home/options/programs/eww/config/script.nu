@@ -1,4 +1,4 @@
-const cache_path = "~/.cache/eww"
+const cache_path = "~/.cache/eww" | path expand
 
 def eww [...args] {
   let cmd = $env.EWW_CMD | split words | get 0
