@@ -28,7 +28,7 @@ def "main pop" [window: string] {
   }
 }
 
-def "main toggle-var" [var: string] {
+def "main toggle" [var: string] {
   let value = do {
     eww get $var | ignore
     if $env.LAST_EXIT_CODE > 0 {
