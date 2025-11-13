@@ -26,3 +26,12 @@ def "main pop" [window: string] {
     eww open $window
   }
 }
+
+def "main toggle-var" [var: string value: any] {
+  eww get $var | ignore
+  if $env.LAST_EXIT_CODE > 0 {
+    exit 1
+  }
+
+  eww update $"($var)=($value | into string)"
+}
