@@ -18,10 +18,6 @@ $bg-color: #183b4a;
 
 .calendar {
   @include box(true);
-
-  * {
-    border: 2px solid black;
-  }
 }
 
 .bar {
