@@ -30,7 +30,7 @@
 (defwindow date
            :monitor 0
            :geometry (geometry :x "1.5%"
-                               :y "9px"
+                               :y {const.subwin.y}
                                :width "5%"
                                :height "10%"
                                :anchor "top left")
