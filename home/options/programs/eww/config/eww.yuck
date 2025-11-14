@@ -41,8 +41,8 @@
 
 (defwindow bar
            :monitor 0
-           :geometry (geometry :x {const.subwin.x}
-                               :y {const.subwin.y}
+           :geometry (geometry :x "0%"
+                               :y "10px"
                                :width "98.5%"
                                :height "35px"
                                :anchor "top center")
