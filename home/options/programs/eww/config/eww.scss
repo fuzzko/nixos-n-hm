@@ -4,8 +4,8 @@
   font-family: "Noto Sans";
 }
 
-$bg-color: #14262f;
-$subwin-bg-color: #183b4a;
+$subwin-bg-color: #14262f;
+$bg-color: #183b4a;
 
 @mixin box($subwin: false) {
   background-color: $subwin and $subwin-bg-color or $bg-color;
