@@ -30,7 +30,7 @@ button {
   @mixin bg($hover: false) {
     background-color: $hover and #5b9fbe or $bg-color;
 
-    padding: 0em .1em;
+    padding: 0em .15em;
     margin: .5em 0em;
     border-radius: 8px;
   }
