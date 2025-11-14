@@ -17,7 +17,7 @@ $subwin-bg-color: #183b4a;
 }
 
 .calendar {
-  @include box($subwin);
+  @include box(true);
 
   * {
     border: unset;
