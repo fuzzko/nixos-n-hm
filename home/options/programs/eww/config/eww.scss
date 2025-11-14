@@ -5,8 +5,9 @@
 }
 
 $bg-color: #14262f;
+$subwin-bg-color: #183b4a;
 
-@mixin box {
+@mixin box($subwin: false) {
   background-color: $bg-color;
 
   padding: 0px 10px;
