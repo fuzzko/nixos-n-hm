@@ -26,7 +26,7 @@ $bg-color: #14262f;
   }
 }
 
-.button {
+button {
   @mixin bg($hover: false) {
     background-color: $hover and #5b9fbe or $bg-color;
 
