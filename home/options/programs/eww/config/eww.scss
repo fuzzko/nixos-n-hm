@@ -26,6 +26,20 @@ $bg-color: #14262f;
   }
 }
 
+.button {
+  @mixin bg($hover: false) {
+    background-color: $hover and #5b9fbe or $bg-color;
+
+    padding: 0px 0.2em;
+  }
+
+  @include bg;
+
+  &:hover {
+    @include bg(true);
+  }
+}
+
 tooltip {
   font-size: 0.90rem;
 
