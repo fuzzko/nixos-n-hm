@@ -1,11 +1,5 @@
 (include "./widgets/utils.yuck")
 
-(defvar const '{
-  "subwin": {
-    "y": "9px"
-  }
-}')
-
 (defvar reveal_date false)
 
 (defwidget date []
@@ -30,7 +24,7 @@
 (defwindow date
            :monitor 0
            :geometry (geometry :x "1.5%"
-                               :y {const.subwin.y}
+                               :y "9px"
                                :width "5%"
                                :height "10%"
                                :anchor "top left")
