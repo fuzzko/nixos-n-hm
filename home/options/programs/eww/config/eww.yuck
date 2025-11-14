@@ -1,5 +1,12 @@
 (include "./widgets/utils.yuck")
 
+(defvar const '{
+  "subwin": {
+    "x": "0%",
+    "y": "0px"
+  }
+}')
+
 (defvar reveal_date false)
 
 (defwidget date []
@@ -13,10 +20,7 @@
     {formattime(EWW_TIME, "%I:%M")}))
 
 (defwidget date-win []
-  (revealer :transition "slidedown"
-            :duration "200ms"
-            :reveal reveal_date
-    (calendar :class "calendar")))
+  (calendar :class "calendar"))
 
 (defwidget bar []
   (better-centerbox
@@ -37,8 +41,8 @@
 
 (defwindow bar
            :monitor 0
-           :geometry (geometry :x "0%"
-                               :y "10px"
+           :geometry (geometry :x {const.subwin.x}
+                               :y {const.subwin.y}
                                :width "98.5%"
                                :height "35px"
                                :anchor "top center")
