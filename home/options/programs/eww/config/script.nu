@@ -7,7 +7,7 @@ def eww [...args] {
   ^$cmd ...$argv ...$args
 }
 
-def main [...$args] {
+def main [...args] {
   exec eww ...$args
 }
 
