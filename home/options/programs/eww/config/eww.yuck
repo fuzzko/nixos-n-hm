@@ -13,12 +13,12 @@
 
 (defwidget date-win []
   (eventbox :onhover "export EWW_CMD=\"${EWW_CMD}\"; {
-              ${EWW_CMD} update focus_date=true
+              ./script.nu toggle focus_date
             }"
             :onhoverlost "export EWW_CMD=\"${EWW_CMD}\"; {
               $(${EWW_CMD} get focus_date) && {
                 ./script.nu pop date
-                ${EWW_CMD} update focus_date=false
+                ./script.nu toggle focus_date
               }
             }"
             :timeout "500ms"
