@@ -31,7 +31,7 @@
     ""
     "ddddddddd"))
 
-(defwindow calendar-sub
+(defwindow calendar
            :monitor 0
            :geometry (geometry :x "1.5%"
                                :y "9px"
