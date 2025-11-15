@@ -7,7 +7,8 @@ def eww [...args] {
   ^$cmd ...$argv ...$args
 }
 
-def main [] {
+def main [...$args] {
+  exec eww ...$args
 }
 
 def "main pop" [window: string] {
