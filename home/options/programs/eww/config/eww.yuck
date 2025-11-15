@@ -6,7 +6,7 @@
 (defwidget clock []
   (button :class "date"
           :onclick "export EWW_CMD=\"${EWW_CMD}\"; {
-            ./script.nu pop calendar
+            ./script.nu pop calendar-sub
           }"
           :timeout "500ms"
           :tooltip {formattime(EWW_TIME, "%a, %B %d, %Y")}
@@ -18,7 +18,7 @@
             }"
             :onhoverlost "export EWW_CMD=\"${EWW_CMD}\"; {
               $(${EWW_CMD} get focus_date) && {
-                ./script.nu pop calendar
+                ./script.nu pop calendar-sub
                 ./script.nu toggle focus_date
               }
             }"
