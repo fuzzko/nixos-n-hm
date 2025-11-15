@@ -13,9 +13,9 @@
             :onhover "export EWW_CMD=\"${EWW_CMD}\"; {
               ./script.nu toggle reveal_date
             }"
-            :onhoverlost "export EWW_CMD=\"${EWW_CMD}\"; {
-              ./script.nu toggle reveal_date
-            }"
+            ; :onhoverlost "export EWW_CMD=\"${EWW_CMD}\"; {
+            ;   ./script.nu toggle reveal_date
+            ; }"
     (box
       {formattime(EWW_TIME, "%I:%M")}
       (revealer :transition "slideright"
