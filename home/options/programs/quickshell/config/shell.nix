@@ -3,5 +3,6 @@
 pkgs.mkShellNoCC {
   packages = with pkgs; [
     kdePackages.qtdeclarative
+    quickshell
   ];
 }
