@@ -17,7 +17,7 @@
             }"
             :onhoverlost "export EWW_CMD=\"${EWW_CMD}\"; {
               $(${EWW_CMD} get focus_date) && {
-                ${EWW_CMD} close date
+                ./script.nu pop date
                 ${EWW_CMD} update focus_date=false
               }
             }"
