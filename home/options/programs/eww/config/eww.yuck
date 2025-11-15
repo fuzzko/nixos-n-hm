@@ -3,22 +3,22 @@
 (defvar focus_lock false)
 (defvar focus_date false)
 
-(defwidget date []
+(defwidget clock []
   (button :class "date"
           :onclick "export EWW_CMD=\"${EWW_CMD}\"; {
-            ./script.nu pop date
+            ./script.nu pop calendar
           }"
           :timeout "500ms"
           :tooltip {formattime(EWW_TIME, "%a, %B %d, %Y")}
     {formattime(EWW_TIME, "%I:%M")}))
 
-(defwidget date-subwin []
+(defwidget calendar- []
   (eventbox :onhover "export EWW_CMD=\"${EWW_CMD}\"; {
               ./script.nu toggle focus_date
             }"
             :onhoverlost "export EWW_CMD=\"${EWW_CMD}\"; {
               $(${EWW_CMD} get focus_date) && {
-                ./script.nu pop date
+                ./script.nu pop calendar
                 ./script.nu toggle focus_date
               }
             }"
@@ -27,11 +27,11 @@
 
 (defwidget bar []
   (better-centerbox
-    (date)
+    (clock)
     ""
     "ddddddddd"))
 
-(defwindow date
+(defwindow calendar
            :monitor 0
            :geometry (geometry :x "1.5%"
                                :y "9px"
@@ -40,7 +40,7 @@
                                :anchor "top left")
            :stacking "fg"
            :exclusive false
-  (date-subwin))
+  (calendar-))
 
 (defwindow bar
            :monitor 0
