@@ -18,6 +18,10 @@ $bg-color: #183b4a;
 
 .calendar {
   @include box(true);
+
+  .day:selected {
+    background-color: red;
+  }
 }
 
 .bar {
