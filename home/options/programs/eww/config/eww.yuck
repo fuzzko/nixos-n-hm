@@ -16,7 +16,10 @@
               ./script.nu toggle focus_date
             }"
             :onhoverlost "export EWW_CMD=\"${EWW_CMD}\"; {
-              $(./script.nu get focus_date) && ./script.nu close date
+              $(./script.nu get focus_date) && {
+                ${EWW_CMD} close date
+                ./script.nu toggle focus_date
+              }
             }"
             :timeout "500ms"
     (calendar :class "calendar")))
