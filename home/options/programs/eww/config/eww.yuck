@@ -1,5 +1,6 @@
 (include "./widgets/utils.yuck")
 
+(defvar focus_lock false)
 (defvar focus_date false)
 
 (defwidget date []
@@ -11,7 +12,7 @@
           :tooltip {formattime(EWW_TIME, "%a, %B %d, %Y")}
     {formattime(EWW_TIME, "%I:%M")}))
 
-(defwidget date-win []
+(defwidget date-subwin []
   (eventbox :onhover "export EWW_CMD=\"${EWW_CMD}\"; {
               ./script.nu toggle focus_date
             }"
@@ -39,7 +40,7 @@
                                :anchor "top left")
            :stacking "fg"
            :exclusive false
-  (date-win))
+  (date-subwin))
 
 (defwindow bar
            :monitor 0
