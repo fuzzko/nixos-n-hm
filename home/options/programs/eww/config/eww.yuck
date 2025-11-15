@@ -18,6 +18,7 @@
             :onhoverlost "export EWW_CMD=\"${EWW_CMD}\"; {
               $(./script.nu get focus_date) && ./script.nu close date
             }"
+            :timeout "500ms"
     (calendar :class "calendar")))
 
 (defwidget bar []
