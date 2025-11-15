@@ -21,6 +21,7 @@
       {formattime(EWW_TIME, "%I:%M")}
       (revealer :transition "slideright"
                 :reveal reveal_date
+                :visible {!reveal_date}
         {formattime(EWW_TIME, "%a, %B %m, %Y")}))))
 
 (defwidget calendar- []
