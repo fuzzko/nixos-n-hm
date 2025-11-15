@@ -14,10 +14,10 @@
               ./script.nu toggle reveal_date
             }"
             :timeout "500ms"
+    {formattime(EWW_TIME, "%I:%M")}
     (revealer :transition "slideright"
               :reveal reveal_date
-      {formattime(EWW_TIME, "%a, %B %m, %Y")})
-    {formattime(EWW_TIME, "%I:%M")}))
+      {formattime(EWW_TIME, "%a, %B %m, %Y")})))
 
 (defwidget calendar- []
   (eventbox :onhover "export EWW_CMD=\"${EWW_CMD}\"; {
