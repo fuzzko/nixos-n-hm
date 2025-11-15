@@ -16,7 +16,6 @@
             :onhoverlost "export EWW_CMD=\"${EWW_CMD}\"; {
               ./script.nu toggle reveal_date
             }"
-            :timeout "1s"
     (box
       {formattime(EWW_TIME, "%I:%M")}
       (revealer :transition "slideright"
