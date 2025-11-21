@@ -6,6 +6,6 @@ pkgs.mkShellNoCC {
     '')
   ];
   shellHook = ''
-    eww daemon
+    eww daemon &
   '';
 }
