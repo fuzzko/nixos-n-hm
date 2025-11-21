@@ -5,4 +5,7 @@ pkgs.mkShellNoCC {
       ${lib.getExe eww} -c $PWD $@
     '')
   ];
+  shellHook = ''
+    eww daemon
+  '';
 }
