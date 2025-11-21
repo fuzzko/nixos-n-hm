@@ -17,7 +17,7 @@ LINENO='76'
 MACHTYPE='x86_64-pc-linux-gnu'
 NIX_BUILD_CORES='4'
 export NIX_BUILD_CORES
-NIX_CFLAGS_COMPILE=' -frandom-seed=829s7bbdzr'
+NIX_CFLAGS_COMPILE=' -frandom-seed=jm2fwcvn6h'
 export NIX_CFLAGS_COMPILE
 NIX_ENFORCE_NO_NATIVE='1'
 export NIX_ENFORCE_NO_NATIVE
@@ -140,7 +140,8 @@ export propagatedNativeBuildInputs
 declare -a propagatedTargetDepFiles=('propagated-target-target-deps' )
 shell='/nix/store/q7sqwn7i6w2b67adw0bmix29pxg85x3w-bash-5.3p3/bin/bash'
 export shell
-shellHook=''
+shellHook='eww daemon
+'
 export shellHook
 stdenv='/nix/store/8yk6k80h03hz8a6743x53xqlcdpafda8-stdenv-linux'
 export stdenv
