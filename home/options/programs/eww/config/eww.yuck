@@ -9,7 +9,7 @@
   (eventbox :class "clock-module"
             :timeout "500ms"
             :onclick "export EWW_CMD=\"${EWW_CMD}\"; {
-              ./script.nu pop calendar-sub
+              ./script.nu pop calendar
             }"
             :onhover "export EWW_CMD=\"${EWW_CMD}\"; {
               ./script.nu toggle reveal_date
@@ -47,7 +47,7 @@
     ""
     "ddddddddd"))
 
-(defwindow calendar-sub
+(defwindow calendar
            :monitor 0
            :geometry (geometry :x "1.5%"
                                :y "9px"
