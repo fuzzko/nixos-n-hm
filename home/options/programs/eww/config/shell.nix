@@ -4,5 +4,6 @@ pkgs.mkShellNoCC {
     (writeShellScriptBin "eww" ''
       ${lib.getExe eww} -c $PWD $@
     '')
+    nerd-fonts.adwaita-mono
   ];
 }
