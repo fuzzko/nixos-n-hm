@@ -12,10 +12,10 @@
               ./script.nu pop sub-calendar
             }"
             :onhover "export EWW_CMD=\"${EWW_CMD}\"; {
-              ${EWW_CMD} set reveal_date=true
+              ${EWW_CMD} update reveal_date=true
             }"
             :onhoverlost "export EWW_CMD=\"${EWW_CMD}\"; {
-              ${EWW_CMD} set reveal_date=false
+              ${EWW_CMD} update reveal_date=false
             }"
     (box :orientation "h"
          :space-evenly false
