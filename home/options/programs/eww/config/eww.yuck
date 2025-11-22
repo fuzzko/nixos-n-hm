@@ -19,7 +19,7 @@
     (box
       {formattime(EWW_TIME, "%I:%M")}
       (revealer :transition "slideright"
-                :duration "50ms"
+                :duration "1s"
                 :reveal reveal_date
         {formattime(EWW_TIME, "%a, %B %m, %Y")}))))
 
