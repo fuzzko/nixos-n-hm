@@ -33,7 +33,6 @@ $bg-color: #183b4a;
   }
 
   .date-text {
-    margin-left: 3px;
     font-size: .85rem;
   }
 }
