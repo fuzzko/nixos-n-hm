@@ -23,7 +23,8 @@
       {formattime(EWW_TIME, "%I:%M")}
       (revealer :transition "slideright"
                 :reveal reveal_date
-        {formattime(EWW_TIME, "%a, %B %m, %Y")}))))
+        (label :text {formattime(EWW_TIME, "%a, %B %m, %Y")}
+               :justify "right")))))
 
 (defwidget calendar- []
   (eventbox :onhover "export EWW_CMD=\"${EWW_CMD}\"; {
