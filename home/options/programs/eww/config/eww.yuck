@@ -34,7 +34,7 @@
             }"
             :onhoverlost "export EWW_CMD=\"${EWW_CMD}\"; {
               $(${EWW_CMD} get focus_calendar) && {
-                ./script.nu pop calendar-sub
+                ./script.nu pop calendar
                 ./script.nu toggle focus_calendar
               }
             }"
