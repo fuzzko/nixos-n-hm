@@ -6,7 +6,7 @@
 (defvar reveal_date false)
 
 (defwidget clock []
-  (eventbox :class "date"
+  (eventbox :class "clock-module"
             :onclick "export EWW_CMD=\"${EWW_CMD}\"; {
               ./script.nu pop calendar-sub
             }"
@@ -20,11 +20,13 @@
          :space-evenly false
          :hexpand false
          :vexpand false
-      {formattime(EWW_TIME, "%I:%M")}
+      (label :text {formattime(EWW_TIME, "%I:%M")}
+             :class "clock-text")
       (revealer :transition "slideright"
                 :reveal reveal_date
         (label :text {formattime(EWW_TIME, " %a, %B %m, %Y")}
-               :unindent false)))))
+               :unindent false
+               :class "date-text")))))
 
 (defwidget calendar- []
   (eventbox :onhover "export EWW_CMD=\"${EWW_CMD}\"; {
