@@ -22,9 +22,8 @@
          :vexpand false
       {formattime(EWW_TIME, "%I:%M")}
       (revealer :transition "slideright"
-                :duration "1s"
                 :reveal reveal_date
-        {formattime(EWW_TIME, "%a, %B %m, %Y")}))))
+        {formattime(EWW_TIME, " %a, %B %m, %Y")}))))
 
 (defwidget calendar- []
   (eventbox :onhover "export EWW_CMD=\"${EWW_CMD}\"; {
