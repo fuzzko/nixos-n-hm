@@ -1,7 +1,16 @@
+@font-face {
+  font-family: AdwaitaMonoNF;
+  src:
+    url("./AdwaitaMonoNerdFont-Regular.ttf"),
+    url("./AdwaitaMonoNerdFont-Italic.ttf"),
+    url("./AdwaitaMonoNerdFont-Bold.ttf"),
+    url("./AdwaitaMonoNerdFont-BoldItalic.ttf");
+}
+
 * {
   all: unset;
 
-  font-family: "AdwaitaMono Nerd Fon";
+  font-family: "AdwaitaMonoNF";
 }
 
 $subwin-bg-color: #14262f;
