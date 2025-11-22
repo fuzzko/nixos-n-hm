@@ -5,11 +5,10 @@
   font-family: "AdwaitaMono Nerd Font";
 }
 
-$subwin-bg-color: #14262f;
-$bg-color: #183b4a;
+$bg-color: #14262f;
 
-@mixin box($subwin: false) {
-  background-color: $subwin and $subwin-bg-color or $bg-color;
+@mixin box {
+  background-color: $bg-color;
 
   padding: 0px 10px;
 
@@ -18,11 +17,7 @@ $bg-color: #183b4a;
 }
 
 .calendar {
-  @include box(true);
-
-  day:selected {
-    background-color: red;
-  }
+  @include box;
 }
 
 .bar {
