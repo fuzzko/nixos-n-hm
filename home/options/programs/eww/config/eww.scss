@@ -16,9 +16,8 @@ $bg-color: #14262f;
   /* border: $subwin and unset or #{2px solid #618394}; */
 }
 
-.sub-calendar {
+.calendar {
   @include box;
-  padding: 10px 10px;
 }
 
 .bar {
