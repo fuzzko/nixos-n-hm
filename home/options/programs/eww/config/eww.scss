@@ -27,7 +27,7 @@ $bg-color: #183b4a;
 .bar {
   @include box;
 
-  .date {
+  .clock-text {
     font-weight: bold;
     font-size: .95rem;
   }
