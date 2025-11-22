@@ -18,6 +18,7 @@ $bg-color: #14262f;
 
 .sub-calendar {
   @include box;
+  padding: 10px 10px;
 }
 
 .bar {
