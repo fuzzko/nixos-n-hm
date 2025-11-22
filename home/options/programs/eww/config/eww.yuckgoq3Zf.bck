@@ -24,7 +24,8 @@
              :class "clock-text")
       (revealer :transition "slideright"
                 :reveal reveal_date
-        (label :text {formattime(EWW_TIME, "%a, %B %m, %Y")}
+        (label :text {formattime(EWW_TIME, " %a, %B %m, %Y")}
+               :unindent false
                :class "date-text")))))
 
 (defwidget calendar- []
