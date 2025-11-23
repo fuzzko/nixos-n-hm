@@ -6,8 +6,4 @@ pkgs.mkShellNoCC {
     '')
     nerd-fonts.adwaita-mono
   ];
-  shellHook = ''
-    eww daemon
-    trap EXIT "eww kill"
-  '';
 }
