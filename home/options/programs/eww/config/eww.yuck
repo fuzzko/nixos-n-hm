@@ -41,8 +41,8 @@
             }"
             :onhoverlost "export EWW_CMD=\"${EWW_CMD}\"; {
               $(${EWW_CMD} get focus_calendar) && {
-                ${EWW_CMD} update focus_calendar=false
                 ./script.nu pop sub-calendar
+                ${EWW_CMD} update focus_calendar=false
               }
             }"
             :timeout "500ms"
