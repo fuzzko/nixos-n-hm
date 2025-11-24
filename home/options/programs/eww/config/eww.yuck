@@ -5,7 +5,7 @@
 (defvar focus_calendar false)
 (defvar reveal_date false)
 
-(defwidget dropdown []
+(defwidget dropdown [var]
     (box :orientation "v"
          :space-evenly false
          :hexpand false
@@ -13,7 +13,7 @@
          :class "dropdown"
       (revealer :transition "slidedown"
                 :duration "300ms"
-                :reveal focus_calendar
+                :reveal var
         (children))))
 
 (defwidget clock-module []
@@ -48,7 +48,7 @@
                :class "date-text")))))
 
 (defwidget calendar-module []
-  (dropdown
+  (dropdown :var focus_calendar
     (calendar :class "calendar-module")))
 
 (defwidget bar []
