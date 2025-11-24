@@ -9,14 +9,16 @@
   (eventbox :class "clock-module"
             :timeout "500ms"
             :onclick "export EWW_CMD=\"${EWW_CMD}\"; {
-              close=true
-              $(${EWW_CMD} get focus_calendar) || {
-                close=false
-                ${EWW_CMD} update focus_calendar=true
+              open=true
+              $(${EWW_CMD} get focus_calendar) && {
+                open=false
+                ${EWW_CMD} update focus_calendar=false
+                sleep .3
               }
               ./script.nu pop sub-calendar
-              $close && $(${EWW_CMD} get focus_calendar) &&
-                ${EWW_CMD} update focus_calendar=false
+              $open && $(${EWW_CMD} get focus_calendar) || {
+                ${EWW_CMD} update focus_calendar=true
+              }
             }"
             :onhover "export EWW_CMD=\"${EWW_CMD}\"; {
               ${EWW_CMD} update reveal_date=true
