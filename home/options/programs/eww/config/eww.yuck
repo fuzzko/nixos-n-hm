@@ -52,6 +52,7 @@
          :hexpand false
          :vexpand false
       (revealer :transition "slidedown"
+                :duration "300ms"
                 :reveal focus_calendar
         (calendar :class "calendar")))))
 
