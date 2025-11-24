@@ -16,8 +16,13 @@ $bg-color: #14262f;
   /* border: $subwin and unset or #{2px solid #618394}; */
 }
 
+@mixin subwin {
+  margin-top: 10px;
+}
+
 .calendar-module {
   @include box;
+  @include subwin;
 }
 
 .bar {
