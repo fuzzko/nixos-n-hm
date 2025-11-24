@@ -15,7 +15,7 @@
                 :duration "300ms"
                 :reveal focus_calendar)))
 
-(defwidget clock []
+(defwidget clock-module []
   (eventbox :class "clock-module"
             :timeout "500ms"
             :onclick "export EWW_CMD=\"${EWW_CMD}\"; {
@@ -46,7 +46,7 @@
         (label :text {formattime(EWW_TIME, "%m/%y")}
                :class "date-text")))))
 
-(defwidget calendar- []
+(defwidget calendar-module []
   (eventbox :onhover "export EWW_CMD=\"${EWW_CMD}\"; {
               ${EWW_CMD} update focus_calendar=true
             }"
@@ -58,15 +58,15 @@
             }"
             :timeout "500ms"
     (dropdown
-      (calendar :class "calendar"))))
+      (calendar :class "calendar-module"))))
 
 (defwidget bar []
   (better-centerbox
-    (clock)
+    (clock-module)
     ""
     "ddddddddd"))
 
-(defwindow sub-calendar
+(defwindow calendar-module
            :monitor 0
            :geometry (geometry :x "1.5%"
                                :y "9px"
@@ -75,7 +75,7 @@
                                :anchor "top left")
            :stacking "fg"
            :exclusive false
-  (calendar-))
+  (calendar-module))
 
 (defwindow bar
            :monitor 0
