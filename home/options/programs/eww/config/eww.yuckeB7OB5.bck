@@ -10,7 +10,6 @@
             :timeout "500ms"
             :onclick "export EWW_CMD=\"${EWW_CMD}\"; {
               ./script.nu pop sub-calendar
-              ./script.nu toggle focus_calendar
             }"
             :onhover "export EWW_CMD=\"${EWW_CMD}\"; {
               ${EWW_CMD} update reveal_date=true
