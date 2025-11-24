@@ -10,7 +10,7 @@
             :timeout "500ms"
             :onclick "export EWW_CMD=\"${EWW_CMD}\"; {
               # close=true
-              $(${EWW_CMD} get focus_calendar) || {
+              $(${EWW_CMD} get focus_calendar) && {
                 # close=false
                 ./script.nu toggle focus_calendar
               }
