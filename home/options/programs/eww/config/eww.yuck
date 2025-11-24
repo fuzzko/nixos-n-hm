@@ -39,9 +39,13 @@
               }
             }"
             :timeout "500ms"
-    (revealer :transition "slidedown"
-              :reveal {focus_calendar}
-      (calendar :class "calendar"))))
+    (box :orientation "h"
+         :space-evenly false
+         :hexpand false
+         :vexpand false
+      (revealer :transition "slidedown"
+                :reveal focus_calendar
+        (calendar :class "calendar")))))
 
 (defwidget bar []
   (better-centerbox
