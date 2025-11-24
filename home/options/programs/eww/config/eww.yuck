@@ -5,6 +5,15 @@
 (defvar focus_calendar false)
 (defvar reveal_date false)
 
+(defwidget dropdown []
+    (box :orientation "v"
+         :space-evenly false
+         :hexpand false
+         :vexpand false
+      (revealer :transition "slidedown"
+                :duration "300ms"
+                :reveal focus_calendar)))
+
 (defwidget clock []
   (eventbox :class "clock-module"
             :timeout "500ms"
@@ -47,14 +56,8 @@
               }
             }"
             :timeout "500ms"
-    (box :orientation "v"
-         :space-evenly false
-         :hexpand false
-         :vexpand false
-      (revealer :transition "slidedown"
-                :duration "300ms"
-                :reveal focus_calendar
-        (calendar :class "calendar")))))
+    (dropdown
+      (calendar :class "calendar"))))
 
 (defwidget bar []
   (better-centerbox
