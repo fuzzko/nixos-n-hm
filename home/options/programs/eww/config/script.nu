@@ -45,6 +45,5 @@ def "main is-active-window" [win: string] {
   if (eww active-windows | str contains $win) {
     exit 0
   }
-
   exit 1
 }
