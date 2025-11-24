@@ -41,6 +41,10 @@ def "main toggle" [var: string] {
   eww update $"($var)=(not $value)"
 }
 
-def "main is-active-window" [win: string]: nothing -> bool {
-  eww active-windows | str contains $win
+def "main is-active-window" [win: string] {
+  if (eww active-windows | str contains $win) {
+    exit 0
+  }
+
+  exit 1
 }
