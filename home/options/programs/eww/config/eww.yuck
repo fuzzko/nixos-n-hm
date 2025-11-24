@@ -10,6 +10,7 @@
          :space-evenly false
          :hexpand false
          :vexpand false
+         :class "dropdown"
       (revealer :transition "slidedown"
                 :duration "300ms"
                 :reveal focus_calendar)))
