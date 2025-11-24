@@ -60,7 +60,7 @@
 (defwindow calendar-module
            :monitor 0
            :geometry (geometry :x "1.5%"
-                               :y "2px"
+                               :y "3px"
                                :width "5%"
                                :height "10%"
                                :anchor "top left")
