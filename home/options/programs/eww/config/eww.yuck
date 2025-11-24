@@ -24,7 +24,7 @@
                 open=false
                 ${EWW_CMD} update focus_calendar=false
               }
-              ./script.nu pop sub-calendar
+              ./script.nu pop calendar-module
               $open && $(${EWW_CMD} get focus_calendar) || {
                 ${EWW_CMD} update focus_calendar=true
               }
@@ -53,7 +53,7 @@
             :onhoverlost "export EWW_CMD=\"${EWW_CMD}\"; {
               $(${EWW_CMD} get focus_calendar) && {
                 ${EWW_CMD} update focus_calendar=false
-                ./script.nu pop sub-calendar
+                ./script.nu pop calendar-module
               }
             }"
             :timeout "500ms"
