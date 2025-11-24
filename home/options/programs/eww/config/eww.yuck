@@ -13,7 +13,6 @@
               $(${EWW_CMD} get focus_calendar) && {
                 open=false
                 ${EWW_CMD} update focus_calendar=false
-                sleep .3
               }
               ./script.nu pop sub-calendar
               $open && $(${EWW_CMD} get focus_calendar) || {
@@ -44,7 +43,6 @@
             :onhoverlost "export EWW_CMD=\"${EWW_CMD}\"; {
               $(${EWW_CMD} get focus_calendar) && {
                 ${EWW_CMD} update focus_calendar=false
-                sleep .3
                 ./script.nu pop sub-calendar
               }
             }"
