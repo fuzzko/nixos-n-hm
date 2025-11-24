@@ -40,7 +40,7 @@
               }
             }"
             :timeout "500ms"
-    (box :orientation "h"
+    (box :orientation "v"
          :space-evenly false
          :hexpand false
          :vexpand false
