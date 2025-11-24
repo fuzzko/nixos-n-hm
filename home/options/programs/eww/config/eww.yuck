@@ -37,12 +37,12 @@
 
 (defwidget calendar- []
   (eventbox :onhover "export EWW_CMD=\"${EWW_CMD}\"; {
-              ./script.nu toggle focus_calendar
+              ${EWW_CMD} update focus_calendar=true
             }"
             :onhoverlost "export EWW_CMD=\"${EWW_CMD}\"; {
               $(${EWW_CMD} get focus_calendar) && {
+                ${EWW_CMD} update focus_calendar=false
                 ./script.nu pop sub-calendar
-                ./script.nu toggle focus_calendar
               }
             }"
             :timeout "500ms"
