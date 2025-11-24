@@ -43,6 +43,7 @@ def "main toggle" [var: string] {
 
 def "main is-active-window" [win: string] {
   if not (eww active-windows | str contains $win) {
-    exit 1
+    true
   }
+  false
 }
