@@ -13,7 +13,8 @@
          :class "dropdown"
       (revealer :transition "slidedown"
                 :duration "300ms"
-                :reveal focus_calendar)))
+                :reveal focus_calendar
+        (children))))
 
 (defwidget clock-module []
   (eventbox :class "clock-module"
