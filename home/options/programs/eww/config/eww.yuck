@@ -48,18 +48,8 @@
                :class "date-text")))))
 
 (defwidget calendar-module []
-  (eventbox :onhover "export EWW_CMD=\"${EWW_CMD}\"; {
-              ${EWW_CMD} update focus_calendar=true
-            }"
-            :onhoverlost "export EWW_CMD=\"${EWW_CMD}\"; {
-              $(${EWW_CMD} get focus_calendar) && {
-                ${EWW_CMD} update focus_calendar=false
-                ./script.nu pop calendar-module
-              }
-            }"
-            :timeout "500ms"
-    (dropdown
-      (calendar :class "calendar-module"))))
+  (dropdown
+    (calendar :class "calendar-module")))
 
 (defwidget bar []
   (better-centerbox
