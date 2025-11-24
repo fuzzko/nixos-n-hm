@@ -40,7 +40,7 @@
             }"
             :timeout "500ms"
     (revealer :transition "slidedown"
-              :reveal {true}
+              :reveal {focus_calendar}
       (calendar :class "calendar"))))
 
 (defwidget bar []
