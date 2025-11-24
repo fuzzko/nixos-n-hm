@@ -39,7 +39,9 @@
               }
             }"
             :timeout "500ms"
-    (calendar :class "calendar")))
+    (revealer :transition "slidedown"
+              :reveal focus_calendar
+      (calendar :class "calendar"))))
 
 (defwidget bar []
   (better-centerbox
