@@ -19,7 +19,10 @@
          :width {floor((thickness + middle-thickness) / 2)}
          :height {floor((thickness + middle-thickness) / 2)}
          :style "border-radius: 50%; margin-right: ${
-           round(middle-thickness / thickness, 0)
-           / round(middle-thickness / thickness, 0)
+           round(
+             round(middle-thickness / thickness, 0)
+             / round(middle-thickness / thickness, 0),
+             0
+          )
          }px;"))
   )
