@@ -52,6 +52,6 @@ def "main close-all-subwin" [] {
     let var = $x.1
 
     eww update $"($var)=false"
-    eww close $win
+    eww close $win | ignore
   }
 }
