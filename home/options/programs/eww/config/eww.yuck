@@ -63,8 +63,7 @@
     ""
     (box :space-evenly true
          :spacing 8
-      "a"
-      "b")))
+      (ram-module :class "ram-module"))))
 
 (defwindow calendar-module
            :monitor 0
