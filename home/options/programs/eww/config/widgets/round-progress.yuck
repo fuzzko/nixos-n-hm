@@ -6,6 +6,10 @@
                             ?clockwise
                           ]
   (overlay :class "round-progress"
+    (circular-progress :value value
+                       :start-at start-at
+                       :thickness thickness
+                       :clockwise clockwise)
     (box :valign "center"
          :halign "center"
          :vexpand false
@@ -13,8 +17,4 @@
          :width {thickness - middle-thickness}
          :height {thickness - middle-thickness}
          :style "border-radius: 50%;"))
-    (circular-progress :value value
-                       :start-at start-at
-                       :thickness thickness
-                       :clockwise clockwise)
   )
