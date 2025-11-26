@@ -62,5 +62,7 @@ def "main close-all-subwin" [] {
     eww close $win | ignore
   }
 
+  sleep 50ms
+
   null
 }
