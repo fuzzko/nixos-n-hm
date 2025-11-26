@@ -9,12 +9,12 @@
     (circular-progress :value value
                        :start-at {start-at == "" ? 0 : start-at}
                        :thickness thickness
-                       :clockwise clockwise
-                       :valign "baseline"
-                       :halign "baseline")
-    (box :valign "center"
-         :halign "center"
-         :width {floor((thickness + middle-thickness) / 2)}
-         :height {floor((thickness + middle-thickness) / 2)}
+                       :clockwise clockwise)
+    (box :valign "fill"
+         :halign "fill"
+         :vexpand false
+         :hexpand false
+         :width {floor((thickness - middle-thickness))}
+         :height {floor((thickness - middle-thickness))}
          :style "border-radius: 50%;"))
   )
