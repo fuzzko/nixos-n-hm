@@ -16,5 +16,5 @@
          :hexpand false
          :width {floor((thickness + middle-thickness) / 2)}
          :height {floor((thickness + middle-thickness) / 2)}
-         :style "border-radius: 50%; margin-top: 1px; margin-right: 1px"))
+         :style "border-radius: 50%; margin: auto;"))
   )
