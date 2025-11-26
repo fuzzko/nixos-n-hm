@@ -21,11 +21,11 @@
             :timeout "500ms"
             :onclick "export EWW_CMD=\"${EWW_CMD}\"; {
               open=true
-              $(${EWW_CMD} get reveal_calendar) && {
+              $(${reveal_calendar}) && {
                 open=false
                 ${EWW_CMD} update reveal_calendar=false
               }
-              $open && $(${EWW_CMD} get reveal_calendar) || {
+              $open && $(${reveal_calendar}) || {
                 ./script.nu close-all-subwin
                 ./script.nu pop calendar-module
                 ${EWW_CMD} update reveal_calendar=true
