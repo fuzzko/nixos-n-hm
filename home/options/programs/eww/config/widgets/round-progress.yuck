@@ -12,7 +12,7 @@
                        :clockwise clockwise)
     (box :valign "center"
          :halign "center"
-         :vexpand false
+         :vexpand true
          :hexpand false
          :width {floor((thickness + middle-thickness) / 2)}
          :height {floor((thickness + middle-thickness) / 2)}
