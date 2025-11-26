@@ -51,6 +51,13 @@ def "main close-all-subwin" [] {
     let win = $x.0
     let var = $x.1
 
+    let lockfile = [$cache_path $"($win).lock"] | path join
+
+
+    if ($lockfile | path exists) {
+      rm -f $lockfile
+    }
+
     eww update $"($var)=false"
     eww close $win | ignore
   }
