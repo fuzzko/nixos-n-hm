@@ -2,7 +2,7 @@
 
 (defvar focus_lock false)
 
-(defvar focus_calendar false)
+(defvar reveal_calendar false)
 (defvar reveal_date false)
 
 (defwidget dropdown [var]
@@ -21,14 +21,14 @@
             :timeout "500ms"
             :onclick "export EWW_CMD=\"${EWW_CMD}\"; {
               open=true
-              $(${EWW_CMD} get focus_calendar) && {
+              $(${EWW_CMD} get reveal_calendar) && {
                 open=false
-                ${EWW_CMD} update focus_calendar=false
+                ${EWW_CMD} update reveal_calendar=false
               }
-              $open && $(${EWW_CMD} get focus_calendar) || {
+              $open && $(${EWW_CMD} get reveal_calendar) || {
                 ./script.nu close-all-subwin
                 ./script.nu pop calendar-module
-                ${EWW_CMD} update focus_calendar=true
+                ${EWW_CMD} update reveal_calendar=true
               }
             }"
             :onhover "export EWW_CMD=\"${EWW_CMD}\"; {
@@ -49,7 +49,7 @@
                :class "date-text")))))
 
 (defwidget calendar-module []
-  (dropdown :var focus_calendar
+  (dropdown :var reveal_calendar
     (calendar :class "calendar-module")))
 
 (defwidget bar []
