@@ -22,5 +22,5 @@
              ? thickness - middle-thickness
              : middle-thickness - thickness
            )
-         })px;"))
+         }px;"))
   )
