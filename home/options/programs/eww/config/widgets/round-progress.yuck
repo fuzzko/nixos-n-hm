@@ -13,7 +13,7 @@
     (box :valign "center"
          :halign "center"
          :vexpand true
-         :hexpand false
+         :hexpand true
          :width {floor((thickness + middle-thickness) / 2)}
          :height {floor((thickness + middle-thickness) / 2)}
          :style "border-radius: 50%;"))
