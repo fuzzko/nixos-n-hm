@@ -45,7 +45,7 @@
              :class "clock-text")
       (revealer :transition "slideright"
                 :reveal reveal_date
-        (label :markup {formattime(EWW_TIME, "%d<span letter_spacing=\"100\">/</span>%m")}
+        (label :text {formattime(EWW_TIME, "%d/%m")}
                :class "date-text")))))
 
 (defwidget calendar-module []
