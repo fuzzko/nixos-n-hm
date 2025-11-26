@@ -43,11 +43,15 @@ def "main toggle" [var: string] {
 
 def "main close-all-subwin" [] {
   let windows = [
-    calendar-module
+    [calendar-module reveal-calendar]
   ]
 
   $windows
   | par-each { |x|
-    eww close $x
+    let win = $x.0
+    let var = $x.1
+
+    eww set $"($var)=false"
+    eww close $win
   }
 }
