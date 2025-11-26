@@ -10,11 +10,11 @@
                        :start-at {start-at == "" ? 0 : start-at}
                        :thickness thickness
                        :clockwise clockwise)
-    (box :valign "fill"
-         :halign "fill"
+    (box :valign "center"
+         :halign "center"
          :vexpand false
          :hexpand false
-         :width {floor((thickness - middle-thickness))}
-         :height {floor((thickness - middle-thickness))}
+         :width {floor((thickness + middle-thickness) / 2)}
+         :height {floor((thickness + middle-thickness) / 2)}
          :style "border-radius: 50%;"))
   )
