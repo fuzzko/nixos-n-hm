@@ -1,0 +1,20 @@
+(defwidget round-progress [
+                            ?value
+                            ?start-at
+                            ?thickness
+                            ?middle-thickness
+                            ?clockwise
+                          ]
+  (overlay :class "round-progress"
+    (circular-progress :value value
+                       :start-at start-at
+                       :thickness thickness
+                       :clockwise clockwise)
+    (box :valign "center"
+         :halign "center"
+         :vexpand false
+         :hexpand false
+         :width {thickness - middle-thickness}
+         :height {thickness - middle-thickness}
+         :style "border-radius: 50%;"))
+)
