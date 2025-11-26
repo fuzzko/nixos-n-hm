@@ -20,16 +20,17 @@
   (eventbox :class "clock-module"
             :timeout "500ms"
             :onclick "export EWW_CMD=\"${EWW_CMD}\"; {
-              $(${reveal_calendar}) && {
-                ${EWW_CMD} update reveal_calendar=false
-                ./script.nu pop calendar-module
-                exit
-              }
-              $(${reveal_calendar}) || {
-                ./script.nu close-all-subwin
-                ./script.nu pop calendar-module
-                ${EWW_CMD} update reveal_calendar=true
-              }
+              case ${reveal_calendar} in
+                true)
+                  ${EWW_CMD} update reveal_calendar=false
+                  ./script.nu pop calendar-module
+                  ;;
+                false)
+                  ./script.nu close-all-subwin
+                  ./script.nu pop calendar-module
+                  ${EWW_CMD} update reveal_calendar=true
+                  ;;
+              esac
             }"
             :onhover "export EWW_CMD=\"${EWW_CMD}\"; {
               ${EWW_CMD} update reveal_date=true
