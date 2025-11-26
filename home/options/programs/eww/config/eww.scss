@@ -20,6 +20,10 @@ $bg-color: #14262f;
   @include box;
 }
 
+.round-progress box {
+  background-color: $bg-color;
+}
+
 .bar {
   @include box;
 
