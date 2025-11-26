@@ -7,7 +7,7 @@
                           ]
   (overlay :class "round-progress"
     (circular-progress :value value
-                       :start-at start-at
+                       :start-at {start-at == "" ? 0 : start-at}
                        :thickness thickness
                        :clockwise clockwise
                        :valign "center"
