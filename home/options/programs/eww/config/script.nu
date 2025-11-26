@@ -54,4 +54,6 @@ def "main close-all-subwin" [] {
     eww update $"($var)=false"
     eww close $win | ignore
   }
+
+  null
 }
