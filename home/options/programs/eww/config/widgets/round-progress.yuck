@@ -9,7 +9,9 @@
     (circular-progress :value value
                        :start-at start-at
                        :thickness thickness
-                       :clockwise clockwise)
+                       :clockwise clockwise
+                       :valign "center"
+                       :halign "center")
     (box :valign "center"
          :halign "center"
          :vexpand false
