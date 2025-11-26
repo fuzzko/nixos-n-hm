@@ -17,9 +17,9 @@
          :width {floor((thickness + middle-thickness) / 2)}
          :height {floor((thickness + middle-thickness) / 2)}
          :style "border-radius: 50%; margin-right: ${
-           ; powf(
-           ;   powi(100 + thickness, 2) - powi(100 + middle-thickness),
-           ;   1/2
-           ; )
+           powf(
+             powi(100 + thickness, 2) - powi(100 + middle-thickness),
+             1/2
+           )
          }px;"))
   )
