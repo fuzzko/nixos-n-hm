@@ -41,9 +41,13 @@ def "main toggle" [var: string] {
   eww update $"($var)=(not $value)"
 }
 
-def "main is-active-window" [win: string] {
-  if (eww active-windows | str contains $win) {
-    exit 0
+def "main close-all-subwin" [] {
+  let windows = [
+    calendar-module
+  ]
+
+  $windows
+  | par-each { |x|
+    eww close $x
   }
-  exit 1
 }
