@@ -10,8 +10,8 @@
                        :start-at {start-at == "" ? 0 : start-at}
                        :thickness thickness
                        :clockwise clockwise)
-    (box :valign "fill"
-         :halign "fill"
+    (box :valign "baseline"
+         :halign "baseline"
          :vexpand false
          :hexpand false
          :width {floor((thickness + middle-thickness) / 2)}
