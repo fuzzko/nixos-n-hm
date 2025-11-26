@@ -14,7 +14,7 @@
          :halign "center"
          :vexpand false
          :hexpand false
-         :width {floor(thickness + middle-thickness)}
-         :height {floor(thickness + middle-thickness)}
+         :width {floor(thickness + middle-thickness) / 2}
+         :height {floor(thickness + middle-thickness) / 2}
          :style "border-radius: 50%;"))
   )
