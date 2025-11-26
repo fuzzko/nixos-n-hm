@@ -43,7 +43,7 @@ def "main toggle" [var: string] {
 
 def "main close-all-subwin" [] {
   let windows = [
-    [calendar-module reveal-calendar]
+    [calendar-module reveal_calendar]
   ]
 
   $windows
