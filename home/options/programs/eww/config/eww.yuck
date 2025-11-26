@@ -51,12 +51,16 @@
   (dropdown :var reveal_calendar
     (calendar :class "calendar-module")))
 
+(defwidget )
+
 (defwidget bar []
   (better-centerbox
     (box
       (clock-module))
     ""
-    "ddddddddd"))
+    (box :space-evenly true
+      "a"
+      "b")))
 
 (defwindow calendar-module
            :monitor 0
