@@ -1,7 +1,5 @@
 (include "./widgets/utils.yuck")
 
-(defvar focus_lock false)
-
 (defvar reveal_calendar false)
 (defvar reveal_date false)
 
