@@ -27,6 +27,7 @@
               }
               ./script.nu pop calendar-module
               $open && $(${EWW_CMD} get focus_calendar) || {
+                ./script.nu close-all-subwin
                 ${EWW_CMD} update focus_calendar=true
               }
             }"
