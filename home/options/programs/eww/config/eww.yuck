@@ -53,7 +53,7 @@
 
 (defwidget ram-module []
   (circular-progress :value {EWW_RAM.used_mem_perc}
-                     :thickness 10
+                     :thickness 15
                      :clockwise true))
 
 (defwidget bar []
