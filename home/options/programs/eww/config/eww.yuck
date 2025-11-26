@@ -53,7 +53,8 @@
 
 (defwidget bar []
   (better-centerbox
-    (clock-module)
+    (box
+      (clock-module))
     ""
     "ddddddddd"))
 
