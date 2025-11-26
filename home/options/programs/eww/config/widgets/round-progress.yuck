@@ -4,8 +4,10 @@
                             ?thickness
                             ?middle-thickness
                             ?clockwise
+                            ?tooltip
                           ]
   (overlay :class "round-progress"
+           :tooltip tooltip
     (circular-progress :value value
                        :start-at {start-at == "" ? 0 : start-at}
                        :thickness thickness
