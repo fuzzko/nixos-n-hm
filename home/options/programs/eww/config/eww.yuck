@@ -57,6 +57,7 @@
                   :start-at 75
                   :thickness 11
                   :middle-thickness 20
+                  :clockwise false
                   :tooltip "Used memory: ${round(EWW_RAM.used_mem_perc, 1)}%"))
 
 (defwidget bar []
