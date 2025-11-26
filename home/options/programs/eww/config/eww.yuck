@@ -45,7 +45,7 @@
              :class "clock-text")
       (revealer :transition "slideright"
                 :reveal reveal_date
-        (label :text {formattime(EWW_TIME, "%d/%m")}
+        (label :text {formattime(EWW_TIME, "%d<span stretch=\"expanded\">/</span>%m")}
                :markup true
                :class "date-text")))))
 
