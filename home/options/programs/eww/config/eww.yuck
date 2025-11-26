@@ -51,7 +51,7 @@
   (dropdown :var reveal_calendar
     (calendar :class "calendar-module")))
 
-(defwidget )
+; (defwidget )
 
 (defwidget bar []
   (better-centerbox
