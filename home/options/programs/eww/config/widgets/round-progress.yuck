@@ -16,5 +16,4 @@
          :hexpand false
          :width {thickness - middle-thickness}
          :height {thickness - middle-thickness}
-         :style "border-radius: 50%;"))
-)
+         :style "border-radius: 50%;")))
