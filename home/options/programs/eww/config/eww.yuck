@@ -56,7 +56,8 @@
   (round-progress :value {EWW_RAM.used_mem_perc}
                   :thickness 11
                   :middle-thickness 20
-                  :clockwise true))
+                  :clockwise true
+                  :tooltip "Used memory: ${EWW_RAM.used_mem_perc}%"))
 
 (defwidget bar []
   (better-centerbox
