@@ -21,6 +21,6 @@
              thickness >= middle-thickness
              ? thickness - middle-thickness
              : middle-thickness - thickness
-           ) / 2)
+           ) / 3)
          }px;"))
   )
