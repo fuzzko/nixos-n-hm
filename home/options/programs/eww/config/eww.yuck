@@ -59,7 +59,7 @@
       (clock-module))
     ""
     (box :space-evenly true
-         :spacing 10
+         :spacing 5
       "a"
       "b")))
 
