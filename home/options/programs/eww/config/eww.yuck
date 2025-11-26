@@ -54,8 +54,8 @@
 
 (defwidget ram-module []
   (round-progress :value {EWW_RAM.used_mem_perc}
-                  :thickness 10.5
-                  :middle-thickness 30
+                  :thickness 13
+                  :middle-thickness 20
                   :clockwise true))
 
 (defwidget bar []
