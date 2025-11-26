@@ -18,7 +18,7 @@
 
 (defwidget clock-module []
   (eventbox :class "clock-module"
-            :timeout "500ms"
+            :timeout "1s"
             :onclick "export EWW_CMD=\"${EWW_CMD}\"; {
               case ${reveal_calendar} in
                 true)
