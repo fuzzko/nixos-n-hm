@@ -49,17 +49,20 @@
 
 (defwidget calendar-module []
   (dropdown :var reveal_calendar
-    (calendar :class "calendar-module")))
+    (calendar)))
 
-; (defwidget )
+(defwidget ram-module []
+  (circular-progress :value {EWW_RAM.used_mem_perc}
+                     :thickness 1
+                     :clockwise true))
 
 (defwidget bar []
   (better-centerbox
     (box
-      (clock-module))
+      (clock-module :class "clock-module"))
     ""
     (box :space-evenly true
-         :spacing 5
+         :spacing 8
       "a"
       "b")))
 
