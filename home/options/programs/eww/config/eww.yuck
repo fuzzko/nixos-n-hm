@@ -66,7 +66,7 @@
                   :thickness 11
                   :middle-thickness 20
                   :clockwise false
-                  :tooltip "Used swap space: ${round((EWW_RAM.total_swap - EWW_RAM.free_swap))}"))
+                  :tooltip "Used swap space: ${formatbytes(EWW_RAM.total_swap - EWW_RAM.free_swap)}"))
 
 (defwidget bar []
   (better-centerbox
