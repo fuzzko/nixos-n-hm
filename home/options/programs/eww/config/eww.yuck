@@ -52,15 +52,16 @@
   (dropdown :var reveal_calendar
     (calendar)))
 
-(defwidget ram-module []
-  (box (round-progress :value {EWW_RAM.used_mem_perc}
+(defwidget ram-module [class]
+  (box :class class
+    (round-progress :value {EWW_RAM.used_mem_perc}
                   :start-at 75
                   :thickness 14
                   :middle-thickness 29
                   :clockwise false
                   :tooltip "Used memory: ${round(EWW_RAM.used_mem_perc, 1)}%"
-    (label :text ""
-           :style "font-size: smaller; padding-right: 5px;"))))
+      (label :text ""
+             :style "font-size: smaller; padding-right: 5px;"))))
 
 
 (defwidget bar []
