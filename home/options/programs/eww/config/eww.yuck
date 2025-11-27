@@ -61,12 +61,12 @@
                   :tooltip "Used memory: ${round(EWW_RAM.used_mem_perc, 1)}%"))
 
 (defwidget swap-module []
-  (round-progress :value {(EWW_RAM.total_swap - EWW_RAM.free_swap) / 100}
+  (round-progress :value {(EWW_RAM.total_swap - EWW_RAM.free_swap) * 1/100}
                   :start-at 75
                   :thickness 11
                   :middle-thickness 20
                   :clockwise false
-                  :tooltip "Used swap space: ${round((EWW_RAM.total_swap - EWW_RAM.free_swap) / 100, 1)}"))
+                  :tooltip "Used swap space: ${round((EWW_RAM.total_swap - EWW_RAM.free_swap))}"))
 
 (defwidget bar []
   (better-centerbox
