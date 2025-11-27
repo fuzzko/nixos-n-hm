@@ -62,13 +62,6 @@
     (label :text ""
            :style "font-size: smaller; padding-right: 5px;")))
 
-(defwidget swap-module []
-  (round-progress :value {(EWW_RAM.total_swap - EWW_RAM.free_swap) / EWW_RAM.free_swap * 100}
-                  :start-at 75
-                  :thickness 11
-                  :middle-thickness 20
-                  :clockwise false
-                  :tooltip "Used swap space: ${formatbytes(EWW_RAM.total_swap - EWW_RAM.free_swap)}"))
 
 (defwidget bar []
   (better-centerbox
@@ -77,8 +70,7 @@
     ""
     (box :space-evenly true
          :spacing 8
-      (ram-module :class "ram-module")
-      (swap-module :class "swap-module"))))
+      (ram-module :class "ram-module"))))
 
 (defwindow calendar-module
            :monitor 0
