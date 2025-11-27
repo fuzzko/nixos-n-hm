@@ -19,10 +19,5 @@
          :hexpand false
          :width {floor((thickness + middle-thickness) / 2)}
          :height {floor((thickness + middle-thickness) / 2)}
-         :style "border-radius: 50%;")
-    (box :valign "center"
-         :halign "center"
-         :width {floor(thickness / 2)}
-         :height {floor(thickness / 2)}
-         :style "background-color: rgba(255, 255, 255, 0);"
+         :style "border-radius: 50%;"
       (children))))
