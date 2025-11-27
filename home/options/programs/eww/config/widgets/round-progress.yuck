@@ -32,5 +32,5 @@
          :hexpand false
          :width {floor(middle-thickness) / 2}
          :height {floor(middle-thickness) / 2}
-         :style "background-color: #000000;"
+         :style "background-color: rgba(255, 255, 255, 0);"
       (children))))
