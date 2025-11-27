@@ -1,0 +1,10 @@
+(defwidget dropdown [var]
+    (box :orientation "v"
+         :space-evenly false
+         :hexpand false
+         :vexpand false
+         :class "dropdown"
+      (revealer :transition "slidedown"
+                :duration "300ms"
+                :reveal var
+        (children))))
