@@ -16,8 +16,7 @@
         (children))))
 
 (defwidget clock-module [class]
-  (eventbox :class class
-            :timeout "1s"
+  (eventbox :timeout "1s"
             :onclick "export EWW_CMD=\"${EWW_CMD}\"; {
               case ${reveal_calendar} in
                 true)
@@ -37,7 +36,8 @@
             :onhoverlost "export EWW_CMD=\"${EWW_CMD}\"; {
               ${EWW_CMD} update reveal_date=false
             }"
-    (box :orientation "h"
+    (box :class class
+         :orientation "h"
          :space-evenly false
          :hexpand false
          :vexpand false
