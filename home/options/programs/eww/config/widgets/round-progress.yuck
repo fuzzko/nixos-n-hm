@@ -12,7 +12,8 @@
                        :start-at {start-at == "" ? 0 : start-at}
                        :thickness thickness
                        :clockwise clockwise)
-    (box :valign "center"
+    (box :class "middle-thickness"
+         :valign "center"
          :halign "center"
          :vexpand false
          :hexpand false
