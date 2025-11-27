@@ -60,8 +60,8 @@
                   :clockwise false
                   :tooltip "Used memory: ${round(EWW_RAM.used_mem_perc, 1)}%"
     (label :text ""
-           :style "font-size: smaller;"
-           :justify "center")))
+           :style "font-size: x-small;"
+           :justify "right")))
 
 (defwidget swap-module []
   (round-progress :value {(EWW_RAM.total_swap - EWW_RAM.free_swap) / EWW_RAM.free_swap * 100}
