@@ -53,7 +53,7 @@
     (calendar)))
 
 (defwidget ram-module []
-  (round-progress :value {EWW_RAM.used_mem_perc}
+  (round-progress :value 100
                   :start-at 75
                   :thickness 13
                   :middle-thickness 23
