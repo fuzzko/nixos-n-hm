@@ -15,8 +15,8 @@
                 :reveal var
         (children))))
 
-(defwidget clock-module []
-  (eventbox :class "clock-module"
+(defwidget clock-module [class]
+  (eventbox :class class
             :timeout "1s"
             :onclick "export EWW_CMD=\"${EWW_CMD}\"; {
               case ${reveal_calendar} in
