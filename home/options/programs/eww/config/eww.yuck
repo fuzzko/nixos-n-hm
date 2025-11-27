@@ -1,5 +1,6 @@
 (include "./widgets/utils.yuck")
 (include "./widgets/round-progress.yuck")
+(include "./widgets/dropdown.yuck")
 
 (defvar reveal_calendar false)
 (defvar reveal_date false)
