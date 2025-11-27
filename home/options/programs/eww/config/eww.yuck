@@ -55,8 +55,8 @@
 (defwidget ram-module []
   (round-progress :value 100
                   :start-at 75
-                  :thickness 17
-                  :middle-thickness 33
+                  :thickness 14
+                  :middle-thickness 27
                   :clockwise false
                   :tooltip "Used memory: ${round(EWW_RAM.used_mem_perc, 1)}%"
     (label :text "a"
