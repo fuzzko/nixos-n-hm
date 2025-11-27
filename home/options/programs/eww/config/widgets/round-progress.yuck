@@ -26,4 +26,10 @@
              0
           )
          }px;"))
-    (children))
+    (box :valign "center"
+         :halign "center"
+         :vexpand false
+         :hexpand false
+         :width {floor(middle-thickness) / 2}
+         :height {floor(middle-thickness) / 2}
+      (children)))
