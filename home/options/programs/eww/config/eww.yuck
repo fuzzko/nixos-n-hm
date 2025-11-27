@@ -4,17 +4,6 @@
 (defvar reveal_calendar false)
 (defvar reveal_date false)
 
-(defwidget dropdown [var]
-    (box :orientation "v"
-         :space-evenly false
-         :hexpand false
-         :vexpand false
-         :class "dropdown"
-      (revealer :transition "slidedown"
-                :duration "300ms"
-                :reveal var
-        (children))))
-
 (defwidget clock-module [class]
   (eventbox :timeout "1s"
             :onclick "export EWW_CMD=\"${EWW_CMD}\"; {
@@ -48,9 +37,10 @@
         (label :text {formattime(EWW_TIME, "%d/%m")}
                :class "date-text")))))
 
-(defwidget calendar-module []
-  (dropdown :var reveal_calendar
-    (calendar)))
+(defwidget calendar-module [class]
+  (box :class class
+    (dropdown :var reveal_calendar
+      (calendar))))
 
 (defwidget ram-module [class]
   (box :class class
@@ -82,7 +72,7 @@
                                :anchor "top left")
            :stacking "fg"
            :exclusive false
-  (calendar-module))
+  (calendar-module :class "calendar-module"))
 
 (defwindow bar
            :monitor 0
