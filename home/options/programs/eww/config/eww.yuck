@@ -84,8 +84,7 @@
     ""
     (box :space-evenly true
          :spacing 8
-      (ram-module :class "ram-module")
-      )))
+      (ram-module :class "ram-module"))))
 
 (defwindow calendar-module
            :monitor 0
