@@ -16,6 +16,11 @@ $bg-color: #14262f;
   /* border: $subwin and unset or #{2px solid #618394}; */
 }
 
+.progress-icon {
+  font-size: .7em;
+  padding-right: 5px;
+}
+
 .calendar-module calendar {
   @include box;
 }
