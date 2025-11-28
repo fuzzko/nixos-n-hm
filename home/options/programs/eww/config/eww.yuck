@@ -46,13 +46,35 @@
 (defwidget ram-module [class]
   (box :class class
     (round-progress :value {EWW_RAM.used_mem_perc}
-                  :start-at 75
-                  :thickness 14
-                  :middle-thickness 29
-                  :clockwise false
-                  :tooltip "Used memory: ${round(EWW_RAM.used_mem_perc, 1)}%"
+                    :start-at 75
+                    :thickness 14
+                    :middle-thickness 29
+                    :clockwise false
+                    :tooltip "Used memory: ${round(EWW_RAM.used_mem_perc, 1)}%"
       (label :class "progress-icon"
              :text ""))))
+
+(defwidget bat-module [class]
+  (box :class class
+       :visible {EWW_BATTERY?.BAT0 != null}
+    (round-progress :value {EWW_BATTERY?.BAT0.capacity}
+                    :start-at 75
+                    :thickness 14
+                    :middle-thickness 29
+                    :clockwise false
+                    :tooltip "Battery percentage: ${EWW_BATTERY?.BAT0.capacity}%"
+      (label :class "progress-icon"
+             :text {
+               EWW_BATTERY?.BAT0.capacity == 0 ?
+                "" :
+               EWW_BATTERY?.BAT0.capacity <= 20 ?
+                "" :
+               EWW_BATTERY?.BAT0.capacity <= 50 ?
+                "" :
+               EWW_BATTERY?.BAT0.capacity <= 80 ?
+                "" :
+                ""
+             }))))
 
 
 (defwidget bar []
@@ -62,7 +84,8 @@
     ""
     (box :space-evenly true
          :spacing 8
-      (ram-module :class "ram-module"))))
+      (ram-module :class "ram-module")
+      )))
 
 (defwindow calendar-module
            :monitor 0
