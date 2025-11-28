@@ -52,8 +52,7 @@
                   :clockwise false
                   :tooltip "Used memory: ${round(EWW_RAM.used_mem_perc, 1)}%"
       (label :class "progress-icon"
-             :text ""
-             :style "font-size: .7em; padding-right: 5px;"))))
+             :text ""))))
 
 
 (defwidget bar []
