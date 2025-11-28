@@ -80,7 +80,7 @@
            :geometry (geometry :x "0%"
                                :y "10px"
                                :width "98.5%"
-                               :height "38px"
+                               :height "36px"
                                :anchor "top center")
            :stacking "fg"
            :exclusive true
