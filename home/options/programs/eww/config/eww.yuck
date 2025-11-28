@@ -56,22 +56,22 @@
 
 (defwidget bat-module [class]
   (box :class class
-       :visible {true}
+       :visible {EWW_BATTERY?.BAT0.capacity}
     (round-progress :value {100}
                     :start-at 75
                     :thickness 14
                     :middle-thickness 29
                     :clockwise false
-                    :tooltip "Battery percentage: ${100}%"
+                    :tooltip "Battery percentage: ${EWW_BATTERY?.BAT0.capacity}%"
       (label :class "progress-icon"
              :text {
-               80 == 0 ?
+              EWW_BATTERY?.BAT0.capacity == 0 ?
                 "" :
-               80 <= 20 ?
+              EWW_BATTERY?.BAT0.capacity <= 20 ?
                 "" :
-               80 <= 50 ?
+              EWW_BATTERY?.BAT0.capacity <= 50 ?
                 "" :
-               80 <= 80 ?
+              EWW_BATTERY?.BAT0.capacity <= 80 ?
                 "" :
                 ""
              }))))
