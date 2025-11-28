@@ -62,7 +62,7 @@
                     :thickness 14
                     :middle-thickness 29
                     :clockwise false
-                    :tooltip "Battery percentage: ${EWW_BATTERY?.BAT0.capacity}%"
+                    :tooltip "Battery percentage: ${100}%"
       (label :class "progress-icon"
              :text {
                100 == 0 ?
