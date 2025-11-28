@@ -51,7 +51,8 @@
                   :middle-thickness 29
                   :clockwise false
                   :tooltip "Used memory: ${round(EWW_RAM.used_mem_perc, 1)}%"
-      (label :text ""
+      (label :class "icon"
+             :text ""
              :style "font-size: .7em; padding-right: 5px;"))))
 
 
