@@ -65,13 +65,13 @@
                     :tooltip "Battery percentage: ${EWW_BATTERY?.BAT0?.capacity}%"
       (label :class "progress-icon"
              :text {
-              EWW_BATTERY?.BAT0?.capacity == 0 ?
+              EWW_BATTERY?.BAT0?.capacity ?: 0 == 0 ?
                 "" :
-              EWW_BATTERY?.BAT0?.capacity <= 20 ?
+              EWW_BATTERY?.BAT0?.capacity ?: 0 <= 20 ?
                 "" :
-              EWW_BATTERY?.BAT0?.capacity <= 50 ?
+              EWW_BATTERY?.BAT0?.capacity ?: 0 <= 50 ?
                 "" :
-              EWW_BATTERY?.BAT0?.capacity <= 80 ?
+              EWW_BATTERY?.BAT0?.capacity ?: 0 <= 80 ?
                 "" :
                 ""
              }))))
