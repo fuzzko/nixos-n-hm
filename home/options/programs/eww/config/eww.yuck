@@ -4,6 +4,7 @@
 
 (defvar reveal_calendar false)
 (defvar reveal_date false)
+(defvar reveal_sysinfo false)
 
 (defwidget clock-module [class]
   (eventbox :timeout "1s"
@@ -75,7 +76,10 @@
                  "" :
                  ""
              }))))
-
+ 
+(defwidget sysinfo-module [class]
+  (box :class class
+    (dropdown :var reveal_sysinfo)))
 
 (defwidget bar []
   (better-centerbox
@@ -97,6 +101,14 @@
            :stacking "fg"
            :exclusive false
   (calendar-module :class "calendar-module"))
+
+(defwindow sysinfo-module
+           :monitor 0
+           :geometry (geometry :x "1.5%"
+                               :y "5px"
+                               :width "5%"
+                               :height "12.5%"
+                               :anchor "top right"))
 
 (defwindow bar
            :monitor 0
