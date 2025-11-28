@@ -9,7 +9,3 @@
     (box :class "centerbox-end"
          :halign "end"
       (children :nth 2))))
-
-(defwidget time [format]
-  (box :class "time"
-    {formattime(EWW_TIME, format)}))
