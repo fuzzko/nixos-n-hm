@@ -1,11 +1,12 @@
-(defwidget round-progress [
-                            ?value
-                            ?start-at
-                            ?thickness
-                            ?middle-thickness
-                            ?clockwise
-                            ?tooltip
-                          ]
+(defwidget round-progress
+           [
+            ?value
+            ?start-at
+            ?thickness
+            ?middle-thickness
+            ?clockwise
+            ?tooltip
+           ]
   (overlay :class "round-progress"
            :tooltip tooltip
     (circular-progress :value value
