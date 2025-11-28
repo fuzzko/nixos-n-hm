@@ -57,7 +57,7 @@
 (defwidget bat-module [class]
   (box :class class
        :visible {EWW_BATTERY?.BAT0?.capacity ?: "null" != "null"}
-    (round-progress :value {100}
+    (round-progress :value {EWW_BATTERY?.BAT0?.capacity ?: 0}
                     :start-at 75
                     :thickness 14
                     :middle-thickness 29
