@@ -22,9 +22,5 @@ Rectangle {
 
     RowLayout {
         spacing: spacing
-
-        anchors.right: parent.right
-        anchors.rightMargin: marginLR /* qmllint disable */ // same as the above
-        anchors.verticalCenter: parent.verticalCenter
     }
 }
