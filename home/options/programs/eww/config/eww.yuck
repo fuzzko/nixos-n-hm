@@ -98,6 +98,7 @@
 (defwidget bar []
   (better-centerbox
     (box :space-evenly false
+         :spacing 1
       (os-module :class "os-module")
       (separator)
       (clock-module :class "clock-module"))
