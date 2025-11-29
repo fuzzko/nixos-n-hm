@@ -8,7 +8,7 @@ Item {
     }
 
     Text {
-        anchors.fill: parent
+        anchors.fill: parent.parent
         text: Qt.formatDateTime(clock.date, "hh:mm")
     }
 }
