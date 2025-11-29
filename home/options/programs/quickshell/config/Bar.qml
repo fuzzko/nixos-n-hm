@@ -1,3 +1,4 @@
+import Quickshell
 import QtQuick
 import QtQuick.Layouts
 
@@ -16,12 +17,6 @@ Rectangle {
         anchors.leftMargin: marginLR /* qmllint disable */ // too lazy to define `id`
         anchors.verticalCenter: parent.verticalCenter
 
-        Text {
-            text: "aaa"
-        }
-        Text {
-            text: "aaa"
-        }
     }
 
     RowLayout {
