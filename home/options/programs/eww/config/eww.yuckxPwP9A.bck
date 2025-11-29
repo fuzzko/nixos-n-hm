@@ -45,8 +45,8 @@
              :class "clock-text")
       (revealer :transition "slideright"
                 :reveal reveal_date
+                :visible reveal_date
         (label :text {formattime(EWW_TIME, "%d/%m")}
-               :visible reveal_date
                :class "date-text")))))
 
 (defwidget calendar-module [class]
