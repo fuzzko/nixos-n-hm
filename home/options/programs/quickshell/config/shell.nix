@@ -14,10 +14,10 @@ pkgs.mkShellNoCC {
     quickshell
   ];
 
-  QML2_IMPORT_PATH = builtins.replaceStrings [" "] [":"] (makeQmlImportPath (with pkgs; [
+  QML2_IMPORT_PATH = makeQmlImportPath (with pkgs; [
     kdePackages.qtdeclarative
     quickshell
-  ]));
+  ]);
   QML_PLUGIN_PATH = makeQmlPluginPath (with pkgs; [
     kdePackages.qtdeclarative
   ]);
