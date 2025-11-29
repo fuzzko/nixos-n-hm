@@ -43,6 +43,10 @@ $bg-color: #14262f;
   }
 }
 
+.separator {
+  background-color: #101e1c;
+}
+
 button {
   @mixin bg($hover: false) {
     background-color: $hover and #5b9fbe or $bg-color;
