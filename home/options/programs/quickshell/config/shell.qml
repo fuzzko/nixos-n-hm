@@ -3,13 +3,21 @@ import QtQuick
 
 PanelWindow // qmllint disable
 {
+    readonly property int marginLR: 4;
+
     anchors {
         top: true;
         left: true;
         right: true;
     }
 
-    margins.top: 3; // qmllint disable
+    // qmllint disable
+    margins {
+        top: 3;
+        left: marginLR;
+        right: marginLR;
+    }
+    // qmllint enable
     
     implicitHeight: 30;
 
