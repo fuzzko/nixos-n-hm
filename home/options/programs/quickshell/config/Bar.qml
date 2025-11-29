@@ -10,6 +10,7 @@ Rectangle {
         spacing: 5;
 
         anchors.left: parent.left;
+        anchors.verticalCenter: parent.verticalCenter;
 
         Text {
             text: "aaa"
