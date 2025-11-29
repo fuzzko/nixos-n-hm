@@ -1,6 +1,10 @@
-{ pkgs ? import <nixpkgs> {}}:
+{ ... }:
 let
+  komo' = import ../../../../../lib {};
+  pkgs = (builtins.getFlake "github:NixOS/nixpkgs/${(komo'.getFlakeInputGithub "nixpkgs").locked.rev}").legacyPackages.${builtins.currentSystem};
+
   inherit (pkgs) lib;
+  
   makeQmlImportPath = lib.makeSearchPathOutput "out" "lib/qt-6/qml";
   makeQmlPluginPath = lib.makeSearchPathOutput "out" "lib/qt-6/plugins";
 in
