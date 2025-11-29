@@ -97,13 +97,16 @@
 
 (defwidget bar []
   (centerbox :orientation "h"
-    (box :space-evenly false
+             :align 
+    (box :halign "start"
+         :space-evenly false
          :spacing 3
       (os-module :class "os-module")
       (separator)
       (clock-module :class "clock-module"))
     ""
-    (box :space-evenly true
+    (box :halign "end"
+         :space-evenly true
          :spacing 6
       (bat-module :class "bat-module")
       (ram-module :class "ram-module"))))
