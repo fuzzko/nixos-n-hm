@@ -36,6 +36,8 @@
             }"
     (box :class class
          :orientation "h"
+         :hexpand false
+         :vexpand false
       (label :text {formattime(EWW_TIME, "%I:%M")}
              :class "clock-text")
       (revealer :transition "slideright"
