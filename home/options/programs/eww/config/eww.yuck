@@ -36,6 +36,8 @@
             }"
     (box :class class
          :orientation "h"
+         :halign "center"
+         :valign "center"
          :space-evenly false
          :hexpand false
          :vexpand false
