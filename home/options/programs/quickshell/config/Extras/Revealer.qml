@@ -1,6 +1,8 @@
 import QtQuick
 
 Item {
+    id: revealer
+    
     enum Transition {
         None,
         CrossFade,
@@ -11,5 +13,22 @@ Item {
     }
     
     required property bool reveal
-    property Transition transition: Revealer.Transition
+    property Transition transitionType: Revealer.Transition.CrossFade
+    default property alias content: child.children
+
+    states: [
+        State {
+            name: "reveal"
+            when: revealer.transitionType === Revealer.Transition.CrossFade
+
+            PropertyChanges {
+                child.opacity: 100
+            }
+        }
+    ]
+
+    Item {
+        id: child
+        
+    }
 }
