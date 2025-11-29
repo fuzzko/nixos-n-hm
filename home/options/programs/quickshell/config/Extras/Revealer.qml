@@ -33,7 +33,7 @@ Item {
             reversible: true
 
             NumberAnimation {
-                targets
+                targets: revealer.visibleChildren
                 property: "opacity"
                 easing: easing
                 duration: duration
