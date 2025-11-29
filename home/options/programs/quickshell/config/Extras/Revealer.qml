@@ -32,6 +32,7 @@ Item {
     transitions: [
         Transition {
             reversible: true
+
             NumberAnimation {
                 target: child
                 property: "opacity"
