@@ -13,6 +13,8 @@ Rectangle {
     RowLayout {
         spacing: spacing
 
+        Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
+
         ClockModule {}
     }
 
