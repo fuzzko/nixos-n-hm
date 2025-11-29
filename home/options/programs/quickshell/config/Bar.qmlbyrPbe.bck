@@ -13,9 +13,9 @@ Rectangle {
     RowLayout {
         spacing: spacing
 
+        Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
 
         ClockModule {
-        Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
         }
     }
 
