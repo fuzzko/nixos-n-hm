@@ -16,7 +16,6 @@ Item {
     property Transition transitionType: Revealer.TransitionType.CrossFade
     property int duration
     property var easing
-    default property alias content: child.children
 
     states: [
         State {
@@ -34,15 +33,11 @@ Item {
             reversible: true
 
             NumberAnimation {
-                target: child
+                targets
                 property: "opacity"
                 easing: easing
                 duration: duration
             }
         }
     ]
-
-    Item {
-        id: child
-    }
 }
