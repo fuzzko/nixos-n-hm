@@ -29,18 +29,22 @@ $bg-color: #14262f;
   background-color: $bg-color;
 }
 
+.clock-module {
+  margin: unset;
+}
+
+.clock-text {
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+.date-text {
+  margin-left: 5px;
+  font-size: .80rem;
+}
+
 .bar {
   @include box;
-
-  .clock-text {
-    font-weight: bold;
-    font-size: 1.05rem;
-  }
-
-  .date-text {
-    margin-left: 5px;
-    font-size: .80rem;
-  }
 }
 
 .separator {
