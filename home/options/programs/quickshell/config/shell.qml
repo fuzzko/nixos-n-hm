@@ -1,7 +1,19 @@
 import Quickshell
 import QtQuick
 
-Root {
-    
+PanelWindow {
+    anchors {
+        top: true
+        left: true
+        right: true
+    }
+
+    implicitHeight: 30
+
+    Text {
+        anchors.centerIn: parent
+
+        text: "halooo"
+    }
 }
 
