@@ -14,7 +14,7 @@ pkgs.mkShellNoCC {
     quickshell
   ];
 
-  QML2_IMPORT_PATH = makeQmlImportPath (with pkgs; [
+  QML_IMPORT_PATH = makeQmlImportPath (with pkgs; [
     kdePackages.qtdeclarative
     quickshell
   ]);
