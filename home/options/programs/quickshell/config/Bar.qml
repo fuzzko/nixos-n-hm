@@ -6,7 +6,7 @@ Rectangle {
     readonly property int marginLR: 4
     
     anchors.fill: parent
-    radius: 8;
+    radius: 9.5;
     color: "white"
 
     RowLayout {
