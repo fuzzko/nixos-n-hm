@@ -1,8 +1,8 @@
 import Quickshell
 import QtQuick
 
-// qmllint disable uncreatable-type
-PanelWindow {
+PanelWindow // qmllint disable uncreatable-type
+{
     anchors {
         top: true
         left: true
