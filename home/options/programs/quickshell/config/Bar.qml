@@ -21,7 +21,14 @@ Rectangle {
         Layout.alignment: Qt.AlignLeft | Qt.AlignCenter
 
         Revealer {
-            reveal: true
+            implicitHeight: text.implicitHeight
+            implicitWidth: text.implicitWidth
+            
+            MouseArea {
+                onClicked: parent.reveal = !parent.reveal
+            }
+            
+            reveal: false
 
             Text {
                 id: text
