@@ -2,18 +2,19 @@ import QtQuick
 import QtQuick.Layouts
 
 Rectangle {
-    readonly property int marginLR: 3;
+    readonly property int spacing: 5
+    readonly property int marginLR: 3
     
-    anchors.fill: parent;
+    anchors.fill: parent
     radius: 5;
-    color: "white";
+    color: "white"
 
     RowLayout {
-        spacing: 5;
+        spacing: spacing
 
-        anchors.left: parent.left;
-        anchors.leftMargin: marginLR; // qmllint disable
-        anchors.verticalCenter: parent.verticalCenter;
+        anchors.left: parent.left
+        anchors.leftMargin: marginLR /* qmllint disable */ // too lazy to define `id`
+        anchors.verticalCenter: parent.verticalCenter
 
         Text {
             text: "aaa"
@@ -21,5 +22,19 @@ Rectangle {
         Text {
             text: "aaa"
         }
+    }
+
+    RowLayout {
+        spacing: spacing
+
+        anchors.centerIn: parent
+    }
+
+    RowLayout {
+        spacing: spacing
+
+        anchors.right: parent.right
+        anchors.rightMargin: marginLR /* qmllint disable */ // same as the above
+        anchors.verticalCenter: parent.verticalCenter
     }
 }
