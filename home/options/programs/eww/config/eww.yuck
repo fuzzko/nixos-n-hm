@@ -6,6 +6,16 @@
 (defvar reveal_date false)
 (defvar reveal_sysinfo false)
 
+(defwidget separator []
+  (box :class "separator"
+       :halign "center"
+       :valign "center"
+       :hexpand false
+       :vexpand true
+       :height "95%"
+       :width "2px"
+       :style "border-radius: 50%;"))
+
 (defwidget clock-module [class]
   (eventbox :timeout "1s"
             :onclick "export EWW_CMD=\"${EWW_CMD}\"; {
@@ -82,13 +92,18 @@
     (dropdown :var reveal_sysinfo
       e)))
 
+(defwidget os-module [class]
+  (box :class class
+    (label :class "os-icon"
+           :text "")))
+
 (defwidget bar []
   (better-centerbox
-    (box
+    (box :space-evenly true
       (clock-module :class "clock-module"))
     ""
     (box :space-evenly true
-         :spacing 8
+         :spacing 6
       (bat-module :class "bat-module")
       (ram-module :class "ram-module"))))
 
