@@ -96,7 +96,7 @@
            :text "")))
 
 (defwidget bar []
-  (better-centerbox
+  (centerbox :orientation "h"
     (box :space-evenly false
          :spacing 3
       (os-module :class "os-module")
