@@ -18,9 +18,6 @@ Item {
     property int duration
     property var easing
 
-    implicitHeight: content.implicitHeight
-    implicitWidth: content.implicitWidth
-
     Item {
         id: content
     }
