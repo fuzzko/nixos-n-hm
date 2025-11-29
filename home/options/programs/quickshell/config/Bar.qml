@@ -3,7 +3,7 @@ import QtQuick.Layouts
 
 Rectangle {
     readonly property int spacing: 5
-    readonly property int marginLR: 5
+    readonly property int marginLR: 4
     
     anchors.fill: parent
     radius: 5;
