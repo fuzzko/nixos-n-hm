@@ -20,15 +20,13 @@ Rectangle {
         anchors.margins: parent.marginLR
         Layout.alignment: Qt.AlignLeft | Qt.AlignCenter
 
-        Revealer {
+        Item {
             implicitHeight: text.implicitHeight
             implicitWidth: text.implicitWidth
 
             HoverHandler {
                 onHoveredChanged: text.opacity = 0
             }            
-            
-            reveal: true
 
             Text {
                 id: text
