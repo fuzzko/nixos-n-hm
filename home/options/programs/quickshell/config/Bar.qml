@@ -17,7 +17,7 @@ Rectangle {
         anchors.leftMargin: parent.marginLR;
 
         ClockModule {
-            Layout.alignment: Qt.AlignCenter
+            Layout.alignment: Qt.AlignVCenter
         }
     }
 
