@@ -10,16 +10,16 @@ pkgs.mkShellNoCC {
 
   env =
     let
-      makeQmlImportPath = lib.makeSearchPath "lib/qt-6/qml";
-      makeQmlPluginPath = lib.makeSearchPath "lib/qt-6/plugins";
+      makeQmlImportPath = lib.makeSearchPathOutput "out" "lib/qt-6/qml";
+      makeQmlPluginPath = lib.makeSearchPathOutput "out" "lib/qt-6/plugins";
     in
     {
       QML2_IMPORT_PATH = makeQmlImportPath (with pkgs; [
-        "${kdePackages.qtdeclarative}"
-        "${quickshell}"
+        kdePackages.qtdeclarative
+        quickshell
       ]);
       QML_PLUGIN_PATH = makeQmlPluginPath (with pkgs; [
-        "${kdePackages.qtdeclarative}"
+        kdePackages.qtdeclarative
       ]);
     };
 }
