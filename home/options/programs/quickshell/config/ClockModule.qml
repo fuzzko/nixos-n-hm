@@ -1,9 +1,7 @@
 import Quickshell
 import QtQuick
 
-Item {
-    anchors.centerIn: parent
-    
+Item {    
     SystemClock {
         id: clock
         precision: SystemClock.Seconds
