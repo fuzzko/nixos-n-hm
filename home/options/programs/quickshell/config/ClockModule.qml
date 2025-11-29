@@ -8,7 +8,6 @@ Item {
     }
 
     Text {
-        Layout.alignment: Qt.AlignCenter
         text: Qt.formatDateTime(clock.date, "hh:mm")
     }
 }
