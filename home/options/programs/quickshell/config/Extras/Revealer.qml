@@ -20,6 +20,7 @@ Item {
 
     Item {
         id: content
+        opacity: 0
 
         states: [
             State {
