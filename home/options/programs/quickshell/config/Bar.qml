@@ -10,10 +10,10 @@ Rectangle {
     radius: 9.5;
     color: "white"
 
-        Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
-
     RowLayout {
         spacing: spacing
+
+        anchors.verticalCenter: parent.verticalCenter
 
         ClockModule {}
     }
