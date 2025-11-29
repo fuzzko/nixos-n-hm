@@ -12,7 +12,7 @@ Item {
         SlideRight
     }
 
-    property alias container: content.data
+    property alias container: content.children
     required property bool reveal
     property Revealer.TransitionType transitionType: Revealer.TransitionType.CrossFade // qmllint disable
     property int duration
