@@ -13,7 +13,8 @@ Rectangle {
     RowLayout {
         spacing: spacing
 
-        anchors.fill: parent
+        anchors.left: parent.left
+        anchors.leftMargin: parent.marginLR
         Layout.alignment: Qt.AlignLeft | Qt.AlignCenter
         
         ClockModule {
