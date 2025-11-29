@@ -12,7 +12,7 @@ Rectangle {
         spacing: 5;
 
         anchors.left: parent.left;
-        anchors.leftMargin: marginLR;
+        anchors.leftMargin: marginLR; // qmllint disable
         anchors.verticalCenter: parent.verticalCenter;
 
         Text {
