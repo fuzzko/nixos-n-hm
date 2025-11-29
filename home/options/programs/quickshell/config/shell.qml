@@ -9,7 +9,8 @@ PanelWindow // qmllint disable uncreatable-type
         right: true
     }
 
-    margins {
+    margins //
+    {
         top: 5
     }
     
