@@ -15,7 +15,9 @@ Rectangle {
 
         anchors.verticalCenter: parent.verticalCenter
 
-        ClockModule {}
+        Text {
+            text: "aaaa"
+        }
     }
 
     RowLayout {
