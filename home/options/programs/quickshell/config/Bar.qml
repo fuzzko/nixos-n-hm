@@ -14,9 +14,9 @@ Rectangle {
         spacing: spacing
 
         anchors.fill: parent
-
+        Layout.alignment: Qt.AlignLeft | Qt.AlignCenter
+        
         ClockModule {
-            Layout.alignment: Qt.AlignLeft | Qt.AlignCenter
         }
     }
 
