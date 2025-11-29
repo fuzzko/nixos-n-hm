@@ -20,19 +20,7 @@ Rectangle {
         anchors.margins: parent.marginLR
         Layout.alignment: Qt.AlignLeft | Qt.AlignCenter
 
-        Revealer {
-            implicitHeight: text.implicitHeight
-            implicitWidth: text.implicitWidth
-
-            HoverHandler {
-                onHoveredChanged: text.opacity = 0
-            }            
-
-            Text {
-                id: text
-                text: "aaa"
-            }
-        }
+        ClockModule {}
     }
 
     RowLayout {
