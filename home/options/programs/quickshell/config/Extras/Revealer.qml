@@ -20,9 +20,6 @@ Item {
 
     Item {
         id: content
-        opacity: 0
-        x: root.parent.x
-        y: root.parent.y
 
         states: [
             State {
