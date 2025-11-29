@@ -2,6 +2,8 @@ import QtQuick
 import QtQuick.Layouts
 
 Rectangle {
+    readonly property int marginLR: 3;
+    
     anchors.fill: parent;
     radius: 5;
     color: "white";
@@ -10,6 +12,7 @@ Rectangle {
         spacing: 5;
 
         anchors.left: parent.left;
+        anchors.leftMargin: marginLR;
         anchors.verticalCenter: parent.verticalCenter;
 
         Text {
