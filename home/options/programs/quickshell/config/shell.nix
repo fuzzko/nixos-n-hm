@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs/nixos-unstable> {}}:
+{ pkgs ? import <nixpkgs> {}}:
 let
   inherit (pkgs) lib;
   makeQmlImportPath = lib.makeSearchPathOutput "out" "lib/qt-6/qml";
