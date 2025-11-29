@@ -104,7 +104,7 @@
       (os-module :class "os-module")
       (separator)
       (clock-module :class "clock-module"))
-    ""
+    (box)
     (box :halign "end"
          :space-evenly true
          :spacing 6
