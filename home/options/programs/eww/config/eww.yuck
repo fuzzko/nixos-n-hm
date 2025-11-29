@@ -10,7 +10,7 @@
   (box :class "separator"
        :halign "center"
        :valign "fill"
-       :width 2.5
+       :width 2
        :style "border-radius: 50%;"))
 
 (defwidget clock-module [class]
