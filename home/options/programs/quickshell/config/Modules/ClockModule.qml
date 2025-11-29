@@ -21,5 +21,6 @@ Item {
     }
     
     ToolTip.text: Qt.formatDateTime(clock.date, "dd/MM")
+    ToolTip.delay: 500
     ToolTip.visible: device.hovered
 }
