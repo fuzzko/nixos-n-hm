@@ -13,10 +13,6 @@ Rectangle {
     RowLayout {
         spacing: spacing
 
-        anchors.left: parent.left
-        anchors.leftMargin: marginLR /* qmllint disable */ // too lazy to define `id`
-        anchors.verticalCenter: parent.verticalCenter
-
         ClockModule {}
     }
 
