@@ -1,7 +1,8 @@
 import Quickshell
 import QtQuick
 
-PanelWindow { // qmllint disable uncreatable-type
+PanelWindow {
+    // qmllint disable uncreatable-type
     anchors {
         top: true
         left: true
@@ -16,4 +17,3 @@ PanelWindow { // qmllint disable uncreatable-type
         text: "halooo"
     }
 }
-
