@@ -1,24 +1,23 @@
 import Quickshell
 import QtQuick
 
-PanelWindow // qmllint disable uncreatable-type
+PanelWindow // qmllint disable
 {
     anchors {
-        top: true
-        left: true
-        right: true
+        top: true;
+        left: true;
+        right: true;
     }
 
-    margins
-    {
-        top: 3
-    }
+    margins.top: 3; // qmllint disable
     
-    implicitHeight: 30
+    implicitHeight: 30;
 
-    Text {
-        anchors.centerIn: parent
+    color: "transparent";
 
-        text: "haloooaa"
+    Rectangle {
+        anchors.fill: parent;
+        radius: 5;
+        color: "white";
     }
 }
