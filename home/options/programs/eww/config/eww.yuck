@@ -97,7 +97,6 @@
 
 (defwidget bar []
   (centerbox :orientation "h"
-             :align 
     (box :halign "start"
          :space-evenly false
          :spacing 3
