@@ -99,7 +99,7 @@
   (centerbox :orientation "h"
     (box :halign "start"
          :space-evenly true
-         :spacing 3
+         :spacing 1
       (os-module :class "os-module")
       (separator)
       (clock-module :class "clock-module"))
