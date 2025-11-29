@@ -7,7 +7,7 @@ Rectangle {
     color: "white";
 
     RowLayout {
-        spacing: 3;
+        spacing: 5;
 
         anchors.left: parent.left;
 
