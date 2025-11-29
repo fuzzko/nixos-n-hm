@@ -14,7 +14,6 @@ Rectangle {
         spacing: spacing
 
         anchors.verticalCenter: parent.verticalCenter
-        anchors.fill: parent
 
         ClockModule {}
     }
