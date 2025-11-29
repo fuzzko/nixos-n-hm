@@ -48,9 +48,10 @@ $bg-color: #14262f;
 }
 
 .separator {
+  $margin: 4px;
   background-color: #ffffff;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-top: $margin;
+  margin-bottom: $margin;
 }
 
 .os-icon {
