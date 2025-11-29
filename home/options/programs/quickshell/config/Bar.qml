@@ -23,10 +23,10 @@ Rectangle {
         Revealer {
             implicitHeight: text.implicitHeight
             implicitWidth: text.implicitWidth
-            
-            MouseArea {
-                onClicked: parent.reveal = !parent.reveal
-            }
+
+            HoverHandler {
+                onHoveredChanged: text.opacity = 100
+            }            
             
             reveal: false
 
