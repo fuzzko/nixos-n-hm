@@ -20,7 +20,7 @@ Rectangle {
         anchors.margins: parent.marginLR
         Layout.alignment: Qt.AlignLeft | Qt.AlignCenter
 
-        Item {
+        Revealer {
             implicitHeight: text.implicitHeight
             implicitWidth: text.implicitWidth
 
