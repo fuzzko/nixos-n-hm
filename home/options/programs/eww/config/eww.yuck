@@ -9,7 +9,7 @@
 (defwidget separator []
   (box :class "separator"
        :halign "center"
-       :valign "fill"
+       :valign "fill center"
        :width 2
        :style "border-radius: 50%;"))
 
