@@ -23,9 +23,7 @@ Rectangle {
         Revealer {
             reveal: true
 
-            Text {
-                text: "aaa"
-            }
+            ClockModule {}
         }
     }
 

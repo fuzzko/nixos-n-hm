@@ -11,33 +11,14 @@ Item {
         SlideLeft,
         SlideRight
     }
-    
+
+    property alias container: content.data
     required property bool reveal
     property Transition transitionType: Revealer.TransitionType.CrossFade
     property int duration
     property var easing
 
-    states: [
-        State {
-            name: "reveal"
-            when: revealer.transitionType === Revealer.TransitionType.CrossFade
-
-            PropertyChanges {
-                child.opacity: 0
-            }
-        }
-    ]
-
-    transitions: [
-        Transition {
-            reversible: true
-
-            NumberAnimation {
-                targets: revealer.visibleChildren
-                property: "opacity"
-                easing: easing
-                duration: duration
-            }
-        }
-    ]
+    Item {
+        id: content
+    }
 }
