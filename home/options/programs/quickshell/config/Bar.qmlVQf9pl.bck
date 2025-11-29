@@ -2,8 +2,6 @@ import Quickshell
 import QtQuick
 import QtQuick.Layouts
 
-import "./Modules"
-
 Rectangle {
     readonly property int spacing: 5
     readonly property int marginLR: 4
