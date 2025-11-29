@@ -7,8 +7,6 @@ Item {
         precision: SystemClock.Seconds
     }
 
-    anchors: parent.anchors
-
     Text {
         text: Qt.formatDateTime(clock.date, "hh:mm")
     }
