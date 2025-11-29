@@ -89,8 +89,7 @@
  
 (defwidget sysinfo-module [class]
   (box :class class
-    (dropdown :var reveal_sysinfo
-      e)))
+    (dropdown :var reveal_sysinfo)))
 
 (defwidget os-module [class]
   (box :class class
