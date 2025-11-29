@@ -1,9 +1,13 @@
 import Quickshell
 import QtQuick
 
-QtObject {
+Item {
     SystemClock {
         id: clock
-        precision: 1
+        precision: SystemClock.Seconds
+    }
+
+    Text {
+        text: Qt.formatDateTime(clock.date, "hh:mm")
     }
 }
