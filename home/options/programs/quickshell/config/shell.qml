@@ -23,9 +23,5 @@ PanelWindow // qmllint disable
 
     color: "transparent";
 
-    Rectangle {
-        anchors.fill: parent;
-        radius: 5;
-        color: "white";
-    }
+    Bar {}
 }
