@@ -2,6 +2,7 @@ import Quickshell
 import QtQuick
 
 Item {
+    anchors.centerIn: parent
     
     SystemClock {
         id: clock
