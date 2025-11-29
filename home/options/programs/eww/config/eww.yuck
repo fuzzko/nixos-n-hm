@@ -93,6 +93,7 @@
 (defwidget os-module [class]
   (box :class class
     (label :class "os-icon"
+           :justify "left"
            :text "")))
 
 (defwidget bar []
