@@ -15,9 +15,7 @@ Rectangle {
 
         anchors.verticalCenter: parent.verticalCenter
 
-        ClockModule {
-            Layout.alignment: Qt.AlignCenter
-        }
+        ClockModule {}
     }
 
     RowLayout {
