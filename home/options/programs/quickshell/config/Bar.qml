@@ -23,7 +23,11 @@ Rectangle {
         Revealer {
             reveal: true
 
+            implicitHeight: text.implicitHeight
+            implicitWidth: text.implicitWidth
+
             Text {
+                id: text
                 text: "aaa"
             }
         }
