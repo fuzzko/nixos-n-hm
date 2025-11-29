@@ -7,16 +7,19 @@ Rectangle {
     readonly property int marginLR: 4
     
     anchors.fill: parent
-    radius: 9.5
+    radius: 9.5;
     color: "white"
 
     RowLayout {
         spacing: spacing
 
+        anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
-        anchors.leftMargin: parent.marginLR
+        anchors.leftMargin: parent.marginLR;
 
-        ClockModule {}
+        ClockModule {
+            Layout.alignment: Qt.AlignCenter
+        }
     }
 
     RowLayout {
