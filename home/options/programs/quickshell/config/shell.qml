@@ -8,6 +8,10 @@ PanelWindow // qmllint disable uncreatable-type
         left: true
         right: true
     }
+
+    margins {
+        top: 1
+    }
     
     implicitHeight: 30
 
