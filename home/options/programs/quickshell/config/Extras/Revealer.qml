@@ -18,15 +18,6 @@ Item {
     property int duration
     property var easing
 
-    QtObject {
-        id: previous
-        property var value: ({
-            opacity: content.opacity,
-            x: content.x,
-            y: content.y,
-        })
-    }
-
     Item {
         id: content
         opacity: 0
