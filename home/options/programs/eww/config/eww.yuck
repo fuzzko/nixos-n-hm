@@ -12,7 +12,6 @@
        :valign "center"
        :hexpand false
        :vexpand true
-       :height "95%"
        :width 2
        :style "border-radius: 50%;"))
 
