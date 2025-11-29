@@ -3,6 +3,7 @@ import QtQuick
 import QtQuick.Layouts
 
 import "./Modules"
+import "./Extras"
 
 Rectangle {
     readonly property int spacing: 5
@@ -19,7 +20,11 @@ Rectangle {
         anchors.margins: parent.marginLR
         Layout.alignment: Qt.AlignLeft | Qt.AlignCenter
 
-        ClockModule {}
+        Revealer {
+            reveal: true
+
+            ClockModule {}
+        }
     }
 
     RowLayout {
