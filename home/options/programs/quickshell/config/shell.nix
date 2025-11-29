@@ -10,11 +10,11 @@ let
 in
 pkgs.mkShellNoCC {
   packages = with pkgs; [
-    kdePackages.qtdeclarative
-    quickshell
     (pkgs.writeShellScriptBin "qmlls" ''
       exec ${kdePackages.qtdeclarative}/bin/qmlls -E "$@"
     '')
+    kdePackages.qtdeclarative
+    quickshell
   ];
 
   QML_IMPORT_PATH = makeQmlImportPath (with pkgs; [
