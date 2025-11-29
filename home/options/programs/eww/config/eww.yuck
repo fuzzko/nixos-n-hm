@@ -13,7 +13,7 @@
        :hexpand false
        :vexpand true
        :height "95%"
-       :width "2px"
+       :width 2
        :style "border-radius: 50%;"))
 
 (defwidget clock-module [class]
