@@ -14,6 +14,6 @@ PanelWindow // qmllint disable uncreatable-type
     Text {
         anchors.centerIn: parent
 
-        text: "halooo"
+        text: "haloooaa"
     }
 }
