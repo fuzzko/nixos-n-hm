@@ -14,5 +14,8 @@ Rectangle {
         Text {
             text: "aaa"
         }
+        Text {
+            text: "aaa"
+        }
     }
 }
