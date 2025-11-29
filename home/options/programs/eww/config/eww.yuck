@@ -11,7 +11,7 @@
        :halign "center"
        :valign "fill"
        :width 2
-       :style "border-radius: 50%;"))
+       :style "border-radius: 100%;"))
 
 (defwidget clock-module [class]
   (eventbox :timeout "1s"
