@@ -23,5 +23,7 @@ PanelWindow // qmllint disable
 
     color: "transparent";
 
-    Bar {}
+    Bar {
+        anchors.centerIn: parent
+    }
 }
