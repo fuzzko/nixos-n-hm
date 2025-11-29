@@ -29,13 +29,16 @@ Item {
 
     Item {
         id: content
+        opacity: 0
+        x: root.parent.x
+        y: root.parent.y
 
         states: [
             State {
                 name: "crossfade"
                 when: !root.reveal && root.transitionType == Revealer.TransitionType.CrossFade // qmllint disable
                 PropertyChanges {
-                    content.opacity: 0
+                    content.opacity: 100
                 }
             }
         ]
