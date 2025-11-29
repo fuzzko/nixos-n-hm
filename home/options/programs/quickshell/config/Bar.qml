@@ -18,8 +18,6 @@ Rectangle {
 
     RowLayout {
         spacing: spacing
-
-        anchors.centerIn: parent
     }
 
     RowLayout {
