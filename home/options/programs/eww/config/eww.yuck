@@ -9,9 +9,9 @@
 (defwidget separator []
   (box :class "separator"
        :halign "center"
-       :valign "center"
-       :hexpand true
-       :vexpand false
+       :valign "fill"
+       :hexpand false
+       :vexpand true
        :width 2
        :style "border-radius: 50%;"))
 
