@@ -1,2 +1,6 @@
-:q
+import Quickshell
+
+Root {
+    
+}
 
