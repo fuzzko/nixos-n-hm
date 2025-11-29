@@ -14,11 +14,18 @@ Item {
 
     property alias container: content.data
     required property bool reveal
-    property Transition transitionType: Revealer.TransitionType.CrossFade
+    property Revealer.TransitionType transitionType: Revealer.TransitionType.CrossFade
     property int duration
     property var easing
 
     Item {
         id: content
+
+        states: [
+            State {
+                name: "crossfade"
+                when: reveal && transi
+            }
+        ]
     }
 }
