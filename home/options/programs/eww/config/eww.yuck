@@ -10,7 +10,6 @@
   (box :class "separator"
        :halign "center"
        :valign "fill"
-       :hexpand false
        :width 2
        :style "border-radius: 50%;"))
 
