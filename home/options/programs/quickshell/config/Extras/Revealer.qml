@@ -1,7 +1,7 @@
 import QtQuick
 
 Item {
-    id: revealer
+    id: root
     
     enum TransitionType {
         None,
@@ -17,6 +17,9 @@ Item {
     property Transition transitionType: Revealer.TransitionType.CrossFade
     property int duration
     property var easing
+
+    implicitHeight: content.implicitHeight
+    implicitWidth: content.implicitWidth
 
     Item {
         id: content
