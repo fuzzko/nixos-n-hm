@@ -17,9 +17,7 @@ Rectangle {
         anchors.leftMargin: marginLR /* qmllint disable */ // too lazy to define `id`
         anchors.verticalCenter: parent.verticalCenter
 
-        ClockModule {
-            anchors.centerIn: parent
-        }
+        ClockModule {}
     }
 
     RowLayout {
