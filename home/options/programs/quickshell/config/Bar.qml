@@ -16,7 +16,7 @@ Rectangle {
         anchors.fill: parent
 
         ClockModule {
-            Layout.alignment: Qt.AlignVCenter
+            Layout.alignment: Qt.AlignCenter
         }
     }
 
