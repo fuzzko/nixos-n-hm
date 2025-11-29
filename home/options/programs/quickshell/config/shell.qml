@@ -3,26 +3,25 @@ import QtQuick
 
 PanelWindow // qmllint disable
 {
-    readonly property int marginLR: 9;
+    readonly property int marginLR: 9
 
     anchors {
-        top: true;
-        left: true;
-        right: true;
+        top: true
+        left: true
+        right: true
     }
 
     // qmllint disable
     margins {
-        top: 10;
-        left: marginLR;
-        right: marginLR;
+        top: 10
+        left: marginLR
+        right: marginLR
     }
     // qmllint enable
-    
-    implicitHeight: 30;
 
-    color: "transparent";
+    implicitHeight: 30
 
-    Bar {
-    }
+    color: "transparent"
+
+    Bar {}
 }
