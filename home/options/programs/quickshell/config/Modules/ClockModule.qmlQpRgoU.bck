@@ -1,14 +1,9 @@
 import Quickshell
 import QtQuick
-import QtQuick.Controls
 
 Item {
     implicitHeight: text.implicitHeight
     implicitWidth: text.implicitWidth
-
-    HoverHandler {
-        id: device
-    }
 
     SystemClock {
         id: clock
@@ -19,7 +14,4 @@ Item {
         id: text
         text: Qt.formatDateTime(clock.date, "hh:mm")
     }
-    
-    ToolTip.text: Qt.formatDateTime(clock.date, "dd/MM")
-    ToolTip.visible: device.hovered
 }
