@@ -11,7 +11,7 @@ PanelWindow // qmllint disable uncreatable-type
 
     margins //
     {
-        top: 5
+        top: 3
     }
     
     implicitHeight: 30
