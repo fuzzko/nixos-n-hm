@@ -3,7 +3,7 @@ import QtQuick
 
 PanelWindow // qmllint disable
 {
-    readonly property int marginLR: 8;
+    readonly property int marginLR: 9;
 
     anchors {
         top: true;
