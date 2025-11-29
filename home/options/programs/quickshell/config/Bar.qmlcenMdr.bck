@@ -21,7 +21,7 @@ Rectangle {
         Layout.alignment: Qt.AlignLeft | Qt.AlignCenter
 
         Revealer {
-            reveal: true
+            reveal: false
 
             Text {
                 id: text
