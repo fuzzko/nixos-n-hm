@@ -28,7 +28,7 @@ Rectangle {
                 onHoveredChanged: text.opacity = 100
             }            
             
-            reveal: false
+            reveal: true
 
             Text {
                 id: text
