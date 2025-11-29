@@ -98,7 +98,7 @@
 (defwidget bar []
   (centerbox :orientation "h"
     (box :halign "start"
-         :space-evenly false
+         :space-evenly true
          :spacing 3
       (os-module :class "os-module")
       (separator)
