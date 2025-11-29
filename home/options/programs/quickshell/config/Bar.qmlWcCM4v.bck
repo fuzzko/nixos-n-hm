@@ -10,9 +10,5 @@ Rectangle {
         spacing: 2;
 
         anchors.left: parent.left;
-
-        Text {
-            text: "aaa"
-        }
     }
 }
