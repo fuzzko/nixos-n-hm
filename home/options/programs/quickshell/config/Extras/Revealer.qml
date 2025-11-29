@@ -3,7 +3,7 @@ import QtQuick
 Item {
     id: revealer
     
-    enum Transition {
+    enum TransitionType {
         None,
         CrossFade,
         SlideDown,
@@ -13,22 +13,35 @@ Item {
     }
     
     required property bool reveal
-    property Transition transitionType: Revealer.Transition.CrossFade
+    property Transition transitionType: Revealer.TransitionType.CrossFade
+    property int duration
+    property var easing
     default property alias content: child.children
 
     states: [
         State {
             name: "reveal"
-            when: revealer.transitionType === Revealer.Transition.CrossFade
+            when: revealer.transitionType === Revealer.TransitionType.CrossFade
 
             PropertyChanges {
-                child.opacity: 100
+                child.opacity: 0
+            }
+        }
+    ]
+
+    transitions: [
+        Transition {
+            reversible: true
+            NumberAnimation {
+                target: child
+                property: "opacity"
+                easing: easing
+                duration: duration
             }
         }
     ]
 
     Item {
         id: child
-        
     }
 }
