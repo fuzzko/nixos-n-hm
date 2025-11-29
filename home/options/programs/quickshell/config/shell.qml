@@ -13,7 +13,7 @@ PanelWindow // qmllint disable
 
     // qmllint disable
     margins {
-        top: 3;
+        top: 10;
         left: marginLR;
         right: marginLR;
     }
