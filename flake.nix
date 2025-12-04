@@ -14,7 +14,6 @@
     nix-std.url = "github:chessai/nix-std";
     matui.url = "github:pkulak/matui";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    nix-cwc.url = "github:0komo/nix-cwc";
     zen-browser.url = "github:pfaj/zen-browser-flake";
     niri-flake.url = "github:sodiboo/niri-flake";
     xwayland-satellite.url = "github:Supreeeme/xwayland-satellite";
@@ -24,6 +23,7 @@
     eza-themes.url = "github:eza-community/eza-themes";
     flakelight.url = "github:nix-community/flakelight";
     gh-b.url = "github:joaom00/gh-b/v0.2.3";
+    waterfox.url = "github:0komo/waterfox-flake";
 
     nur.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -32,7 +32,6 @@
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     matui.inputs.nixpkgs.follows = "nixpkgs";
     chaotic.inputs.nixpkgs.follows = "nixpkgs";
-    nix-cwc.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
     niri-flake.inputs.nixpkgs.follows = "nixpkgs";
     xwayland-satellite.inputs.nixpkgs.follows = "nixpkgs";
@@ -45,6 +44,7 @@
     eza-themes.flake = false;
     flakelight.inputs.nixpkgs.follows = "nixpkgs";
     gh-b.flake = false;
+    waterfox.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   nixConfig = {
@@ -75,13 +75,13 @@
       nix-flatpak,
       matui,
       chaotic,
-      nix-cwc,
       zen-browser,
       niri-flake,
       xwayland-satellite,
       kidex,
       wired,
       flakelight,
+      waterfox,
       ...
     }@inputs:
     flakelight ./. (
@@ -95,7 +95,6 @@
 
         withOverlays = [
           nur.overlays.default
-          nix-cwc.overlays.default
           niri-flake.overlays.niri
           (
             final: prev:
@@ -104,6 +103,7 @@
             in
             {
               inherit (nix-search-cli.outputs.packages.${system}) nix-search;
+              inherit (waterfox.packages.${system}) waterfox; 
               xwayland-satellite-unstable = xwayland-satellite.outputs.packages.${system}.xwayland-satellite;
               nixGLPackages = nixGL.outputs.packages.${system};
               matui = matui.packages.${system}.matui;
@@ -131,7 +131,6 @@
               catppuccin.homeModules.catppuccin
               nix-flatpak.homeManagerModules.nix-flatpak
               chaotic.homeManagerModules.default
-              nix-cwc.homeManagerModules.default
               niri-flake.homeModules.niri
               kidex.homeModules.kidex
               wired.homeManagerModules.default
@@ -148,7 +147,6 @@
                 config.propagationModule
                 nix-flatpak.nixosModules.nix-flatpak
                 chaotic.nixosModules.default
-                nix-cwc.nixosModules.default
                 niri-flake.nixosModules.niri
                 ./nixos/hardwares/${x}/configuration.nix
                 ./nixos/hardwares/${x}/hardware-configuration.nix

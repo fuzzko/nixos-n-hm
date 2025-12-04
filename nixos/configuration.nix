@@ -112,19 +112,6 @@ in
     xwayland.enable = true;
   };
 
-  programs.cwc = {
-    enable = true;
-    package = pkgs.cwc.override {
-      luaEnv = pkgs.luajit.withPackages (
-        p: with p; [
-          lgi
-          fennel
-        ]
-      );
-    };
-    withUWSM = true;
-  };
-
   security.pam.services.hyprlock = { };
 
   boot = {
