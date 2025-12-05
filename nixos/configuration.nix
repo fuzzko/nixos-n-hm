@@ -346,4 +346,6 @@ in
 
   programs.niri.enable = true;
   programs.niri.package = pkgs.niri-unstable;
+
+  services.seatd.enable = true;
 }
