@@ -46,8 +46,10 @@ in
     doas-sudo-shim
     zen-browser
 
+    waterfox
+
     # greeter
-    greetd.regreet
+    regreet
 
     # useless things
     openutau
