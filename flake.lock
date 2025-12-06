@@ -914,11 +914,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1764767314,
-        "narHash": "sha256-Ns9ByessgtCjl0Nvzm9j9Bt55XTuqfFQWUamU5Y4ex8=",
+        "lastModified": 1764979387,
+        "narHash": "sha256-j0LsV0JDMjDLY3clTAmOYI244E3J/8xy4up33sUiXqU=",
         "owner": "0komo",
         "repo": "waterfox-flake",
-        "rev": "6de30c1dc456bf5740611d08dd55ca841e973b15",
+        "rev": "5dce0d6de65eb2f4b44118a3b71c85c16f221c4b",
         "type": "github"
       },
       "original": {
