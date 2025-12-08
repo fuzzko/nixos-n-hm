@@ -87,7 +87,7 @@ in
     komo_cache_or_get = ''
       set filename $argv[1]
 
-      if ! test -f $filename; or test (komo_modified_when $filename) -gt 0
+      if ! test -f $filename || test (komo_modified_when $filename) -gt 0
         command $argv[2..] > $filename
       end
 
