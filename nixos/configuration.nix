@@ -164,6 +164,12 @@
       mouse
       palette=soft-black
     '';
+    fonts = [
+      {
+        name = "GohuFont Nerd Font";
+        package = pkgs.nerd-fonts.gohufont;
+      }
+    ];
   };
 
   services.printing = {
