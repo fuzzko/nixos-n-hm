@@ -50,37 +50,18 @@
       obsidian
 
       # For hyprland
-      nemo
-      nemo-preview
-      nemo-fileroller
-      hyprshot
-      hyprpicker
-      hyprsunset
-      hyprsysteminfo
-      playerctl
-      wireplumber
-      clipse
       wl-clipboard
       nushell
-      brightnessctl
 
-      # For CwC
-      app2unit
-
-      # For recording
       kooha
       scrcpy
-      mumble
 
-      # i don't fucking know why i installed these shits but i installed them anyway
       youtube-music
       qview
       openutau
       nchat
-      kdePackages.kdenlive
       audacity
       igrep
-      packet
     ]
   );
 
