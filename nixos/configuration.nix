@@ -307,5 +307,5 @@
     ACTION=="add", SUBSYSTEM=="leds", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/leds/%k/brightness"
   '';
 
-
+  services.desktopManager.cosmic.enable = true;
 }
