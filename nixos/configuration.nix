@@ -307,9 +307,5 @@
     ACTION=="add", SUBSYSTEM=="leds", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/leds/%k/brightness"
   '';
 
-  programs.niri.enable = true;
-  programs.niri.package = pkgs.niri-unstable;
 
-  services.seatd.enable = true;
-  services.seatd.user = "greeter";
 }
