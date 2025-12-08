@@ -7,7 +7,7 @@
         shell = "fish";
         login-shell = true;
 
-        font = "GohuFont 14 Nerd Font:size=10";
+        font = "GohuFont 14 Nerd Font:size=11";
       };
       bell.system = false;
     };
