@@ -63,7 +63,6 @@
   );
 
   home.sessionVariables = {
-    "IGREP_CUSTOM_EDITOR" = "hx {file_name}:{line_number}";
     "SYSTEMD_PAGERSECURE" = "true";
   };
 }
