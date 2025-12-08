@@ -38,38 +38,38 @@
     };
   };
 
-  services.greetd = {
-    enable = true;
-    settings.default_session = {
-      command = "env GTK_USE_PORTAL=0 GDK_DEBUG=no-portals LIBSEAT_BACKEND=logind ${lib.getExe pkgs.cage} -s -mlast -- ${lib.getExe pkgs.regreet}";
-    };
-  };
+  # services.greetd = {
+  #   enable = true;
+  #   settings.default_session = {
+  #     command = "env GTK_USE_PORTAL=0 GDK_DEBUG=no-portals LIBSEAT_BACKEND=logind ${lib.getExe pkgs.cage} -s -mlast -- ${lib.getExe pkgs.regreet}";
+  #   };
+  # };
 
-  programs.regreet = {
-    enable = true;
-    theme = {
-      name = "Graphite-Dark";
-      package = pkgs.graphite-gtk-theme.override {
-        themeVariants = [ "default" ];
-        tweaks = [
-          "rimless"
-          "darker"
-        ];
-      };
-    };
-    cursorTheme = {
-      name = "catppuccin-mocha-yellow-cursors";
-      package = pkgs.catppuccin-cursors.mochaYellow;
-    };
-    iconTheme = {
-    };
-    settings = {
-      background = {
-        path = ../resources/wallpapers/regreet-wallpaper.png;
-        fit = "Contain";
-      };
-    };
-  };
+  # programs.regreet = {
+  #   enable = true;
+  #   theme = {
+  #     name = "Graphite-Dark";
+  #     package = pkgs.graphite-gtk-theme.override {
+  #       themeVariants = [ "default" ];
+  #       tweaks = [
+  #         "rimless"
+  #         "darker"
+  #       ];
+  #     };
+  #   };
+  #   cursorTheme = {
+  #     name = "catppuccin-mocha-yellow-cursors";
+  #     package = pkgs.catppuccin-cursors.mochaYellow;
+  #   };
+  #   iconTheme = {
+  #   };
+  #   settings = {
+  #     background = {
+  #       path = ../resources/wallpapers/regreet-wallpaper.png;
+  #       fit = "Contain";
+  #     };
+  #   };
+  # };
 
   programs.hyprland = {
     enable = true;
@@ -266,9 +266,7 @@
     };
   };
 
-  services.gnome.gnome-keyring = {
-    enable = true;
-  };
+  services.gnome.gnome-keyring.enable = true;
 
   services.flatpak.enable = true;
 
@@ -295,5 +293,5 @@
   '';
 
   services.desktopManager.cosmic.enable = true;
-  services.displayManager.cosmic-greeter.enable = false;
+  services.displayManager.cosmic-greeter.enable = true;
 }
