@@ -238,8 +238,7 @@
 
   fonts.fontDir.enable = true;
   fonts.packages = with pkgs; [
-    departure-nf
-    departure-nf-mono
+    nerd-fonts.gohufont
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
