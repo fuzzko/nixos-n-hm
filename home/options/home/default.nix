@@ -17,9 +17,6 @@
     with pkgs;
     [
       # Fonts
-      (with nerd-fonts; [
-        terminess-ttf
-      ])
       noto-fonts
       noto-fonts-color-emoji
 
