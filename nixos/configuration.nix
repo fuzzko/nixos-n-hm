@@ -4,34 +4,6 @@
   config,
   ...
 }:
-let
-  departure-nf = pkgs.departure-mono.overrideAttrs {
-    pname = "departure-nerd-font";
-    nativeBuildInputs = [ pkgs.nerd-font-patcher ];
-    installPhase = ''
-      runHook preInstall
-
-      nerd-font-patcher -c *.otf -out $out/share/fonts/otf
-      nerd-font-patcher -c *.woff -out $out/share/woff || true
-      nerd-font-patcher -c *.woff2 -out $out/share/woff2 || true
-
-      runHook postInstall
-    '';
-  };
-  departure-nf-mono = pkgs.departure-mono.overrideAttrs {
-    pname = "departure-nerd-font";
-    nativeBuildInputs = [ pkgs.nerd-font-patcher ];
-    installPhase = ''
-      runHook preInstall
-
-      nerd-font-patcher --mono -c *.otf -out $out/share/fonts/otf
-      nerd-font-patcher --mono -c *.woff -out $out/share/woff || true
-      nerd-font-patcher --mono -c *.woff2 -out $out/share/woff2 || true
-
-      runHook postInstall
-    '';
-  };
-in
 {
   system.stateVersion = "24.05";
 
@@ -180,23 +152,18 @@ in
     };
   };
 
+  services.kmscon.enable = true;
   services.kmscon = {
-    enable = true;
+    autologinUser = "komo";
+    useXkbConfig = true;
     hwRender = true;
-    fonts = [
-      {
-        name = "DepartureMono Nerd Font Mono";
-        package = departure-nf-mono;
-      }
-      {
-        name = "Noto fonts";
-        package = pkgs.noto-fonts;
-      }
-      {
-        name = "Noto fonts (Emoji)";
-        package = pkgs.noto-fonts-color-emoji;
-      }
-    ];
+    extraConfig = ''
+      listen
+      font-size=11
+      login=/usr/bin/env fish -l
+      mouse
+      palette=soft-black
+    '';
   };
 
   services.printing = {
