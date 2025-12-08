@@ -129,15 +129,9 @@
     };
   };
 
-  programs.nm-applet.enable = true;
-
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
-  };
-
-  services.blueman = {
-    enable = true;
   };
 
   time.timeZone = "Asia/Makassar";
