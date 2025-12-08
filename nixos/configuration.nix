@@ -165,7 +165,7 @@
     '';
     fonts = [
       {
-        name = "GohuFont Nerd Font";
+        name = "GohuFont 14 Nerd Font";
         package = pkgs.nerd-fonts.gohufont;
       }
     ];
