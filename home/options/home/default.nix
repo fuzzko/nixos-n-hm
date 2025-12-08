@@ -63,22 +63,7 @@
   );
 
   home.sessionVariables = {
-    "BROWSER" = "zen";
     "IGREP_CUSTOM_EDITOR" = "hx {file_name}:{line_number}";
     "SYSTEMD_PAGERSECURE" = "true";
-  };
-
-  home.keyboard.options = [
-    "caps:none"
-    "shift:both_capslock_cancel"
-  ];
-
-  home.pointerCursor.enable = true;
-  home.pointerCursor.package = pkgs.catppuccin-cursors;
-  home.pointerCursor.name = "Catppuccin Mocha Blue";
-  home.pointerCursor.size = 15;
-  home.pointerCursor = {
-    hyprcursor.enable = true;
-    x11.enable = true;
   };
 }
