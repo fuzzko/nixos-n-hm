@@ -158,7 +158,6 @@
     useXkbConfig = true;
     hwRender = true;
     extraConfig = ''
-      listen
       font-size=11
       login=/usr/bin/env fish -l
       mouse
@@ -216,13 +215,6 @@
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-hyprland
-      xdg-desktop-portal-gtk
-    ];
-    configPackages = [
-      config.programs.hyprland.package
-    ];
   };
 
   users.users.komo = {
