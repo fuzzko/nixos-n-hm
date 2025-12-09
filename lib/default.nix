@@ -86,6 +86,8 @@ rec {
 
   fromBoolToNumStr = b: if b then "1" else "0";
 
+  getPathFromPwd = path: toString /${builtins.getEnv "PWD"}/${path};
+
   hypr = {
     mkBeziers =
       attrs:
@@ -111,7 +113,9 @@ rec {
 
     percentXY = x: y: "${toString x}%, ${toString y}%";
 
-    rgb = r: g: b: "rgb(${toString r}, ${toString g}, ${toString b})";
+    rgb =
+      r: g: b:
+      "rgb(${toString r}, ${toString g}, ${toString b})";
 
     textCmd = updateMs: cmd: "cmd[update:${toString updateMs}] ${cmd}";
   };
