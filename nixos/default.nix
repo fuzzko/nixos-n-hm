@@ -4,7 +4,7 @@ let
   
   nixosSystem =
     args:
-    import ./nixos/lib/eval-config.nix (
+    import /${npins.nixpkgs}/nixos/lib/eval-config.nix (
       {
         lib = nixpkgs.lib;
         # Allow system to be set modularly in nixpkgs.system.
