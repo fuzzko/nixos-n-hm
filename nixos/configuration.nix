@@ -166,8 +166,8 @@ in
     useXkbConfig = true;
     hwRender = true;
     extraConfig = ''
+      listen
       font-size=11
-      login=/usr/bin/env fish -l
       mouse
       palette=soft-black
     '';
