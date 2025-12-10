@@ -2,6 +2,8 @@ init() {
   nixpkgs_pin=$(nix-instantiate --eval ./npins -A nixpkgs.outPath |tr -d \")
   export NIX_PATH="nixpkgs=${nixpkgs_pin}:nixos-config=${PWD}/nixos/configuration.nix"
 
+  export NIX_CONFIG="$(< nix.conf)"
+
   : "${config:=$(task.get-system-name)}"
   export config
 }
