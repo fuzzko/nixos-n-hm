@@ -7,8 +7,7 @@ let
     args:
     import "${npins.nixpkgs}/nixos/lib/eval-config.nix" (
       {
-        lib = nixpkgs.lib;
-        system = null;
+        inherit (nixpkgs) lib system;
 
         modules = args.modules ++ [
           (
