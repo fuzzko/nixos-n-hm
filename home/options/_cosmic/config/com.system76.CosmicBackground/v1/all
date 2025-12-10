@@ -1,14 +1,8 @@
 (
     output: "all",
-    source: Color(Gradient((
-        colors: [
-            (0.584, 0.769, 0.988),
-            (0.063, 0.165, 0.298),
-        ],
-        radius: 180.0,
-    ))),
+    source: Path("/home/komo/Downloads/The_Manager_of_La_Manchaland_Don_Quixote_Full_waifu2x_art_noise1_scale.png"),
     filter_by_theme: false,
-    rotation_frequency: 900,
+    rotation_frequency: 300,
     filter_method: Lanczos,
     scaling_mode: Zoom,
     sampling_method: Alphanumeric,
