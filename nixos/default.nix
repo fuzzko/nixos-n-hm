@@ -1,13 +1,14 @@
 let
   npins = import ../npins;
-  nixpkgs = import npins.nixpkgs { };
+  pkgs = import npins.nixpkgs { };
   
   nixosSystem =
     # ugly modified of lib.nixosSystem from the flake
     args:
     import "${npins.nixpkgs}/nixos/lib/eval-config.nix" (
       {
-        inherit (nixpkgs) lib system;
+        inherit (pkgs) lib;
+        inherit (pkgs.stdenv.hostPlatform) system;
 
         modules = args.modules ++ [
           (
