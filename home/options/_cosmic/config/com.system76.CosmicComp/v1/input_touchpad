@@ -2,7 +2,7 @@
     state: Enabled,
     acceleration: Some((
         profile: Some(Adaptive),
-        speed: 0.2506703436571913,
+        speed: 0.06682081742327817,
     )),
     click_method: Some(Clickfinger),
     scroll_config: Some((
