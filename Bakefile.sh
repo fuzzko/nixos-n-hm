@@ -1,78 +1,31 @@
-#!/usr/bin/env bash
+init() {
+  nixpkgs_pin=$(nix-instantiate --eval ./npins -A nixpkgs.outPath |tr -d \")
+  export NIX_PATH="nixpkgs=${nixpkgs_pin}:nixos-config=${PWD}/nixos/configuration.nix"
 
-export NIXPKGS_ALLOW_UNFREE=1
-export NIXPKGS_ALLOW_INSECURE=1
-
-nix() {
-  command nix --extra-experimental-features "nix-command flakes" "$@"
-}
-export -f nix
-
-task.init-hm-gcroots() {
-  local srcdir
-  local gcroots="/nix/var/nix/gcroots/per-user/${USER}"
-  srcdir=$(nix eval --expr '{ json }: (builtins.fromJSON json)' --argstr json "$(nix flake archive --json --dry-run)" path --raw)
-  if [[ ! -d ~/.local/state/home-manager/gcroots/current-home && ! -d "${srcdir}" ]]; then
-    bake.warn "Cannot initialize a gcroot for home-manager"
-  else
-    sudo mkdir -p "/nix/var/nix/gcroots/per-user/${USER}"
-    [[ -d "${gcroots}/current-home" ]] &&
-      sudo rm -f "${gcroots}/current-home"
-    [[ -d "${gcroots}/nixcfg-srcdir" ]] &&
-      sudo rm -f "${gcroots}/nixcfg-srcdir"
-    sudo ln -s ~/.local/state/home-manager/gcroots/current-home "${gcroots}/current-home"
-    sudo ln -s "${srcdir}" "${gcroots}/nixcfg-srcdir"
-  fi
+  : "${config:=$(task.get-system-name)}"
+  export config
 }
 
-task.switch-hm() {
-  nh home switch -c komo -b backup . -- --impure "$@" --show-trace --keep-going
-  ./bake init-hm-gcroots
+task.get-system-name() {
+  local product_name=/sys/devices/virtual/dmi/id/product_name 
+  
+  [[ ! -f "${product_name}" ]] &&
+    { echo unknown; exit; }
+
+  sed 's| |-|g' "${product_name}"
 }
 
-task.switch-nixos() {
-  local config
-  config="$(
-    sed 's| |-|g' /sys/devices/virtual/dmi/id/product_name
-  )"
-  [[ "$1" != "-" ]] && config="$1"
-  shift
-
-  nh os switch -a -H "$config" . -- --impure "$@" --show-trace --keep-going
+task.dry-build() {
+  nixos-rebuild dry-build \
+    --show-trace
 }
 
-task.boot-nixos() {
-  local config
-  config="$(
-    sed 's| |-|g' /sys/devices/virtual/dmi/id/product_name
-  )"
-  [[ "$1" != "-" ]] && config="$1"
-  shift
- 
-  nh os boot -a -H "$config" . -- --impure "$@" --show-trace --keep-going
-}
-
-task.switch-nix-on-droid() {
-  local config="${1:-$(getprop ro.product.vendor.model)}"
-  nix-on-droid switch --flake .#"$config"
-}
-
-task.list-nixos() {
-  echo
-  echo "NixOS configurations:"
-  grep nixosConfigurations flake.nix |
-    awk -F' ' '/.+/ { print $1; }' |
-    awk -F. '/.+/ { print $2; }' |
-    sed 's/^/ - /'
-  echo
-}
-
-task.list-nix-on-droid() {
-  echo
-  echo "nix-on-droid configurations:"
-  grep nixOnDroidConfigurations flake.nix |
-    awk -F' ' '/.+/ { print $1; }' |
-    awk -F. '/.+/ { print $2; }' |
-    sed 's/^/ - /'
-  echo
+task.switch() {
+  nixos-rebuild switch \
+    --log-format internal-json \
+    --verbose \
+    --keep-going \
+    --show-trace \
+    "$@" \
+    |& nom
 }

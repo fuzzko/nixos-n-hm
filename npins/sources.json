@@ -1,0 +1,56 @@
+{
+  "pins": {
+    "flake-compat": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "NixOS",
+        "repo": "flake-compat"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v1.1.0",
+      "revision": "ff81ac966bb2cae68946d5ed5fc4994f96d0ffec",
+      "url": "https://api.github.com/repos/NixOS/flake-compat/tarball/v1.1.0",
+      "hash": "19d2z6xsvpxm184m41qrpi1bplilwipgnzv9jy17fgw421785q1m"
+    },
+    "nix-flatpak": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "gmodena",
+        "repo": "nix-flatpak"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v0.6.0",
+      "revision": "5e54c3ca05a7c7d968ae1ddeabe01d2a9bc1e177",
+      "url": "https://api.github.com/repos/gmodena/nix-flatpak/tarball/v0.6.0",
+      "hash": "0s3mpb28rcmma29vv884fi3as926bfszhn7v8n74bpnp5qg5a1c8"
+    },
+    "nixpkgs": {
+      "type": "Channel",
+      "name": "nixpkgs-unstable",
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre909321.677fbe97984e/nixexprs.tar.xz",
+      "hash": "0i4jyr0xv8i90gxil1s36yqas4qfnp52bwr02fdx90chp31kchzv"
+    },
+    "nyx": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "chaotic-cx",
+        "repo": "nyx"
+      },
+      "branch": "nyxpkgs-unstable",
+      "submodules": false,
+      "revision": "aacb796ccd42be1555196c20013b9b674b71df75",
+      "url": "https://github.com/chaotic-cx/nyx/archive/aacb796ccd42be1555196c20013b9b674b71df75.tar.gz",
+      "hash": "11b8v7rf0lzv83z2p3qf4pngxz2v7vsmdw9iv2pb1f0wr7k7h5zg"
+    }
+  },
+  "version": 5
+}

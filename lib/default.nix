@@ -12,6 +12,10 @@ let
     elemAt
     length
     ;
+
+  npins = import ../npins;
+
+  flake-compat = import npins.flake-compat;
 in
 rec {
   # returns a list of files inside a directory
@@ -29,6 +33,8 @@ rec {
 
   # same as `filter (p: ...) (filesInDir path)`
   filterFilesInDir = filterLambda: dir: filter filterLambda (filesInDir dir);
+
+  getFlakeFromNpin = npin: (flake-compat { src = npin.outPath; }).outputs;
 
   # wraps list of packages or attrs
   wrapFishPlugins =

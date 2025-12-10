@@ -1,5 +1,9 @@
 { lib, ... }:
 {
+  imports = [
+    ./hardware-configuration.nix
+  ];
+  
   services.kanata.enable = lib.mkForce false;
 
   networking.networkmanager = {
