@@ -1,6 +1,6 @@
 (
     output: "all",
-    source: Path("/home/komo/Downloads/The_Manager_of_La_Manchaland_Don_Quixote_Full_waifu2x_art_noise1_scale.png"),
+    source: Path("/home/.config/cosmic/com.system76.CosmicSettings.Wallpaper/v1/wallpaper.png"),
     filter_by_theme: false,
     rotation_frequency: 300,
     filter_method: Lanczos,
