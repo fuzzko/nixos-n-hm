@@ -1,10 +1,12 @@
 let
   npins = import ../npins;
+  nixpkgs = import npins.nixpkgs { };
+  
   nixosSystem =
     args:
     import ./nixos/lib/eval-config.nix (
       {
-        lib = final;
+        lib = nixpkgs.lib;
         # Allow system to be set modularly in nixpkgs.system.
         # We set it to null, to remove the "legacy" entrypoint's
         # non-hermetic default.
@@ -25,7 +27,7 @@ let
               ...
             }:
             {
-              config.nixpkgs.flake.source = self.outPath;
+              config.nixpkgs.flake.source = npins.nixpkgs.outPath;
             }
           )
         ];
