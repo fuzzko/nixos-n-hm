@@ -2,6 +2,11 @@
     (
         modifiers: [
             Super,
+        ],
+    ): Disable,
+    (
+        modifiers: [
+            Super,
             Shift,
         ],
         key: "m",
