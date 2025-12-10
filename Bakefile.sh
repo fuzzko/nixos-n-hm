@@ -24,8 +24,6 @@ task.dry-build() {
 
 task.dry-activate() {
   nixos-rebuild dry-activate \
-    --log-format internal-json \
-    --verbose \
     --keep-going \
     --show-trace \
     "$@" \
@@ -34,8 +32,6 @@ task.dry-activate() {
 
 task.switch() {
   nixos-rebuild switch \
-    --log-format internal-json \
-    --verbose \
     --keep-going \
     --show-trace \
     "$@" \
@@ -44,8 +40,6 @@ task.switch() {
 
 task.boot() {
   nixos-rebuild boot \
-    --log-format internal-json \
-    --verbose \
     --keep-going \
     --show-trace \
     "$@" \
