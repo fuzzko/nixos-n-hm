@@ -37,14 +37,14 @@
     ),
     divider: (
         red: 1.0,
-        green: 0.5140421,
-        blue: 0.47034544,
+        green: 0.46499145,
+        blue: 0.42249638,
         alpha: 0.2,
     ),
     on: (
         red: 1.0,
-        green: 0.5140421,
-        blue: 0.47034544,
+        green: 0.46499145,
+        blue: 0.42249638,
         alpha: 1.0,
     ),
     disabled: (
@@ -55,8 +55,8 @@
     ),
     on_disabled: (
         red: 0.5,
-        green: 0.25702104,
-        blue: 0.23517272,
+        green: 0.23249573,
+        blue: 0.21124819,
         alpha: 0.5,
     ),
     border: (
