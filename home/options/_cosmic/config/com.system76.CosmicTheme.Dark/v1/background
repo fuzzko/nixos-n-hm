@@ -45,13 +45,13 @@
         divider: (
             red: 0.8945331,
             green: 0.8945334,
-            blue: 0.8945327,
+            blue: 0.89453256,
             alpha: 0.2,
         ),
         on: (
             red: 0.8945331,
             green: 0.8945334,
-            blue: 0.8945327,
+            blue: 0.89453256,
             alpha: 1.0,
         ),
         disabled: (
@@ -63,7 +63,7 @@
         on_disabled: (
             red: 0.8945331,
             green: 0.8945334,
-            blue: 0.8945327,
+            blue: 0.89453256,
             alpha: 0.65,
         ),
         border: (
@@ -88,7 +88,7 @@
     on: (
         red: 0.7913617,
         green: 0.7913619,
-        blue: 0.7913613,
+        blue: 0.7913612,
         alpha: 1.0,
     ),
     small_widget: (
