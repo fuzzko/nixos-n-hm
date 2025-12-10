@@ -5,4 +5,10 @@
         speed: 0.2506703436571913,
     )),
     click_method: Some(Clickfinger),
+    tap_config: Some((
+        enabled: true,
+        button_map: Some(LeftRightMiddle),
+        drag: true,
+        drag_lock: false,
+    )),
 )
