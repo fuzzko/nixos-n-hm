@@ -5,7 +5,7 @@ let
   nixosSystem =
     # ugly modified of lib.nixosSystem from the flake
     args:
-    import /${npins.nixpkgs}/nixos/lib/eval-config.nix (
+    import "${npins.nixpkgs}/nixos/lib/eval-config.nix" (
       {
         lib = nixpkgs.lib;
         system = null;
