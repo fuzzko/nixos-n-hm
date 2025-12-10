@@ -3,7 +3,7 @@ let
   pkgs = import npins.nixpkgs { };
   
   nixosSystem =
-    # ugly modified of lib.nixosSystem from the flake
+    # ugly modification of lib.nixosSystem from the flake
     args:
     import "${npins.nixpkgs}/nixos/lib/eval-config.nix" (
       {
