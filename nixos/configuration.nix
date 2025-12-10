@@ -40,7 +40,7 @@ in
     udisks
     doas-sudo-shim
 
-    waterfox
+    (pkgs.callPackage "${npins.waterfox-flake}/package.nix" { })
 
     # useless things
     openutau
