@@ -39,7 +39,6 @@ in
     efibootmgr
     udisks
     doas-sudo-shim
-    zen-browser
 
     waterfox
 
