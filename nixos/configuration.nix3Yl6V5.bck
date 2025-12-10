@@ -20,6 +20,9 @@
 
     waterfox
 
+    # greeter
+    regreet
+
     # useless things
     openutau
   ];
