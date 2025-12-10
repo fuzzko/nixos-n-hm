@@ -50,6 +50,19 @@
       "revision": "aacb796ccd42be1555196c20013b9b674b71df75",
       "url": "https://github.com/chaotic-cx/nyx/archive/aacb796ccd42be1555196c20013b9b674b71df75.tar.gz",
       "hash": "11b8v7rf0lzv83z2p3qf4pngxz2v7vsmdw9iv2pb1f0wr7k7h5zg"
+    },
+    "waterfox-flake": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "0komo",
+        "repo": "waterfox-flake"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "c4039dd8b32a16ef6a73503aae7735a0b59d66e4",
+      "url": "https://github.com/0komo/waterfox-flake/archive/c4039dd8b32a16ef6a73503aae7735a0b59d66e4.tar.gz",
+      "hash": "0fvg0s99ajzca6pkpbr0c0c9wc0nalm64a004v7510vhbpvl8lvw"
     }
   },
   "version": 5
