@@ -9,11 +9,11 @@ let
     getFlake
     getEnv
     ;
-    
+
   config = getEnv "config";
 
   komoLib = import ../lib lib;
-  
+
   npins = import ../npins;
 in
 {
@@ -27,7 +27,7 @@ in
   nixpkgs.config = {
     allowUnfree = true;
   };
-  
+
   system.stateVersion = "24.05";
 
   networking.hostName = "gudboye";
@@ -90,13 +90,6 @@ in
     };
   };
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
-  security.pam.services.hyprlock = { };
-
   boot = {
     loader = {
       grub.enable = lib.mkForce false;
@@ -150,8 +143,8 @@ in
     };
   };
 
+  hardware.bluetooth.enable = true;
   hardware.bluetooth = {
-    enable = true;
     powerOnBoot = true;
   };
 
