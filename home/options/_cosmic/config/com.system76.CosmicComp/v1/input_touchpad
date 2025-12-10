@@ -5,6 +5,12 @@
         speed: 0.2506703436571913,
     )),
     click_method: Some(Clickfinger),
+    scroll_config: Some((
+        method: Some(TwoFinger),
+        natural_scroll: Some(true),
+        scroll_button: None,
+        scroll_factor: None,
+    )),
     tap_config: Some((
         enabled: true,
         button_map: Some(LeftRightMiddle),
