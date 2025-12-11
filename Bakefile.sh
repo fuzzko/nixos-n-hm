@@ -9,12 +9,14 @@ init() {
 }
 
 task.get-system-name() {
-  local product_name=/sys/devices/virtual/dmi/id/product_name 
-  
-  [[ ! -f "${product_name}" ]] &&
-    { echo unknown; exit; }
-
-  sed 's| |-|g' "${product_name}"
+  nix eval --raw --expr "
+    let
+      npins = import ./npins { };
+      pkgs = import npins.nixpkgs { };
+      komoLib = import ./lib pkgs.lib;
+    in
+    komoLib.systemProductName
+  "
 }
 
 task.dry-build() {
