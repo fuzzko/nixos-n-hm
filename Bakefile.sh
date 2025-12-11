@@ -9,15 +9,14 @@ init() {
 }
 
 task.get-system-name() {
-  printf "System name: "
-  nix eval --raw --impure --expr "
+  nix eval --raw --impure --expr '
     let
       npins = import ./npins { };
       pkgs = import npins.nixpkgs { };
       komoLib = import ./lib pkgs.lib;
     in
-    komoLib.systemProductName
-  "
+    "System name: " + komoLib.systemProductName
+  '
 }
 
 task.dry-build() {
