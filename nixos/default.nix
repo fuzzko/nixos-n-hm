@@ -8,6 +8,5 @@ komoLib.nixosSystem {
   modules = [
     ./configuration.nix
     ./hardwares/${komoLib.systemProductName}/configuration.nix
-    ./hardwares/${komoLib.systemProductName}/hardware-configuration.nix
   ];
 }
