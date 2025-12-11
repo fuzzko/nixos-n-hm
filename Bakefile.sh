@@ -28,7 +28,7 @@ task.test() {
       --dry
     )
 
-  nh os test "${flags[@]}" "$@"
+  nh os test "${flags[@]}" ${args}
 }
 
 task.switch() {
@@ -46,7 +46,7 @@ task.switch() {
       --dry
     )
 
-  nh os switch "${flags[@]}" "$@"
+  nh os switch "${flags[@]}" ${args}
 }
 
 task.boot() {
@@ -65,5 +65,5 @@ task.boot() {
       --dry
     )
 
-  nh os build "${flags[@]}" "$@"
+  nh os build "${flags[@]}" ${args}
 }
