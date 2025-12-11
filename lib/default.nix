@@ -11,6 +11,11 @@ let
     mapAttrs
     elemAt
     length
+    pathExists
+    replaceStrings
+    attrNames
+    attrValues
+    listToAttrs
     ;
 
   npins = import ../npins;
@@ -37,6 +42,32 @@ rec {
   # get a flake outputs from npin
   getFlakeFromNpin = npin: (flake-compat { src = npin.outPath; }).outputs;
 
+  npinsToFlakes =
+    npins:
+    let
+      npinNames = attrNames npins;
+      filteredNpins = filter (
+        name:
+        let
+          npin = npins.${name};
+        in
+        pathExists "${npin}/flake.nix"
+      ) npinNames;
+      transformedNpins = listToAttrs (
+        map (
+          name:
+          let
+            npin = npins.${name};
+          in
+          {
+            inherit name;
+            value = (flake-compat { src = npin.outPath; }).outputs;
+          }
+        ) filteredNpins
+      );
+    in
+    transformedNpins;
+
   # poor man's modification of lib.nixosSystem
   nixosSystem =
     pkgs: args:
@@ -60,8 +91,8 @@ rec {
   systemProductName =
     let
       path = /sys/devices/virtual/dmi/id/product_name;
-      rawName = if builtins.pathExists path then builtins.readFile path else null;
-      name = if rawName != null then builtins.replaceStrings [ " " ] [ "-" ] rawName else null;
+      rawName = if pathExists path then readFile path else null;
+      name = if rawName != null then replaceStrings [ " " ] [ "-" ] rawName else null;
     in
     name;
 
