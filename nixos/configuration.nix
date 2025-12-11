@@ -16,10 +16,6 @@ in
     npinsFlake.nyx.nixosModules.default
   ];
 
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
-
   system.stateVersion = "24.05";
 
   networking.hostName = "gudboye";
