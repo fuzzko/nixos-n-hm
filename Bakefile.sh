@@ -24,7 +24,7 @@ task.test() {
     --show-trace
     --impure
     --keep-going
-    --file ./nixos
+    --file .
   )
 
   [[ -v dry ]] &&
@@ -42,7 +42,7 @@ task.switch() {
     --show-trace
     --impure
     --keep-going
-    --file ./nixos
+    --file .
   )
 
   [[ -v dry ]] &&
@@ -61,7 +61,7 @@ task.boot() {
     --impure
     --use-substitutes
     --keep-going
-    --file ./nixos
+    --file .
   )
 
   [[ -v dry ]] &&
