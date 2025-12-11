@@ -42,6 +42,7 @@ rec {
   # get a flake outputs from npin
   getFlakeFromNpin = npin: (flake-compat { src = npin.outPath; }).outputs;
 
+  # filters npins and turn them into flakes outputs
   npinsToFlakes =
     npins:
     let
