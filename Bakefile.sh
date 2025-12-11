@@ -1,16 +1,20 @@
 init() {
+  local pkgs_path="$(nix eval --raw --impure --expr '(import ./npins).nixpkgs.outPath')"
+  
   export NIX_CONFIG="$(< nix.conf)"
+  export NIX_PATH="nixpkgs=${pkgs_path}"
 }
 
 task.get-system-name() {
   nix eval --raw --impure --expr '
     let
-      npins = import ./npins { };
+      npins = import ./npins;
       pkgs = import npins.nixpkgs { };
       komoLib = import ./lib pkgs.lib;
     in
     "System name: " + komoLib.systemProductName
   '
+  echo
 }
 
 task.test() {

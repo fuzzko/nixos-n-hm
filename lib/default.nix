@@ -14,7 +14,6 @@ let
     pathExists
     replaceStrings
     attrNames
-    attrValues
     listToAttrs
     ;
 
@@ -62,7 +61,7 @@ rec {
           in
           {
             inherit name;
-            value = (flake-compat { src = npin.outPath; }).outputs;
+            value = getFlakeFromNpin npin;
           }
         ) filteredNpins
       );
@@ -71,19 +70,14 @@ rec {
 
   # poor man's modification of lib.nixosSystem
   nixosSystem =
-    pkgs: args:
+    {
+      pkgs,
+      modules,
+    }@args:
     import "${pkgs.path}/nixos/lib/eval-config.nix" (
       {
         inherit (pkgs) lib;
-        inherit (pkgs.stdenv.hostPlatform) system;
-
-        modules = args.modules ++ [
-          (attrs: {
-            config.nixpkgs = {
-              inherit pkgs;
-            };
-          })
-        ];
+        inherit pkgs modules;
       }
       // removeAttrs args [ "modules" ]
     );
@@ -95,7 +89,7 @@ rec {
       rawName = if pathExists path then readFile path else null;
       name = if rawName != null then replaceStrings [ " " ] [ "-" ] rawName else null;
     in
-    name;
+    lib.trim name;
 
   # wraps list of packages or attrs
   wrapFishPlugins =
