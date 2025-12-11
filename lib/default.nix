@@ -37,26 +37,30 @@ rec {
   getFlakeFromNpin = npin: (flake-compat { src = npin.outPath; }).outputs;
 
   nixosSystem =
-    pkgs:
-    args:
+    pkgs: args:
     import "${pkgs}/nixos/lib/eval-config.nix" (
       {
         inherit (pkgs) lib;
         inherit (pkgs.stdenv.hostPlatform) system;
 
         modules = args.modules ++ [
-          (
-            attrs:
-            {
-              config.nixpkgs = {
-                inherit pkgs;
-              };
-            }
-          )
+          (attrs: {
+            config.nixpkgs = {
+              inherit pkgs;
+            };
+          })
         ];
       }
       // removeAttrs args [ "modules" ]
     );
+
+  systemProductName =
+    let
+      path = /sys/devices/virtual/dmi/id/product_name;
+      rawName = if builtins.pathExists path then builtins.readFile path else null;
+      name = if rawName != null then builtins.replaceStrings [ " " ] [ "-" ] rawName else null;
+    in
+    name;
 
   # wraps list of packages or attrs
   wrapFishPlugins =
