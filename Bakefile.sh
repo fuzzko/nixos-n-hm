@@ -1,11 +1,5 @@
 init() {
-  nixpkgs_pin=$(nix-instantiate --eval ./npins -A nixpkgs.outPath |tr -d \")
-  export NIX_PATH="nixpkgs=${nixpkgs_pin}:nixos-config=${PWD}/nixos/configuration.nix"
-
   export NIX_CONFIG="$(< nix.conf)"
-
-  : "${config:=$(task.get-system-name)}"
-  export config
 }
 
 task.get-system-name() {
@@ -19,31 +13,59 @@ task.get-system-name() {
   '
 }
 
-task.dry-build() {
-  nixos-rebuild dry-build \
+task.test() {
+  local flags=(
+    --ask
+    --log-format multiline
     --show-trace
-}
+    --impure
+    --use-substitutes
+    --keep-going
+    --file ./nixos
+  )
 
-task.dry-activate() {
-  nixos-rebuild dry-activate \
-    --keep-going \
-    --show-trace \
-    "$@" \
-    |& nom
+  [[ -v dry ]] &&
+    flags+=(
+      --dry
+    )
+
+  nh os test "${flags[@]}" "$@"
 }
 
 task.switch() {
-  nixos-rebuild switch \
-    --keep-going \
-    --show-trace \
-    "$@" \
-    |& nom
+  local flags=(
+    --ask
+    --log-format multiline
+    --show-trace
+    --impure
+    --use-substitutes
+    --keep-going
+    --file ./nixos
+  )
+
+  [[ -v dry ]] &&
+    flags+=(
+      --dry
+    )
+
+  nh os switch "${flags[@]}" "$@"
 }
 
 task.boot() {
-  nixos-rebuild boot \
-    --keep-going \
-    --show-trace \
-    "$@" \
-    |& nom
+  local flags=(
+    --ask
+    --log-format multiline
+    --show-trace
+    --impure
+    --use-substitutes
+    --keep-going
+    --file ./nixos
+  )
+
+  [[ -v dry ]] &&
+    flags+=(
+      --dry
+    )
+
+  nh os build "${flags[@]}" "$@"
 }
