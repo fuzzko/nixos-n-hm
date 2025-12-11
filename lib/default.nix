@@ -72,7 +72,7 @@ rec {
   # poor man's modification of lib.nixosSystem
   nixosSystem =
     pkgs: args:
-    import "${pkgs.source}/nixos/lib/eval-config.nix" (
+    import "${pkgs.path}/nixos/lib/eval-config.nix" (
       {
         inherit (pkgs) lib;
         inherit (pkgs.stdenv.hostPlatform) system;
