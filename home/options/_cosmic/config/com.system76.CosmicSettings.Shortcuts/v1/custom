@@ -6,9 +6,4 @@
         ],
         key: "m",
     ): Minimize,
-    (
-        modifiers: [
-            Super,
-        ],
-    ): Disable,
 }
