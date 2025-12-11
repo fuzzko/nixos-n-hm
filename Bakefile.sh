@@ -19,7 +19,6 @@ task.test() {
     --log-format multiline
     --show-trace
     --impure
-    --use-substitutes
     --keep-going
     --file ./nixos
   )
@@ -38,7 +37,6 @@ task.switch() {
     --log-format multiline
     --show-trace
     --impure
-    --use-substitutes
     --keep-going
     --file ./nixos
   )
