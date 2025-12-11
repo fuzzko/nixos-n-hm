@@ -1,17 +1,1 @@
-[
-    (
-        output: (
-            name: "VGA-1",
-            edid: Some((
-                manufacturer: ('G', 'S', 'M'),
-                product: 23243,
-                serial: Some(267648),
-                manufacture_week: 5,
-                manufacture_year: 2019,
-                model_year: None,
-            )),
-        ),
-        tiling_enabled: true,
-        id: Some("1c194bd"),
-    ),
-]
+[]
