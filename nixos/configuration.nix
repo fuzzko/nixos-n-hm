@@ -1,27 +1,19 @@
 {
   pkgs,
   lib,
-  config,
   ...
 }:
 let
-  inherit (builtins)
-    getFlake
-    getEnv
-    ;
-
-  config = getEnv "config";
-
   komoLib = import ../lib lib;
 
   npins = import ../npins;
+  npinsFlake = komoLib.npinsToFlakes npins;
 in
 {
   imports = [
-    ./hardwares/${config}/configuration.nix
     "${npins.nix-flatpak}/modules/nixos.nix"
     # TODO: move helix-nightly out of nyx
-    (komoLib.getFlakeFromNpin npins.nyx).nixosModules.default
+    npinsFlake.nyx.nixosModules.default
   ];
 
   nixpkgs.config = {
