@@ -36,6 +36,33 @@ rec {
 
   getFlakeFromNpin = npin: (flake-compat { src = npin.outPath; }).outputs;
 
+  nixosSystem =
+    pkgs:
+    args:
+    import "${pkgs}/nixos/lib/eval-config.nix" (
+      {
+        inherit (pkgs) lib;
+        inherit (pkgs.stdenv.hostPlatform) system;
+
+        modules = args.modules ++ [
+          (
+            {
+              config,
+              pkgs,
+              lib,
+              ...
+            }:
+            {
+              config.nixpkgs = {
+                inherit pkgs;
+              };
+            }
+          )
+        ];
+      }
+      // removeAttrs args [ "modules" ]
+    );
+
   # wraps list of packages or attrs
   wrapFishPlugins =
     x:
