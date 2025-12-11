@@ -9,7 +9,7 @@ init() {
 }
 
 task.get-system-name() {
-  nix eval --raw --expr "
+  nix eval --raw --impure --expr "
     let
       npins = import ./npins { };
       pkgs = import npins.nixpkgs { };
