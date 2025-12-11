@@ -34,8 +34,10 @@ rec {
   # same as `filter (p: ...) (filesInDir path)`
   filterFilesInDir = filterLambda: dir: filter filterLambda (filesInDir dir);
 
+  # get a flake outputs from npin
   getFlakeFromNpin = npin: (flake-compat { src = npin.outPath; }).outputs;
 
+  # poor man's modification of lib.nixosSystem
   nixosSystem =
     pkgs: args:
     import "${pkgs}/nixos/lib/eval-config.nix" (
@@ -54,6 +56,7 @@ rec {
       // removeAttrs args [ "modules" ]
     );
 
+  # product name of current system
   systemProductName =
     let
       path = /sys/devices/virtual/dmi/id/product_name;
