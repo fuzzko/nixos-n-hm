@@ -9,6 +9,7 @@ init() {
 }
 
 task.get-system-name() {
+  printf "System name: "
   nix eval --raw --impure --expr "
     let
       npins = import ./npins { };
