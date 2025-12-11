@@ -5,5 +5,9 @@ let
   komoLib = import ../lib pkgs.lib;
 in
 komoLib.nixosSystem {
-  modules = [ ];
+  modules = [
+    ./configuration.nix
+    ./hardwares/${komoLib.systemProductName}/configuration.nix
+    ./hardwares/${komoLib.systemProductName}/hardware-configuration.nix
+  ];
 }
