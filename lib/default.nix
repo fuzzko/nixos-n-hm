@@ -46,7 +46,7 @@ rec {
 
         modules = args.modules ++ [
           (
-            _:
+            attrs:
             {
               config.nixpkgs = {
                 inherit pkgs;
