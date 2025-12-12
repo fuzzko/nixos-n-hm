@@ -11,13 +11,13 @@ let
 in
 {
   imports = [
+    "${npins.home-manager}/nixos"
     "${npins.nix-flatpak}/modules/nixos.nix"
     # TODO: move helix-nightly out of nyx
     npinsFlake.nyx.nixosModules.default
   ];
 
   system.stateVersion = "24.05";
-
   networking.hostName = "gudboye";
 
   environment.systemPackages = with pkgs; [
@@ -200,37 +200,10 @@ in
     pulse.enable = true;
   };
 
-  services.openssh = {
-    enable = true;
-  };
-
-  services.udisks2 = {
-    enable = true;
-  };
-
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
   };
-
-  users.users.komo = {
-    isNormalUser = true;
-    description = "Komo";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "video"
-      "i2c"
-    ];
-  };
-
-  fonts.fontDir.enable = true;
-  fonts.packages = with pkgs; [
-    nerd-fonts.gohufont
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-color-emoji
-  ];
 
   programs.gnupg.agent = {
     enable = true;
