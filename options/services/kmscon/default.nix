@@ -1,4 +1,6 @@
-{pkgs, ...}: {  services.kmscon.enable = true;
+{ pkgs, ... }:
+{
+  services.kmscon.enable = true;
   services.kmscon = {
     autologinUser = "komo";
     useXkbConfig = true;
@@ -16,5 +18,4 @@
       }
     ];
   };
-
 }
