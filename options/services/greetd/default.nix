@@ -1,5 +1,6 @@
-{...}:
-{  services.greetd = {
+{ pkgs, lib, ... }:
+{
+  services.greetd = {
     enable = true;
     settings.default_session = {
       command = "env GTK_USE_PORTAL=0 GDK_DEBUG=no-portals ${lib.getExe pkgs.cage} -s -mlast -- ${lib.getExe pkgs.regreet}";
