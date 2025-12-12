@@ -10,7 +10,7 @@ let
   npinsFlake = komoLib.npinsToFlakes npins;
 in
 {
-  imports = [
+  imports = (komoLib.filterFilesInDir (x: if (builtins.baseNameOf x) == "default.nix" then builtins.trace "${toString x}\n" true else false) ./options) ++ [
     "${npins.home-manager}/nixos"
     "${npins.nix-flatpak}/modules/nixos.nix"
     # TODO: move helix-nightly out of nyx
