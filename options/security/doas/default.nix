@@ -1,4 +1,5 @@
-{...}: {
+{ lib, ... }:
+{
   security.sudo.enable = lib.mkForce false;
   security.doas = {
     enable = true;
