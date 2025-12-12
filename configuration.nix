@@ -10,16 +10,12 @@ let
   npinsFlake = komoLib.npinsToFlakes npins;
 in
 {
-  imports =
-    (komoLib.filterFilesInDir (
-      x: (builtins.baseNameOf x) == "default.nix"
-    ) ./options)
-    ++ [
-      "${npins.home-manager}/nixos"
-      "${npins.nix-flatpak}/modules/nixos.nix"
-      # TODO: move helix-nightly out of nyx
-      npinsFlake.nyx.nixosModules.default
-    ];
+  imports = (komoLib.filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./options) ++ [
+    "${npins.home-manager}/nixos"
+    "${npins.nix-flatpak}/modules/nixos.nix"
+    # TODO: move helix-nightly out of nyx
+    npinsFlake.nyx.nixosModules.default
+  ];
 
   system.stateVersion = "24.05";
   networking.hostName = "gudboye";
