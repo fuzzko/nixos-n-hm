@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ lib, ... }:
 {
   security.sudo.enable = lib.mkForce false;
   security.doas = {
@@ -10,8 +10,4 @@
       }
     ];
   };
-
-  environment.systemPackages = with pkgs; [
-    doas-sudo-shim
-  ];
 }
