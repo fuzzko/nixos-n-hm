@@ -11,5 +11,5 @@
     ];
   };
 
-  home-manager.users.komo = x;
+  home-manager.users.komo = import ../../../../home/home.nix;
 }
