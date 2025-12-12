@@ -1,13 +1,9 @@
 let
   npins = import ../npins;
   pkgs = import npins.nixpkgs { };
-
-  komoLib = import ./lib pkgs.lib;
+  hmLib = import "${npins.home-manager}/lib" { inherit (pkgs) lib; };
 in
-komoLib.hmConfig {
+hmLib.homeManagerConfiguration {
   inherit pkgs;
-
-  modules = [
-    ./home.nix
-  ];
+  modules = [];
 }
