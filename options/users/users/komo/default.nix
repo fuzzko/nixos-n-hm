@@ -13,7 +13,7 @@
 
   home-manager.users.komo = { ... }: {
     imports = [
-      ./_home-manager
+      ./_home-manager.nix
       ../../../../home/home.nix
     ];
   };
