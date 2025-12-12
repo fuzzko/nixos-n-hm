@@ -12,7 +12,7 @@ in
 {
   imports =
     (komoLib.filterFilesInDir (
-      x: if (builtins.baseNameOf x) == "default.nix" then builtins.trace "${toString x}\n" true else false
+      x: (builtins.baseNameOf x) == "default.nix"
     ) ./options)
     ++ [
       "${npins.home-manager}/nixos"
