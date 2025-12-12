@@ -12,7 +12,7 @@ in
     "-wrap"
   ];
 
-  programs.git.extraConfig = {
+  programs.git.settings = {
     core.pager = config.home.sessionVariables.PAGER;
   };
 
