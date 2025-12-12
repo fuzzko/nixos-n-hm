@@ -21,12 +21,8 @@ in
   networking.hostName = "gudboye";
 
   environment.systemPackages = with pkgs; [
-    git
-    refind
     gptfdisk
     efibootmgr
-    udisks
-    doas-sudo-shim
 
     (pkgs.callPackage "${npins.waterfox-flake}/package.nix" { }) # waterfox
 
