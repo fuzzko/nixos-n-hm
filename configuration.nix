@@ -270,8 +270,6 @@ in
 
   services.flatpak.enable = true;
 
-  services.cloudflare-warp.enable = true;
-
   security.sudo.enable = lib.mkForce false;
   security.doas = {
     enable = true;
