@@ -16,6 +16,19 @@
       "url": "https://api.github.com/repos/NixOS/flake-compat/tarball/v1.1.0",
       "hash": "19d2z6xsvpxm184m41qrpi1bplilwipgnzv9jy17fgw421785q1m"
     },
+    "home-manager": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "home-manager"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "39cb677ed9e908e90478aa9fe5f3383dfc1a63f3",
+      "url": "https://github.com/nix-community/home-manager/archive/39cb677ed9e908e90478aa9fe5f3383dfc1a63f3.tar.gz",
+      "hash": "1g5j7khbkwm6m3j5z2apb40hjig5xv4nfl2icjmbbiwb190fymhy"
+    },
     "nix-flatpak": {
       "type": "GitRelease",
       "repository": {
