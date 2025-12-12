@@ -4,9 +4,9 @@
   ...
 }:
 let
-  komoLib = import ../lib lib;
+  komoLib = import ./lib lib;
 
-  npins = import ../npins;
+  npins = import ./npins;
   npinsFlake = komoLib.npinsToFlakes npins;
 in
 {
