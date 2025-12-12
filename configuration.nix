@@ -196,20 +196,6 @@ in
     xdgOpenUsePortal = true;
   };
 
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
-
-  programs.adb = {
-    enable = true;
-  };
-
-  programs.appimage = {
-    enable = true;
-    binfmt = true;
-  };
-
   programs.nh = {
     enable = true;
     clean = {
@@ -217,20 +203,6 @@ in
       extraArgs = "--keep 2 --keep-since 3d";
     };
   };
-
-  services.kanata = {
-    enable = true;
-    keyboards = {
-      home-row = {
-        extraDefCfg = ''
-          process-unmapped-keys yes
-        '';
-        config = builtins.readFile ./configs/kanata/asdf.lisp;
-      };
-    };
-  };
-
-  services.gnome.gnome-keyring.enable = true;
 
   services.flatpak.enable = true;
 
