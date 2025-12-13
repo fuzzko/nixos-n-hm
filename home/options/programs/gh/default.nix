@@ -23,6 +23,8 @@ in
       extraExtensions
     ];
 
+  programs.gh.gitCredentialHelper.enable = true;
+  
   programs.gh.settings = {
     prefer_editor_prompt = "enabled";
     aliases = {
