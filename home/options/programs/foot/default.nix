@@ -1,16 +1,20 @@
 { pkgs, ... }:
 {
   programs.foot.enable = true;
-  programs.foot = {
-    settings = {
-      main = {
-        shell = "fish";
-        login-shell = true;
 
-        font = "GohuFont 14 Nerd Font:size=11";
-      };
-      bell.system = false;
+  programs.foot.settings = {
+    main = {
+      shell = "fish";
+      login-shell = true;
+
+      font = "GohuFont 14 Nerd Font:size=11";
     };
+
+    colors.alpha = 0.85;
+
+    csd.preferred = "csd";
+    
+    bell.system = false;
   };
 
   home.packages = with pkgs; [
