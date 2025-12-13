@@ -9,7 +9,7 @@
       [
         nushell
         nixfmt-rfc-style
-        nil
+        nixd
       ]
     );
   };
@@ -102,76 +102,83 @@
     ];
   };
 
-  programs.helix.settings = {
-    theme = lib.mkForce "ao";
+  programs.helix.settings.theme = lib.mkForce "ao";
+  programs.helix.settings.editor = {
+    true-color = true;
 
-    editor = {
-      true-color = true;
-      mouse = false;
-      scroll-lines = 2;
-      line-number = "relative";
-      cursorline = true;
-      bufferline = "multiple";
-      color-modes = true;
-      default-line-ending = "lf";
-      popup-border = "all";
-      preview-completion-insert = false;
-      completion-trigger-len = 2;
-      shell = [
-        "nu"
-        "--stdin"
-        "-c"
-      ];
+    mouse = false;
+
+    scroll-lines = 2;
+    line-number = "relative";
+
+    cursorline = true;
+
+    bufferline = "multiple";
+
+    color-modes = true;
+
+    default-line-ending = "lf";
+
+    popup-border = "all";
+
+    preview-completion-insert = false;
+    completion-trigger-len = 2;
+
+    shell = [
+      "nu"
+      "--stdin"
+      "-c"
+    ];
+
+  };
+
+  statusline = {
+    mode = {
+      normal = "NOR";
+      insert = "INS";
+      select = "SEL";
     };
+    center = [
+      "read-only-indicator"
+      "file-base-name"
+      "file-modification-indicator"
+    ];
+    left = [
+      "mode"
+      "spacer"
+      "spinner"
+      "spacer"
+      "diagnostics"
+    ];
+    right = [
+      "file-type"
+      "file-encoding"
+      "position"
+      "version-control"
+    ];
+  };
 
-    editor.statusline = {
-      mode = {
-        normal = "NOR";
-        insert = "INS";
-        select = "SEL";
-      };
-      center = [
-        "read-only-indicator"
-        "file-base-name"
-        "file-modification-indicator"
-      ];
-      left = [
-        "mode"
-        "spacer"
-        "spinner"
-        "spacer"
-        "diagnostics"
-      ];
-      right = [
-        "file-type"
-        "file-encoding"
-        "position"
-        "version-control"
-      ];
-    };
+  indent-guides = {
+    render = true;
+    character = "╎";
+  };
 
-    editor.indent-guides = {
-      render = true;
-      character = "╎";
-    };
+  soft-wrap = {
+    enable = true;
+    max-wrap = 25;
+    max-indent-retain = 0;
+  };
 
-    editor.soft-wrap = {
-      enable = true;
-      max-wrap = 25;
-      max-indent-retain = 0;
-    };
+  end-of-line-diagnostics = "warning";
+  inline-diagnostics = {
+    cursor-line = "error";
+  };
 
-    editor.end-of-line-diagnostics = "warning";
-    editor.inline-diagnostics = {
-      cursor-line = "error";
-    };
-
-    keys.normal = {
-      "C-m" = {
-        s = "save_selection";
-        "." = "jump_forward";
-        "," = "jump_backward";
-      };
+  programs.helix.settings.keys.normal = {
+    "C-m" = {
+      s = "save_selection";
+      "." = "jump_forward";
+      "," = "jump_backward";
     };
   };
 }
