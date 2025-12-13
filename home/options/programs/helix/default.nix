@@ -111,6 +111,8 @@
     scroll-lines = 2;
     line-number = "relative";
 
+    cursor_shape.insert = "underline";
+    cursor_shape.select = "hidden";
     cursorline = true;
 
     bufferline = "multiple";
@@ -159,6 +161,7 @@
     indent-guides = {
       render = true;
       character = "╎";
+      skip-levels = 1;
     };
 
     soft-wrap = {
@@ -167,10 +170,20 @@
       max-indent-retain = 0;
     };
 
-    end-of-line-diagnostics = "warning";
+    end-of-line-diagnostics = "error";
     inline-diagnostics = {
-      cursor-line = "error";
+      cursor-line = "warning";
+      other-lines = "hint";
     };
+
+    file-explorer = {
+      follow-symlinks = true;
+      ignore = true;
+      git-ignore = true;
+      git-exclude = true;
+    };
+
+    word-completion.trigger-length = 4;
   };
 
   programs.helix.settings.keys.normal = {
