@@ -17,6 +17,29 @@ task.get-system-name() {
   echo
 }
 
+task.edit-option() {
+  local for="$1" path="$2"
+
+  case "${for}" in
+    nixos)
+      path="options/${path}";;
+    home)
+      path="home/options/${path}";;
+    *)
+      bake.die "unknown '${for}', choose between 'home' or 'nixos'"
+  esac
+
+  local default_nix="${path}/default.nix"
+
+  if [[ -f "${default_nix}" ]]; then
+    "${EDITOR}" "${default_nix}"
+    exit "$?"
+  fi
+
+  mkdir -p "${path}"
+  "${EDITOR}" "${default_nix}"
+}
+
 task.test() {
   local flags=(
     --ask
