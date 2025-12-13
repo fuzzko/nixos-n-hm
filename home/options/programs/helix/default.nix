@@ -130,48 +130,48 @@
       "-c"
     ];
 
-  statusline = {
-    mode = {
-      normal = "NOR";
-      insert = "INS";
-      select = "SEL";
+    statusline = {
+      mode = {
+        normal = "NOR";
+        insert = "INS";
+        select = "SEL";
+      };
+      center = [
+        "read-only-indicator"
+        "file-base-name"
+        "file-modification-indicator"
+      ];
+      left = [
+        "mode"
+        "spacer"
+        "spinner"
+        "spacer"
+        "diagnostics"
+      ];
+      right = [
+        "file-type"
+        "file-encoding"
+        "position"
+        "version-control"
+      ];
     };
-    center = [
-      "read-only-indicator"
-      "file-base-name"
-      "file-modification-indicator"
-    ];
-    left = [
-      "mode"
-      "spacer"
-      "spinner"
-      "spacer"
-      "diagnostics"
-    ];
-    right = [
-      "file-type"
-      "file-encoding"
-      "position"
-      "version-control"
-    ];
-  };
 
-  indent-guides = {
-    render = true;
-    character = "╎";
-  };
+    indent-guides = {
+      render = true;
+      character = "╎";
+    };
 
-  soft-wrap = {
-    enable = true;
-    max-wrap = 25;
-    max-indent-retain = 0;
-  };
+    soft-wrap = {
+      enable = true;
+      max-wrap = 25;
+      max-indent-retain = 0;
+    };
 
-  end-of-line-diagnostics = "warning";
-  inline-diagnostics = {
-    cursor-line = "error";
+    end-of-line-diagnostics = "warning";
+    inline-diagnostics = {
+      cursor-line = "error";
+    };
   };
-  }
 
   programs.helix.settings.keys.normal = {
     "C-m" = {
