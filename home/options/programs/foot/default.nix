@@ -10,7 +10,7 @@
       font = "GohuFont 14 Nerd Font:size=11";
     };
 
-    colors.alpha = 0.85;
+    colors.alpha = .85;
 
     csd.preferred = "csd";
     
