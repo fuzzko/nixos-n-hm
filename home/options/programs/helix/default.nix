@@ -130,8 +130,6 @@
       "-c"
     ];
 
-  };
-
   statusline = {
     mode = {
       normal = "NOR";
@@ -173,6 +171,7 @@
   inline-diagnostics = {
     cursor-line = "error";
   };
+  }
 
   programs.helix.settings.keys.normal = {
     "C-m" = {
