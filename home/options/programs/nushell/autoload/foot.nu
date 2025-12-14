@@ -1,0 +1,3 @@
+## Nushell integration for Foot
+
+
