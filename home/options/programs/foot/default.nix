@@ -13,7 +13,7 @@
 
     colors.alpha = .85;
 
-    csd.preferred = "none";
+    csd.size = 0; # hide title bar
     
     bell.system = false;
   };
