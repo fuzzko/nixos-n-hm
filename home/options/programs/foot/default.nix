@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   programs.foot.enable = true;
+  programs.foot.server.enable = true;
 
   programs.foot.settings = {
     main = {
@@ -12,7 +13,7 @@
 
     colors.alpha = .85;
 
-    csd.preferred = "csd";
+    csd.preferred = "none";
     
     bell.system = false;
   };
