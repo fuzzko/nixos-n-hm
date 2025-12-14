@@ -26,8 +26,8 @@ in
 
     (pkgs.callPackage "${npins.waterfox-flake}/package.nix" { }) # waterfox
 
-    # useless things
     openutau
+    dissent
   ];
 
   nix = {
