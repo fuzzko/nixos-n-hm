@@ -1,9 +1,9 @@
 ## Nushell integration for Foot
 
-$env.config.hooks.env_change.PWD = $env.config.hooks.env_change.PWD? | default []
-
 if $nu.is-interactive and $env.TERM == foot {
   let hostname = (sys host).hostname
+
+  $env.config.hooks.env_change.PWD = $env.config.hooks.env_change.PWD? | default []
 
   # https://codeberg.org/dnkl/foot/wiki#spawning-new-terminal-instances-in-the-current-working-directory  
   $env.config.hooks.env_change.PWD ++= [{
