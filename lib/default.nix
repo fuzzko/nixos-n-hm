@@ -146,6 +146,4 @@ rec {
     input;
 
   fromBoolToNum = b: if b then 1 else 0;
-
-  getPathFromPwd = path: toString /${builtins.getEnv "PWD"}/${path};
 }
