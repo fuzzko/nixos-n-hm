@@ -40,7 +40,7 @@ task.edit-option() {
   "${EDITOR}" "${default_nix}"
 }
 
-task.test() {
+task.build() {
   local flags=(
     --ask
     --log-format multiline
@@ -55,7 +55,7 @@ task.test() {
       --dry
     )
 
-  nh os test "${flags[@]}" ${args}
+  nh os build "${flags[@]}" ${args}
 }
 
 task.switch() {
