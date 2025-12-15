@@ -8,5 +8,5 @@ in
     ../modules/hm/moor
   ];
 
-  home.stateVersion = "24.05";
+  home.stateVersion = lib.trivial.release;
 }
