@@ -1,14 +1,10 @@
-{
-  config,
-  lib,
-  ...
-}:
+{...}:
 let
-  inherit (config.lib) komo;
+  komoLib = import ../lib {};
 in
 {
   # A simple business logic to import all configs in ./options, you should check that dir too
-  imports = (komo.filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./options) ++ [
+  imports = (komoLib.filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./options) ++ [
     ../modules/hm/moor
   ];
 

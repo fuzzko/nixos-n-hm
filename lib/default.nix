@@ -145,39 +145,7 @@ rec {
     assert input.locked.type == "github";
     input;
 
-  fromBoolToNumStr = b: if b then "1" else "0";
+  fromBoolToNum = b: if b then 1 else 0;
 
   getPathFromPwd = path: toString /${builtins.getEnv "PWD"}/${path};
-
-  hypr = {
-    mkBeziers =
-      attrs:
-      mapAttrs (
-        bezierName: xys:
-        assert length xys == 4;
-        let
-          xys' = map toString xys;
-        in
-        "${bezierName}, ${elemAt xys' 0}, ${elemAt xys' 1}, ${elemAt xys' 2}, ${elemAt xys' 3}"
-      ) attrs;
-
-    mkAnimations =
-      attrs:
-      mapAttrs (
-        animName: option:
-        "${animName},"
-        + "${fromBoolToNumStr (option.enable or true)},"
-        + "${toString option.speed},"
-        + "${option.curve}"
-        + (if option ? style then ",${option.style}" else "")
-      ) attrs;
-
-    percentXY = x: y: "${toString x}%, ${toString y}%";
-
-    rgb =
-      r: g: b:
-      "rgb(${toString r}, ${toString g}, ${toString b})";
-
-    textCmd = updateMs: cmd: "cmd[update:${toString updateMs}] ${cmd}";
-  };
 }

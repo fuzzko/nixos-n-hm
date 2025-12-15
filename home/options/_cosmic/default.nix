@@ -4,5 +4,5 @@ let
   komoLib = homeLib.komo;
 in
 {
-  xdg.configFile."cosmic".source = homeLib.file.mkOutOfStoreSymlink (komoLib.getPathFromPwd "home/options/_cosmic/config");
+  xdg.configFile."cosmic".source = homeLib.file.mkOutOfStoreSymlink (toString ./config);
 }
