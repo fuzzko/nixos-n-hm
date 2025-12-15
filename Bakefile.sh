@@ -52,7 +52,7 @@ task.delete-option() {
       bake.die "unknown '${for}', choose between 'home' or 'nixos'"
   esac
 
-  rm -fr "${path}"
+  rm -frI "${path}"
 }
 
 task.build() {
