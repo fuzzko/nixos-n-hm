@@ -11,14 +11,12 @@
     };
     registry.nixpkgs = {
       from = {
-        id = "nixpkgs";
         type = "indirect";
+        id = "nixpkgs";
       };
       to = {
-        owner = "NixOS";
-        repo = "nixpkgs";
-        ref = (import ../../../npins).nixpkgs.url;
-        type = "github";
+        type = "tarball";
+        inherit ((import ../../../npins).nixpkgs) url;
       };
     };
   };
