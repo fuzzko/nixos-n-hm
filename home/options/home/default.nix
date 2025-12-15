@@ -4,6 +4,8 @@
   ...
 }:
 {
+  home.stateVersion = lib.trivia.release;
+
   home.packages = lib.flatten (
     with pkgs;
     [
