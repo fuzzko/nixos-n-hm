@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   nix = {
     package = pkgs.lixPackageSets.latest.lix;
@@ -7,7 +7,6 @@
         "nix-command"
         "flakes"
       ];
-      allowed-users = [ config.home.username ];
       auto-optimise-store = true;
     };
     registry.nixpkgs = {
@@ -18,7 +17,7 @@
       to = {
         owner = "NixOS";
         repo = "nixpkgs";
-        ref = (builtins.fromJSON (builtins.readFile ../../../flake.lock)).nodes.nixpkgs.locked.rev;
+        ref = (import ../../../npins).nixpkgs.url;
         type = "github";
       };
     };
