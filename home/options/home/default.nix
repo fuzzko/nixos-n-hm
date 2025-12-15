@@ -1,18 +1,9 @@
 {
-  config,
   lib,
   pkgs,
   ...
 }:
 {
-  programs.home-manager.enable = true;
-  home.stateVersion = "24.05";
-
-  home = {
-    username = "komo";
-    homeDirectory = /home/${config.home.username};
-  };
-
   home.packages = lib.flatten (
     with pkgs;
     [
