@@ -5,11 +5,6 @@
     "zls.json".source = ../extras/zls.json;
   };
 
-  caches.cachix = [
-    "nix-community"
-    "mbekkomo"
-  ];
-
   nixGL = {
     packages = pkgs.nixGLPackages;
     installScripts = [ "mesa" ];
