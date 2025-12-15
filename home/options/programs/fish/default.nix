@@ -167,30 +167,30 @@ in
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
 
-  programs.eza.enable = true;
-  programs.eza = {
-    theme =
-      let
-        themeName = "frosty";
+  # programs.eza.enable = true;
+  # programs.eza = {
+  #   theme =
+  #     let
+  #       themeName = "frosty";
 
-        input = komo.getFlakeInputGithub "eza-themes";
-        src = pkgs.fetchFromGitHub {
-          inherit (input.locked) owner repo rev;
-          hash = input.locked.narHash;
-        };
-      in
-      komo.fromYAML pkgs (readFile "${src}/themes/${themeName}.yml");
+  #       input = komo.getFlakeInputGithub "eza-themes";
+  #       src = pkgs.fetchFromGitHub {
+  #         inherit (input.locked) owner repo rev;
+  #         hash = input.locked.narHash;
+  #       };
+  #     in
+  #     komo.fromYAML pkgs (readFile "${src}/themes/${themeName}.yml");
 
-    icons = true;
-    colors = "auto";
-    extraOptions = [
-      "--classify=auto"
-      "--sort=type"
-      "--git-ignore"
-      "--git"
-      "--header"
-    ];
-  };
+  #   icons = true;
+  #   colors = "auto";
+  #   extraOptions = [
+  #     "--classify=auto"
+  #     "--sort=type"
+  #     "--git-ignore"
+  #     "--git"
+  #     "--header"
+  #   ];
+  # };
 
   programs.ripgrep.enable = true;
   programs.ripgrep.arguments = [
