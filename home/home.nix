@@ -1,6 +1,6 @@
-{...}:
+{ lib, ... }:
 let
-  komoLib = import ../lib {};
+  komoLib = import ../lib lib;
 in
 {
   # A simple business logic to import all configs in ./options, you should check that dir too
