@@ -136,14 +136,5 @@ rec {
     end = true;
   };
 
-  getFlakeInputGithub =
-    s:
-    let
-      flakeLock = fromJSON (readFile ../flake.lock);
-      input = flakeLock.nodes.${s};
-    in
-    assert input.locked.type == "github";
-    input;
-
   fromBoolToNum = b: if b then 1 else 0;
 }
