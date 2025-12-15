@@ -6,6 +6,11 @@ in
 hmLib.homeManagerConfiguration {
   inherit pkgs;
   modules = [
+    ({ ...}: {
+      home.stateVersion = "26.05";
+      home.username = builtins.getEnv "USER";
+      home.homeDirectory = builtins.getEnv "HOME";
+    })
     ./home.nix
   ];
 }
