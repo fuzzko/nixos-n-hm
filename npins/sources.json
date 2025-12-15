@@ -45,6 +45,19 @@
       "url": "https://api.github.com/repos/gmodena/nix-flatpak/tarball/v0.6.0",
       "hash": "0s3mpb28rcmma29vv884fi3as926bfszhn7v8n74bpnp5qg5a1c8"
     },
+    "nixGL": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "nixGL"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "b6105297e6f0cd041670c3e8628394d4ee247ed5",
+      "url": "https://github.com/nix-community/nixGL/archive/b6105297e6f0cd041670c3e8628394d4ee247ed5.tar.gz",
+      "hash": "1zv3bshk0l4hfh1s7s3jzwjxl0nqqcvc4a3kydd3d4lgh7651d3x"
+    },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
