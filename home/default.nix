@@ -5,5 +5,7 @@ let
 in
 hmLib.homeManagerConfiguration {
   inherit pkgs;
-  modules = [];
+  modules = [
+    ./home.nix
+  ];
 }
