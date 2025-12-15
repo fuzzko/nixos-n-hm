@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   nix = {
-    package = pkgs.lixPackageSets.latest.lix;
+    package = lib.mkDefault pkgs.lixPackageSets.latest.lix;
     settings = {
       experimental-features = [
         "nix-command"
