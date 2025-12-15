@@ -40,6 +40,21 @@ task.edit-option() {
   "${EDITOR}" "${default_nix}"
 }
 
+task.delete-option() {
+  local for="$1" path="$2"
+  
+  case "${for}" in
+    nixos)
+      path="options/${path}";;
+    home)
+      path="home/options/${path}";;
+    *)
+      bake.die "unknown '${for}', choose between 'home' or 'nixos'"
+  esac
+
+  rm -fr "${path}"
+}
+
 task.build() {
   local flags=(
     --ask
