@@ -70,7 +70,7 @@ task.build() {
       --dry
     )
 
-  nh os build "${flags[@]}" ${args}
+  nh os build "${flags[@]}" "$@"
 }
 
 task.switch() {
@@ -88,7 +88,7 @@ task.switch() {
       --dry
     )
 
-  nh os switch "${flags[@]}" ${args}
+  nh os switch "${flags[@]}" "$@"
 }
 
 task.boot() {
@@ -107,5 +107,5 @@ task.boot() {
       --dry
     )
 
-  nh os build "${flags[@]}" ${args}
+  nh os build "${flags[@]}" "$@"
 }
