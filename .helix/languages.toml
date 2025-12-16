@@ -1,0 +1,7 @@
+[language-server.nixd.config]
+nixpkgs.expr = "import (import ./npins).nixpkgs { }"
+formatting.command = ["nixfmt"]
+
+[language-server.nixd.config.options]
+nixos.expr = "(import ./.).options"
+home-manager.expr = "(import ./home).options"
