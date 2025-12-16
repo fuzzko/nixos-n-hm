@@ -1,6 +1,13 @@
-{ ... }:
+{ npins, lib, ... }:
 let
-  npins = import ../../../../npins;
+  inherit (builtins)
+    readFile
+    split
+    ;
+
+  inherit (lib)
+    last
+    ;
 in
 {
   programs.nushell.enable = true;
@@ -11,7 +18,8 @@ in
     mkdir $autoload
     cp ${toString ./autoload}/* $autoload
 
-
     source ${toString ./config.nu}
   '';
+
+  home.sessionVariables.LS_COLORS = last (split " " (readFile "${npins.LS_COLORS}/lscolors.csh"));
 }
