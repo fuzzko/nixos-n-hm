@@ -1,5 +1,18 @@
 {
   "pins": {
+    "LS_COLORS": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "trapd00r",
+        "repo": "LS_COLORS"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "810ce8cac886ac50e75d84fb438b549a1f9478ee",
+      "url": "https://github.com/trapd00r/LS_COLORS/archive/810ce8cac886ac50e75d84fb438b549a1f9478ee.tar.gz",
+      "hash": "0dkfilaad2yarzjahbbb6vl417iyyqi803zpj991lbl4gf9cvk1h"
+    },
     "flake-compat": {
       "type": "GitRelease",
       "repository": {
