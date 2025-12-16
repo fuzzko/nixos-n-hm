@@ -10,6 +10,7 @@ let
 in
 komoLib.nixosSystem {
   inherit pkgs;
+  specialArgs.npins = npins;
   modules = [
     ./configuration.nix
     ./hardwares/${komoLib.systemProductName}/configuration.nix
