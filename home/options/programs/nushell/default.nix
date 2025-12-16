@@ -3,6 +3,7 @@ let
   inherit (builtins)
     readFile
     split
+    match
     ;
 
   inherit (lib)
@@ -21,5 +22,10 @@ in
     source ${toString ./config.nu}
   '';
 
-  home.sessionVariables.LS_COLORS = last (split " " (readFile "${npins.LS_COLORS}/lscolors.csh"));
+  home.sessionVariables.LS_COLORS =
+    let
+      escapedVal = last (split " " (readFile "${npins.LS_COLORS}/lscolors.csh"));
+      actualVal = last (match "'(.+)'" escapedVal);
+    in
+    actualVal;
 }
