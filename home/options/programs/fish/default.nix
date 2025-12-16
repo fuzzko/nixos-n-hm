@@ -158,9 +158,4 @@ in
 
   ## extra clis
 
-  home.packages = with pkgs; [
-    gum
-    glow
-    gut
-  ];
 }
