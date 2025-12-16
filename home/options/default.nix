@@ -4,9 +4,4 @@
   xdg.configFile = {
     "zls.json".source = ../extras/zls.json;
   };
-
-  nixGL = {
-    packages = pkgs.nixGLPackages;
-    installScripts = [ "mesa" ];
-  };
 }

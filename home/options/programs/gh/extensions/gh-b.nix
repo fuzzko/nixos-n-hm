@@ -1,23 +1,18 @@
 pkgs:
 let
-  komo = import ../../../../../lib pkgs.lib;
+  komoLib = import ../../../../../lib pkgs.lib;
+  npins = import ../../../../../npins;
   
   inherit (pkgs)
     buildGoModule
-    fetchFromGitHub
     ;
-
-  input = komo.getFlakeInputGithub "gh-b";
 in
 buildGoModule (final: {
   pname = "gh-b";
   version = "0.2.3";
 
-  src = fetchFromGitHub {
-    inherit (input.locked) owner repo rev;
-    hash = input.locked.narHash;
-  };
-
+  src = npins.gh-b.outPath;
+  
   vendorHash = "sha256-Qq7denlGwBdMjhdno9uLKsu64SaGEFXH8zCplNivsIM=";
 
   meta = {

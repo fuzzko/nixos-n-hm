@@ -11,6 +11,7 @@
     ];
   };
 
+  home-manager.useGlobalPkgs = true;
   home-manager.users.komo = { ... }: {
     imports = [
       ./_home-manager.nix
