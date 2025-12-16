@@ -5,6 +5,7 @@ let
 in
 hmLib.homeManagerConfiguration {
   inherit pkgs;
+  specialArgs.npins = npins;
   modules = [
     (
       { ... }:
