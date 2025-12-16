@@ -1,4 +1,4 @@
-{ ... }:
+{ npins, ... }:
 {
   users.users.komo = {
     isNormalUser = true;
@@ -14,6 +14,9 @@
   home-manager.useGlobalPkgs = true;
   home-manager.users.komo = { ... }: {
     imports = [
+      ({ ... }: {
+        _module.args.npins = npins;
+      })
       ./_home-manager.nix
       ../../../../home/home.nix
     ];
