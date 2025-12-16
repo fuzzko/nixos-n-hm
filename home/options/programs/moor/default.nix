@@ -12,10 +12,6 @@ in
     "-wrap"
   ];
 
-  programs.git.settings = {
-    core.pager = config.home.sessionVariables.PAGER;
-  };
-
   home.sessionVariables = {
     "PAGER" = lib.mkDefault cfg.package.meta.mainProgram;
   };

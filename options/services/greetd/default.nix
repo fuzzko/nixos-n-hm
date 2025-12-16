@@ -27,7 +27,7 @@
     };
     settings = {
       background = {
-        path = ./resources/wallpapers/regreet-wallpaper.png;
+        path = ../../../resources/wallpapers/regreet-wallpaper.png;
         fit = "Contain";
       };
     };
