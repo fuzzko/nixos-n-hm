@@ -8,7 +8,7 @@ let
 
   komoLib = import ./lib pkgs.lib;
 in
-komoLib.nixosSystem {
+import "${npins.nixpkgs}/nixos/lib/eval-config.nix" {
   inherit pkgs;
   specialArgs.npins = npins;
   modules = [
