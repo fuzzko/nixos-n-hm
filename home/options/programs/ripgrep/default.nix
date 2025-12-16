@@ -15,5 +15,4 @@
     "--heading"
     "--line-number"
   ];
-
 }
