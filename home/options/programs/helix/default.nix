@@ -1,4 +1,9 @@
-{ lib, pkgs, npins, ... }:
+{
+  lib,
+  pkgs,
+  npins,
+  ...
+}:
 {
   programs.helix = {
     enable = true;
@@ -15,58 +20,16 @@
   };
 
   programs.helix.languages = {
-    language =
-      let
-        indent = {
-          unit = "  ";
-          tab-width = 2;
-        };
-      in
-      [
-        {
-          name = "html";
-          roots = [ ".git" ];
-          language-servers = [
-            "emmet-langserver"
-            "superhtml"
-          ];
-        }
-        {
-          inherit indent;
-
-          name = "civet";
-          scope = "source.civet";
-          file-types = [ "civet" ];
-          comment-tokens = "//";
-          block-comment-tokens = [
-            {
-              start = "/*";
-              end = "*/";
-            }
-            {
-              start = "###\n";
-              end = "\n###";
-            }
-          ];
-        }
-        {
-          inherit indent;
-
-          name = "nelua";
-          scope = "source.nelua";
-          file-types = [ "nelua" ];
-          comment-tokens = "--";
-          block-comment-tokens = {
-            start = "--[[";
-            end = "]]";
-          };
-        }
-        {
-          inherit indent;
-
-          name = "c";
-        }
-      ];
+    language = [
+      {
+        name = "html";
+        roots = [ ".git" ];
+        language-servers = [
+          "emmet-langserver"
+          "superhtml"
+        ];
+      }
+    ];
 
     grammar = [
       {
