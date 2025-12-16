@@ -1,8 +1,10 @@
 { lib, pkgs, ... }:
+let
+in
 {
   programs.helix = {
     enable = true;
-    package = pkgs.helix_git;
+    package = pkgs.ca;
     defaultEditor = true;
     extraPackages = lib.flatten (
       with pkgs;
