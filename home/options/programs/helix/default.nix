@@ -15,26 +15,6 @@
   };
 
   programs.helix.languages = {
-    language-server.nil = {
-      config = {
-        nil.formatting.command = [ "nixfmt" ];
-      };
-    };
-
-    language-server.emmet-langserver = {
-      command = "emmet-language-server";
-      args = [ "--stdio" ];
-    };
-    language-server.superhtml = {
-      command = "superhtml";
-      args = [ "lsp" ];
-    };
-    language-server.tailwindcss-langserver = {
-      command = "tailwindcss-language-server";
-      args = [ "--stdio" ];
-      required-root-patterns = [ "tailwind.config.js" ];
-    };
-
     language =
       let
         indent = {
