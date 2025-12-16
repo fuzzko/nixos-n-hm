@@ -30,6 +30,19 @@
       "hash": "1wh8j9k5392n4dch8m1qfcnsqjgsbsnsi78gm66lsr497a02cs7f",
       "frozen": true
     },
+    "helix": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "helix-editor",
+        "repo": "helix"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "41af65142be56a1698525a9d20cf20862dcdd0d1",
+      "url": "https://github.com/helix-editor/helix/archive/41af65142be56a1698525a9d20cf20862dcdd0d1.tar.gz",
+      "hash": "1laxwq0lpdp5m2sa2syyx50xnxfbjm9qzagi5mg5cpw13rsq7ssi"
+    },
     "home-manager": {
       "type": "Git",
       "repository": {
