@@ -7,7 +7,6 @@ let
   komoLib = import ./lib lib;
 
   npins = import ./npins;
-  npinsFlake = komoLib.npinsToFlakes npins;
 in
 {
   imports = (komoLib.filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./options) ++ [
