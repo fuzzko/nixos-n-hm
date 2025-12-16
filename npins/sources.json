@@ -62,19 +62,6 @@
       "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre911985.09b8fda8959d/nixexprs.tar.xz",
       "hash": "12b9cxxmmnlk2f8jbhijsixb9lbqh20bd2wria19ym8xdg6pkg93"
     },
-    "nyx": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "chaotic-cx",
-        "repo": "nyx"
-      },
-      "branch": "nyxpkgs-unstable",
-      "submodules": false,
-      "revision": "aacb796ccd42be1555196c20013b9b674b71df75",
-      "url": "https://github.com/chaotic-cx/nyx/archive/aacb796ccd42be1555196c20013b9b674b71df75.tar.gz",
-      "hash": "11b8v7rf0lzv83z2p3qf4pngxz2v7vsmdw9iv2pb1f0wr7k7h5zg"
-    },
     "waterfox-flake": {
       "type": "Git",
       "repository": {
