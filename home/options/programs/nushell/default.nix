@@ -1,4 +1,4 @@
-{ npins, lib, ... }:
+{ npins, pkgs, lib, ... }:
 let
   inherit (builtins)
     readFile
@@ -21,6 +21,13 @@ in
 
     source ${toString ./config.nu}
   '';
+
+  # extra clis
+  home.packages = with pkgs; [
+    gum
+    glow
+    gut
+  ];
 
   home.sessionVariables.LS_COLORS =
     let
