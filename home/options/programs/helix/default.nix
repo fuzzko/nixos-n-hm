@@ -1,10 +1,8 @@
-{ lib, pkgs, ... }:
-let
-in
+{ lib, pkgs, npins, ... }:
 {
   programs.helix = {
     enable = true;
-    package = pkgs.ca;
+    package = pkgs.callPackage "${npins.helix}" { };
     defaultEditor = true;
     extraPackages = lib.flatten (
       with pkgs;
