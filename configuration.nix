@@ -22,9 +22,13 @@ in
     efibootmgr
 
     (pkgs.callPackage "${npins.waterfox-flake}/package.nix" { }) # waterfox
-
     openutau
     dissent
+    kooha
+    scrcpy
+    wl-clipboard
+    obsidian
+    qview
   ];
 
   time.timeZone = "Asia/Makassar";
