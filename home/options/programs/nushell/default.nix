@@ -8,6 +8,7 @@ let
 
   inherit (lib)
     last
+    trim
     ;
 in
 {
