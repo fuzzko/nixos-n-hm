@@ -1,4 +1,9 @@
-{ npins, pkgs, lib, ... }:
+{
+  npins,
+  pkgs,
+  lib,
+  ...
+}:
 let
   inherit (builtins)
     readFile
@@ -32,7 +37,11 @@ in
 
   home.sessionVariables.LS_COLORS =
     let
-      escapedVal = last (split " " (readFile "${npins.LS_COLORS}/lscolors.csh"));
+      escapedVal = lib.pipe (readFile "${npins.LS_COLORS}/lscolors.csh") [
+        (split " ")
+        last
+        trim
+      ];
       actualVal = last (match "'(.+)'" escapedVal);
     in
     actualVal;
