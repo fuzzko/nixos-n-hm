@@ -45,7 +45,12 @@
     ];
   };
 
-  programs.helix.settings.theme = lib.mkForce "ao";
+  programs.helix.themes.autumn_night_transparent = {
+    inherits = "autumn_night";
+    "ui.background" = { };
+  };
+
+  programs.helix.settings.theme = "autumn_night_transparent";
   programs.helix.settings.editor = {
     true-color = true;
 
