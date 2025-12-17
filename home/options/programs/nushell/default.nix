@@ -41,7 +41,8 @@ in
         readFile "${npins.LS_COLORS}/lscolors.csh"
         |> split " "
         |> last
-        |> trim;
+        |> trim
+        ;
       actualVal = match "'(.+)'" escapedVal |> last;
     in
     actualVal;
