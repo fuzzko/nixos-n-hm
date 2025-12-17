@@ -1,7 +1,7 @@
 (
     chart_visible: true,
     label_visible: false,
-    chart: Ring,
+    chart: Line,
     colors: (
         ring: (
             background: (
