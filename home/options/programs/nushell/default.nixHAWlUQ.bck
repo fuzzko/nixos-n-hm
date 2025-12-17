@@ -17,12 +17,9 @@ let
     trim
     ;
 
-  idc = import npins.idc;
+  komoLib = config.lib.komo;
 
-  nix-search-cli = idc {
-    src = npins.nix-search-cli.outPath;
-    settings.inputs.nixpkgs 
-  };
+  flakes = komoLib.npinsToFlakes npins;
 in
 {
   programs.nushell.enable = true;
