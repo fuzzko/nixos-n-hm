@@ -49,8 +49,8 @@
     scroll-lines = 2;
     line-number = "relative";
 
-    cursor_shape.insert = "underline";
-    cursor_shape.select = "hidden";
+    cursor-shape.insert = "underline";
+    cursor-shape.select = "hidden";
     cursorline = true;
 
     bufferline = "multiple";
