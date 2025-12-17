@@ -1,4 +1,9 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, config, npins, ... }:
+let
+  komoLib = config.lib.komo;
+
+  flakes = komoLib.npinsToFlakes npins;
+in
 {
   boot = {
     loader = {
@@ -8,7 +13,7 @@
     };
 
     # comment this if something's fucked up
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = flakes.nix;
 
     kernelParams = [
       "vt.default_red=30,243,166,249,137,245,148,186,88,243,166,249,137,245,148,166"
