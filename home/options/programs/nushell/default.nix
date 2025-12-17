@@ -2,7 +2,6 @@
   npins,
   pkgs,
   lib,
-  config,
   ...
 }:
 let
