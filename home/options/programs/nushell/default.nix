@@ -37,12 +37,12 @@ in
 
   home.sessionVariables.LS_COLORS =
     let
-      escapedVal = lib.pipe (readFile "${npins.LS_COLORS}/lscolors.csh") [
-        (split " ")
-        last
-        trim
-      ];
-      actualVal = last (match "'(.+)'" escapedVal);
+      escapedVal =
+        readFile "${npins.LS_COLORS}/lscolors.csh"
+        |> split " "
+        |> last
+        |> trim;
+      actualVal = match "'(.+)'" escapedVal |> last;
     in
     actualVal;
 }
