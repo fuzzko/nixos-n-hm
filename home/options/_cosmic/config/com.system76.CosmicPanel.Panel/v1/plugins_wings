@@ -1,6 +1,6 @@
 Some(([
-    "net.tropicbliss.CosmicExtAppletCaffeine",
     "com.system76.CosmicAppletPower",
+    "net.tropicbliss.CosmicExtAppletCaffeine",
     "com.system76.CosmicAppletBattery",
     "com.system76.CosmicAppletWorkspaces",
     "dev.DBrox.CosmicPrivacyIndicator",
