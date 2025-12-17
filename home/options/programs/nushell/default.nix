@@ -31,11 +31,17 @@ in
     mkdir $autoload
     cp ${toString ./autoload}/* $autoload
 
+    use ${builtins.fetchurl "https://github.com/tesujimath/bash-env-nushell/raw/refs/heads/main/bash-env.nu"}
+    if ("~/.nix-profile/etc/profile.d/hm-session-vars.sh" | path exists) {
+      bash-env "~/.nix-profile/etc/profile.d/hm-session-vars.sh" | load-env
+    }
+
     source ${toString ./config.nu}
   '';
 
   home.packages = with pkgs; [
     nix-search-cli.packages.${builtins.currentSystem}.nix-search
+    bash-env-json
     libnotify
     cachix
     unzip
