@@ -38,7 +38,7 @@
     "ui.background" = { };
   };
 
-  programs.helix.settings.theme = "autumn_night_transparent";
+  programs.helix.settings.theme = "autumn_night";
   programs.helix.settings.editor = {
     true-color = true;
 
@@ -47,7 +47,6 @@
     scroll-lines = 2;
     line-number = "relative";
 
-    cursor-shape.insert = "underline";
     cursor-shape.select = "hidden";
     cursorline = true;
 
@@ -95,7 +94,7 @@
     };
 
     indent-guides = {
-      render = true;
+      render = false;
       character = "╎";
       skip-levels = 1;
     };
