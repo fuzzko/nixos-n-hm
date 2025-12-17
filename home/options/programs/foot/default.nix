@@ -8,6 +8,7 @@
       shell = "nu";
 
       font = "GohuFont 14 Nerd Font:size=11";
+      pad = "0x0 center";
     };
 
     colors.alpha = 0.85;
