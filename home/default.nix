@@ -6,6 +6,7 @@ in
 hmLib.homeManagerConfiguration {
   inherit pkgs;
   specialArgs.npins = npins;
+  specialArgs.idc = import npins.idc;
   modules = [
     (
       { ... }:
