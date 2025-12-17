@@ -30,9 +30,14 @@ in
 
   # extra clis
   home.packages = with pkgs; [
+    dragon-drop
+    sigi
+    sd
+    ouch
     gum
     glow
     gut
+    igrep
   ];
 
   home.sessionVariables.LS_COLORS =
