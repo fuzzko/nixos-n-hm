@@ -69,6 +69,19 @@
       "url": "https://github.com/nix-community/home-manager/archive/8315c1544f383b791a3115c9959d1f27920e8320.tar.gz",
       "hash": "0a1zrfd48n530d0wqvzskfh3iy5r3raspv27r0ngi19wvs6lj8xp"
     },
+    "idc": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "jakehamilton",
+        "repo": "idc"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "a89d7d14d55112a6fb690f4e1563a082504f408a",
+      "url": "https://github.com/jakehamilton/idc/archive/a89d7d14d55112a6fb690f4e1563a082504f408a.tar.gz",
+      "hash": "1jnjs3gxsc1kavs41j6fkqx1igwvp8b4vm6m1f9v2giqzwbjlwjz"
+    },
     "nix-cachyos-kernel": {
       "type": "Git",
       "repository": {
