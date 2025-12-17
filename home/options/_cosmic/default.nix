@@ -1,7 +1,8 @@
-{ config, pkgs, ... }:
+{ config, osConfig ? null, lib, pkgs, ... }:
 let
   homeLib = config.lib;
 in
+lib.optionalAttrs (osConfig != null && osConfig.services.desktopManager.cosmic.enable)
 {
   xdg.configFile."cosmic".source = homeLib.file.mkOutOfStoreSymlink (toString ./config);
 
