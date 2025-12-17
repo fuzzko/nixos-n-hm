@@ -2,7 +2,6 @@
   npins,
   pkgs,
   lib,
-  config,
   ...
 }:
 let
@@ -16,10 +15,6 @@ let
     last
     trim
     ;
-
-  komoLib = config.lib.komo;
-
-  flakes = komoLib.npinsToFlakes npins;
 in
 {
   programs.nushell.enable = true;
