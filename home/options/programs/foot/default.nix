@@ -11,8 +11,9 @@
       font = "GohuFont 14 Nerd Font:size=11";
     };
 
-    colors.alpha = .85;
+    colors.alpha = 0.85;
 
+    csd.preferred = "client";
     csd.size = 0; # hide title bar
     
     bell.system = false;
