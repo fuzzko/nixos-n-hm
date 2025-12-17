@@ -3,8 +3,8 @@ Some(([
     "net.tropicbliss.CosmicExtAppletCaffeine",
     "com.system76.CosmicAppletBattery",
     "com.system76.CosmicAppletWorkspaces",
-    "dev.DBrox.CosmicPrivacyIndicator",
 ], [
+    "dev.DBrox.CosmicPrivacyIndicator",
     "io.github.cosmic_utils.minimon-applet",
     "io.github.cosmic_utils.cosmic-ext-applet-external-monitor-brightness",
     "com.system76.CosmicAppletNotifications",
