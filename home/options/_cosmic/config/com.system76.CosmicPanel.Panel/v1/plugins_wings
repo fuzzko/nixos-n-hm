@@ -1,11 +1,11 @@
 Some(([
     "com.system76.CosmicAppletPower",
-    "net.tropicbliss.CosmicExtAppletCaffeine",
     "com.system76.CosmicAppletBattery",
     "com.system76.CosmicAppletWorkspaces",
 ], [
     "dev.DBrox.CosmicPrivacyIndicator",
     "io.github.cosmic_utils.minimon-applet",
+    "net.tropicbliss.CosmicExtAppletCaffeine",
     "io.github.cosmic_utils.cosmic-ext-applet-external-monitor-brightness",
     "com.system76.CosmicAppletNotifications",
     "com.system76.CosmicAppletNetwork",
