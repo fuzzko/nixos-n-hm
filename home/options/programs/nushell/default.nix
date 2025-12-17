@@ -21,7 +21,7 @@ let
 
   nix-search-cli = idc {
     src = npins.nix-search-cli.outPath;
-    settings.inputs.nixpkgs 
+    settings.inputs.nixpkgs = npins.nixpkgs;
   };
 in
 {
@@ -37,7 +37,7 @@ in
   '';
 
   home.packages = with pkgs; [
-    flakes.nix-search-cli.packages.${builtins.currentSystem}.nix-search
+    nix-search-cli.packages.${builtins.currentSystem}.nix-search
     libnotify
     cachix
     unzip
