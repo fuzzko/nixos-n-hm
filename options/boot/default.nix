@@ -3,6 +3,7 @@ let
   komoLib = config.lib.komo;
 
   flakes = komoLib.npinsToFlakes npins;
+  cachyos-kernel = flakes.nix-cachyos-kernel.legacyPackages.${builtins.currentSystem};
 in
 {
   boot = {
@@ -13,7 +14,7 @@ in
     };
 
     # comment this if something's fucked up
-    kernelPackages = flakes.nix;
+    kernelPackages = cachyos-kernel;
 
     kernelParams = [
       "vt.default_red=30,243,166,249,137,245,148,186,88,243,166,249,137,245,148,166"
