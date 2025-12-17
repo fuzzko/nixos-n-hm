@@ -16,6 +16,7 @@ let
     last
     trim
     ;
+
   nix-search-cli = idc {
     src = npins.nix-search-cli.outPath;
     settings.inputs.nixpkgs = npins.nixpkgs;
