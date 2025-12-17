@@ -1,19 +1,9 @@
-### Nix config :3
-
-How to use it:
+### NixOS and HM config !
 
 ```sh
-# If you're only wanted to use the dotfiles
-$ ./bake switch-hm
+$ nix shell nixpkgs#nh # requires nh
 
-# Optionally, you can register HM to gcroots
-$ ./bake init-hm-gcroots
-
-# Otherwise
-$ ./bake list-nixos # List NixOS configuration
-# ./bake switch-nixos [config] # Switch to [config] NixOS configuration
-# ./bake boot-nixos [config] # Switch to [config] NixOS configuration at boot
-
-$ ./bake list-nix-on-droid # List nix-on-droid configuration
-$ ./bake switch-nix-on-droid [config] # Switch to [config] nix-on-droid configuration
+$ ./bake switch
+$ ./bake boot
+$ ./bake build
 ```
