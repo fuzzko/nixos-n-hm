@@ -31,12 +31,8 @@ in
       # Something that would ease me off
       riff
       khal
-      fzf
-      ripgrep
-      fd
       sd
       zoxide
-      bat
       sigi
       gum
       dragon-drop
