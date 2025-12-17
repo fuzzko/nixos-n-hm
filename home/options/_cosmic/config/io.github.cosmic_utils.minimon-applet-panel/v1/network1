@@ -159,6 +159,6 @@
     adaptive: true,
     bandwidth: 62500000,
     unit: Some(0),
-    variant: Download,
+    variant: Combined,
     show_bytes: false,
 )
