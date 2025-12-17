@@ -65,11 +65,6 @@ task.build() {
     --file .
   )
 
-  [[ -v dry ]] &&
-    flags+=(
-      --dry
-    )
-
   nh os build "${flags[@]}" "$@"
 }
 
@@ -83,11 +78,6 @@ task.switch() {
     --file .
   )
 
-  [[ -v dry ]] &&
-    flags+=(
-      --dry
-    )
-
   nh os switch "${flags[@]}" "$@"
 }
 
@@ -100,11 +90,6 @@ task.boot() {
     --keep-going
     --file .
   )
-
-  [[ -v dry ]] &&
-    flags+=(
-      --dry
-    )
 
   nh os build "${flags[@]}" "$@"
 }
