@@ -30,19 +30,6 @@
         ];
       }
     ];
-
-    grammar = [
-      {
-        name = "fennel";
-        source = {
-          path =
-            (builtins.fetchGit {
-              url = "https://github.com/0komo/tree-sitter-fennel.git";
-              ref = "merged";
-            }).outPath;
-        };
-      }
-    ];
   };
 
   programs.helix.themes.autumn_night_transparent = {
