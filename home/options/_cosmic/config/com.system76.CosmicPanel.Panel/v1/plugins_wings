@@ -4,6 +4,7 @@ Some(([
     "com.system76.CosmicAppletWorkspaces",
     "net.tropicbliss.CosmicExtAppletCaffeine",
     "dev.DBrox.CosmicPrivacyIndicator",
+    "io.github.cosmic_utils.cosmic-ext-applet-external-monitor-brightness",
 ], [
     "com.system76.CosmicAppletNotifications",
     "com.system76.CosmicAppletNetwork",
