@@ -5,8 +5,7 @@
 
   programs.foot.settings = {
     main = {
-      shell = "nu -i";
-      login-shell = true;
+      shell = "nu";
 
       font = "GohuFont 14 Nerd Font:size=11";
     };
