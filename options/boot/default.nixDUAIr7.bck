@@ -1,10 +1,9 @@
-{ lib, npins, idc, ... }:
+{ lib, config, npins, ... }:
 let
-  nix-cachyos-kernel = idc {
-    src = npins.nix-cachyos-kernel.outPath;
-    settings.inputs.nixpkgs = npins.nixpkgs.outPath;
-  };
-  cachyosKernels = nix-cachyos-kernel.legacyPackages.${builtins.currentSystem};
+  komoLib = config.lib.komo;
+
+  flakes = komoLib.npinsToFlakes npins;
+  cachyosKernels = flakes.nix-cachyos-kernel.legacyPackages.${builtins.currentSystem};
 in
 {
   boot = {
