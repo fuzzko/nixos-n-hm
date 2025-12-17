@@ -157,6 +157,6 @@
         ),
     ),
     no_decimals: false,
-    bar_width: 4,
+    bar_width: 5,
     bar_spacing: 1,
 )
