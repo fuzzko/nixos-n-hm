@@ -20,8 +20,6 @@
     );
   };
 
-  home.sessionVariables.EDITOR = lib.getExe config.programs.helix.package;
-
   programs.helix.languages = {
     language = [
       {
