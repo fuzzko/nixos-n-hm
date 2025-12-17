@@ -1,18 +1,23 @@
 {
   lib,
   pkgs,
+  config,
+  npins,
   ...
 }:
+let
+  komoLib = config.lib.komo;
+  
+  flakes = komoLib.npinsToFlakes npins;
+in
 {
   home.packages = lib.flatten (
     with pkgs;
     [
       # Fonts
-      noto-fonts
-      noto-fonts-color-emoji
 
       # Nix-purpose
-      nix-search
+      flakes.nix-search-cli.packages.${builtins.currentSystem}.nix-search
       cachix
 
       # Misc.
