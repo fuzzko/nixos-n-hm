@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  npins,
   ...
 }:
 let
