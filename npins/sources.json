@@ -69,6 +69,19 @@
       "url": "https://github.com/nix-community/home-manager/archive/8315c1544f383b791a3115c9959d1f27920e8320.tar.gz",
       "hash": "0a1zrfd48n530d0wqvzskfh3iy5r3raspv27r0ngi19wvs6lj8xp"
     },
+    "nix-cachyos-kernel": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "xddxdd",
+        "repo": "nix-cachyos-kernel"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "55467e4a0183350d3e67447e2b8c7ae25efa2028",
+      "url": "https://github.com/xddxdd/nix-cachyos-kernel/archive/55467e4a0183350d3e67447e2b8c7ae25efa2028.tar.gz",
+      "hash": "0cg7jf4byi15k5hasz0ncmwfqk4i40qxi8skg4akhjphsngkbjsz"
+    },
     "nix-flatpak": {
       "type": "Git",
       "repository": {
