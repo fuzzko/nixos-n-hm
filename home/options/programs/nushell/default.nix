@@ -31,8 +31,9 @@ in
     mkdir $autoload
     cp ${toString ./autoload}/* $autoload
 
-    def --wrapped bash-env [...rest] {
-      ^nu ${builtins.fetchurl "https://github.com/tesujimath/bash-env-nushell/raw/refs/heads/main/bash-env.nu"} ...$rest
+    def --env --wrapped bash-env [...rest] {
+      use ${builtins.fetchurl "https://github.com/tesujimath/bash-env-nushell/raw/refs/heads/main/bash-env.nu"} main
+      main ...$rest
     }
     if ("~/.nix-profile/etc/profile.d/hm-session-vars.sh" | path exists) {
       bash-env "~/.nix-profile/etc/profile.d/hm-session-vars.sh" | load-env
