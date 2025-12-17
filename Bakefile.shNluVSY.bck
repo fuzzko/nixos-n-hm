@@ -97,6 +97,7 @@ task.boot() {
     --log-format multiline
     --show-trace
     --impure
+    --use-substitute
     --keep-going
     --file .
   )
