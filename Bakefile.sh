@@ -91,5 +91,5 @@ task.boot() {
     --file .
   )
 
-  nh os build "${flags[@]}" "$@"
+  nh os boot "${flags[@]}" "$@"
 }
