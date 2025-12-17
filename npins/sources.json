@@ -13,6 +13,19 @@
       "url": "https://github.com/trapd00r/LS_COLORS/archive/810ce8cac886ac50e75d84fb438b549a1f9478ee.tar.gz",
       "hash": "0dkfilaad2yarzjahbbb6vl417iyyqi803zpj991lbl4gf9cvk1h"
     },
+    "bash-env-nushell": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "tesujimath",
+        "repo": "bash-env-nushell"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "f555b9b4ba1f90185cb02c02df4f027dada59767",
+      "url": "https://github.com/tesujimath/bash-env-nushell/archive/f555b9b4ba1f90185cb02c02df4f027dada59767.tar.gz",
+      "hash": "1zx07ylg6s3f2m01wnd4rdz30jda64q37hjrqq6z1q61cf429nw8"
+    },
     "flake-compat": {
       "type": "GitRelease",
       "repository": {
