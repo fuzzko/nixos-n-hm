@@ -28,8 +28,10 @@ in
     source ${toString ./config.nu}
   '';
 
-  # extra clis
   home.packages = with pkgs; [
+    libnotify
+    cachix
+    unzip
     dragon-drop
     sigi
     sd
