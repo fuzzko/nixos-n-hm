@@ -1,4 +1,4 @@
-{ lib, pkgs, config, npins, ... }:
+{ lib, config, npins, ... }:
 let
   komoLib = config.lib.komo;
 
