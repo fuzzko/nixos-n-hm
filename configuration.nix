@@ -1,12 +1,17 @@
 {
   pkgs,
   lib,
+  npins,
+  idc,
   ...
 }:
 let
   komoLib = import ./lib lib;
 
-  npins = import ./npins;
+  affinity-nix = idc {
+    src = npins.affinity-nix.outPath;
+    settings.inputs.nixpkgs = npins.nixpkgs.outPath;
+  };
 in
 {
   imports = (komoLib.filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./options) ++ [
