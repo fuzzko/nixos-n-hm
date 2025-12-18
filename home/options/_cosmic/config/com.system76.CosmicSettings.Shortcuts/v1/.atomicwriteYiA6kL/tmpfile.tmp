@@ -2,13 +2,6 @@
     (
         modifiers: [
             Super,
-            Shift,
-        ],
-        key: "m",
-    ): Minimize,
-    (
-        modifiers: [
-            Super,
         ],
     ): Disable,
     (
@@ -22,5 +15,12 @@
             Super,
         ],
         key: "BackSpace",
-    ): System(Launcher),
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "m",
+    ): Minimize,
 }
