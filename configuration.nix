@@ -9,6 +9,7 @@ let
   komoLib = import ./lib lib;
 
   affinity-nix = idc {
+    loader = "flake";
     src = npins.affinity-nix.outPath;
     settings.inputs.nixpkgs = npins.nixpkgs.outPath;
   };
