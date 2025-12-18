@@ -13,6 +13,19 @@
       "url": "https://github.com/trapd00r/LS_COLORS/archive/810ce8cac886ac50e75d84fb438b549a1f9478ee.tar.gz",
       "hash": "0dkfilaad2yarzjahbbb6vl417iyyqi803zpj991lbl4gf9cvk1h"
     },
+    "affinity-nix": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "mrshmllow",
+        "repo": "affinity-nix"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "8c939e11edda228a529ed78701c327df4d38a4c4",
+      "url": "https://github.com/mrshmllow/affinity-nix/archive/8c939e11edda228a529ed78701c327df4d38a4c4.tar.gz",
+      "hash": "183w4mk3jn6jba5zqcyrnl9c0jwa4cj57m0snna9a4c5xk3ihb0r"
+    },
     "bash-env-nushell": {
       "type": "Git",
       "repository": {
