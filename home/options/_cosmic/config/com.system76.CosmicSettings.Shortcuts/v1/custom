@@ -3,6 +3,12 @@
         modifiers: [
             Super,
         ],
+        key: "slash",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
     ): Disable,
     (
         modifiers: [
