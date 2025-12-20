@@ -35,7 +35,6 @@ in
     wl-clipboard
     obsidian
     qview
-    affinity-nix.packages.${builtins.currentSystem}.v3
   ];
 
   time.timeZone = "Asia/Makassar";
