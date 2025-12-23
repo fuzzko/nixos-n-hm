@@ -78,9 +78,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "41af65142be56a1698525a9d20cf20862dcdd0d1",
-      "url": "https://github.com/helix-editor/helix/archive/41af65142be56a1698525a9d20cf20862dcdd0d1.tar.gz",
-      "hash": "1laxwq0lpdp5m2sa2syyx50xnxfbjm9qzagi5mg5cpw13rsq7ssi"
+      "revision": "b74e2694124b9d269d05f6aace42d4756c3bb724",
+      "url": "https://github.com/helix-editor/helix/archive/b74e2694124b9d269d05f6aace42d4756c3bb724.tar.gz",
+      "hash": "1bb2kks5ivc9xj08j2hqbg55cjlh004vi605bgj6rz2mp4xmd4wn"
     },
     "home-manager": {
       "type": "Git",
@@ -91,9 +91,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "8315c1544f383b791a3115c9959d1f27920e8320",
-      "url": "https://github.com/nix-community/home-manager/archive/8315c1544f383b791a3115c9959d1f27920e8320.tar.gz",
-      "hash": "0a1zrfd48n530d0wqvzskfh3iy5r3raspv27r0ngi19wvs6lj8xp"
+      "revision": "527ad07e6625302b648ed3b28c34b62a79bd103e",
+      "url": "https://github.com/nix-community/home-manager/archive/527ad07e6625302b648ed3b28c34b62a79bd103e.tar.gz",
+      "hash": "1q6x9kqf6pakmra0xmjyv09wpqfzi4b58jw3g72ybkc38byvfch2"
     },
     "idc": {
       "type": "Git",
@@ -117,9 +117,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "55467e4a0183350d3e67447e2b8c7ae25efa2028",
-      "url": "https://github.com/xddxdd/nix-cachyos-kernel/archive/55467e4a0183350d3e67447e2b8c7ae25efa2028.tar.gz",
-      "hash": "0cg7jf4byi15k5hasz0ncmwfqk4i40qxi8skg4akhjphsngkbjsz"
+      "revision": "2a835792df91e629ef585eae6f63d70dfadd5754",
+      "url": "https://github.com/xddxdd/nix-cachyos-kernel/archive/2a835792df91e629ef585eae6f63d70dfadd5754.tar.gz",
+      "hash": "00imsj0x8ibih64lqimb8kb1hkaqxg122khna067mhb6sys3an7x"
     },
     "nix-flatpak": {
       "type": "Git",
@@ -150,8 +150,8 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre911985.09b8fda8959d/nixexprs.tar.xz",
-      "hash": "12b9cxxmmnlk2f8jbhijsixb9lbqh20bd2wria19ym8xdg6pkg93"
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre914780.306ea70f9eb0/nixexprs.tar.xz",
+      "hash": "1xx42m8amnda6z8nbm2ksv0plpzcdqxzymb1qqnp0xnf0k2bz2d1"
     },
     "waterfox-flake": {
       "type": "Git",
