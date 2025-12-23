@@ -35,8 +35,6 @@
 
   programs.helix.themes.autumn_night_better = {
     inherits = "autumn_night";
-    "diagnostic.error".underline = {};
-    "diagnostic.error".bg = "my_red";
   };
 
   programs.helix.settings.theme = "autumn_night_better";

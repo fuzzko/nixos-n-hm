@@ -9,6 +9,9 @@
 
       font = "GohuFont 14 Nerd Font:size=11";
       pad = "0x0 center";
+
+      underline-offset = "3px";
+      strikeout-thickness = "3px";
     };
 
     colors.alpha = 0.85;
