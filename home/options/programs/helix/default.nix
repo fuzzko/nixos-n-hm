@@ -33,12 +33,13 @@
     ];
   };
 
-  programs.helix.themes.autumn_night_transparent = {
+  programs.helix.themes.autumn_night_better = {
     inherits = "autumn_night";
-    "ui.background" = { };
+    "diagnostic.error".underline = {};
+    "diagnostic.error".bg = "my_red";
   };
 
-  programs.helix.settings.theme = "autumn_night";
+  programs.helix.settings.theme = "autumn_night_better";
   programs.helix.settings.editor = {
     true-color = true;
 
