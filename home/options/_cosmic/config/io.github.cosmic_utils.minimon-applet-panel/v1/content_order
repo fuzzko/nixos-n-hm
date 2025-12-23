@@ -3,8 +3,8 @@
         CpuUsage,
         CpuTemp,
         MemoryUsage,
-        DiskUsage,
         NetworkUsage,
+        DiskUsage,
         GpuInfo,
     ],
 )
