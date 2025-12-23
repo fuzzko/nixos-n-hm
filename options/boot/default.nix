@@ -15,7 +15,7 @@ in
     };
 
     # comment this if something's fucked up
-    kernelPackages = cachyosKernels.linuxPackages-cachyos-latest-lto;
+    kernelPackages = cachyosKernels.linuxPackages-cachyos-bore-lto;
 
     kernelParams = [
       "vt.default_red=30,243,166,249,137,245,148,186,88,243,166,249,137,245,148,166"
