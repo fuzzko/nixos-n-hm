@@ -1,8 +1,8 @@
 (
     order: [
         CpuUsage,
-        CpuTemp,
         DiskUsage,
+        CpuTemp,
         MemoryUsage,
         NetworkUsage,
         GpuInfo,
