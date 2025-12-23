@@ -1,5 +1,5 @@
 (
-    chart_visible: false,
+    chart_visible: true,
     label_visible: false,
     chart: Line,
     colors: (
