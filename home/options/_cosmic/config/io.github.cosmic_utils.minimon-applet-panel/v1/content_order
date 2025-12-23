@@ -2,8 +2,8 @@
     order: [
         CpuUsage,
         CpuTemp,
-        MemoryUsage,
         DiskUsage,
+        MemoryUsage,
         NetworkUsage,
         GpuInfo,
     ],
