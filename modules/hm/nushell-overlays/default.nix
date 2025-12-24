@@ -28,7 +28,7 @@ in
   options = {
     programs.nushell.overlays = lib.mkOption {
       type = with lib.types; attrsOf (submodule overlaySubmodule);
-      default = [ ];
+      default = { };
       example = lib.literalExpression ''
         {
           foo = {
