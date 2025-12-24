@@ -43,12 +43,13 @@ in
 
   config.programs.nushell.extraConfig =
     let
-      describeCfg = lib.mkAttrs (
-        name: subcfg:
-        "overlay use ${lib.optionalString subcfg.prefix "--prefix"} \"${subcfg.module}\" as ${name}"
-      );
+      describeCfg =
+        attr:
+        lib.mapAttrs (
+          name: subcfg:
+          "overlay use ${lib.optionalString subcfg.prefix "--prefix"} \"${subcfg.module}\" as ${name}"
+        ) attr
+        |> lib.attrValues;
     in
-    cfg
-    |> describeCfg
-    |> lib.concatLines;
+    cfg |> describeCfg |> lib.concatLines;
 }
