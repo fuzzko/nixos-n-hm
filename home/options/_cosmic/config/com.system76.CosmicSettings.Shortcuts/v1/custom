@@ -3,12 +3,12 @@
         modifiers: [
             Super,
         ],
+        key: "BackSpace",
     ): Disable,
     (
         modifiers: [
             Super,
         ],
-        key: "BackSpace",
     ): Disable,
     (
         modifiers: [
