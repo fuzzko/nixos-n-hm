@@ -48,5 +48,7 @@ in
         "overlay use ${lib.optionalString subcfg.prefix "--prefix"} \"${subcfg.module}\" as ${name}"
       );
     in
-    null;
+    cfg
+    |> describeCfg
+    |> lib.concatLines;
 }
