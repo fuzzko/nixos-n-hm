@@ -25,6 +25,13 @@ in
 {
   programs.nushell.enable = true;
 
+  programs.nushell.overlays = {
+    bash-env = {
+      module = "${npins.bash-env-nushell}/bash-env.nu";
+      addPrefix = true;
+    };
+  };
+
   programs.nushell.configFile.text = '''';
   programs.nushell.extraConfig = ''
     let autoload = $nu.data-dir | path join "vendor/autoload"
