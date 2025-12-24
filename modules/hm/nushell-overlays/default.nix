@@ -10,7 +10,7 @@ let
       };
 
       module = lib.mkOption {
-        type = with lib.types; either str path;
+        type = with lib.types; either path str;
         example = lib.literalExpression "./foo.nu";
         description = "Module or path of the overlay.";
       };
