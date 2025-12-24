@@ -28,7 +28,7 @@ in
   programs.nushell.overlays = {
     bash-env = {
       module = "${npins.bash-env-nushell}/bash-env.nu";
-      addPrefix = true;
+      prefix = true;
     };
   };
 
