@@ -15,7 +15,7 @@ let
         description = "Module or path of the overlay.";
       };
 
-      appendPrefix = lib.mkOption {
+      prefix = lib.mkOption {
         type = with lib.types; bool;
         default = false;
         example = true;
@@ -33,11 +33,20 @@ in
         {
           foo = {
             module = "foo";
-            appendPrefix = false;
+            prefix = false;
           };
         }
       '';
       description = "An attribute set of overlays definition (the top level attribute names in the option being the overlay name).";
     };
   };
+
+  config.programs.nushell.extraConfig =
+    let
+      describeCfg = lib.mkAttrs (
+        name: subcfg:
+        "overlay use ${lib.optionalString subcfg.prefix "--prefix"} \"${subcfg.module}\" as ${name}"
+      );
+    in
+    null;
 }
