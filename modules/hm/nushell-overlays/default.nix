@@ -51,5 +51,5 @@ in
         ) attr
         |> lib.attrValues;
     in
-    cfg |> describeCfg |> lib.concatLines |> lib.mkAfter;
+    cfg |> describeCfg |> lib.concatLines |> lib.mkBefore;
 }
