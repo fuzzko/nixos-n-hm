@@ -9,6 +9,12 @@
         modifiers: [
             Super,
         ],
+        key: "slash",
+    ): System(Launcher),
+    (
+        modifiers: [
+            Super,
+        ],
     ): Disable,
     (
         modifiers: [
@@ -17,10 +23,4 @@
         ],
         key: "m",
     ): Minimize,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "slash",
-    ): Disable,
 }
