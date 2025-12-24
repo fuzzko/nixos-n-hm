@@ -25,7 +25,8 @@ in
 {
   programs.nushell.enable = true;
 
-  programs.nushell.configFile.text = ''
+  programs.nushell.configFile.text = '''';
+  programs.nushell.extraConfig = ''
     let autoload = $nu.data-dir | path join "vendor/autoload"
 
     mkdir $autoload
