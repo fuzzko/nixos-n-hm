@@ -40,4 +40,6 @@ in
       description = "An attribute set of overlays definition (the top level attribute names in the option being the overlay name).";
     };
   };
+
+  config.programs.nushell.extraConfig = 
 }
