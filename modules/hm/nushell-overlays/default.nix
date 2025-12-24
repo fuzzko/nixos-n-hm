@@ -50,5 +50,5 @@ in
       ) enabledOverlays;
       overlays = lib.attrValues describedOverlays;
     in
-    lib.mkAfter (lib.concatLines overlays);
+    lib.mkBefore (lib.concatLines overlays);
 }
