@@ -79,6 +79,19 @@
       "url": "https://github.com/jakehamilton/idc/archive/a89d7d14d55112a6fb690f4e1563a082504f408a.tar.gz",
       "hash": "1jnjs3gxsc1kavs41j6fkqx1igwvp8b4vm6m1f9v2giqzwbjlwjz"
     },
+    "nix-cachyos-kernel": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "xddxdd",
+        "repo": "nix-cachyos-kernel"
+      },
+      "branch": "release",
+      "submodules": false,
+      "revision": "87ad2d62ed85240ebb605acf4db890168b1a3853",
+      "url": "https://github.com/xddxdd/nix-cachyos-kernel/archive/87ad2d62ed85240ebb605acf4db890168b1a3853.tar.gz",
+      "hash": "1n22k73rv5n3lp6qc1v3i29ifbgl3fs2w8g3wpcsy24npj4giagk"
+    },
     "nix-flatpak": {
       "type": "Git",
       "repository": {
