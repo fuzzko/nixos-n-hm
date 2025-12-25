@@ -16,10 +16,6 @@ let
     attrNames
     listToAttrs
     ;
-
-  npins = import ../npins;
-
-  flake-compat = import npins.flake-compat;
 in
 rec {
   # returns a list of files inside a directory
@@ -37,36 +33,6 @@ rec {
 
   # same as `filter (p: ...) (filesInDir path)`
   filterFilesInDir = filterLambda: dir: filter filterLambda (filesInDir dir);
-
-  # get a flake outputs from npin
-  getFlakeFromNpin = npin: (flake-compat { src = npin.outPath; }).outputs;
-
-  # filters npins and turn them into flakes outputs
-  npinsToFlakes =
-    npins:
-    let
-      npinNames = attrNames npins;
-      filteredNpins = filter (
-        name:
-        let
-          npin = npins.${name};
-        in
-        pathExists "${npin}/flake.nix"
-      ) npinNames;
-      transformedNpins = listToAttrs (
-        map (
-          name:
-          let
-            npin = npins.${name};
-          in
-          {
-            inherit name;
-            value = getFlakeFromNpin npin;
-          }
-        ) filteredNpins
-      );
-    in
-    transformedNpins;
 
   # poor man's modification of lib.nixosSystem
   nixosSystem =
