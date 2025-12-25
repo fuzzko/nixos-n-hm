@@ -2,17 +2,10 @@
   pkgs,
   lib,
   npins,
-  idc,
   ...
 }:
 let
   komoLib = import ./lib lib;
-
-  affinity-nix = idc {
-    loader = "flake";
-    src = npins.affinity-nix.outPath;
-    settings.inputs.nixpkgs = npins.nixpkgs.outPath;
-  };
 in
 {
   imports = (komoLib.filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./options) ++ [
@@ -27,7 +20,6 @@ in
     gptfdisk
     efibootmgr
 
-    (pkgs.callPackage "${npins.waterfox-flake}/package.nix" { }) # waterfox
     openutau
     dissent
     kooha
@@ -36,6 +28,7 @@ in
     obsidian
     qview
     nyxt
+    (import npins.zen-browser-flake { inherit pkgs; }).zen-browser
   ];
 
   time.timeZone = "Asia/Makassar";
