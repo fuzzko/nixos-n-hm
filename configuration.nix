@@ -35,6 +35,7 @@ in
     wl-clipboard
     obsidian
     qview
+    nyxt
   ];
 
   time.timeZone = "Asia/Makassar";
