@@ -31,7 +31,7 @@ in
       prefix = true;
     };
     nix-your-shell = {
-      module = ./nix-your-shell.nu
+      module = ./nix-your-shell.nu;
     };
   };
 
