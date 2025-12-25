@@ -123,6 +123,19 @@
       "name": "nixpkgs-unstable",
       "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre916402.3c1016e6acd1/nixexprs.tar.xz",
       "hash": "0gscnklqsckcmx3qr5s59k26l23938kq5sw9w0ifgzk7000pfw7s"
+    },
+    "zen-browser-flake": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "youwen5",
+        "repo": "zen-browser-flake"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "2f61341b32dd69c07e147188e67e09ba2bb99c33",
+      "url": "https://github.com/youwen5/zen-browser-flake/archive/2f61341b32dd69c07e147188e67e09ba2bb99c33.tar.gz",
+      "hash": "1n3ahhaw8nsw9gyyyiq9s1391x4a99r3djdiin8xkln1lcx3fy6b"
     }
   },
   "version": 5
