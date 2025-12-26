@@ -8,7 +8,10 @@ let
     overlays = [
       (self: super: {
         inherit (import npins.zen-browser-flake { pkgs = super; }) zen-browser;
-        nur = import npins.nur { pkgs = super; nurpkgs = super; };
+        nur = import npins.nur {
+          pkgs = super;
+          nurpkgs = super;
+        };
       })
     ];
   };
