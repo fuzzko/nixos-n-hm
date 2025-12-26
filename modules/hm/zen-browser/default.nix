@@ -10,7 +10,7 @@ let
   module = makeFirefoxModule {
     modulePath = "programs.zen-browser";
     name = "Zen Browser";
-    wrappedPackage = "zen-browser";
+    wrappedPackageName = "zen-browser";
     visible = true;
 
     platforms.linux.configPath = ".zen";
