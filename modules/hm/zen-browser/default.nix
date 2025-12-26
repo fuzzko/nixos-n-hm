@@ -4,7 +4,7 @@
   npins ? null,
   ...
 }:
-lib.mkIf (npins != null) (
+if npins != null then
   let
     makeFirefoxModule = import "${npins.home-manager}/modules/programs/firefox/mkFirefoxModule.nix";
 
@@ -31,4 +31,5 @@ lib.mkIf (npins != null) (
       ];
     };
   }
-)
+else
+  { }
