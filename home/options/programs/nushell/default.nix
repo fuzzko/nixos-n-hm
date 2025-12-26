@@ -30,8 +30,8 @@ in
       module = "${npins.bash-env-nushell}/bash-env.nu";
       prefix = true;
     };
-    nix-your-shell = {
-      module = ./nix-your-shell.nu;
+    nix4nushell = {
+      module = ./nix4nushell.nu;
     };
   };
 
