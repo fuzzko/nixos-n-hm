@@ -7,6 +7,7 @@ in
   imports = (komoLib.filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./options) ++ [
     ../modules/hm/moor
     ../modules/hm/nushell-overlays
+    ../modules/hm/zen-browser
   ];
 
   home.stateVersion = lib.trivial.release;

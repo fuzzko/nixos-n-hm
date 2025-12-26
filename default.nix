@@ -4,6 +4,12 @@ let
     config = {
       allowUnfree = true;
     };
+
+    overlays = [
+      (self: super: {
+        inherit (import npins.zen-browser-flake { pkgs = super; }) zen-browser;
+      })
+    ];
   };
 
   komoLib = import ./lib pkgs.lib;

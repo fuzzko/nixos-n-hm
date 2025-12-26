@@ -1,6 +1,12 @@
 let
   npins = import ../npins;
-  pkgs = import npins.nixpkgs { };
+  pkgs = import npins.nixpkgs {
+    overlays = [
+      (self: super: {
+        inherit (import npins.zen-browser-flake { pkgs = super; }) zen-browser;
+      })
+    ];
+  };
   hmLib = import "${npins.home-manager}/lib" { inherit (pkgs) lib; };
 in
 hmLib.homeManagerConfiguration {
