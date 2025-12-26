@@ -8,7 +8,7 @@ let
   makeFirefoxModule = import "${npins.home-manager}/modules/programs/firefox/mkFirefoxModule.nix";
 
   module = makeFirefoxModule {
-    modulePath = "programs.zen-browser";
+    modulePath = "programs.zen-browser" |> (lib.splitString ".");
     name = "Zen Browser";
     wrappedPackageName = "zen-browser";
     visible = true;
