@@ -124,6 +124,19 @@
       "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre916402.3c1016e6acd1/nixexprs.tar.xz",
       "hash": "0gscnklqsckcmx3qr5s59k26l23938kq5sw9w0ifgzk7000pfw7s"
     },
+    "nur": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "nur"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "fc7ae20903d7160a9e1b90780d5dc13c63d8d9a4",
+      "url": "https://github.com/nix-community/nur/archive/fc7ae20903d7160a9e1b90780d5dc13c63d8d9a4.tar.gz",
+      "hash": "0l040rdr54l25y0f26dkkpjk8rj5d0j755r34knp195y4qm6wmk0"
+    },
     "zen-browser-flake": {
       "type": "Git",
       "repository": {
