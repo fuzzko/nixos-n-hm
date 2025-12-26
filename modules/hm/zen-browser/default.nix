@@ -1,27 +1,34 @@
-{ pkgs, lib, npins, ... }:
-let
-  makeFirefoxModule = import "${npins.home-manager}/modules/programs/firefox/mkFirefoxModule.nix";
-
-  module = makeFirefoxModule {
-    modulePath = "programs.zen-browser";
-    wrappedPackage = "zen-browser";
-    visible = true;
-
-    platforms.linux.configPath = ".zen";
-  };
-in
 {
-  imports = [
-    module
-  ];
+  pkgs,
+  lib,
+  npins ? null,
+  ...
+}:
+lib.mkIf (npins != null) (
+  let
+    makeFirefoxModule = import "${npins.home-manager}/modules/programs/firefox/mkFirefoxModule.nix";
 
-  config = {
-    assertions = [
-      (lib.hm.assertPlatform "programs.zen-browser" pkgs lib.platforms.linux)
-      {
-        assertion = pkgs ? zen-browser && pkgs ? zen-browser-unwrapped;
-        message = ''programs.zen-browser "package" option require pkgs.zen-browser to be available'';
-      }
+    module = makeFirefoxModule {
+      modulePath = "programs.zen-browser";
+      wrappedPackage = "zen-browser";
+      visible = true;
+
+      platforms.linux.configPath = ".zen";
+    };
+  in
+  {
+    imports = [
+      module
     ];
-  };
-}
+
+    config = {
+      assertions = [
+        (lib.hm.assertPlatform "programs.zen-browser" pkgs lib.platforms.linux)
+        {
+          assertion = pkgs ? zen-browser && pkgs ? zen-browser-unwrapped;
+          message = ''programs.zen-browser "package" option require pkgs.zen-browser to be available'';
+        }
+      ];
+    };
+  }
+)
