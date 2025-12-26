@@ -20,6 +20,29 @@
         refined-github
         ublock-origin
       ];
+
+      settings = {
+        "uBlock0@raymondhill.net".settings = {
+          selectedFilterLists = [
+            "ublock-filters"
+            "ublock-badware"
+            "ublock-privacy"
+            "ublock-unbreak"
+            "ublock-quick-fixes"
+
+            "ublock-cookies-easylist"
+            "fanboy-cookiemonster"
+            
+            "easylist"
+            "adguard-spyware-url"
+            "urlhaus-1"
+            "plowe-0"
+            "fanboy-social"
+            "easylist-annoyances"
+            "ublock-annoyances"     
+          ];
+        };
+      };
     };
   };
 }
