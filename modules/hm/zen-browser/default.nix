@@ -14,6 +14,7 @@ let
     visible = true;
 
     platforms.linux.configPath = ".zen";
+    platforms.darwin.configPath = "";
   };
 in
 {
