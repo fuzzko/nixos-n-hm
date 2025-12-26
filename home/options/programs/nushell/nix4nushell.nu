@@ -1,4 +1,4 @@
-def nix --wrapped [...args] {
+export def nix --wrapped [...args] {
   match $args {
     [$subcmd, ..$rest] if $subcmd == "develop"
                        or $subcmd == "shell"
