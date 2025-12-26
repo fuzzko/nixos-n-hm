@@ -29,7 +29,7 @@ in
     assertions = [
       (lib.hm.assertions.assertPlatform "programs.zen-browser" pkgs lib.platforms.linux)
       {
-        assertion = pkgs ? zen-browser && pkgs ? zen-browser-unwrapped;
+        assertion = pkgs ? zen-browser;
         message = ''programs.zen-browser "package" option require pkgs.zen-browser to be available'';
       }
     ];
