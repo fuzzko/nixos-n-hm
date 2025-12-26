@@ -1,4 +1,4 @@
-{ npins, lib, ... }:
+{ npins, pkgs, lib, ... }:
 {
   programs.zen-browser.enable = true;
   programs.zen-browser.profiles.default = {
@@ -14,5 +14,12 @@
       // [1] https://bugzilla.mozilla.org/show_bug.cgi?id=1846935
       user_pref("general.smoothScroll.msdPhysics.enabled", false); // [FF122+ Nightly]
     '';
+
+    extensions = {
+      packages = with pkgs.nur.repos.rycee.firefox-addons; [
+        refined-github
+        ublock-origin
+      ];
+    };
   };
 }
