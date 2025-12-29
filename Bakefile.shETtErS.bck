@@ -1,7 +1,3 @@
-init() {
-  export NIX_CONF="$(< ./nix.conf)"
-}
-
 task.get-system-name() {
   nix eval --raw --impure --expr '
     let
