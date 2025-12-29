@@ -8,7 +8,7 @@ let
   komoLib = import ./lib lib;
 in
 {
-  imports = (komoLib.filterFilesInDir (x: (builtins.baseNameOf x) == "default.nix") ./options) ++ [
+  imports = (komoLib.filterFilesInDir (x: (baseNameOf x) == "default.nix") ./options) ++ [
     "${npins.home-manager}/nixos"
     "${npins.nix-flatpak}/modules/nixos.nix"
   ];
