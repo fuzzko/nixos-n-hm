@@ -21,7 +21,7 @@ in
     efibootmgr
 
     openutau
-    dissent
+    legcord
     kooha
     scrcpy
     wl-clipboard
