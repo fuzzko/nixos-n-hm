@@ -22,6 +22,7 @@
         refined-github
         ublock-origin
         violentmonkey
+        keepassxc-browser
       ];
 
       settings = {
