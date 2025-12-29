@@ -27,7 +27,7 @@ in
     wl-clipboard
     obsidian
     qview
-    davinci-resolve-studio
+    davinci-resolve
     (import npins.zen-browser-flake { inherit pkgs; }).zen-browser
   ];
 
