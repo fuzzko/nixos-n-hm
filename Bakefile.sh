@@ -1,5 +1,5 @@
 init() {
-  export NIX_CONF="$(< ./nix.conf)"
+  export NIX_CONFIG="$(< ./nix.conf)"
 }
 
 task.get-system-name() {
