@@ -157,6 +157,6 @@
         ),
     ),
     percentage: false,
-    show_allocated: false,
+    show_allocated: true,
     stack_labels: false,
 )
