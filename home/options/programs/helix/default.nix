@@ -104,10 +104,9 @@
       max-indent-retain = 0;
     };
 
-    end-of-line-diagnostics = "error";
+    end-of-line-diagnostics = "hint";
     inline-diagnostics = {
       cursor-line = "warning";
-      other-lines = "hint";
     };
 
     file-explorer = {
