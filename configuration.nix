@@ -28,6 +28,7 @@ in
     obsidian
     qview
     davinci-resolve
+    android-tools
     (import npins.zen-browser-flake { inherit pkgs; }).zen-browser
   ];
 
