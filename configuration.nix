@@ -29,7 +29,8 @@ in
     qview
     davinci-resolve
     android-tools
-    (import npins.zen-browser-flake { inherit pkgs; }).zen-browser
+    zen-browser # from overlays
+    prismlauncher # from overlays
   ];
 
   time.timeZone = "Asia/Makassar";
