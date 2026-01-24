@@ -27,7 +27,6 @@ in
     wl-clipboard
     obsidian
     qview
-    davinci-resolve
     android-tools
     zen-browser # from overlays
     prismlauncher # from overlays
