@@ -1,5 +1,6 @@
 let
   npins = import ./npins;
+  idc = import npins.idc;
   pkgs = import npins.nixpkgs {
     config = {
       allowUnfree = true;
@@ -13,6 +14,10 @@ let
           nurpkgs = super;
         };
       })
+      (idc {
+        src = npins.ElyPrismLauncher.outPath;
+        settings.inputs.nixpkgs = npins.nixpkgs.outPath;
+      }).overlays.default
     ];
   };
 
@@ -20,8 +25,9 @@ let
 in
 import "${npins.nixpkgs}/nixos/lib/eval-config.nix" {
   inherit pkgs;
-  specialArgs.npins = npins;
-  specialArgs.idc = import npins.idc;
+  specialArgs = {
+    inherit npins idc;
+  };
   modules = [
     ./configuration.nix
     ./hardwares/${komoLib.systemProductName}/configuration.nix
