@@ -63,7 +63,6 @@ in
     gum
     glow
     gut
-    igrep
   ];
 
   home.sessionVariables.LS_COLORS =
