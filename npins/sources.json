@@ -1,5 +1,21 @@
 {
   "pins": {
+    "ElyPrismLauncher": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "ElyPrismLauncher",
+        "repo": "ElyPrismLauncher"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "10.0.2",
+      "revision": "4620911783b904ccf0919e9d67ae8ff3c5034624",
+      "url": "https://api.github.com/repos/ElyPrismLauncher/ElyPrismLauncher/tarball/refs/tags/10.0.2",
+      "hash": "sha256-p9gFdiVRQBIVMatq0v1lw+2ggSU3RV42u55O6w44L9E="
+    },
     "LS_COLORS": {
       "type": "Git",
       "repository": {
