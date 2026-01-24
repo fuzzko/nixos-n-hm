@@ -1,4 +1,4 @@
-{ lib, npins, idc, ... }:
+{ lib, pkgs, npins, idc, ... }:
 let
   nix-cachyos-kernel = idc {
     src = npins.nix-cachyos-kernel.outPath;
@@ -16,6 +16,7 @@ in
 
     # comment this if something's fucked up
     # kernelPackages = cachyosKernels.linuxPackages-cachyos-bore-lto;
+    kernelPackages = pkgs.kernelPackages_zen;
 
     kernelParams = [
       "vt.default_red=30,243,166,249,137,245,148,186,88,243,166,249,137,245,148,166"
