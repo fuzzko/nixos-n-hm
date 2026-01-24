@@ -2,10 +2,13 @@
   pkgs,
   lib,
   npins,
+  idc,
   ...
 }:
 let
   komoLib = import ./lib lib;
+
+  
 in
 {
   imports = (komoLib.filterFilesInDir (x: baseNameOf x == "default.nix") ./options) ++ [
